@@ -2,7 +2,7 @@
 	"$schema": "https://json.schemastore.org/eslintrc",
 	"extends": ["airbnb", "airbnb-typescript", "next", "prettier"],
 	"parserOptions": {
-		"project": "./tsconfig.json"
+		"project": ["./tsconfig.json"]
 	},
 	"parser": "@typescript-eslint/parser",
 	"plugins": ["@typescript-eslint", "prettier"],
@@ -19,7 +19,8 @@
 		"no-alert": "warn",
 		"react/jsx-indent": ["warn", "tab"],
 		"@typescript-eslint/indent": ["error", "tab"],
+		"@typescript-eslint/no-unused-vars": ["warn"],
 		"react/function-component-definition": "off",
-		"@typescript-eslint/no-unused-vars": ["warn"]
+		"react/jsx-props-no-spreading": "off"
 	}
 }
