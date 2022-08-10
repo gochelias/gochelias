@@ -1,13 +1,12 @@
 {
 	"$schema": "https://json.schemastore.org/eslintrc",
-	"extends": ["airbnb", "airbnb-typescript", "next", "prettier"],
+	"extends": ["next", "airbnb", "airbnb-typescript", "prettier"],
 	"parserOptions": {
 		"project": ["./tsconfig.json"]
 	},
 	"parser": "@typescript-eslint/parser",
 	"plugins": ["@typescript-eslint", "prettier"],
 	"rules": {
-		"prettier/prettier": "error",
 		"indent": "off",
 		"@next/next/no-html-link-for-pages": "off",
 		"react/jsx-key": "off",
@@ -21,6 +20,7 @@
 		"@typescript-eslint/indent": ["error", "tab"],
 		"@typescript-eslint/no-unused-vars": ["warn"],
 		"react/function-component-definition": "off",
-		"react/jsx-props-no-spreading": "off"
+		"react/jsx-props-no-spreading": "off",
+		"react/react-in-jsx-scope": "off"
 	}
 }
