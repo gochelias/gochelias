@@ -15,6 +15,7 @@ export const Layout = ({
 	<>
 		<Head>
 			<title>{`${title} | Elias Goche`}</title>
+			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		</Head>
 		<div className="fixed flex h-screen w-full select-none flex-col justify-between px-16 pb-16">
 			<div>
