@@ -17,7 +17,8 @@
 		"noEmit": true,
 		"jsx": "preserve",
 		"isolatedModules": true,
-		"incremental": true
+		"incremental": true,
+		"baseUrl": "src"
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.config.js"],
 	"exclude": ["node_modules"]
