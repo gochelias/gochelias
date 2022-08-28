@@ -1,11 +1,13 @@
-import { Layout } from 'components/Layout';
 import type { NextPage } from 'next';
+
+import styles from 'styles/Home.module.css';
+import { Layout } from 'components/Layout';
 
 const Home: NextPage = () => (
 	<Layout title="Home">
-		<header className="flex h-screen w-full items-center justify-center pt-16">
+		<header className={styles.header}>
 			header
-			<div className="absolute right-0 bottom-0 mr-16 flex flex-col items-center space-y-2">
+			<div className={styles.scroll}>
 				<svg
 					width="11"
 					height="72"
@@ -22,9 +24,16 @@ const Home: NextPage = () => (
 				</div>
 			</div>
 		</header>
-		<main className="flex h-screen w-full flex-col items-center justify-center">
-			main
-		</main>
+		<main className={styles.main}>main</main>
+		<section className={styles.cool_stuff}>
+			<p>
+				I like to work on cool stuff,
+				<br />
+				<span className={styles.work_together}>
+					Let’s work together.
+				</span>
+			</p>
+		</section>
 	</Layout>
 );
 
