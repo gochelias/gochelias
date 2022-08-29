@@ -25,15 +25,6 @@ const Home: NextPage = () => (
 			</div>
 		</header>
 		<main className={styles.main}>main</main>
-		<section className={styles.cool_stuff}>
-			<p>
-				I like to work on cool stuff,
-				<br />
-				<span className={styles.work_together}>
-					Let’s work together.
-				</span>
-			</p>
-		</section>
 	</Layout>
 );
 

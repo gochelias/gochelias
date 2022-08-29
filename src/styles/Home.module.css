@@ -26,34 +26,3 @@
 	items-center 
 	justify-center;
 }
-
-.cool_stuff {
-	@apply relative
-	flex
-	select-none
-	items-center
-	justify-center 
-	overflow-hidden
-	py-80 
-	text-9xl
-	font-medium;
-}
-
-.work_together {
-	@apply relative;
-}
-
-.work_together:after {
-	@apply absolute
-	left-0
-	-bottom-3
-	h-1.5
-	w-0
-	bg-white
-	duration-300
-	content-[''];
-}
-
-.cool_stuff p:hover .work_together:after {
-	@apply w-full;
-}
