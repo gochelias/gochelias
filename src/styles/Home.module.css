@@ -1,21 +1,10 @@
-.header {
+.hero {
 	@apply flex
 	h-screen
 	w-full
 	items-center
 	justify-center
 	pt-16;
-}
-
-.scroll {
-	@apply absolute
-	right-0
-	bottom-0 
-	mr-16 
-	flex 
-	flex-col 
-	items-center 
-	space-y-2;
 }
 
 .main {
