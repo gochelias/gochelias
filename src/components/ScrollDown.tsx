@@ -1,5 +1,5 @@
-export const ScrollAnimation = () => (
-	<div className="scroll">
+export const ScrollDown = () => (
+	<div className="scroll_down">
 		<svg
 			width="11"
 			height="72"
@@ -11,6 +11,6 @@ export const ScrollAnimation = () => (
 				fill="white"
 			/>
 		</svg>
-		<div className="scroll-line" />
+		<div className="scroll_down_line" />
 	</div>
 );

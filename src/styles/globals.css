@@ -21,7 +21,7 @@
 	}
 }
 
-.scroll {
+.scroll_down {
 	@apply absolute
 	right-0
 	bottom-0 
@@ -29,33 +29,12 @@
 	flex 
 	flex-col 
 	items-center 
-	space-y-2;
+	space-y-5;
 }
 
-.scroll-line {
+.scroll_down_line {
 	@apply relative
-	h-24 
+	h-20 
 	w-0.5 
-	bg-[#666666];
-}
-
-.scroll-line:after {
-	animation: scroll-animation 1.2s infinite;
-	@apply absolute 
-	w-0.5 
-	bg-white 
-	content-[''];
-}
-
-@keyframes scroll-animation {
-	0% {
-		@apply h-0
-		transition-all
-		duration-100;
-	}
-	100% {
-		@apply h-full
-		transition-all
-		duration-100;
-	}
+	bg-white;
 }
