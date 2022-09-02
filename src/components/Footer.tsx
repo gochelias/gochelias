@@ -94,16 +94,12 @@ export const Footer = () => (
 			</div>
 
 			<div className={styles.email}>
-				<label className="font-medium uppercase" htmlFor="email">
-					subscribe to my newsletter
-					<input
-						className={styles.input}
-						placeholder="your@email.com"
-						type="email"
-						name=""
-						id="email"
-					/>
-				</label>
+				<input
+					className={styles.input}
+					placeholder="your@email.com"
+					type="email"
+					name=""
+				/>
 				<button className={styles.button} type="button">
 					<svg
 						width="24"
