@@ -10,6 +10,10 @@
 		font-family: 'Clash Display';
 	}
 
+	#__next {
+		@apply bg-black text-white;
+	}
+
 	@media (prefers-color-scheme: dark) {
 		html {
 			color-scheme: dark;
