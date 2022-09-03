@@ -5,6 +5,9 @@ const withPreact = require('next-plugin-preact');
 const nextConfig = withPreact({
 	reactStrictMode: true,
 	swcMinify: true,
+	images: {
+		domains: ['images.unsplash.com'],
+	},
 });
 
 module.exports = nextConfig;

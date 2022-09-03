@@ -2,9 +2,10 @@
 	@apply flex
 	h-screen
 	w-full
+	select-none
 	items-center
 	justify-center
-	pt-36;
+	pt-32;
 }
 
 .main {

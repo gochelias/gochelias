@@ -6,12 +6,9 @@ import { Nav } from 'components/Nav';
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
-			<div className="fixed flex h-screen w-full select-none flex-col justify-between px-16 pb-16">
-				<div>
-					<div className="h-16 bg-gradient-to-b from-black to-transparent" />
-					<Nav />
-				</div>
-				<div>© 2022</div>
+			<div className="fixed flex w-full select-none flex-col justify-between px-16 pt-16">
+				<Nav />
+				<div className="fixed bottom-16 left-16">© 2022</div>
 			</div>
 			<Component {...pageProps} />
 		</>
