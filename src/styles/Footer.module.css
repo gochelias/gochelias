@@ -1,5 +1,6 @@
 .container {
 	@apply relative
+    z-[1]
     flex
     h-screen 
     flex-col 
@@ -73,6 +74,10 @@
 .list {
 	@apply space-y-1 
     font-light;
+}
+
+.item {
+	@apply hover:underline;
 }
 
 .email {

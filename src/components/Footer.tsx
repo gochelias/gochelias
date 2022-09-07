@@ -20,21 +20,21 @@ export const Footer = () => (
 						<a className={styles.nav_title}>Portfolio</a>
 					</Link>
 					<ul className={styles.list}>
-						<li>
+						<li className={styles.item}>
 							<a
 								href="https://github.com/gochelias"
 								title="@gochelias">
 								GitHub
 							</a>
 						</li>
-						<li>
+						<li className={styles.item}>
 							<a
 								href="https://codepen.io/gochelias"
 								title="@gochelias">
 								Codepen
 							</a>
 						</li>
-						<li>
+						<li className={styles.item}>
 							<a
 								href="https://dribbble.com/gochelias"
 								title="@gochelias">
@@ -48,17 +48,17 @@ export const Footer = () => (
 						<a className={styles.nav_title}>About</a>
 					</Link>
 					<ul className={styles.list}>
-						<li>
+						<li className={styles.item}>
 							<Link href="/me">
 								<a>Me</a>
 							</Link>
 						</li>
-						<li>
+						<li className={styles.item}>
 							<Link href="/feed">
 								<a>Feed</a>
 							</Link>
 						</li>
-						<li>
+						<li className={styles.item}>
 							<Link href="/stats">
 								<a>Stats</a>
 							</Link>
@@ -68,14 +68,14 @@ export const Footer = () => (
 				<div className={styles.col}>
 					<h2 className={styles.nav_title}>Contact</h2>
 					<ul className={styles.list}>
-						<li>
+						<li className={styles.item}>
 							<a
 								href="https://www.linkedin.com/in/gochelias"
 								title="@gochelias">
 								LinkedIn
 							</a>
 						</li>
-						<li>
+						<li className={styles.item}>
 							<a
 								href="http://https://twitter.com/gochelias"
 								title="@gochelias">

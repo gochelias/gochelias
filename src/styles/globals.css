@@ -11,7 +11,7 @@
 	}
 
 	#__next {
-		@apply bg-black text-white;
+		@apply overflow-hidden bg-black text-white;
 	}
 
 	@media (prefers-color-scheme: dark) {
@@ -29,7 +29,6 @@
 	@apply absolute
 	right-0
 	bottom-0 
-	mr-16 
 	flex 
 	flex-col 
 	items-center 
@@ -41,4 +40,28 @@
 	h-20 
 	w-0.5 
 	bg-white;
+}
+
+.elliptic_wave_one {
+	animation: rotate_right 5s linear infinite;
+}
+.elliptic_wave_two {
+	animation: rotate_left 5s linear infinite;
+}
+
+@keyframes rotate_right {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotate_left {
+	0% {
+		transform: rotate(-0deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
 }
