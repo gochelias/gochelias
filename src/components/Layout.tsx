@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import { Container } from 'components/Container';
 import { Footer } from 'components/Footer';
-import { EllipticWaves } from './EllipticWaves';
+import { RingsWaves } from 'components/RingsWaves';
 
 export const Layout = ({
 	title,
@@ -19,8 +19,8 @@ export const Layout = ({
 		</Head>
 		<Container>
 			<div className="relative z-[1] h-full w-full">{children}</div>
-			<EllipticWaves />
 			<Footer />
+			<RingsWaves />
 		</Container>
 	</>
 );

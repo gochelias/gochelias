@@ -73,7 +73,7 @@
 
 .list {
 	@apply space-y-1 
-    font-light;
+    font-normal;
 }
 
 .item {

@@ -8,6 +8,138 @@
 	justify-center;
 }
 
+.hero_title {
+	@apply absolute 
+	left-64 
+	z-[2];
+}
+
+.hero_name {
+	@apply text-9xl
+	font-medium;
+}
+
+.hero_dev {
+	@apply font-['telegraf']
+	text-3xl 
+	font-normal 
+	text-[#eaeaea];
+}
+
+.hero_center {
+	@apply relative
+	flex 
+	h-full 
+	w-full 
+	items-center 
+	justify-center;
+}
+
+.hero_center_left {
+	@apply grid
+	h-4/6
+	place-content-end;
+}
+
+.hero_to_about {
+	@apply grid 
+	h-48 
+	w-48 
+	place-content-center 
+	place-self-end 
+	bg-white 
+	text-black;
+}
+
+.hero_img_container {
+	@apply relative
+	z-[1] 
+	flex 
+	h-4/6 
+	w-1/4 
+	justify-center 
+	overflow-hidden;
+}
+
+.hero_img_cover {
+	@apply absolute 
+	z-[2] 
+	h-full 
+	w-full 
+	bg-black 
+	outline 
+	outline-2 
+	outline-black;
+}
+
+.hero_img_layout {
+	@apply relative
+	h-full 
+	w-full;
+}
+
+.hero_image {
+	@apply object-cover;
+}
+
+.hero_center_right {
+	@apply h-4/6;
+}
+
+.hero_available {
+	@apply mr-24 
+	grid 
+	h-96 
+	w-24 
+	place-content-center 
+	place-self-start 
+	bg-white 
+	text-black;
+}
+
+.hero_available_text {
+	@apply w-max 
+	rotate-90 
+	text-2xl 
+	font-medium;
+}
+
+.hero_descrip_container {
+	@apply absolute 
+	right-52 
+	bottom-0 
+	flex 
+	space-x-8;
+}
+
+.hero_descrip_line {
+	@apply mt-1.5 
+	h-4 
+	w-[2.5px] 
+	bg-white;
+}
+
+.hero_descrip_content {
+	@apply mb-80 
+	flex 
+	w-max 
+	flex-col 
+	items-end 
+	space-y-8;
+}
+
+.hero_descrip_paragraph {
+	@apply w-96 
+	font-['telegraf'] 
+	text-lg 
+	text-white;
+}
+
+.hero_descrip_more {
+	@apply text-[#eaeaea] 
+	hover:underline;
+}
+
 .main {
 	@apply flex 
 	h-screen 
