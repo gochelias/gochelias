@@ -9,56 +9,77 @@
 }
 
 .hero_title {
-	@apply absolute 
-	left-64 
-	z-[2];
+	@apply absolute
+	top-24 
+	left-8
+	z-[2]
+	sm:top-auto
+	2xl:left-64;
 }
 
 .hero_name {
-	@apply text-9xl
-	font-medium;
+	@apply text-4xl
+	font-medium
+	sm:text-6xl 
+	lg:text-7xl
+	2xl:text-9xl;
 }
 
 .hero_dev {
 	@apply font-['telegraf']
-	text-3xl 
-	font-normal 
-	text-[#eaeaea];
+	text-lg
+	font-normal
+	text-[#eaeaea] 
+	sm:text-xl
+	lg:text-2xl
+	2xl:text-3xl;
 }
 
 .hero_center {
 	@apply relative
 	flex 
-	h-full 
-	w-full 
-	items-center 
-	justify-center;
+	h-80
+	w-full
+	items-center
+	justify-center 
+	sm:h-3/4
+	md:h-3/5
+	lg:h-2/3
+	2xl:h-4/6;
 }
 
 .hero_center_left {
 	@apply grid
-	h-4/6
+	h-full
 	place-content-end;
 }
 
 .hero_to_about {
 	@apply grid 
-	h-48 
-	w-48 
-	place-content-center 
+	h-10
+	w-10
+	place-content-center
 	place-self-end 
-	bg-white 
-	text-black;
+	bg-white
+	text-black 
+	sm:h-24
+	sm:w-24 
+	2xl:h-48 
+	2xl:w-48;
 }
 
 .hero_img_container {
 	@apply relative
 	z-[1] 
-	flex 
-	h-4/6 
-	w-1/4 
-	justify-center 
-	overflow-hidden;
+	flex
+	h-full
+	w-52  
+	justify-center
+	overflow-hidden
+	md:w-2/4
+	lg:w-1/3
+	2xl:h-full 
+	2xl:w-1/4;
 }
 
 .hero_img_cover {
@@ -66,7 +87,7 @@
 	z-[2] 
 	h-full 
 	w-full 
-	bg-black 
+	bg-black
 	outline 
 	outline-2 
 	outline-black;
@@ -74,42 +95,52 @@
 
 .hero_img_layout {
 	@apply relative
-	h-full 
-	w-full;
+	h-full
+	w-full 
+	bg-black;
 }
 
 .hero_image {
-	@apply object-cover;
+	@apply object-cover opacity-90;
 }
 
 .hero_center_right {
-	@apply h-4/6;
+	@apply h-full;
 }
 
 .hero_available {
-	@apply mr-24 
-	grid 
-	h-96 
-	w-24 
-	place-content-center 
-	place-self-start 
+	@apply flex h-44
+	w-10
+	flex-col
+	items-center
+	justify-center
 	bg-white 
-	text-black;
+	text-black 
+	sm:mr-10
+	sm:h-60
+	sm:w-14
+	2xl:mr-24 
+	2xl:h-96 
+	2xl:w-24;
 }
 
 .hero_available_text {
-	@apply w-max 
-	rotate-90 
-	text-2xl 
-	font-medium;
+	@apply w-max
+	rotate-90
+	font-medium 
+	text-black
+	sm:text-xl
+	2xl:text-2xl;
 }
 
 .hero_descrip_container {
 	@apply absolute 
-	right-52 
 	bottom-0 
-	flex 
-	space-x-8;
+	z-[1]
+	flex
+	space-x-8
+	sm:right-10 
+	2xl:right-52;
 }
 
 .hero_descrip_line {
@@ -120,19 +151,23 @@
 }
 
 .hero_descrip_content {
-	@apply mb-80 
-	flex 
+	@apply flex 
 	w-max 
 	flex-col 
 	items-end 
-	space-y-8;
+	space-y-8 
+	sm:mb-20
+	md:mb-5
+	2xl:mb-80;
 }
 
 .hero_descrip_paragraph {
-	@apply w-96 
+	@apply w-72 
 	font-['telegraf'] 
-	text-lg 
-	text-white;
+	text-lg
+	text-white 
+	md:w-96 
+	2xl:w-96;
 }
 
 .hero_descrip_more {

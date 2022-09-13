@@ -1,11 +1,12 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Tween } from 'react-gsap';
 
 import styles from 'styles/Home.module.css';
 import { Layout } from 'components/Layout';
 import { ScrollDown } from 'components/ScrollDown';
-import Link from 'next/link';
+import { ArrowRight } from 'components/ArrowRight';
 
 const Home: NextPage = () => (
 	<Layout title="Home">
@@ -33,17 +34,7 @@ const Home: NextPage = () => (
 					ease="Expo.easeInOut">
 					<div className={styles.hero_center_left}>
 						<div className={styles.hero_to_about}>
-							<svg
-								width="40"
-								height="40"
-								viewBox="0 0 18 16"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M9.93945 0.403906L8.73945 1.60391L14.5645 7.37891H0.814453V9.00391H14.5395L8.73945 14.7539L9.93945 15.9789L17.7145 8.17891L9.93945 0.403906Z"
-									fill="currentColor"
-								/>
-							</svg>
+							<ArrowRight className="w-4 md:w-6 2xl:w-10" />
 						</div>
 					</div>
 				</Tween>
@@ -54,7 +45,7 @@ const Home: NextPage = () => (
 							duration={3}
 							delay={1}
 							ease="Expo.easeInOut">
-							<div className={styles.img_cover} />
+							<div className={styles.hero_img_cover} />
 						</Tween>
 						<Tween
 							from={{ opacity: 0, scale: 1.4 }}
