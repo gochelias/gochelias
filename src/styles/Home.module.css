@@ -13,20 +13,25 @@
 	top-24 
 	left-8
 	z-[2]
+	flex
+	flex-col
+	items-end
 	sm:top-auto
 	2xl:left-64;
 }
 
 .hero_name {
-	@apply text-4xl
+	@apply overflow-hidden
+	text-4xl 
 	font-medium
-	sm:text-6xl 
+	sm:text-6xl
 	lg:text-7xl
 	2xl:text-9xl;
 }
 
 .hero_dev {
-	@apply font-['telegraf']
+	@apply overflow-hidden
+	font-['telegraf']
 	text-lg
 	font-normal
 	text-[#eaeaea] 
@@ -177,9 +182,8 @@
 
 .main {
 	@apply flex 
-	h-screen 
+	h-full 
 	w-full
 	flex-col
-	items-center
-	justify-center;
+	items-center;
 }

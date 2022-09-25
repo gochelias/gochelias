@@ -1,8 +1,8 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
+import { Tween } from 'react-gsap';
 
 import { Nav } from 'components/Nav';
-import { Tween } from 'react-gsap';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (

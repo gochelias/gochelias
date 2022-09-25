@@ -2,7 +2,7 @@ import { Tween } from 'react-gsap';
 
 export const RingsWaves = () => (
 	<Tween from={{ opacity: 0 }} duration={2} delay={4.8} ease="Expo.easeInOut">
-		<div className="fixed left-0 top-0 flex h-screen w-full items-center justify-center opacity-80">
+		<div className="fixed left-0 top-0 flex h-screen w-full items-center justify-center text-[#666666]">
 			<svg
 				className="elliptic_wave_one h-80 sm:h-4/5 md:h-4/6 lg:h-4/5 2xl:h-5/6"
 				width="1304"

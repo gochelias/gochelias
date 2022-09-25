@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import { Logo } from 'components/Logo';
 
 export const Nav = () => (
@@ -8,7 +9,7 @@ export const Nav = () => (
 				<Logo className="w-5 md:w-6 2xl:w-8" />
 			</a>
 		</Link>
-		<button type="button" className="text-sm uppercase">
+		<button type="button" className="text-base font-semibold uppercase">
 			menu
 		</button>
 	</nav>
