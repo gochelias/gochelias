@@ -44,10 +44,10 @@
 	bg-white;
 }
 
-.elliptic_wave_one {
+.ring_one {
 	animation: rotate_right 5s linear infinite;
 }
-.elliptic_wave_two {
+.ring_two {
 	animation: rotate_left 5s linear infinite;
 }
 

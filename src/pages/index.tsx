@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ScrollTrigger, Tween } from 'react-gsap';
 import { nanoid } from 'nanoid';
 
@@ -8,7 +9,6 @@ import { Layout } from 'components/Layout';
 import { ScrollDown } from 'components/ScrollDown';
 import { ArrowRight } from 'components/ArrowRight';
 import { RecentProject } from 'components/RecentProject';
-import Link from 'next/link';
 
 const Home: NextPage = () => {
 	const text =
@@ -93,9 +93,17 @@ const Home: NextPage = () => {
 			</header>
 			<main className={styles.main}>
 				<section className="flex h-screen w-full select-none flex-col items-end py-16">
-					<div className="flex w-full justify-around text-2xl font-semibold uppercase">
-						<h4>About me</h4>
-						<h4>Base in México</h4>
+					<div className="flex w-full justify-around overflow-hidden text-2xl font-semibold uppercase leading-none">
+						<ScrollTrigger start="top bottom">
+							<Tween
+								from={{ y: '105%' }}
+								duration={1.6}
+								stagger={0.2}
+								ease="Expo.easeInOut">
+								<h4>About me</h4>
+								<h4>Base in México</h4>
+							</Tween>
+						</ScrollTrigger>
 					</div>
 					<div className="my-auto flex w-2/3 flex-col justify-center space-y-20">
 						<p className="flex flex-wrap text-6xl font-medium uppercase">
@@ -103,31 +111,35 @@ const Home: NextPage = () => {
 							<ScrollTrigger
 								start="center bottom"
 								end="bottom bottom">
-								{textByWord.map((word: string) => (
-									<span
-										className="mr-3 overflow-hidden"
-										key={nanoid()}>
-										<Tween
-											from={{ y: '100%' }}
-											duration={2.5}
-											ease="Expo.easeInOut">
-											<span className="block">
-												{word}
-											</span>
-										</Tween>
-									</span>
-								))}
+								{textByWord.map(
+									(word: string, index: number) => (
+										<span
+											className="mr-3 overflow-hidden"
+											key={nanoid()}>
+											<Tween
+												from={{ y: '100%' }}
+												duration={2.5}
+												delay={`0.1${index}`}
+												ease="Expo.easeInOut">
+												<span className="block">
+													{word}
+												</span>
+											</Tween>
+										</span>
+									),
+								)}
 							</ScrollTrigger>
 						</p>
 						<div className="flex items-end">
-							<ScrollTrigger
-								start="center bottom"
-								end="bottom bottom">
-								<div className="w-1/2">
+							<div className="w-1/2">
+								<ScrollTrigger
+									start="center bottom"
+									end="bottom bottom">
 									<Tween
 										from={{ opacity: 0 }}
 										duration={2.5}
-										stagger={0.4}
+										delay={0.5}
+										stagger={0.5}
 										ease="Expo.easeInOut">
 										<p className="font-['telegraf'] text-2xl text-[#eaeaea]">
 											Lorem ipsum dolor sit amet
@@ -146,26 +158,34 @@ const Home: NextPage = () => {
 											officia reprehenderit.
 										</p>
 									</Tween>
-									<Link href="/about">
-										<a className="relative ml-auto mt-20 flex w-max items-center space-x-6 text-2xl font-medium before:absolute before:top-10 before:h-0.5 before:w-0 before:bg-white before:transition-all before:duration-200 before:ease-in-out before:content-[''] hover:before:w-full">
-											<span>
-												More about me and services{' '}
-											</span>
-											<ArrowRight className="w-5" />
-										</a>
-									</Link>
-								</div>
-							</ScrollTrigger>
+									<Tween
+										from={{ opacity: 0 }}
+										duration={2.5}
+										delay={0.7}
+										ease="Expo.easeInOut">
+										<div>
+											<Link href="/about">
+												<a className="relative ml-auto mt-20 flex w-max items-center space-x-6 text-2xl font-medium before:absolute before:top-10 before:h-0.5 before:w-0 before:bg-white before:transition-all before:duration-200 before:ease-in-out before:content-[''] hover:before:w-full">
+													<span>
+														More about me and
+														services
+													</span>
+													<ArrowRight className="w-5" />
+												</a>
+											</Link>
+										</div>
+									</Tween>
+								</ScrollTrigger>
+							</div>
 						</div>
 					</div>
 				</section>
 				<section className="flex h-full w-full flex-col">
-					<div className="my-24 flex w-full select-none justify-around overflow-hidden text-left text-2xl font-semibold uppercase">
-						<ScrollTrigger start="top bottom" end="start bottom">
+					<div className="my-24 flex w-full select-none justify-around overflow-hidden text-left text-2xl font-semibold uppercase leading-none">
+						<ScrollTrigger start="top bottom">
 							<Tween
-								from={{ y: 30 }}
+								from={{ y: '100%' }}
 								duration={1.6}
-								delay={0}
 								stagger={0.2}
 								ease="Expo.easeInOut">
 								<h4>Recent Projects</h4>
@@ -190,40 +210,64 @@ const Home: NextPage = () => {
 				</section>
 				<section className="flex h-screen w-full flex-col">
 					<div className="flex w-full flex-auto flex-col justify-center">
-						<div className="flex select-none justify-around pt-16 text-2xl font-semibold uppercase">
-							<h2>I like to work on cool stuff</h2>
-							<h2>Let’s work together</h2>
+						<div className="mt-16 flex select-none justify-around overflow-hidden text-2xl font-semibold uppercase leading-none">
+							<ScrollTrigger start="top bottom">
+								<Tween
+									from={{ y: '100%' }}
+									duration={1.6}
+									stagger={0.2}
+									ease="Expo.easeInOut">
+									<h2>I like to work on cool stuff</h2>
+									<h2>Let’s work together</h2>
+								</Tween>
+							</ScrollTrigger>
 						</div>
-
-						<h2 className="m-auto text-9xl font-medium uppercase selection:bg-white selection:text-black">
-							hello@gochelias.com
+						<h2 className="m-auto flex overflow-hidden text-9xl font-medium uppercase selection:bg-white selection:text-black">
+							<ScrollTrigger start="top bottom">
+								<Tween
+									from={{ y: '100%' }}
+									duration={2.5}
+									ease="Expo.easeInOut">
+									<span className="block">
+										hello@gochelias.com
+									</span>
+								</Tween>
+							</ScrollTrigger>
 						</h2>
 					</div>
 					<footer className="flex items-end justify-center space-x-12 py-16 text-lg font-medium">
-						<a
-							target="_blank"
-							href="https://github.com/gochelias"
-							title="@gochelias"
-							className="hover:underline"
-							rel="noreferrer">
-							GitHub
-						</a>
-						<a
-							target="_blank"
-							href="https://www.linkedin.com/in/gochelias"
-							title="@gochelias"
-							className="hover:underline"
-							rel="noreferrer">
-							LinkedIn
-						</a>
-						<a
-							target="_blank"
-							href="https://twitter.com/gochelias"
-							title="@gochelias"
-							className="hover:underline"
-							rel="noreferrer">
-							Twitter
-						</a>
+						<ScrollTrigger start="top bottom">
+							<Tween
+								from={{ opacity: 0 }}
+								duration={1.6}
+								stagger={0.2}
+								ease="Expo.easeInOut">
+								<a
+									target="_blank"
+									href="https://github.com/gochelias"
+									title="@gochelias"
+									className="hover:underline"
+									rel="noreferrer">
+									GitHub
+								</a>
+								<a
+									target="_blank"
+									href="https://www.linkedin.com/in/gochelias"
+									title="@gochelias"
+									className="hover:underline"
+									rel="noreferrer">
+									LinkedIn
+								</a>
+								<a
+									target="_blank"
+									href="https://twitter.com/gochelias"
+									title="@gochelias"
+									className="hover:underline"
+									rel="noreferrer">
+									Twitter
+								</a>
+							</Tween>
+						</ScrollTrigger>
 					</footer>
 				</section>
 			</main>
