@@ -8,6 +8,7 @@ import { Layout } from 'components/Layout';
 import { ScrollDown } from 'components/ScrollDown';
 import { ArrowRight } from 'components/ArrowRight';
 import { RecentProject } from 'components/RecentProject';
+import Link from 'next/link';
 
 const Home: NextPage = () => {
 	const text =
@@ -122,13 +123,13 @@ const Home: NextPage = () => {
 							<ScrollTrigger
 								start="center bottom"
 								end="bottom bottom">
-								<div className="w-1/2 space-y-5 font-['telegraf'] text-2xl text-[#eaeaea]">
+								<div className="w-1/2">
 									<Tween
 										from={{ opacity: 0 }}
 										duration={2.5}
 										stagger={0.4}
 										ease="Expo.easeInOut">
-										<p>
+										<p className="font-['telegraf'] text-2xl text-[#eaeaea]">
 											Lorem ipsum dolor sit amet
 											consectetur adipisicing elit. Minus
 											ullam veritatis rerum, recusandae,
@@ -138,21 +139,23 @@ const Home: NextPage = () => {
 											ducimus voluptatem dignissimos
 											dicta!
 										</p>
-										<p>
+										<p className="mt-5 font-['telegraf'] text-2xl text-[#eaeaea]">
 											Lorem ipsum dolor sit amet
 											consectetur, adipisicing elit.
 											Quidem sint assumenda quod tenetur,
 											officia reprehenderit.
 										</p>
 									</Tween>
+									<Link href="/about">
+										<a className="relative ml-auto mt-20 flex w-max items-center space-x-6 text-2xl font-medium before:absolute before:top-10 before:h-0.5 before:w-0 before:bg-white before:transition-all before:duration-200 before:ease-in-out before:content-[''] hover:before:w-full">
+											<span>
+												More about me and services{' '}
+											</span>
+											<ArrowRight className="w-5" />
+										</a>
+									</Link>
 								</div>
 							</ScrollTrigger>
-							<div className="group relative mx-auto flex h-48 w-48 items-center justify-center border-2 border-white text-black transition-colors duration-200 ease-in-out hover:bg-white hover:text-black">
-								<span className="absolute select-none text-center text-2xl font-medium uppercase">
-									Read <br /> More
-								</span>
-								<ArrowRight className="-rotate-45 text-white group-hover:text-transparent" />
-							</div>
 						</div>
 					</div>
 				</section>
