@@ -3,17 +3,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ScrollTrigger, Tween } from 'react-gsap';
 import { nanoid } from 'nanoid';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 import styles from 'styles/Home.module.css';
 import { Layout } from 'components/Layout';
 import { ScrollDown } from 'components/ScrollDown';
 import { ArrowRight } from 'components/ArrowRight';
 import { RecentProject } from 'components/RecentProject';
+import { useState } from 'react';
 
 const Home: NextPage = () => {
 	const text =
 		'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat nesciunt fugiat, placeat tenetur ducimus aperiam suscipit illum sit explicabo.';
 	const textByWord = text.split(' ');
+
+	const [copied, setCopied] = useState(false);
 
 	return (
 		<Layout>
@@ -222,18 +226,31 @@ const Home: NextPage = () => {
 								</Tween>
 							</ScrollTrigger>
 						</div>
-						<h2 className="m-auto flex overflow-hidden text-9xl font-medium uppercase selection:bg-white selection:text-black">
-							<ScrollTrigger start="top bottom">
-								<Tween
-									from={{ y: '100%' }}
-									duration={2.5}
-									ease="Expo.easeInOut">
-									<span className="block">
-										hello@gochelias.com
-									</span>
-								</Tween>
-							</ScrollTrigger>
-						</h2>
+						<div className="group relative m-auto flex select-none flex-col items-center justify-center">
+							<div className="absolute -top-12 w-max border border-white px-6 py-3 font-semibold text-white opacity-0 transition-all duration-300 ease-in-out group-hover:-top-20 group-hover:opacity-100">
+								{copied ? 'Copied' : 'Click to copy'}
+							</div>
+							<div className="text-test overflow-hidden">
+								<ScrollTrigger start="top bottom">
+									<Tween
+										from={{ y: '100%' }}
+										duration={2.5}
+										ease="Expo.easeInOut">
+										<div>
+											<CopyToClipboard
+												text="hello@gochelias.com"
+												onCopy={() => setCopied(true)}>
+												<button
+													type="button"
+													className="text-9xl font-medium uppercase selection:bg-white selection:text-black">
+													hello@gochelias.com
+												</button>
+											</CopyToClipboard>
+										</div>
+									</Tween>
+								</ScrollTrigger>
+							</div>
+						</div>
 					</div>
 					<footer className="flex items-end justify-center space-x-12 py-16 text-lg font-medium">
 						<ScrollTrigger start="top bottom">
