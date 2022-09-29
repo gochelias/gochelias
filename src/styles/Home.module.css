@@ -73,6 +73,12 @@
 	2xl:w-48;
 }
 
+.hero_arrow {
+	@apply w-4 
+	md:w-6 
+	2xl:w-10;
+}
+
 .hero_img_container {
 	@apply relative
 	z-[1] 
@@ -138,52 +144,296 @@
 	2xl:text-2xl;
 }
 
-.hero_descrip_container {
-	@apply absolute 
-	bottom-0 
-	z-[1]
-	flex
-	space-x-8
-	sm:right-10 
-	2xl:right-52;
-}
-
-.hero_descrip_line {
-	@apply mt-1.5 
-	h-4 
-	w-[2.5px] 
-	bg-white;
-}
-
-.hero_descrip_content {
-	@apply flex 
-	w-max 
-	flex-col 
-	items-end 
-	space-y-8 
-	sm:mb-20
-	md:mb-5
-	2xl:mb-80;
-}
-
-.hero_descrip_paragraph {
-	@apply w-72 
-	font-['telegraf'] 
-	text-lg
-	text-white 
-	md:w-96 
-	2xl:w-96;
-}
-
-.hero_descrip_more {
-	@apply text-[#eaeaea] 
-	hover:underline;
-}
-
 .main {
 	@apply flex 
 	h-full 
 	w-full
 	flex-col
 	items-center;
+}
+
+.about_section {
+	@apply flex
+	h-screen 
+	w-full 
+	select-none 
+	flex-col 
+	items-end 
+	py-16;
+}
+
+.about_separator {
+	@apply flex 
+	w-full 
+	justify-around 
+	overflow-hidden 
+	text-2xl 
+	font-semibold 
+	uppercase 
+	leading-none;
+}
+
+.about_content {
+	@apply my-auto 
+	flex
+	w-2/3 
+	flex-col
+	justify-center
+	space-y-20;
+}
+
+.about_main {
+	@apply flex 
+	flex-wrap 
+	text-6xl 
+	font-medium 
+	uppercase;
+}
+
+.about_margin {
+	@apply ml-80;
+}
+
+.about_word {
+	@apply mr-3
+	overflow-hidden;
+}
+
+.about_paragraph {
+	@apply w-1/2;
+}
+
+.about_paragraph_one {
+	@apply font-['telegraf']
+	text-2xl
+	text-[#eaeaea];
+}
+
+.about_paragraph_two {
+	@apply mt-5 
+	font-['telegraf'] 
+	text-2xl 
+	text-[#eaeaea];
+}
+
+.about_me_link {
+	@apply relative 
+	ml-auto 
+	mt-20 
+	flex 
+	w-max 
+	items-center 
+	space-x-6 
+	text-2xl 
+	font-medium 
+	before:absolute 
+	before:top-10 
+	before:h-0.5 
+	before:w-0 
+	before:bg-white 
+	before:transition-all 
+	before:duration-200 
+	before:ease-in-out 
+	before:content-[''] 
+	hover:before:w-full;
+}
+
+.about_arrow {
+	@apply w-5;
+}
+
+.projects_section {
+	@apply flex 
+	h-full 
+	w-full 
+	flex-col;
+}
+
+.projects_separator {
+	@apply my-24 
+	flex 
+	w-full 
+	select-none 
+	justify-around 
+	overflow-hidden 
+	text-left 
+	text-2xl 
+	font-semibold 
+	uppercase 
+	leading-none;
+}
+
+.projects_container {
+	@apply h-full 
+	w-full 
+	flex-auto;
+}
+
+.recent_project {
+	@apply flex 
+	h-screen
+	w-full
+	flex-auto
+	select-none 
+	space-x-20 
+	py-16;
+}
+
+.recent_project_info_container {
+	@apply flex 
+	w-1/2 
+	flex-auto 
+	flex-col 
+	items-start 
+	justify-between;
+}
+
+.recent_project_content {
+	@apply flex
+	w-full
+	flex-wrap 
+	text-9xl 
+	font-medium
+	uppercase;
+}
+
+.recent_project_line_container {
+	@apply flex 
+	w-24;
+}
+
+.recent_project_line {
+	@apply mt-auto
+	mb-6 
+	block 
+	h-0.5 
+	w-24 
+	bg-white;
+}
+
+.recent_project_name {
+	@apply mr-6 
+	ml-14 
+	mt-auto 
+	mb-3 
+	overflow-hidden 
+	text-2xl 
+	text-[#eaeaea];
+}
+
+.recent_project_description {
+	@apply mr-6 
+	overflow-hidden;
+}
+
+.recent_project_link {
+	@apply ml-auto 
+	grid 
+	h-48 
+	w-48 
+	place-content-center 
+	border-2 
+	border-white 
+	transition-colors 
+	duration-200 
+	ease-in-out 
+	hover:bg-white 
+	hover:text-black;
+}
+
+.recent_project_arrow {
+	@apply -rotate-45;
+}
+
+.recent_project_image_container {
+	@apply relative
+	h-full 
+	w-1/2 
+	overflow-hidden;
+}
+
+.recent_project_image {
+	@apply object-cover;
+}
+
+.footer {
+	@apply flex 
+	h-screen 
+	w-full 
+	flex-col;
+}
+
+.footer_main {
+	@apply flex 
+	w-full 
+	flex-auto 
+	flex-col 
+	justify-center;
+}
+
+.footer_separator {
+	@apply mt-16 
+	flex 
+	select-none 
+	justify-around 
+	overflow-hidden 
+	text-2xl 
+	font-semibold 
+	uppercase 
+	leading-none;
+}
+
+.footer_content {
+	@apply relative 
+	m-auto 
+	flex 
+	select-none 
+	flex-col 
+	items-center 
+	justify-center;
+}
+
+.footer_copy_msg {
+	@apply absolute 
+	-top-12 
+	w-max 
+	border 
+	border-white 
+	px-6 
+	py-3 
+	font-semibold 
+	text-white 
+	opacity-0 
+	transition-all 
+	duration-300 
+	ease-in-out 
+	group-hover:-top-20 
+	group-hover:opacity-100;
+}
+
+.footer_email_container {
+	@apply overflow-hidden;
+}
+
+.footer_email {
+	@apply text-9xl 
+	font-medium 
+	uppercase 
+	selection:bg-white 
+	selection:text-black;
+}
+
+.footer_social {
+	@apply flex 
+	select-none 
+	items-end 
+	justify-center 
+	space-x-12 
+	py-16
+	text-lg 
+	font-medium;
+}
+
+.footer_social_link {
+	@apply hover:underline;
 }

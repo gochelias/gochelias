@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { ScrollTrigger, Tween } from 'react-gsap';
 import { nanoid } from 'nanoid';
 import CopyToClipboard from 'react-copy-to-clipboard';
@@ -10,7 +11,6 @@ import { Layout } from 'components/Layout';
 import { ScrollDown } from 'components/ScrollDown';
 import { ArrowRight } from 'components/ArrowRight';
 import { RecentProject } from 'components/RecentProject';
-import { useState } from 'react';
 
 const Home: NextPage = () => {
 	const text =
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
 						ease="Expo.easeInOut">
 						<div className={styles.hero_center_left}>
 							<div className={styles.hero_to_about}>
-								<ArrowRight className="w-4 md:w-6 2xl:w-10" />
+								<ArrowRight className={styles.hero_arrow} />
 							</div>
 						</div>
 					</Tween>
@@ -96,8 +96,8 @@ const Home: NextPage = () => {
 				<ScrollDown />
 			</header>
 			<main className={styles.main}>
-				<section className="flex h-screen w-full select-none flex-col items-end py-16">
-					<div className="flex w-full justify-around overflow-hidden text-2xl font-semibold uppercase leading-none">
+				<section className={styles.about_section}>
+					<div className={styles.about_separator}>
 						<ScrollTrigger start="top bottom">
 							<Tween
 								from={{ y: '105%' }}
@@ -109,16 +109,16 @@ const Home: NextPage = () => {
 							</Tween>
 						</ScrollTrigger>
 					</div>
-					<div className="my-auto flex w-2/3 flex-col justify-center space-y-20">
-						<p className="flex flex-wrap text-6xl font-medium uppercase">
-							<span className="ml-80" />
+					<div className={styles.about_content}>
+						<p className={styles.about_main}>
+							<span className={styles.about_margin} />
 							<ScrollTrigger
 								start="center bottom"
 								end="bottom bottom">
 								{textByWord.map(
 									(word: string, index: number) => (
 										<span
-											className="mr-3 overflow-hidden"
+											className={styles.about_word}
 											key={nanoid()}>
 											<Tween
 												from={{ y: '100%' }}
@@ -134,58 +134,57 @@ const Home: NextPage = () => {
 								)}
 							</ScrollTrigger>
 						</p>
-						<div className="flex items-end">
-							<div className="w-1/2">
-								<ScrollTrigger
-									start="center bottom"
-									end="bottom bottom">
-									<Tween
-										from={{ opacity: 0 }}
-										duration={2.5}
-										delay={0.5}
-										stagger={0.5}
-										ease="Expo.easeInOut">
-										<p className="font-['telegraf'] text-2xl text-[#eaeaea]">
-											Lorem ipsum dolor sit amet
-											consectetur adipisicing elit. Minus
-											ullam veritatis rerum, recusandae,
-											voluptas quisquam, deserunt
-											aspernatur error odit repellendus
-											dolorum ea ex inventore. Unde alias
-											ducimus voluptatem dignissimos
-											dicta!
-										</p>
-										<p className="mt-5 font-['telegraf'] text-2xl text-[#eaeaea]">
-											Lorem ipsum dolor sit amet
-											consectetur, adipisicing elit.
-											Quidem sint assumenda quod tenetur,
-											officia reprehenderit.
-										</p>
-									</Tween>
-									<Tween
-										from={{ opacity: 0 }}
-										duration={2.5}
-										delay={0.7}
-										ease="Expo.easeInOut">
-										<div>
-											<Link href="/about">
-												<a className="relative ml-auto mt-20 flex w-max items-center space-x-6 text-2xl font-medium before:absolute before:top-10 before:h-0.5 before:w-0 before:bg-white before:transition-all before:duration-200 before:ease-in-out before:content-[''] hover:before:w-full">
-													<span>
-														More about me and
-														services
-													</span>
-													<ArrowRight className="w-5" />
-												</a>
-											</Link>
-										</div>
-									</Tween>
-								</ScrollTrigger>
-							</div>
+						<div className={styles.about_paragraph}>
+							<ScrollTrigger
+								start="center bottom"
+								end="bottom bottom">
+								<Tween
+									from={{ opacity: 0 }}
+									duration={2.5}
+									delay={0.5}
+									stagger={0.5}
+									ease="Expo.easeInOut">
+									<p className={styles.about_paragraph_one}>
+										Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Minus ullam veritatis
+										rerum, recusandae, voluptas quisquam,
+										deserunt aspernatur error odit
+										repellendus dolorum ea ex inventore.
+										Unde alias ducimus voluptatem
+										dignissimos dicta!
+									</p>
+									<p className={styles.about_paragraph_two}>
+										Lorem ipsum dolor sit amet consectetur,
+										adipisicing elit. Quidem sint assumenda
+										quod tenetur, officia reprehenderit.
+									</p>
+								</Tween>
+								<Tween
+									from={{ opacity: 0 }}
+									duration={2.5}
+									delay={0.7}
+									ease="Expo.easeInOut">
+									<div>
+										<Link href="/about">
+											<a className={styles.about_me_link}>
+												<span>
+													More about me and services
+												</span>
+												<ArrowRight
+													className={
+														styles.about_arrow
+													}
+												/>
+											</a>
+										</Link>
+									</div>
+								</Tween>
+							</ScrollTrigger>
 						</div>
 					</div>
 				</section>
-				<section className="flex h-full w-full flex-col">
-					<div className="my-24 flex w-full select-none justify-around overflow-hidden text-left text-2xl font-semibold uppercase leading-none">
+				<section className={styles.projects_section}>
+					<div className={styles.projects_separator}>
 						<ScrollTrigger start="top bottom">
 							<Tween
 								from={{ y: '100%' }}
@@ -197,7 +196,7 @@ const Home: NextPage = () => {
 							</Tween>
 						</ScrollTrigger>
 					</div>
-					<div className="h-full w-full flex-auto">
+					<div className={styles.projects_container}>
 						<RecentProject
 							name="tasklab"
 							description="Lorem ipsum dolor sit consectetur adipisicing."
@@ -212,9 +211,9 @@ const Home: NextPage = () => {
 						/>
 					</div>
 				</section>
-				<section className="flex h-screen w-full flex-col">
-					<div className="flex w-full flex-auto flex-col justify-center">
-						<div className="mt-16 flex select-none justify-around overflow-hidden text-2xl font-semibold uppercase leading-none">
+				<footer className={styles.footer}>
+					<div className={styles.footer_main}>
+						<div className={styles.footer_separator}>
 							<ScrollTrigger start="top bottom">
 								<Tween
 									from={{ y: '100%' }}
@@ -226,11 +225,11 @@ const Home: NextPage = () => {
 								</Tween>
 							</ScrollTrigger>
 						</div>
-						<div className="group relative m-auto flex select-none flex-col items-center justify-center">
-							<div className="absolute -top-12 w-max border border-white px-6 py-3 font-semibold text-white opacity-0 transition-all duration-300 ease-in-out group-hover:-top-20 group-hover:opacity-100">
+						<div className={`${styles.footer_content} group`}>
+							<div className={styles.footer_copy_msg}>
 								{copied ? 'Copied' : 'Click to copy'}
 							</div>
-							<div className="text-test overflow-hidden">
+							<div className={styles.footer_email_container}>
 								<ScrollTrigger start="top bottom">
 									<Tween
 										from={{ y: '100%' }}
@@ -242,7 +241,9 @@ const Home: NextPage = () => {
 												onCopy={() => setCopied(true)}>
 												<button
 													type="button"
-													className="text-9xl font-medium uppercase selection:bg-white selection:text-black">
+													className={
+														styles.footer_email
+													}>
 													hello@gochelias.com
 												</button>
 											</CopyToClipboard>
@@ -252,7 +253,7 @@ const Home: NextPage = () => {
 							</div>
 						</div>
 					</div>
-					<footer className="flex items-end justify-center space-x-12 py-16 text-lg font-medium">
+					<div className={styles.footer_social}>
 						<ScrollTrigger start="top bottom">
 							<Tween
 								from={{ opacity: 0 }}
@@ -263,7 +264,7 @@ const Home: NextPage = () => {
 									target="_blank"
 									href="https://github.com/gochelias"
 									title="@gochelias"
-									className="hover:underline"
+									className={styles.footer_social_link}
 									rel="noreferrer">
 									GitHub
 								</a>
@@ -271,7 +272,7 @@ const Home: NextPage = () => {
 									target="_blank"
 									href="https://www.linkedin.com/in/gochelias"
 									title="@gochelias"
-									className="hover:underline"
+									className={styles.footer_social_link}
 									rel="noreferrer">
 									LinkedIn
 								</a>
@@ -279,14 +280,14 @@ const Home: NextPage = () => {
 									target="_blank"
 									href="https://twitter.com/gochelias"
 									title="@gochelias"
-									className="hover:underline"
+									className={styles.footer_social_link}
 									rel="noreferrer">
 									Twitter
 								</a>
 							</Tween>
 						</ScrollTrigger>
-					</footer>
-				</section>
+					</div>
+				</footer>
 			</main>
 		</Layout>
 	);
