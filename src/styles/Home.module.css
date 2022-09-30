@@ -22,7 +22,7 @@
 
 .hero_name {
 	@apply overflow-hidden
-	text-4xl 
+	text-5xl 
 	font-medium
 	sm:text-6xl
 	lg:text-7xl
@@ -154,40 +154,52 @@
 
 .about_section {
 	@apply flex
-	h-screen 
-	w-full 
-	select-none 
-	flex-col 
+	h-full
+	w-full
+	select-none
+	flex-col
 	items-end 
-	py-16;
+	2xl:h-screen
+	2xl:py-16;
 }
 
 .about_separator {
-	@apply flex 
+	@apply mb-32 
+	flex 
 	w-full 
-	justify-around 
-	overflow-hidden 
-	text-2xl 
+	justify-start
+	space-x-14
+	overflow-hidden
+	text-left 
 	font-semibold 
-	uppercase 
-	leading-none;
+	uppercase
+	2xl:justify-around 
+	2xl:text-2xl;
+}
+
+.about_separator_hidden {
+	@apply hidden 
+	2xl:block;
 }
 
 .about_content {
 	@apply my-auto 
 	flex
-	w-2/3 
-	flex-col
+	w-full
+	flex-col 
 	justify-center
-	space-y-20;
+	space-y-5
+	2xl:w-2/3
+	2xl:space-y-20;
 }
 
 .about_main {
 	@apply flex 
 	flex-wrap 
-	text-6xl 
+	text-3xl 
 	font-medium 
-	uppercase;
+	uppercase
+	2xl:text-6xl;
 }
 
 .about_margin {
@@ -195,37 +207,40 @@
 }
 
 .about_word {
-	@apply mr-3
-	overflow-hidden;
+	@apply mr-2
+	overflow-hidden
+	2xl:mr-3;
 }
 
 .about_paragraph {
-	@apply w-1/2;
+	@apply 2xl:w-1/2;
 }
 
 .about_paragraph_one {
 	@apply font-['telegraf']
-	text-2xl
-	text-[#eaeaea];
+	text-xl
+	text-[#eaeaea]
+	2xl:text-2xl;
 }
 
 .about_paragraph_two {
 	@apply mt-5 
 	font-['telegraf'] 
-	text-2xl 
-	text-[#eaeaea];
+	text-xl
+	text-[#eaeaea] 
+	2xl:text-2xl;
 }
 
 .about_me_link {
 	@apply relative 
-	ml-auto 
-	mt-20 
+	ml-auto
+	mt-5 
 	flex 
 	w-max 
 	items-center 
-	space-x-6 
-	text-2xl 
-	font-medium 
+	space-x-3
+	text-lg 
+	font-medium
 	before:absolute 
 	before:top-10 
 	before:h-0.5 
@@ -235,11 +250,14 @@
 	before:duration-200 
 	before:ease-in-out 
 	before:content-[''] 
-	hover:before:w-full;
+	hover:before:w-full 
+	2xl:mt-20 
+	2xl:space-x-6
+	2xl:text-2xl;
 }
 
 .about_arrow {
-	@apply w-5;
+	@apply w-3 2xl:w-5;
 }
 
 .projects_section {
@@ -250,17 +268,18 @@
 }
 
 .projects_separator {
-	@apply my-24 
+	@apply my-16 
 	flex 
 	w-full 
-	select-none 
+	select-none
 	justify-around 
 	overflow-hidden 
 	text-left 
-	text-2xl 
-	font-semibold 
+	font-semibold
 	uppercase 
-	leading-none;
+	leading-none
+	2xl:my-24 
+	2xl:text-2xl;
 }
 
 .projects_container {
@@ -274,71 +293,83 @@
 	h-screen
 	w-full
 	flex-auto
-	select-none 
-	space-x-20 
-	py-16;
+	select-none
+	flex-col 
+	space-y-10
+	py-8
+	2xl:flex-row
+	2xl:space-x-20
+	2xl:py-16;
 }
 
 .recent_project_info_container {
 	@apply flex 
-	w-1/2 
 	flex-auto 
 	flex-col 
-	items-start 
-	justify-between;
+	items-start
+	justify-between
+	2xl:w-1/2;
 }
 
 .recent_project_content {
 	@apply flex
 	w-full
 	flex-wrap 
-	text-9xl 
+	text-5xl
 	font-medium
-	uppercase;
+	uppercase
+	2xl:text-9xl;
 }
 
 .recent_project_line_container {
 	@apply flex 
-	w-24;
+	w-12
+	2xl:w-24;
 }
 
 .recent_project_line {
 	@apply mt-auto
-	mb-6 
+	mb-5
 	block 
 	h-0.5 
-	w-24 
-	bg-white;
+	w-24
+	bg-white 
+	2xl:mb-7;
 }
 
 .recent_project_name {
-	@apply mr-6 
-	ml-14 
+	@apply mr-6
 	mt-auto 
-	mb-3 
+	ml-6 
+	mb-2
 	overflow-hidden 
-	text-2xl 
-	text-[#eaeaea];
+	text-lg 
+	text-[#eaeaea]
+	2xl:mb-3
+	2xl:ml-14 
+	2xl:text-2xl;
 }
 
 .recent_project_description {
-	@apply mr-6 
-	overflow-hidden;
+	@apply overflow-hidden 
+	pr-4
+	2xl:pr-6;
 }
 
 .recent_project_link {
 	@apply ml-auto 
-	grid 
-	h-48 
-	w-48 
-	place-content-center 
+	hidden 
+	h-48
+	w-48
+	place-content-center
 	border-2 
 	border-white 
 	transition-colors 
 	duration-200 
 	ease-in-out 
 	hover:bg-white 
-	hover:text-black;
+	hover:text-black 
+	2xl:grid;
 }
 
 .recent_project_arrow {
@@ -347,9 +378,10 @@
 
 .recent_project_image_container {
 	@apply relative
-	h-full 
-	w-1/2 
-	overflow-hidden;
+	h-1/2
+	overflow-hidden 
+	2xl:h-full 
+	2xl:w-1/2;
 }
 
 .recent_project_image {
@@ -377,10 +409,10 @@
 	select-none 
 	justify-around 
 	overflow-hidden 
-	text-2xl 
 	font-semibold 
 	uppercase 
-	leading-none;
+	leading-none 
+	2xl:text-2xl;
 }
 
 .footer_content {
@@ -405,10 +437,13 @@
 	text-white 
 	opacity-0 
 	transition-all 
-	duration-300 
-	ease-in-out 
-	group-hover:-top-20 
-	group-hover:opacity-100;
+	duration-300
+	ease-in-out;
+}
+
+.footer_content:hover .footer_copy_msg {
+	@apply -top-20
+	opacity-100;
 }
 
 .footer_email_container {
@@ -416,22 +451,63 @@
 }
 
 .footer_email {
-	@apply text-9xl 
-	font-medium 
-	uppercase 
-	selection:bg-white 
-	selection:text-black;
+	@apply flex
+	flex-col
+	text-left
+	text-5xl
+	font-medium
+	uppercase
+	leading-none
+	selection:bg-white
+	selection:text-black 
+	2xl:flex-row 
+	2xl:text-9xl;
+}
+
+.footer_info {
+	@apply flex 
+	select-none 
+	flex-col-reverse 
+	items-center 
+	pb-4 
+	2xl:flex-row 
+	2xl:items-center 
+	2xl:justify-between 
+	2xl:pb-16;
+}
+
+.footer_copyright {
+	@apply flex 
+	w-72 
+	justify-center
+	2xl:justify-start 
+	2xl:text-lg 
+	2xl:font-medium;
 }
 
 .footer_social {
-	@apply flex 
-	select-none 
+	@apply my-4 
+	flex 
+	w-max 
 	items-end 
 	justify-center 
-	space-x-12 
-	py-16
+	space-x-6
+	text-lg
+	font-medium
+	leading-none
+	2xl:m-0 
+	2xl:space-x-12;
+}
+
+.footer_name {
+	@apply hidden 
+	w-72 
+	justify-end 
+	space-x-1.5 
 	text-lg 
-	font-medium;
+	leading-none 
+	2xl:flex 
+	2xl:font-medium;
 }
 
 .footer_social_link {

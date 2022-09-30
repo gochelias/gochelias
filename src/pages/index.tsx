@@ -225,14 +225,14 @@ const Home: NextPage = () => {
 								</Tween>
 							</ScrollTrigger>
 						</div>
-						<div className={`${styles.footer_content} group`}>
+						<div className={styles.footer_content}>
 							<div className={styles.footer_copy_msg}>
 								{copied ? 'Copied' : 'Click to copy'}
 							</div>
 							<div className={styles.footer_email_container}>
 								<ScrollTrigger start="top bottom">
 									<Tween
-										from={{ y: '100%' }}
+										from={{ opacity: 0 }}
 										duration={2.5}
 										ease="Expo.easeInOut">
 										<div>
@@ -244,7 +244,9 @@ const Home: NextPage = () => {
 													className={
 														styles.footer_email
 													}>
-													hello@gochelias.com
+													<span>hello@</span>
+													<span>gochelias</span>
+													<span>.com</span>
 												</button>
 											</CopyToClipboard>
 										</div>
@@ -253,39 +255,47 @@ const Home: NextPage = () => {
 							</div>
 						</div>
 					</div>
-					<div className={styles.footer_social}>
-						<ScrollTrigger start="top bottom">
-							<Tween
-								from={{ opacity: 0 }}
-								duration={1.6}
-								stagger={0.2}
-								ease="Expo.easeInOut">
-								<a
-									target="_blank"
-									href="https://github.com/gochelias"
-									title="@gochelias"
-									className={styles.footer_social_link}
-									rel="noreferrer">
-									GitHub
-								</a>
-								<a
-									target="_blank"
-									href="https://www.linkedin.com/in/gochelias"
-									title="@gochelias"
-									className={styles.footer_social_link}
-									rel="noreferrer">
-									LinkedIn
-								</a>
-								<a
-									target="_blank"
-									href="https://twitter.com/gochelias"
-									title="@gochelias"
-									className={styles.footer_social_link}
-									rel="noreferrer">
-									Twitter
-								</a>
-							</Tween>
-						</ScrollTrigger>
+					<div className={styles.footer_info}>
+						<div className={styles.footer_copyright}>
+							© 2022 Elias Goche
+						</div>
+						<div className={styles.footer_social}>
+							<ScrollTrigger start="top bottom">
+								<Tween
+									from={{ opacity: 0 }}
+									duration={1.6}
+									stagger={0.2}
+									ease="Expo.easeInOut">
+									<a
+										target="_blank"
+										href="https://github.com/gochelias"
+										title="@gochelias"
+										className={styles.footer_social_link}
+										rel="noreferrer">
+										GitHub
+									</a>
+									<a
+										target="_blank"
+										href="https://www.linkedin.com/in/gochelias"
+										title="@gochelias"
+										className={styles.footer_social_link}
+										rel="noreferrer">
+										LinkedIn
+									</a>
+									<a
+										target="_blank"
+										href="https://twitter.com/gochelias"
+										title="@gochelias"
+										className={styles.footer_social_link}
+										rel="noreferrer">
+										Twitter
+									</a>
+								</Tween>
+							</ScrollTrigger>
+						</div>
+						<div className={styles.footer_name}>
+							Elias Goche Software Developer
+						</div>
 					</div>
 				</footer>
 			</main>

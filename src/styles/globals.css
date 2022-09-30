@@ -11,7 +11,9 @@
 	}
 
 	#__next {
-		@apply overflow-hidden bg-black text-white;
+		@apply overflow-hidden 
+		bg-black
+		text-white;
 	}
 
 	@media (prefers-color-scheme: dark) {
