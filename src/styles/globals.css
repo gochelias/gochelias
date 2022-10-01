@@ -12,8 +12,15 @@
 
 	#__next {
 		@apply overflow-hidden 
-		bg-black
-		text-white;
+		border
+		border-white
+		bg-black 
+		text-white
+		sm:border-green-400
+		md:border-violet-400
+		lg:border-pink-400
+		xl:border-sky-400
+		2xl:border-yellow-400;
 	}
 
 	@media (prefers-color-scheme: dark) {

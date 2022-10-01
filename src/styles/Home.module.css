@@ -158,7 +158,9 @@
 	w-full
 	select-none
 	flex-col
-	items-end 
+	items-end
+	md:h-screen
+	md:py-8
 	2xl:h-screen
 	2xl:py-16;
 }
@@ -173,13 +175,10 @@
 	text-left 
 	font-semibold 
 	uppercase
-	2xl:justify-around 
+	md:mb-0
+	md:justify-around 
+	md:text-xl
 	2xl:text-2xl;
-}
-
-.about_separator_hidden {
-	@apply hidden 
-	2xl:block;
 }
 
 .about_content {
@@ -189,6 +188,8 @@
 	flex-col 
 	justify-center
 	space-y-5
+	md:w-4/5
+	md:space-y-8
 	2xl:w-2/3
 	2xl:space-y-20;
 }
@@ -199,11 +200,13 @@
 	text-3xl 
 	font-medium 
 	uppercase
+	md:text-4xl
 	2xl:text-6xl;
 }
 
 .about_margin {
-	@apply ml-80;
+	@apply ml-80 
+	md:ml-40;
 }
 
 .about_word {
@@ -225,9 +228,10 @@
 
 .about_paragraph_two {
 	@apply mt-5 
-	font-['telegraf'] 
-	text-xl
-	text-[#eaeaea] 
+	font-['telegraf']
+	text-xl 
+	text-[#eaeaea]
+	md:mt-8
 	2xl:text-2xl;
 }
 
@@ -235,13 +239,13 @@
 	@apply relative 
 	ml-auto
 	mt-5 
-	flex 
+	flex
 	w-max 
 	items-center 
-	space-x-3
-	text-lg 
-	font-medium
-	before:absolute 
+	space-x-3 
+	text-lg
+	font-medium 
+	before:absolute
 	before:top-10 
 	before:h-0.5 
 	before:w-0 
@@ -251,6 +255,7 @@
 	before:ease-in-out 
 	before:content-[''] 
 	hover:before:w-full 
+	md:mt-10 
 	2xl:mt-20 
 	2xl:space-x-6
 	2xl:text-2xl;
@@ -278,6 +283,7 @@
 	font-semibold
 	uppercase 
 	leading-none
+	md:text-xl
 	2xl:my-24 
 	2xl:text-2xl;
 }
@@ -318,35 +324,38 @@
 	text-5xl
 	font-medium
 	uppercase
+	md:text-7xl
 	2xl:text-9xl;
 }
 
 .recent_project_line_container {
 	@apply flex 
-	w-12
+	w-24
+	md:w-16
 	2xl:w-24;
 }
 
 .recent_project_line {
 	@apply mt-auto
-	mb-5
-	block 
-	h-0.5 
-	w-24
+	mb-5 
+	h-0.5
+	border
 	bg-white 
+	md:w-16 
 	2xl:mb-7;
 }
 
 .recent_project_name {
-	@apply mr-6
+	@apply mx-6 
 	mt-auto 
-	ml-6 
 	mb-2
-	overflow-hidden 
+	overflow-hidden
 	text-lg 
-	text-[#eaeaea]
-	2xl:mb-3
-	2xl:ml-14 
+	text-[#eaeaea] 
+	md:mx-8
+	md:text-xl
+	2xl:mx-14
+	2xl:mb-3 
 	2xl:text-2xl;
 }
 
@@ -379,7 +388,7 @@
 .recent_project_image_container {
 	@apply relative
 	h-1/2
-	overflow-hidden 
+	overflow-hidden
 	2xl:h-full 
 	2xl:w-1/2;
 }
@@ -412,6 +421,7 @@
 	font-semibold 
 	uppercase 
 	leading-none 
+	md:text-xl
 	2xl:text-2xl;
 }
 
@@ -460,7 +470,7 @@
 	leading-none
 	selection:bg-white
 	selection:text-black 
-	2xl:flex-row 
+	md:flex-row 
 	2xl:text-9xl;
 }
 
@@ -469,7 +479,7 @@
 	select-none 
 	flex-col-reverse 
 	items-center 
-	pb-4 
+	pb-4
 	2xl:flex-row 
 	2xl:items-center 
 	2xl:justify-between 
