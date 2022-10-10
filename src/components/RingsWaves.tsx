@@ -1,11 +1,11 @@
 import { Tween } from 'react-gsap';
 
-export const RingsWaves = () => (
+export const RingsWaves = ({ delay }: { delay: number }) => (
 	<div className="fixed left-0 top-0 flex h-screen w-full items-center justify-center text-[#666666]">
 		<Tween
 			from={{ opacity: 0 }}
 			duration={2}
-			delay={4.8}
+			delay={delay}
 			stagger={0.2}
 			ease="Expo.easeInOut">
 			<svg

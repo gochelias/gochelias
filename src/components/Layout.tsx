@@ -12,7 +12,7 @@ export const Layout = ({ children }: { children: ReactNode }) => (
 		</Head>
 		<Container>
 			<div className="relative z-[1] h-full w-full">{children}</div>
-			<RingsWaves />
+			<RingsWaves delay={4.8} />
 		</Container>
 	</>
 );
