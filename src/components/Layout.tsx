@@ -4,10 +4,16 @@ import Head from 'next/head';
 import { Container } from 'components/Container';
 import { RingsWaves } from 'components/RingsWaves';
 
-export const Layout = ({ children }: { children: ReactNode }) => (
+export const Layout = ({
+	title,
+	children,
+}: {
+	title?: string;
+	children: ReactNode;
+}) => (
 	<>
 		<Head>
-			<title>Elias Goche</title>
+			<title>{title ? `Elias Goche | ${title}` : 'Elias Goche'}</title>
 			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		</Head>
 		<Container>
