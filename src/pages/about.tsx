@@ -11,10 +11,12 @@ const AboutPage: NextPage = () => {
 	return (
 		<Layout title="About">
 			<header className="flex h-screen w-full flex-col justify-between space-y-16 py-32">
-				<p className="ml-auto flex w-2/3 flex-wrap">
-					<hr className="my-auto mb-5 ml-72 mr-6 h-0.5 w-24" />
-					<span className="my-auto mr-14 mb-1 text-2xl font-normal uppercase">
-						I&apos;m Elias Goche
+				<p className="ml-auto flex w-3/4 flex-wrap">
+					<span className="my-auto ml-72 mr-14 flex items-center space-x-7">
+						<hr className="h-0.5 w-24" />
+						<span className="text-2xl font-normal uppercase leading-none">
+							I&apos;m Elias Goche
+						</span>
 					</span>
 					{textByWord.map((word: string) => (
 						<span
