@@ -11,22 +11,30 @@ type LayoutProps = {
 	children: ReactNode;
 };
 
-export const Layout = ({ title, children }: LayoutProps) => (
-	<>
-		<Head>
-			<title>{title ? `Elias Goche | ${title}` : 'Elias Goche'}</title>
-			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-		</Head>
-		<Tween
-			from={{ y: 20, opacity: 0 }}
-			duration={1.8}
-			delay={4}
-			ease="Expo.easeInOut">
-			<Nav />
-		</Tween>
-		<Container>
-			<div className="relative z-[1] h-full w-full">{children}</div>
-			<RingsWaves delay={4.8} />
-		</Container>
-	</>
-);
+export const Layout = ({ title, children }: LayoutProps) => {
+	const pageTitle = title ? `Elias Goche | ${title}` : 'Elias Goche';
+
+	return (
+		<>
+			<Head>
+				<title>{pageTitle}</title>
+				<link
+					rel="shortcut icon"
+					href="favicon.ico"
+					type="image/x-icon"
+				/>
+			</Head>
+			<Tween
+				from={{ y: 20, opacity: 0 }}
+				duration={1.8}
+				delay={4}
+				ease="Expo.easeInOut">
+				<Nav />
+			</Tween>
+			<Container>
+				<div className="relative z-[1] h-full w-full">{children}</div>
+				<RingsWaves delay={4.8} />
+			</Container>
+		</>
+	);
+};
