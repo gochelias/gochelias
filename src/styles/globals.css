@@ -31,18 +31,18 @@
 	@apply invisible
 	absolute
 	right-0
-	bottom-0 
+	bottom-0
 	flex 
-	flex-col 
-	items-center 
-	space-y-5
+	w-40
+	flex-col
+	items-center
+	space-y-12 
 	sm:visible;
 }
 
 .scroll_down_line {
-	@apply relative
-	h-20 
-	w-0.5 
+	@apply h-full
+	w-[1px]
 	bg-white;
 }
 

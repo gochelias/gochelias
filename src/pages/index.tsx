@@ -8,7 +8,6 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 
 import styles from 'styles/Home.module.css';
 import { Layout } from 'components/Layout';
-import { ScrollDown } from 'components/ScrollDown';
 import { ArrowRight } from 'components/ArrowRight';
 import { RecentProject } from 'components/RecentProject';
 
@@ -93,7 +92,6 @@ const Home: NextPage = () => {
 						</div>
 					</Tween>
 				</div>
-				<ScrollDown />
 			</header>
 			<main className={styles.main}>
 				<section className={styles.about_section}>
