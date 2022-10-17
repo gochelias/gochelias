@@ -245,26 +245,11 @@
 	flex-col;
 }
 
-.projects_separator {
-	@apply my-16 
-	flex 
-	w-full 
-	select-none
-	justify-around 
-	overflow-hidden 
-	text-left 
-	font-semibold
-	uppercase 
-	leading-none
-	md:text-xl
-	2xl:my-24 
-	2xl:text-2xl;
-}
-
 .projects_container {
 	@apply h-full 
-	w-full 
-	flex-auto;
+	w-full
+	flex-auto
+	space-y-16;
 }
 
 .recent_project {
@@ -281,7 +266,7 @@
 	sm:space-x-10
 	2xl:flex-row
 	2xl:justify-center
-	2xl:space-x-20
+	2xl:space-x-16
 	2xl:py-16;
 }
 
@@ -296,7 +281,8 @@
 }
 
 .recent_project_content {
-	@apply flex
+	@apply mt-16
+	flex
 	w-full
 	flex-wrap
 	text-5xl
@@ -317,7 +303,7 @@
 	@apply mt-auto
 	mb-5 
 	block
-	h-0.5
+	h-[1px]
 	w-full
 	bg-white  
 	2xl:mb-7;

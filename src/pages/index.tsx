@@ -167,18 +167,6 @@ const Home: NextPage = () => {
 					</div>
 				</section>
 				<section className={styles.projects_section}>
-					<div className={styles.projects_separator}>
-						<ScrollTrigger start="top bottom">
-							<Tween
-								from={{ y: '100%' }}
-								duration={1.6}
-								stagger={0.2}
-								ease="Expo.easeInOut">
-								<h4>Recent Projects</h4>
-								<h4>Design / Development</h4>
-							</Tween>
-						</ScrollTrigger>
-					</div>
 					<div className={styles.projects_container}>
 						<RecentProject
 							name="tasklab"
