@@ -184,18 +184,6 @@ const Home: NextPage = () => {
 				</section>
 				<footer className={styles.footer}>
 					<div className={styles.footer_main}>
-						<div className={styles.footer_separator}>
-							<ScrollTrigger start="top bottom">
-								<Tween
-									from={{ y: '100%' }}
-									duration={1.6}
-									stagger={0.2}
-									ease="Expo.easeInOut">
-									<h2>I like to work on cool stuff</h2>
-									<h2>Let’s work together</h2>
-								</Tween>
-							</ScrollTrigger>
-						</div>
 						<div className={styles.footer_content}>
 							<div className={styles.footer_copy_msg}>
 								{copied ? 'Copied' : 'Click to copy'}

@@ -379,20 +379,6 @@
 	justify-center;
 }
 
-.footer_separator {
-	@apply mt-16 
-	flex 
-	select-none 
-	justify-around 
-	overflow-hidden 
-	font-semibold 
-	uppercase 
-	leading-none 
-	sm:m-6
-	md:text-xl
-	2xl:text-2xl;
-}
-
 .footer_content {
 	@apply relative 
 	m-auto 
