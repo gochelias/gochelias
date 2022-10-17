@@ -9,7 +9,7 @@ const AboutPage: NextPage = () => {
 	const textByWord = text.split(' ');
 
 	return (
-		<Layout title="About">
+		<Layout title="About me">
 			<header className="flex h-screen w-full flex-col justify-between space-y-16 py-40">
 				<p className="ml-auto flex w-3/4 flex-wrap">
 					<span className="my-auto ml-72 mr-14 flex items-center space-x-7">

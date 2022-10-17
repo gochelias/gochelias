@@ -4,6 +4,7 @@ import { Tween } from 'react-gsap';
 
 import { Container } from 'components/Container';
 import { RingsWaves } from 'components/RingsWaves';
+import { useRouter } from 'next/router';
 import { Nav } from './Nav';
 
 type LayoutProps = {
@@ -12,6 +13,8 @@ type LayoutProps = {
 };
 
 export const Layout = ({ title, children }: LayoutProps) => {
+	const router = useRouter();
+	const homePage = router.pathname === '/';
 	const pageTitle = title ? `Elias Goche | ${title}` : 'Elias Goche';
 
 	return (
@@ -29,7 +32,7 @@ export const Layout = ({ title, children }: LayoutProps) => {
 				duration={1.8}
 				delay={4}
 				ease="Expo.easeInOut">
-				<Nav />
+				<Nav pageTitle={homePage ? 'Home' : title} />
 			</Tween>
 			<Container>
 				<div className="relative z-[1] h-full w-full">{children}</div>
