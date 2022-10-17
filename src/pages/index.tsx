@@ -95,18 +95,6 @@ const Home: NextPage = () => {
 			</header>
 			<main className={styles.main}>
 				<section className={styles.about_section}>
-					<div className={styles.about_separator}>
-						<ScrollTrigger start="top bottom">
-							<Tween
-								from={{ y: '105%' }}
-								duration={1.6}
-								stagger={0.2}
-								ease="Expo.easeInOut">
-								<h4>About me</h4>
-								<h4>Base in México</h4>
-							</Tween>
-						</ScrollTrigger>
-					</div>
 					<div className={styles.about_content}>
 						<p className={styles.about_main}>
 							<span className={styles.about_margin} />
@@ -165,14 +153,11 @@ const Home: NextPage = () => {
 									<div>
 										<Link href="/about">
 											<a className={styles.about_me_link}>
-												<span>
-													More about me and services
+												<span className="flex items-center">
+													More about{' '}
+													<hr className="mx-4 h-[1px] w-20 text-white" />{' '}
+													me and services
 												</span>
-												<ArrowRight
-													className={
-														styles.about_arrow
-													}
-												/>
 											</a>
 										</Link>
 									</div>

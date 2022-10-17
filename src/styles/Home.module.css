@@ -165,24 +165,6 @@
 	2xl:py-16;
 }
 
-.about_separator {
-	@apply mb-32 
-	flex 
-	w-full 
-	justify-start
-	space-x-14
-	overflow-hidden
-	text-left 
-	font-semibold 
-	uppercase
-	sm:mb-16
-	sm:justify-around
-	md:mb-0
-	md:justify-around 
-	md:text-xl
-	2xl:text-2xl;
-}
-
 .about_content {
 	@apply my-auto 
 	flex
@@ -215,7 +197,7 @@
 .about_word {
 	@apply mr-2
 	overflow-hidden
-	2xl:mr-3;
+	2xl:mr-4;
 }
 
 .about_paragraph {
@@ -244,28 +226,16 @@
 	mt-5 
 	flex
 	w-max 
-	items-center 
+	items-center
 	space-x-3 
 	text-lg
-	font-medium 
-	before:absolute
-	before:top-10 
-	before:h-0.5 
-	before:w-0 
-	before:bg-white 
-	before:transition-all 
-	before:duration-200 
-	before:ease-in-out 
-	before:content-[''] 
-	hover:before:w-full 
-	md:mt-10 
+	font-medium
+	uppercase 
+	hover:text-[#999]
+	md:mt-10
 	2xl:mt-20 
 	2xl:space-x-6
-	2xl:text-2xl;
-}
-
-.about_arrow {
-	@apply w-3 2xl:w-5;
+	2xl:text-lg;
 }
 
 .projects_section {
