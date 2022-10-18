@@ -366,9 +366,9 @@
 
 .footer {
 	@apply flex 
-	h-screen 
-	w-full 
-	flex-col;
+	h-72 w-full
+	select-none
+	justify-between;
 }
 
 .footer_main {
@@ -399,7 +399,7 @@
 	py-3 
 	font-semibold 
 	text-white 
-	opacity-0 
+	opacity-40 
 	transition-all 
 	duration-300
 	ease-in-out;
@@ -414,26 +414,12 @@
 	@apply overflow-hidden;
 }
 
-.footer_email {
-	@apply flex
-	flex-col
-	text-left
-	text-5xl
-	font-medium
-	uppercase
-	leading-none
-	selection:bg-white
-	selection:text-black
-	sm:flex-row 
-	md:flex-row 
-	2xl:text-9xl;
-}
-
 .footer_info {
 	@apply flex 
+	w-full 
 	select-none 
 	flex-col-reverse 
-	items-center 
+	items-center
 	pb-4
 	2xl:flex-row 
 	2xl:items-center 
@@ -452,16 +438,15 @@
 
 .footer_social {
 	@apply my-4 
-	flex 
-	w-max 
-	items-end 
-	justify-center 
-	space-x-6
+	flex
+	w-max
+	flex-col
+	space-y-3
 	text-lg
 	font-medium
 	leading-none
-	2xl:m-0 
-	2xl:space-x-12;
+	text-[#eaeaea]
+	2xl:m-0;
 }
 
 .footer_name {
