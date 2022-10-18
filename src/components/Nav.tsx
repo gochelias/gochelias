@@ -24,7 +24,7 @@ export const Nav = ({ pageTitle }: NavProps) => (
 		</div>
 		<button
 			type="button"
-			className="ml-auto h-40 place-content-center px-16 text-base font-semibold uppercase duration-100 hover:bg-white hover:text-black">
+			className="ml-auto h-40 w-40 place-content-center text-base font-semibold uppercase duration-100 hover:bg-white hover:text-black">
 			Menu
 		</button>
 	</nav>
