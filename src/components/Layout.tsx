@@ -1,13 +1,13 @@
 import { ReactNode } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { Tween } from 'react-gsap';
 
 import { Container } from 'components/Container';
 import { RingsWaves } from 'components/RingsWaves';
-import { useRouter } from 'next/router';
-import { Nav } from './Nav';
-import { ScrollDown } from './ScrollDown';
-import { Footer } from './Footer';
+import { Nav } from 'components/Nav';
+import { ScrollDown } from 'components/ScrollDown';
+import { Footer } from 'components/Footer';
 
 type LayoutProps = {
 	title?: string;
