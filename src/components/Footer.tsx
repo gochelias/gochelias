@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import CopyToClipboard from 'react-copy-to-clipboard';
+
 import { ArrowRight } from './ArrowRight';
 
 export const Footer = () => {

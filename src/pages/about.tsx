@@ -1,7 +1,8 @@
-import { Layout } from 'components/Layout';
-import { nanoid } from 'nanoid';
 import { NextPage } from 'next';
 import Image from 'next/image';
+import { nanoid } from 'nanoid';
+
+import { Layout } from 'components/Layout';
 
 const AboutPage: NextPage = () => {
 	const text =

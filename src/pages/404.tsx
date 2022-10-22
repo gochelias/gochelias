@@ -1,5 +1,6 @@
-import { RingsWaves } from 'components/RingsWaves';
 import Link from 'next/link';
+
+import { RingsWaves } from 'components/RingsWaves';
 
 const Error404 = () => (
 	<main className="grid h-screen w-full select-none place-content-center p-16">
