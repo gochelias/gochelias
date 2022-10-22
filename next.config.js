@@ -6,7 +6,7 @@ const nextConfig = withPreact({
 	reactStrictMode: true,
 	swcMinify: true,
 	images: {
-		domains: ['images.unsplash.com'],
+		domains: ['images.unsplash.com', 'cdn.svgporn.com', 'www.svgrepo.com'],
 	},
 });
 
