@@ -209,7 +209,7 @@ const AboutPage: NextPage = () => {
 							elit. Ab ullam quibusdam assumenda aliquam soluta.
 						</p>
 					</div>
-					<div className="flex h-96 items-center justify-between border-[#666666]">
+					<div className="flex h-96 items-center justify-between">
 						<h4 className="text-5xl">03</h4>
 						<h2 className="text-6xl font-medium uppercase">
 							Apps <br /> development
