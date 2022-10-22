@@ -34,8 +34,8 @@ const AboutPage: NextPage = () => {
 							layout="fill"
 						/>
 					</div>
-					<div className="m-auto w-1/4">
-						<p className="font-['telegraf'] text-xl text-[#eaeaea]">
+					<div className="m-auto w-1/3">
+						<p className="font-['telegraf'] text-2xl text-[#eaeaea]">
 							Lorem ipsum dolor sit amet consectetur adipisicing
 							elit. Ex, illum dolores. In obcaecati esse earum at
 							ex temporibus ipsam impedit, est sint, sed omnis,
