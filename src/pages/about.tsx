@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import { nanoid } from 'nanoid';
 
+import styles from 'styles/About.module.css';
 import { Layout } from 'components/Layout';
 
 const AboutPage: NextPage = () => {
@@ -11,7 +12,7 @@ const AboutPage: NextPage = () => {
 
 	return (
 		<Layout title="About me">
-			<header className="flex h-screen w-full flex-col justify-between space-y-16 py-40">
+			<header className="flex h-full w-full flex-col justify-between space-y-16 py-40">
 				<p className="ml-auto flex w-3/4 flex-wrap">
 					<span className="my-auto ml-72 mr-14 flex items-center space-x-7">
 						<hr className="h-0.5 w-24" />
@@ -27,7 +28,7 @@ const AboutPage: NextPage = () => {
 						</span>
 					))}
 				</p>
-				<div className="mb-48 mt-16 flex h-[50vh] w-full">
+				<div className="mb-48 mt-16 flex h-[100vh] w-full">
 					<div className="relative h-full w-1/2">
 						<Image
 							className="object-cover object-top"
@@ -35,7 +36,7 @@ const AboutPage: NextPage = () => {
 							layout="fill"
 						/>
 					</div>
-					<div className="m-auto w-1/3">
+					<div className="m-auto w-2/5">
 						<p className="font-['telegraf'] text-2xl text-[#eaeaea]">
 							Lorem ipsum dolor sit amet consectetur adipisicing
 							elit. Ex, illum dolores. In obcaecati esse earum at
@@ -48,146 +49,173 @@ const AboutPage: NextPage = () => {
 							elit. Hic illum nesciunt sequi. Tempora excepturi
 							culpa dignissimos eveniet iste numquam harum earum
 							perspiciatis illum aliquid!
+							<br /> <br />
+							Lorem ipsum dolor sit amet consectetur, adipisicing
+							elit. A optio recusandae accusamus voluptates
+							reiciendis non doloribus fuga. Atque, repellendus
+							in.
 						</p>
+						<div className="my-16 flex select-none flex-wrap items-center gap-4">
+							<a
+								href="https://typescriptlang.org"
+								target="_black"
+								rel="noreferrer"
+								title="TypeScript: JavaScript With Syntax For Types"
+								className={styles.skill_item}>
+								Typescript
+							</a>
+							{/* <span className={styles.separator}>/</span> */}
+							<a
+								href="https://reactjs.org"
+								target="_black"
+								rel="noreferrer"
+								title="React – A JavaScript library for building user interfaces"
+								className={styles.skill_item}>
+								React
+							</a>
+							<a
+								href="https://nextjs.org"
+								target="_black"
+								rel="noreferrer"
+								title="Next.js by Vercel - The React Framework"
+								className={styles.skill_item}>
+								Next.js
+							</a>
+							<a
+								href="https://svelte.dev"
+								target="_black"
+								rel="noreferrer"
+								title="Svelte • Cybernetically enhanced web apps"
+								className={styles.skill_item}>
+								Svelte
+							</a>
+							<a
+								href="https://tailwindcss.com"
+								target="_black"
+								rel="noreferrer"
+								title="Tailwind CSS - Rapidly build modern websites without ever leaving your HTML."
+								className={styles.skill_item}>
+								Tailwindcss
+							</a>
+							<a
+								href="https://expressjs.com"
+								target="_black"
+								rel="noreferrer"
+								title="Express - Node.js web application framework"
+								className={styles.skill_item}>
+								Express
+							</a>
+							<a
+								href="https://nestjs.com"
+								target="_black"
+								rel="noreferrer"
+								title="NestJS - A progressive Node.js framework"
+								className={styles.skill_item}>
+								NestJS
+							</a>
+							<a
+								href="https:/hapi.dev"
+								target="_black"
+								rel="noreferrer"
+								title="hapi.dev - The simple, secure framework developers trust"
+								className={styles.skill_item}>
+								Hapi
+							</a>
+							<a
+								href="https://prisma.io"
+								target="_black"
+								rel="noreferrer"
+								title="Prisma | Next-generation ORM for Node.js & TypeScript"
+								className={styles.skill_item}>
+								Prisma
+							</a>
+							<a
+								href="https://jestjs.io"
+								target="_black"
+								rel="noreferrer"
+								title="Jest · 🃏 Delightful JavaScript Testing"
+								className={styles.skill_item}>
+								Jest
+							</a>
+							<a
+								href="https://rust-lang.org"
+								target="_black"
+								rel="noreferrer"
+								title="Rust Programming Language"
+								className={styles.skill_item}>
+								Rust
+							</a>
+							<a
+								href="https://go.dev"
+								target="_black"
+								rel="noreferrer"
+								title="The Go Programming Language"
+								className={styles.skill_item}>
+								Go
+							</a>
+							<a
+								href="https://gin-gonic.com"
+								target="_black"
+								rel="noreferrer"
+								title="The fastest full-featured web framework for Go"
+								className={styles.skill_item}>
+								Gin
+							</a>
+							<a
+								href="https://echo.labstack.com"
+								target="_black"
+								rel="noreferrer"
+								title="High performance, minimalist Go web framework"
+								className={styles.skill_item}>
+								Echo
+							</a>
+							<a
+								href="https://python.org"
+								target="_black"
+								rel="noreferrer"
+								title="Python is a programming language that lets you work quickly and integrate systems more effectively"
+								className={styles.skill_item}>
+								Python
+							</a>
+							<a
+								href="https://mongodb.com"
+								target="_black"
+								rel="noreferrer"
+								title="The Developer Data Platform"
+								className={styles.skill_item}>
+								MongoDB
+							</a>
+							<a
+								href="https://postgresql.org"
+								target="_black"
+								rel="noreferrer"
+								title="The world's most advanced open source database"
+								className={styles.skill_item}>
+								PostgreSQL
+							</a>
+							<a
+								href="https://docker.com"
+								target="_black"
+								rel="noreferrer"
+								title="Develop faster. Run anywhere."
+								className={styles.skill_item}>
+								Docker
+							</a>
+							<a
+								href="https://git-scm.com"
+								target="_black"
+								rel="noreferrer"
+								title="A distributed version control system"
+								className={styles.skill_item}>
+								Git
+							</a>
+							<p className="my-auto font-['telegraf'] text-xl font-medium text-[#FFEFCF]/50">
+								I keep learning more.
+							</p>
+						</div>
 					</div>
 				</div>
 			</header>
-			<section className="my-16 flex w-full flex-wrap gap-x-4">
-				<a
-					href="https://typescriptlang.org"
-					title="TypeScript: JavaScript With Syntax For Types"
-					className="text-xl font-semibold uppercase">
-					Typescript
-				</a>
-				-
-				<a
-					href="https://reactjs.org"
-					title="React – A JavaScript library for building user interfaces"
-					className="text-xl font-semibold uppercase">
-					React
-				</a>
-				-
-				<a
-					href="https://nextjs.org"
-					title="Next.js by Vercel - The React Framework"
-					className="text-xl font-semibold uppercase">
-					Next.js
-				</a>
-				-
-				<a
-					href="https://svelte.dev"
-					title="Svelte • Cybernetically enhanced web apps"
-					className="text-xl font-semibold uppercase">
-					Svelte
-				</a>
-				-
-				<a
-					href="https://tailwindcss.com"
-					title="Tailwind CSS - Rapidly build modern websites without ever leaving your HTML."
-					className="text-xl font-semibold uppercase">
-					Tailwindcss
-				</a>
-				-
-				<a
-					href="https://expressjs.com"
-					title="Express - Node.js web application framework"
-					className="text-xl font-semibold uppercase">
-					Express
-				</a>
-				-
-				<a
-					href="https:/hapi.dev"
-					title="hapi.dev - The simple, secure framework developers trust"
-					className="text-xl font-semibold uppercase">
-					Hapi
-				</a>
-				-
-				<a
-					href="https://nestjs.com"
-					title="NestJS - A progressive Node.js framework"
-					className="text-xl font-semibold uppercase">
-					NestJS
-				</a>
-				-
-				<a
-					href="https://prisma.io"
-					title="Prisma | Next-generation ORM for Node.js & TypeScript"
-					className="text-xl font-semibold uppercase">
-					Prisma
-				</a>
-				-
-				<a
-					href="jestjs.io"
-					title="Jest · 🃏 Delightful JavaScript Testing"
-					className="text-xl font-semibold uppercase">
-					Jest
-				</a>
-				-
-				<a
-					href="https://rust-lang.org"
-					title="Rust Programming Language"
-					className="text-xl font-semibold uppercase">
-					Rust
-				</a>
-				-
-				<a
-					href="https://go.dev"
-					title="The Go Programming Language"
-					className="text-xl font-semibold uppercase">
-					Go
-				</a>
-				<a
-					href="https://gin-gonic.com"
-					title="The fastest full-featured web framework for Go"
-					className="text-xl font-semibold uppercase">
-					Gin
-				</a>
-				-
-				<a
-					href="https://echo.labstack.com"
-					title="High performance, minimalist Go web framework"
-					className="text-xl font-semibold uppercase">
-					Echo
-				</a>
-				-
-				<a
-					href="https://python.org"
-					title="Python is a programming language that lets you work quickly and integrate systems more effectively"
-					className="text-xl font-semibold uppercase">
-					Python
-				</a>
-				-
-				<a
-					href="https://www.mongodb.com"
-					title="The Developer Data Platform"
-					className="text-xl font-semibold uppercase">
-					MongoDB
-				</a>
-				-
-				<a
-					href="https://www.postgresql.org"
-					title="The world's most advanced open source database"
-					className="text-xl font-semibold uppercase">
-					PostgreSQL
-				</a>
-				-
-				<a
-					href="https://docker.com"
-					title="Develop faster. Run anywhere."
-					className="text-xl font-semibold uppercase">
-					Docker
-				</a>
-				-
-				<a
-					href="https://git-scm.com"
-					title="A distributed version control system"
-					className="text-xl font-semibold uppercase">
-					Git.
-				</a>
-				<p className="text-xl font-medium text-[#999]">
-					And I keep learning more...
-				</p>
-			</section>
 			<section className="flex h-full w-full flex-col items-end">
 				<div className="flex h-screen w-4/5 flex-col justify-center">
 					<div className="flex h-96 w-full items-center justify-between">

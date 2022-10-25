@@ -1,0 +1,16 @@
+.skill_item {
+	@apply border-[#333]
+	py-3 
+	px-4 
+	font-semibold 
+	uppercase 
+	leading-none 
+	text-[#FFEFCF] 
+	hover:border-white 
+	hover:bg-[#FFEFCF]
+	hover:text-black;
+}
+
+.separator {
+	@apply text-[#FFEFCF];
+}
