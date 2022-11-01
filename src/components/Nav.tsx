@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { gsap, Expo } from 'gsap';
 
 import { Logo } from 'components/Logo';
+import { NavLink } from 'components/NavLink';
 
 type NavProps = {
 	pageTitle?: string;
@@ -12,8 +13,7 @@ export const Nav = ({ pageTitle }: NavProps) => {
 	const tl = gsap.timeline({ paused: true });
 
 	useEffect(() => {
-		const el = document.getElementById('menu');
-		tl.to(el, {
+		tl.to('.menu', {
 			y: '0%',
 			duration: 2.5,
 			ease: Expo.easeInOut,
@@ -55,12 +55,22 @@ export const Nav = ({ pageTitle }: NavProps) => {
 			<div
 				className="menu fixed inset-0 z-[5] flex -translate-y-full  items-center bg-black p-16"
 				id="menu">
-				<ul className="absolute z-[5] flex flex-col space-y-10 text-9xl font-medium uppercase text-[#999]">
-					<li className="flex text-white">Home</li>
-					<li>Portfolio</li>
-					<li>About</li>
-					<li>Contact</li>
-					<li>Blog</li>
+				<ul className="absolute z-[5] flex flex-col space-y-10">
+					<li>
+						<NavLink href="/" name="Home" />
+					</li>
+					<li>
+						<NavLink href="/portfolio" name="Portfolio" />
+					</li>
+					<li>
+						<NavLink href="/about" name="About" />
+					</li>
+					<li>
+						<NavLink href="/contact" name="Contact" />
+					</li>
+					<li>
+						<NavLink href="/blog" name="Blog" />
+					</li>
 				</ul>
 				<div className="ml-auto flex h-1/2 flex-col justify-between self-end">
 					<div className="flex flex-col space-y-3 text-lg font-medium">
