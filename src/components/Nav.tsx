@@ -28,12 +28,12 @@ export const Nav = ({ pageTitle }: NavProps) => {
 
 	return (
 		<>
-			<nav className="fixed z-10 flex w-full select-none bg-gradient-to-b from-black to-transparent">
+			<nav className="fixed z-10 flex h-40 w-full select-none bg-gradient-to-b from-black to-transparent">
 				{/* <span className='px-4 pt-4 md:px-6 md:pt-6 lg:px-8 lg:pt-8 2xl:px-16 2xl:py-16'></span> */}
 				<Link href="/">
 					<a
-						className="grid w-40 place-content-center p-16 duration-100 hover:bg-white hover:text-black"
-						title="Go to home">
+						title="Go to home"
+						className="grid place-content-center p-16 hover:text-[#999]">
 						<Logo className="w-5 md:w-6 2xl:w-8" />
 					</a>
 				</Link>
@@ -48,7 +48,7 @@ export const Nav = ({ pageTitle }: NavProps) => {
 				<button
 					type="button"
 					onClick={toggleMenu}
-					className="ml-auto h-40 w-40 place-content-center overflow-hidden text-base font-semibold uppercase duration-100 hover:bg-white hover:text-black">
+					className="ml-auto place-content-center overflow-hidden p-16 text-base font-semibold uppercase hover:underline">
 					Menu
 				</button>
 			</nav>
