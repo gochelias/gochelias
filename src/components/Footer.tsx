@@ -7,7 +7,7 @@ export const Footer = () => {
 	const apos = '\u2019';
 
 	return (
-		<section className="relative flex h-screen w-full flex-col justify-center space-y-52 px-24">
+		<section className="relative flex h-screen w-full flex-col justify-center space-y-52">
 			<h6 className="select-none text-lg font-semibold uppercase">
 				Available for work
 			</h6>
@@ -23,7 +23,7 @@ export const Footer = () => {
 					</button>
 				</CopyToClipboard>
 			</div>
-			<footer className="flex w-full select-none justify-between">
+			<footer className="flex w-4/5 select-none justify-between">
 				<div>
 					<div className="group flex items-center space-x-3">
 						<Link href="/portfolio">
