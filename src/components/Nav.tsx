@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { gsap, Expo } from 'gsap';
+import { gsap, Expo, Bounce } from 'gsap';
 
 import { Logo } from 'components/Logo';
 import { NavLink } from 'components/NavLink';
@@ -16,6 +16,20 @@ export const Nav = ({ pageTitle }: NavProps) => {
 		tl.to('.menu', {
 			y: '0%',
 			duration: 2.5,
+			ease: Expo.easeInOut,
+		});
+
+		tl.from('.links li', {
+			y: 25,
+			opacity: 0,
+			stagger: 0.2,
+			duration: 1,
+			ease: Expo.easeInOut,
+		});
+
+		tl.from('.extra', {
+			opacity: 0,
+			duration: 0.8,
 			ease: Expo.easeInOut,
 		});
 
@@ -53,9 +67,9 @@ export const Nav = ({ pageTitle }: NavProps) => {
 				</button>
 			</nav>
 			<div
-				className="menu fixed inset-0 z-[5] flex -translate-y-full  items-center bg-black p-16"
+				className="menu fixed inset-0 z-[5] flex -translate-y-full  items-center bg-[#111] p-16"
 				id="menu">
-				<ul className="absolute z-[5] flex flex-col space-y-10">
+				<ul className="links absolute z-[5] flex flex-col space-y-10">
 					<li>
 						<NavLink href="/" name="Home" />
 					</li>
@@ -72,7 +86,7 @@ export const Nav = ({ pageTitle }: NavProps) => {
 						<NavLink href="/blog" name="Blog" />
 					</li>
 				</ul>
-				<div className="ml-auto flex h-1/2 flex-col justify-between self-end">
+				<div className="extra ml-auto flex h-1/2 flex-col justify-between self-end">
 					<div className="flex flex-col space-y-3 text-lg font-medium">
 						<a
 							target="_blank"
