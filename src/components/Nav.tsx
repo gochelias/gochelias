@@ -40,7 +40,7 @@ export const Nav = ({ pageTitle }: NavProps) => {
 				<div className="flex items-center space-x-6">
 					<hr className="h-[1px] w-24 bg-white" />
 					<h4
-						className="text-xl font-medium uppercase"
+						className="text-lg font-semibold uppercase"
 						title="You are here">
 						{pageTitle || 'Not Found'}
 					</h4>
