@@ -1,18 +1,28 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export const NavLink = ({ href, name }: { href: string; name: string }) => {
+type NavLinkProps = {
+	href: string;
+	name: string;
+};
+
+export const NavLink = ({ href, name }: NavLinkProps) => {
 	const router = useRouter();
 	const path = router.pathname === href;
 
+	const handleClick = (): void => {
+		if (path) return;
+		router.push(href);
+	};
+
 	return (
-		<Link href={href}>
-			<a
-				className={`${
-					path ? 'text-white' : 'text-[#999]'
-				} text-9xl font-medium uppercase`}>
-				{name}
-			</a>
-		</Link>
+		<button
+			className={`${
+				path ? 'text-white' : 'text-[#999]'
+			} text-9xl font-medium uppercase`}
+			onClick={handleClick}
+			type="button">
+			{name}
+		</button>
 	);
 };
