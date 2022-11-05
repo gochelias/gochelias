@@ -7,7 +7,7 @@ export const Footer = () => {
 	const apos = '\u2019';
 
 	return (
-		<section className="relative flex h-screen w-full flex-col justify-center space-y-52">
+		<section className="relative flex h-screen w-full flex-col justify-center space-y-64">
 			<h6 className="select-none text-lg font-semibold uppercase">
 				Available for work
 			</h6>
@@ -23,7 +23,16 @@ export const Footer = () => {
 					</button>
 				</CopyToClipboard>
 			</div>
-			<footer className="flex w-4/5 select-none justify-between">
+			<footer className="mr-40 flex w-auto select-none justify-between">
+				<div>
+					<h6 className="text-lg font-semibold uppercase">
+						© 2022 gochelias
+					</h6>
+					<p className="mt-4 flex flex-col text-lg font-medium text-[#999] hover:text-white">
+						<span>Elias Goche, México</span>
+						<span>Software Developer</span>
+					</p>
+				</div>
 				<div>
 					<div className="group flex items-center space-x-3">
 						<Link href="/portfolio">
@@ -35,8 +44,8 @@ export const Footer = () => {
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 text-lg font-medium text-[#eaeaea]">
-						<li className="hover:underline">
+					<ul className="mt-4 space-y-1 text-lg font-medium text-[#999]">
+						<li className="hover:text-white hover:underline">
 							<a
 								target="_blank"
 								href="https://github.com/gochelias"
@@ -46,7 +55,7 @@ export const Footer = () => {
 								GitHub
 							</a>
 						</li>
-						<li className="hover:underline">
+						<li className="hover:text-white hover:underline">
 							<a
 								target="_blank"
 								href="https://codepen.io/gochelias"
@@ -56,7 +65,7 @@ export const Footer = () => {
 								Codepen
 							</a>
 						</li>
-						<li className="hover:underline">
+						<li className="hover:text-white hover:underline">
 							<a
 								target="_blank"
 								href="https://dribbble.com/gochelias"
@@ -79,18 +88,18 @@ export const Footer = () => {
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 text-lg font-medium text-[#eaeaea]">
-						<li className="hover:underline">
+					<ul className="mt-4 space-y-1 text-lg font-medium text-[#999]">
+						<li className="hover:text-white hover:underline">
 							<Link href="/me">
 								<a>Me</a>
 							</Link>
 						</li>
-						<li className="hover:underline">
+						<li className="hover:text-white hover:underline">
 							<Link href="/feed">
 								<a>Feed</a>
 							</Link>
 						</li>
-						<li className="hover:underline">
+						<li className="hover:text-white hover:underline">
 							<Link href="/stats">
 								<a>Stats</a>
 							</Link>
@@ -108,8 +117,8 @@ export const Footer = () => {
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 text-lg font-medium text-[#eaeaea]">
-						<li className="hover:underline">
+					<ul className="mt-4 space-y-1 text-lg font-medium text-[#999]">
+						<li className="hover:text-white hover:underline">
 							<a
 								target="_blank"
 								href="https://www.linkedin.com/in/gochelias"
@@ -118,7 +127,7 @@ export const Footer = () => {
 								LinkedIn
 							</a>
 						</li>
-						<li className="hover:underline">
+						<li className="hover:text-white hover:underline">
 							<a
 								target="_blank"
 								href="https://twitter.com/gochelias"
@@ -127,7 +136,7 @@ export const Footer = () => {
 								Twitter
 							</a>
 						</li>
-						<li className="hover:underline">
+						<li className="hover:text-white hover:underline">
 							<a
 								target="_blank"
 								href="https://discord.com/users/636351475307773963"
@@ -149,14 +158,14 @@ export const Footer = () => {
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 text-lg font-medium text-[#eaeaea]">
+					<ul className="mt-4 space-y-1 text-lg font-medium text-[#999]">
 						<li>undefined</li>
 						<li>undefined</li>
 						<li>undefined</li>
 					</ul>
 				</div>
 			</footer>
-			<div className="absolute bottom-16 left-0">© 2022</div>
+			{/* <div className="absolute bottom-16 left-0">© 2022</div> */}
 		</section>
 	);
 };
