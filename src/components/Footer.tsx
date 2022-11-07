@@ -11,7 +11,7 @@ export const Footer = () => {
 			<h6 className="select-none text-lg font-semibold uppercase">
 				Available for work
 			</h6>
-			<div className="text-9xl font-medium duration-75 hover:text-[#999999]">
+			<div className="text-center text-9xl font-medium duration-75 hover:text-[#999999]">
 				<h2 className="inline select-none">
 					I like to work on cool stuff, let{apos}s work together.{' '}
 				</h2>
@@ -24,15 +24,6 @@ export const Footer = () => {
 				</CopyToClipboard>
 			</div>
 			<footer className="mr-40 flex w-auto select-none justify-between">
-				<div>
-					<h6 className="text-lg font-semibold uppercase">
-						© 2022 gochelias
-					</h6>
-					<p className="mt-4 flex flex-col text-lg font-medium text-[#999] hover:text-white">
-						<span>Elias Goche, México</span>
-						<span>Software Developer</span>
-					</p>
-				</div>
 				<div>
 					<div className="group flex items-center space-x-3">
 						<Link href="/portfolio">
@@ -165,7 +156,9 @@ export const Footer = () => {
 					</ul>
 				</div>
 			</footer>
-			{/* <div className="absolute bottom-16 left-0">© 2022</div> */}
+			<div className="absolute bottom-16 flex w-full select-none justify-between font-medium uppercase">
+				<p>© 2022 Elias Goche</p>
+			</div>
 		</section>
 	);
 };
