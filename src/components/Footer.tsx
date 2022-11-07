@@ -5,8 +5,10 @@ import { ArrowRight } from 'components/ArrowRight';
 import { FooterExternalLink } from 'components/FooterExternalLink';
 import { FooterLink } from 'components/FooterLink';
 import { links } from 'config/links';
+import { useRouter } from 'next/router';
 
 export const Footer = () => {
+	const router = useRouter();
 	const apos = '\u2019';
 
 	return (
@@ -21,7 +23,8 @@ export const Footer = () => {
 				<CopyToClipboard text="hello@gochelias.com">
 					<button
 						type="button"
-						className="text-[#FFEFCF] underline outline-none selection:bg-[#FFEFCF] selection:text-black active:bg-[#FFEFCF] active:text-black">
+						className="text-[#FFEFCF] underline outline-none selection:bg-[#FFEFCF] selection:text-black active:bg-[#FFEFCF] active:text-black"
+						onClick={() => router.push('/contact')}>
 						hello@gochelias.com
 					</button>
 				</CopyToClipboard>
