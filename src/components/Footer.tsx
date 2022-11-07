@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
-import { ArrowRight } from './ArrowRight';
+import { ArrowRight } from 'components/ArrowRight';
+import { FooterExternalLink } from 'components/FooterExternalLink';
+import { FooterLink } from 'components/FooterLink';
+import { links } from 'config/links';
 
 export const Footer = () => {
 	const apos = '\u2019';
@@ -36,36 +39,21 @@ export const Footer = () => {
 						</div>
 					</div>
 					<ul className="mt-4 space-y-1 text-lg font-medium text-[#999]">
-						<li className="hover:text-white hover:underline">
-							<a
-								target="_blank"
-								href="https://github.com/gochelias"
-								title="@gochelias"
-								className=""
-								rel="noreferrer">
-								GitHub
-							</a>
-						</li>
-						<li className="hover:text-white hover:underline">
-							<a
-								target="_blank"
-								href="https://codepen.io/gochelias"
-								title="@gochelias"
-								className=""
-								rel="noreferrer">
-								Codepen
-							</a>
-						</li>
-						<li className="hover:text-white hover:underline">
-							<a
-								target="_blank"
-								href="https://dribbble.com/gochelias"
-								title="@gochelias"
-								className=""
-								rel="noreferrer">
-								Dribbble
-							</a>
-						</li>
+						<FooterExternalLink
+							title={links.github.username}
+							name={links.github.name}
+							url={links.github.url}
+						/>
+						<FooterExternalLink
+							title={links.codepen.username}
+							name={links.codepen.name}
+							url={links.codepen.url}
+						/>
+						<FooterExternalLink
+							title={links.dribbble.username}
+							name={links.dribbble.name}
+							url={links.dribbble.url}
+						/>
 					</ul>
 				</div>
 				<div>
@@ -80,21 +68,9 @@ export const Footer = () => {
 						</div>
 					</div>
 					<ul className="mt-4 space-y-1 text-lg font-medium text-[#999]">
-						<li className="hover:text-white hover:underline">
-							<Link href="/me">
-								<a>Me</a>
-							</Link>
-						</li>
-						<li className="hover:text-white hover:underline">
-							<Link href="/feed">
-								<a>Feed</a>
-							</Link>
-						</li>
-						<li className="hover:text-white hover:underline">
-							<Link href="/stats">
-								<a>Stats</a>
-							</Link>
-						</li>
+						<FooterLink name="Me" url="/me" />
+						<FooterLink name="Feed" url="/feed" />
+						<FooterLink name="stats" url="/stats" />
 					</ul>
 				</div>
 				<div>
@@ -109,33 +85,21 @@ export const Footer = () => {
 						</div>
 					</div>
 					<ul className="mt-4 space-y-1 text-lg font-medium text-[#999]">
-						<li className="hover:text-white hover:underline">
-							<a
-								target="_blank"
-								href="https://www.linkedin.com/in/gochelias"
-								title="@gochelias"
-								rel="noreferrer">
-								LinkedIn
-							</a>
-						</li>
-						<li className="hover:text-white hover:underline">
-							<a
-								target="_blank"
-								href="https://twitter.com/gochelias"
-								title="@gochelias"
-								rel="noreferrer">
-								Twitter
-							</a>
-						</li>
-						<li className="hover:text-white hover:underline">
-							<a
-								target="_blank"
-								href="https://discord.com/users/636351475307773963"
-								title="gochelias#2076"
-								rel="noreferrer">
-								Discord
-							</a>
-						</li>
+						<FooterExternalLink
+							title={links.linkedin.username}
+							name={links.linkedin.name}
+							url={links.linkedin.url}
+						/>
+						<FooterExternalLink
+							title={links.discord.username}
+							name={links.discord.name}
+							url={links.discord.url}
+						/>
+						<FooterExternalLink
+							title={links.twitter.username}
+							name={links.twitter.name}
+							url={links.twitter.url}
+						/>
 					</ul>
 				</div>
 				<div>
