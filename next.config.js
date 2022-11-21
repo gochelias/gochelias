@@ -1,13 +1,13 @@
-const withPreact = require('next-plugin-preact');
+/* const withPreact = require('next-plugin-preact'); */
 
 /** @type {import('next').NextConfig} */
 
-const nextConfig = withPreact({
+const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	images: {
 		domains: ['images.unsplash.com', 'cdn.svgporn.com', 'www.svgrepo.com'],
 	},
-});
+};
 
 module.exports = nextConfig;

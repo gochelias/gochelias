@@ -1,25 +1,42 @@
 {
-	"$schema": "https://json.schemastore.org/jsconfig",
-	"display": "Default",
-	"compilerOptions": {
-		"target": "ES2022",
-		"lib": ["ESNext", "DOM.Iterable", "DOM"],
-		"module": "ESNext",
-		"resolveJsonModule": true,
-		"moduleResolution": "Node",
-		"strict": true,
-		"strictPropertyInitialization": false,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"allowSyntheticDefaultImports": true,
-		"skipLibCheck": true,
-		"allowJs": true,
-		"noEmit": true,
-		"jsx": "preserve",
-		"isolatedModules": true,
-		"incremental": true,
-		"baseUrl": "src"
-	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.config.js"],
-	"exclude": ["node_modules"]
+  "$schema": "https://json.schemastore.org/jsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ESNext",
+      "DOM.Iterable",
+      "DOM"
+    ],
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "isolatedModules": true,
+    "incremental": true,
+    "baseUrl": "src",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.config.js",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

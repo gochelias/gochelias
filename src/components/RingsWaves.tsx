@@ -4,6 +4,7 @@ export const RingsWaves = ({ delay }: { delay: number }) => (
 	<div className="fixed left-0 top-0 flex h-screen w-full items-center justify-center text-[#666666]">
 		<Tween
 			from={{ opacity: 0 }}
+			to={{ opacity: 1 }}
 			duration={2}
 			delay={delay}
 			stagger={0.2}

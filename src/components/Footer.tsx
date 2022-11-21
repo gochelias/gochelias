@@ -32,10 +32,10 @@ export const Footer = () => {
 			<footer className="mr-40 flex w-auto select-none justify-between">
 				<div>
 					<div className="group flex items-center space-x-3">
-						<Link href="/portfolio">
-							<a className="text-lg font-semibold uppercase">
-								Portfolio
-							</a>
+						<Link
+							href="/portfolio"
+							className="text-lg font-semibold uppercase">
+							Portfolio
 						</Link>
 						<div className="overflow-hidden">
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
@@ -61,10 +61,10 @@ export const Footer = () => {
 				</div>
 				<div>
 					<div className="group flex items-center space-x-3">
-						<Link href="/about">
-							<a className="text-lg font-semibold uppercase">
-								About
-							</a>
+						<Link
+							href="/about"
+							className="text-lg font-semibold uppercase">
+							About
 						</Link>
 						<div className="overflow-hidden">
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
@@ -78,10 +78,10 @@ export const Footer = () => {
 				</div>
 				<div>
 					<div className="group flex items-center space-x-3">
-						<Link href="/about">
-							<a className="text-lg font-semibold uppercase">
-								Contact
-							</a>
+						<Link
+							href="/about"
+							className="text-lg font-semibold uppercase">
+							Contact
 						</Link>
 						<div className="overflow-hidden">
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
@@ -107,10 +107,10 @@ export const Footer = () => {
 				</div>
 				<div>
 					<div className="group flex items-center space-x-3">
-						<Link href="/blog">
-							<a className="text-lg font-semibold uppercase">
-								Blog
-							</a>
+						<Link
+							href="/blog"
+							className="text-lg font-semibold uppercase">
+							Blog
 						</Link>
 						<div className="overflow-hidden">
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />

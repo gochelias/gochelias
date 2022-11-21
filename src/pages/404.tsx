@@ -10,12 +10,12 @@ const Error404 = () => (
 				<p className="text-xl font-medium">
 					Page not found, seems you are lost.
 				</p>
-				<Link href="/">
-					<a className="flex items-center text-lg font-semibold uppercase hover:text-[#FFEFCF]">
-						back
-						<hr className="mx-4 h-[1px] w-20 bg-white" />
-						Home
-					</a>
+				<Link
+					href="/"
+					className="flex items-center text-lg font-semibold uppercase hover:text-[#FFEFCF]">
+					back
+					<hr className="mx-4 h-[1px] w-20 bg-white" />
+					Home
 				</Link>
 			</div>
 		</div>

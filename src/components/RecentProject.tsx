@@ -85,13 +85,14 @@ export const RecentProject = ({
 				<Tween
 					from={{ y: 100, opacity: 0 }}
 					duration={2}
-					ease="Expo.easeInOut"
-					markers>
+					ease="Expo.easeInOut">
 					<div className={styles.recent_project_image_container}>
 						<Image
 							className={styles.recent_project_image}
 							src={imageUrl}
-							layout="fill"
+							fill
+							sizes="50%"
+							alt=""
 						/>
 					</div>
 				</Tween>

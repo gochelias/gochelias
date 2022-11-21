@@ -13,7 +13,6 @@ const Home: NextPage = () => {
 	const text =
 		'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat nesciunt fugiat, placeat tenetur ducimus aperiam suscipit illum sit explicabo.';
 	const textByWord = text.split(' ');
-
 	// const [copied, setCopied] = useState(false);
 
 	return (
@@ -23,6 +22,7 @@ const Home: NextPage = () => {
 					<h2 className={styles.hero_name}>
 						<Tween
 							from={{ y: 200, opacity: 0 }}
+							to={{ y: 0, opacity: 1 }}
 							duration={2}
 							delay={4}
 							ease="Expo.easeInOut">
@@ -68,9 +68,12 @@ const Home: NextPage = () => {
 								ease="Expo.easeInOut">
 								<div className={styles.hero_img_layout}>
 									<Image
-										className={styles.hero_image}
+										className={`${styles.hero_image}`}
+										fill
+										sizes="25%"
+										// layout="fill"
 										src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-										layout="fill"
+										alt=""
 									/>
 								</div>
 							</Tween>
@@ -149,14 +152,14 @@ const Home: NextPage = () => {
 									delay={0.7}
 									ease="Expo.easeInOut">
 									<div>
-										<Link href="/about">
-											<a className={styles.about_me_link}>
-												<span className="flex items-center">
-													More about{' '}
-													<hr className="mx-4 h-[1px] w-20 text-white" />{' '}
-													me and services
-												</span>
-											</a>
+										<Link
+											href="/about"
+											className={styles.about_me_link}>
+											<span className="flex items-center">
+												More about{' '}
+												<hr className="mx-4 h-[1px] w-20 text-white" />{' '}
+												me and services
+											</span>
 										</Link>
 									</div>
 								</Tween>

@@ -44,12 +44,11 @@ export const Nav = ({ pageTitle }: NavProps) => {
 		<>
 			<nav className="fixed z-10 flex h-40 w-full select-none bg-gradient-to-b from-black to-transparent">
 				{/* <span className='px-4 pt-4 md:px-6 md:pt-6 lg:px-8 lg:pt-8 2xl:px-16 2xl:py-16'></span> */}
-				<Link href="/">
-					<a
-						title="Go to home"
-						className="grid place-content-center p-16 hover:text-[#999]">
-						<Logo className="w-5 md:w-6 2xl:w-8" />
-					</a>
+				<Link
+					href="/"
+					className="grid place-content-center p-16 hover:text-[#999]"
+					title="Go to home">
+					<Logo className="w-5 md:w-6 2xl:w-8" />
 				</Link>
 				<div className="flex items-center space-x-6">
 					<hr className="h-[1px] w-24 bg-white" />

@@ -7,8 +7,6 @@ type FooterLinkProps = {
 
 export const FooterLink = ({ url, name }: FooterLinkProps) => (
 	<li className="hover:text-white hover:underline">
-		<Link href={url}>
-			<a>{name}</a>
-		</Link>
+		<Link href={url}>{name}</Link>
 	</li>
 );

@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Tween } from 'react-gsap';
 
 import { Container } from 'components/Container';
 import { RingsWaves } from 'components/RingsWaves';
@@ -29,13 +28,7 @@ export const Layout = ({ title, children }: LayoutProps) => {
 					type="image/x-icon"
 				/>
 			</Head>
-			<Tween
-				from={{ y: 20, opacity: 0 }}
-				duration={1.8}
-				delay={4}
-				ease="Expo.easeInOut">
-				<Nav pageTitle={homePage ? 'Home' : title} />
-			</Tween>
+			<Nav pageTitle={homePage ? 'Home' : title} />
 			<Container>
 				<div className="relative z-[1] h-full w-full">{children}</div>
 				<ScrollDown />

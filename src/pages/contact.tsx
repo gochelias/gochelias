@@ -99,6 +99,7 @@ const ContactPage: NextPage = () => {
 						className="object-cover object-center opacity-80"
 						src="https://images.unsplash.com/photo-1660757177644-2469974a447d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80"
 						layout="fill"
+						alt=""
 					/>
 				</div>
 				<div className="flex h-full w-1/2 items-center p-40">
