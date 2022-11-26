@@ -7,11 +7,7 @@ import { gsap, Expo } from 'gsap';
 import { Logo } from 'components/Logo';
 import { NavLink } from 'components/NavLink';
 
-type NavProps = {
-	pageTitle?: string;
-};
-
-export const Nav = ({ pageTitle }: NavProps) => {
+export const Nav = () => {
 	const timeline = gsap.timeline({ paused: true });
 
 	useEffect(() => {
@@ -52,14 +48,6 @@ export const Nav = ({ pageTitle }: NavProps) => {
 					title="Go to home">
 					<Logo />
 				</Link>
-				{/* <div className="flex items-center space-x-6">
-					<hr className="h-[1px] w-24 bg-white" />
-					<h4
-						className="text-lg font-semibold uppercase"
-						title="You are here">
-						{pageTitle || 'Not Found'}
-					</h4>
-				</div> */}
 				<button
 					type="button"
 					onClick={toggleMenu}
