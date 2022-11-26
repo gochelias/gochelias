@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { Expo } from 'gsap';
 import { Tween, ScrollTrigger } from 'react-gsap';
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 
 import styles from 'styles/Home.module.css';
 import { ArrowRight } from 'components/ArrowRight';
@@ -24,7 +23,6 @@ export const RecentProject = ({
 
 	return (
 		<div className="h-full">
-			{/* <hr className="w-full h-[1] mb-16" /> */}
 			<div className="w-full h-full flex justify-between space-x-16">
 				<div className=" w-1/3 flex flex-col justify-center space-y-12">
 					<h4 className="text-5xl font-semibold flex overflow-hidden">
@@ -89,27 +87,6 @@ export const RecentProject = ({
 					</a>
 				</div>
 			</div>
-			{/* <div className="w-full  flex h-[110vh] mt-96">
-				<div className="w-1/3 h-[100vh] relative">
-					<Image
-						className="object-cover object-left-top"
-						src="https://images.unsplash.com/photo-1635776064096-4e12cce9ead4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
-						fill
-						sizes="33%"
-						alt=""
-					/>
-				</div>
-				<div className="w-1/3 h-1/3 relative place-self-end mx-auto">
-					<Image
-						className="object-cover object-right-bottom"
-						src="https://images.unsplash.com/photo-1635776064096-4e12cce9ead4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
-						fill
-						sizes="33%"
-						alt=""
-					/>
-				</div>
-			</div> */}
-			{/* <LocomotiveScrollProvider> */}
 		</div>
 	);
 };
