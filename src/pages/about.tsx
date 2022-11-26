@@ -1,9 +1,10 @@
+'use client';
+
 import { NextPage } from 'next';
 import Image from 'next/image';
 import { nanoid } from 'nanoid';
 
-import styles from 'styles/About.module.css';
-import { Layout } from 'components/Layout';
+// import styles from 'styles/About.module.css';
 
 const AboutPage: NextPage = () => {
 	const text =
@@ -11,15 +12,15 @@ const AboutPage: NextPage = () => {
 	const textByWord = text.split(' ');
 
 	return (
-		<Layout title="About me">
+		<div className="px-40">
 			<header className="flex h-full w-full flex-col justify-between space-y-16 py-40">
-				<p className="ml-auto flex w-3/4 flex-wrap">
-					<span className="my-auto ml-72 mr-14 flex items-center space-x-7">
+				{/* <p className="ml-auto flex w-3/4 flex-wrap">
+					<div className="my-auto ml-72 mr-14 flex items-center space-x-7">
 						<hr className="h-0.5 w-24" />
 						<span className="text-2xl font-normal uppercase leading-none">
 							I&apos;m Elias Goche
 						</span>
-					</span>
+					</div>
 					{textByWord.map((word: string) => (
 						<span
 							key={nanoid()}
@@ -27,18 +28,18 @@ const AboutPage: NextPage = () => {
 							{word}
 						</span>
 					))}
-				</p>
+				</p> */}
 				<div className="mb-48 mt-16 flex h-[100vh] w-full">
-					<div className="relative h-full w-1/2">
+					{/* <div className="relative h-full w-1/2">
 						<Image
 							className="object-cover object-top"
 							src="https://images.unsplash.com/photo-1612986568842-42f75cc9e36a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
 							layout="fill"
 							alt=""
 						/>
-					</div>
+					</div> */}
 					<div className="m-auto w-2/5">
-						<p className="font-['telegraf'] text-2xl text-[#eaeaea]">
+						{/* <p className="font-['telegraf'] text-2xl text-[#eaeaea]">
 							Lorem ipsum dolor sit amet consectetur adipisicing
 							elit. Ex, illum dolores. In obcaecati esse earum at
 							ex temporibus ipsam impedit, est sint, sed omnis,
@@ -55,8 +56,8 @@ const AboutPage: NextPage = () => {
 							elit. A optio recusandae accusamus voluptates
 							reiciendis non doloribus fuga. Atque, repellendus
 							in.
-						</p>
-						<div className="my-16 flex select-none flex-wrap items-center gap-4">
+						</p> */}
+						{/* <div className="my-16 flex select-none flex-wrap items-center gap-4">
 							<a
 								href="https://typescriptlang.org"
 								target="_black"
@@ -65,7 +66,6 @@ const AboutPage: NextPage = () => {
 								className={styles.skill_item}>
 								Typescript
 							</a>
-							{/* <span className={styles.separator}>/</span> */}
 							<a
 								href="https://reactjs.org"
 								target="_black"
@@ -213,11 +213,42 @@ const AboutPage: NextPage = () => {
 							<p className="my-auto font-['telegraf'] text-xl font-medium text-[#FFEFCF]/50">
 								I keep learning more.
 							</p>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</header>
-			<section className="flex h-full w-full flex-col items-end">
+			<section className="w-full h-screen space-y-16 flex flex-col border-white">
+				<hr className="h-[1] w-full bg-white" />
+				<div className="w-full flex justify-between">
+					<h4 className="text-5xl flex-auto font-semibold">
+						services
+					</h4>
+					<div className="w-3/5">
+						<div className="flex w-full border-b h-32 items-center border-white">
+							<p className="text-xl mr-16 italic">01/</p>
+							<h4 className="text-4xl font-['telegraf'] uppercase leading-none">
+								Frontend development
+							</h4>
+							<p className="ml-auto">+</p>
+						</div>
+						<div className="flex w-full border-b h-32 items-center border-white">
+							<p className="text-xl mr-16 italic">02/</p>
+							<h4 className="text-4xl font-['telegraf'] uppercase leading-none">
+								Backend development
+							</h4>
+							<p className="ml-auto">+</p>
+						</div>
+						<div className="flex w-full border-b h-32 items-center border-white">
+							<p className="text-xl mr-16 italic">03/</p>
+							<h4 className="text-4xl font-['telegraf'] uppercase leading-none">
+								Apps development
+							</h4>
+							<p className="ml-auto">+</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			{/* <section className="flex h-full w-full flex-col items-end">
 				<div className="flex h-screen w-4/5 flex-col justify-center">
 					<div className="flex h-96 w-full items-center justify-between">
 						<h4 className="text-5xl">01</h4>
@@ -250,8 +281,8 @@ const AboutPage: NextPage = () => {
 						</p>
 					</div>
 				</div>
-			</section>
-		</Layout>
+			</section> */}
+		</div>
 	);
 };
 

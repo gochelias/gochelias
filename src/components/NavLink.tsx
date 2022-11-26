@@ -1,5 +1,7 @@
+'use client';
+
 // import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname, useRouter } from 'next/navigation';
 
 type NavLinkProps = {
 	href: string;
@@ -8,17 +10,17 @@ type NavLinkProps = {
 
 export const NavLink = ({ href, name }: NavLinkProps) => {
 	const router = useRouter();
-	const path = router.pathname === href;
+	const pathname = usePathname();
 
 	const handleClick = (): void => {
-		if (path) return;
+		if (pathname === href) return;
 		router.push(href);
 	};
 
 	return (
 		<button
 			className={`${
-				path ? 'text-white' : 'text-[#999]'
+				pathname ? 'text-white' : 'text-[#999]'
 			} text-9xl font-medium uppercase`}
 			onClick={handleClick}
 			type="button">

@@ -1,3 +1,5 @@
+'use client';
+
 import { Tween } from 'react-gsap';
 
 export const RingsWaves = ({ delay }: { delay: number }) => (

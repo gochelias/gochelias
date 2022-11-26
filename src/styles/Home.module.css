@@ -76,7 +76,7 @@
 .hero_arrow {
 	@apply w-4 
 	md:w-6 
-	2xl:w-10;
+	2xl:w-8;
 }
 
 .hero_img_container {
@@ -125,8 +125,7 @@
 	flex-col
 	items-center
 	justify-center
-	bg-white 
-	text-black 
+	bg-white  
 	sm:mr-10
 	sm:h-52
 	sm:w-14
@@ -196,6 +195,7 @@
 
 .about_word {
 	@apply mr-2
+	font-['telegraf']
 	overflow-hidden
 	2xl:mr-4;
 }
@@ -249,119 +249,57 @@
 	@apply h-full 
 	w-full
 	flex-auto
-	space-y-16;
+	space-y-64;
 }
 
 .recent_project {
 	@apply flex 
-	h-screen
+	h-full
+	border
 	w-full
-	flex-auto
 	select-none
 	flex-col 
+	items-center
 	space-y-10
-	py-8
 	sm:flex-row
 	sm:space-y-0
 	sm:space-x-10
 	2xl:flex-row
 	2xl:justify-center
-	2xl:space-x-16
-	2xl:py-16;
-}
-
-.recent_project_info_container {
-	@apply flex 
-	flex-auto 
-	flex-col 
-	items-start
-	justify-between
-	sm:w-1/2
-	2xl:w-1/2;
-}
-
-.recent_project_content {
-	@apply mt-16
-	flex
-	w-full
-	flex-wrap
-	text-5xl
-	font-medium
-	uppercase
-	md:text-7xl
-	2xl:text-9xl;
-}
-
-.recent_project_line_container {
-	@apply flex 
-	w-24
-	md:w-16
-	2xl:w-24;
+	2xl:space-x-16;
 }
 
 .recent_project_line {
 	@apply mt-auto
-	mb-5 
 	block
-	h-[1px]
+	h-0.5
 	w-full
-	bg-white  
-	2xl:mb-7;
-}
-
-.recent_project_name {
-	@apply mx-6 
-	mt-auto 
-	mb-2
-	overflow-hidden
-	text-lg 
-	text-[#eaeaea] 
-	md:mx-8
-	md:text-xl
-	2xl:ml-14
-	2xl:mb-3 
-	2xl:text-2xl;
-}
-
-.recent_project_description {
-	@apply overflow-hidden 
-	pr-4
-	2xl:pr-6;
+	bg-white;
 }
 
 .recent_project_link {
 	@apply ml-auto 
+	absolute
+	bottom-16
+	right-16
 	hidden 
-	h-48
-	w-48
+	h-40
+	w-40
 	place-content-center
-	border-2 
-	border-white 
 	transition-colors 
 	duration-200 
 	ease-in-out 
-	hover:bg-white 
-	hover:text-black 
+	bg-white
+	hover:bg-transparent
+	hover:border-2
+	border-white
+	hover:text-white
+	text-black
 	2xl:grid;
 }
 
 .recent_project_arrow {
-	@apply -rotate-45;
-}
-
-.recent_project_image_container {
-	@apply relative
-	m-0
-	h-1/2
-	overflow-hidden
-	sm:h-full
-	sm:w-1/2
-	2xl:h-full 
-	2xl:w-1/2;
-}
-
-.recent_project_image {
-	@apply object-cover;
+	@apply -rotate-45 w-7;
 }
 
 .footer {

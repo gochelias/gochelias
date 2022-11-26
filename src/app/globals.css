@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@import url('../../public/fonts/stylesheet.css');
+
+	html,
+	body {
+		font-family: 'Clash Display';
+	}
+
+	#__next {
+		@apply overflow-hidden 
+		bg-black
+		text-white;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		html {
+			color-scheme: dark;
+		}
+		body {
+			color: white;
+			background: black;
+		}
+	}
+}
+
+.scrollbar {
+	background-color: #333;
+}
+
+.container {
+	@apply px-4 w-screen
+	md:px-6
+	lg:px-8
+	2xl:px-16;
+}
+
+.scroll_down {
+	@apply invisible
+	absolute
+	right-0
+	bottom-0
+	flex 
+	w-40
+	flex-col
+	items-center
+	space-y-12 
+	sm:visible;
+}
+
+.scroll_down_line {
+	@apply h-full
+	w-[1px]
+	bg-white;
+}
+
+.ring_one {
+	animation: rotate_right 5s linear infinite;
+}
+.ring_two {
+	animation: rotate_left 5s linear infinite;
+}
+
+@keyframes rotate_right {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotate_left {
+	0% {
+		transform: rotate(-0deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+/*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+	overflow: hidden;
+}
+
+html.has-scroll-dragging {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.has-scroll-smooth body {
+	overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+	min-height: 100vh;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-container] {
+	height: 100vh;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-section] {
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
+	height: 100%;
+}
+
+.c-scrollbar {
+	position: absolute;
+	right: 0;
+	z-index: 50;
+	top: 0;
+	width: 11px;
+	height: 100%;
+	transform-origin: center right;
+	transition: transform 0.3s, opacity 0.3s;
+	opacity: 0;
+}
+.c-scrollbar:hover {
+	transform: scaleX(1.45);
+}
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+	opacity: 1;
+}
+[data-scroll-direction='horizontal'] .c-scrollbar {
+	width: 100%;
+	height: 10px;
+	top: auto;
+	bottom: 0;
+	transform: scaleY(1);
+}
+[data-scroll-direction='horizontal'] .c-scrollbar:hover {
+	transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #444;
+	opacity: 0.5;
+	width: 7px;
+	border-radius: 10px;
+	margin: 2px;
+	cursor: -webkit-grab;
+	cursor: grab;
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+[data-scroll-direction='horizontal'] .c-scrollbar_thumb {
+	right: auto;
+	bottom: 0;
+}

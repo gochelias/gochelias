@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { gsap, Expo } from 'gsap';
@@ -42,26 +44,26 @@ export const Nav = ({ pageTitle }: NavProps) => {
 
 	return (
 		<>
-			<nav className="fixed z-10 flex h-40 w-full select-none bg-gradient-to-b from-black to-transparent">
+			<nav className="fixed inset-0 z-10 flex h-40 w-full select-none">
 				{/* <span className='px-4 pt-4 md:px-6 md:pt-6 lg:px-8 lg:pt-8 2xl:px-16 2xl:py-16'></span> */}
 				<Link
 					href="/"
-					className="grid place-content-center p-16 hover:text-[#999]"
+					className="grid place-content-center w-40 h-40 hover:text-black transition-colors duration-200 ease-in-out hover:bg-white text-3xl font-medium"
 					title="Go to home">
-					<Logo className="w-5 md:w-6 2xl:w-8" />
+					<Logo />
 				</Link>
-				<div className="flex items-center space-x-6">
+				{/* <div className="flex items-center space-x-6">
 					<hr className="h-[1px] w-24 bg-white" />
 					<h4
 						className="text-lg font-semibold uppercase"
 						title="You are here">
 						{pageTitle || 'Not Found'}
 					</h4>
-				</div>
+				</div> */}
 				<button
 					type="button"
 					onClick={toggleMenu}
-					className="ml-auto place-content-center overflow-hidden p-16 text-base font-semibold uppercase hover:underline">
+					className="w-40 h-40 hover:text-black transition-colors duration-200 ease-in-out hover:bg-white place-content-center overflow-hidden text-base font-semibold uppercase ml-auto">
 					Menu
 				</button>
 			</nav>

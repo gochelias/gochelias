@@ -1,33 +1,27 @@
 import Link from 'next/link';
-import CopyToClipboard from 'react-copy-to-clipboard';
 
 import { ArrowRight } from 'components/ArrowRight';
 import { FooterExternalLink } from 'components/FooterExternalLink';
 import { FooterLink } from 'components/FooterLink';
 import { links } from 'config/links';
-import { useRouter } from 'next/router';
 
 export const Footer = () => {
-	const router = useRouter();
 	const apos = '\u2019';
 
 	return (
-		<section className="relative flex h-screen w-full flex-col justify-center space-y-64">
+		<section className="flex h-screen w-full flex-col justify-center space-y-64">
 			<h6 className="select-none text-lg font-semibold uppercase">
 				Available for work
 			</h6>
-			<div className="text-center text-9xl font-medium duration-75 hover:text-[#999999]">
+			<div className="text-9xl font-medium duration-75 hover:text-[#999999]">
 				<h2 className="inline select-none">
 					I like to work on cool stuff, let{apos}s work together.{' '}
 				</h2>
-				<CopyToClipboard text="hello@gochelias.com">
-					<button
-						type="button"
-						className="text-[#FFEFCF] underline outline-none selection:bg-[#FFEFCF] selection:text-black active:bg-[#FFEFCF] active:text-black"
-						onClick={() => router.push('/contact')}>
-						hello@gochelias.com
-					</button>
-				</CopyToClipboard>
+				<Link
+					href="/contact"
+					className="text-[#FFEFCF] underline outline-none selection:bg-[#FFEFCF] selection:text-black active:bg-[#FFEFCF] active:text-black">
+					hello@gochelias.com
+				</Link>
 			</div>
 			<footer className="mr-40 flex w-auto select-none justify-between">
 				<div>
@@ -123,9 +117,6 @@ export const Footer = () => {
 					</ul>
 				</div>
 			</footer>
-			<div className="absolute bottom-16 flex w-full select-none justify-between font-medium uppercase">
-				<p>© 2022 Elias Goche</p>
-			</div>
 		</section>
 	);
 };
