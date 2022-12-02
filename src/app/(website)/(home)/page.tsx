@@ -7,13 +7,10 @@ import styles from 'styles/Home.module.css';
 import AddIcon from 'icons/AddIcon';
 import { ArrowRight } from 'components/ArrowRight';
 import { RecentProject } from 'components/RecentProject';
-import { Nav } from 'components/Nav';
-import { Footer } from 'components/Footer';
 
 const HomePage = () => (
 	/* const containerRef = useRef(null); */
 	<>
-		<Nav />
 		{/* <LocomotiveScrollProvider
 				options={{ smooth: true, getSpeed: true }}> */}
 		<div>
@@ -169,7 +166,6 @@ const HomePage = () => (
 					</div>
 				</section>
 			</main>
-			<Footer />
 		</div>
 		{/* </LocomotiveScrollProvider> */}
 	</>
