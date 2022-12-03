@@ -72,7 +72,6 @@ const HomePage = () => (
 										className={`${styles.hero_image}`}
 										fill
 										sizes="25%"
-										// layout="fill"
 										src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 										alt=""
 									/>
@@ -104,37 +103,42 @@ const HomePage = () => (
 							About
 						</h4>
 						<div className="w-3/5">
-							<p className="font-['telegraf'] text-4xl uppercase mb-12">
+							<p className="font-medium indent-64 text-4xl uppercase mb-12">
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Vel ab commodi repellendus
 								doloribus non necessitatibus delectus nulla
 								tenetur.
 							</p>
-							<p className="text-2xl w-1/2 font-['telegraf']">
+							<p className="text-2xl w-2/3 font-['telegraf'] text-[#EAEAEA]">
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Vel ab commodi repellendus
 								doloribus non necessitatibus delectus nulla
 								tenetur, laudantium inventore qui consectetur.
+								<br /> <br />
+								Lorem ipsum dolor, sit amet consectetur
+								adipisicing elit. Laboriosam expedita distinctio
+								cupiditate optio ratione beatae nobis commodi ad
+								fugiat vel.
 							</p>
 							<div className="flex w-full border-b mt-16 h-32 items-center border-white">
-								<h4 className="text-4xl font-['telegraf] leading-none">
-									Web development
+								<h4 className="text-4xl font-medium uppercase leading-none">
+									Web Development
 								</h4>
 								<p className="ml-auto">
 									<AddIcon className="w-8" />
 								</p>
 							</div>
 							<div className="flex w-full border-b h-32 items-center border-white">
-								<h4 className="text-4xl font-['telegraf] leading-none">
-									Backend development
+								<h4 className="text-4xl font-medium uppercase leading-none">
+									Backend Development
 								</h4>
 								<p className="ml-auto">
 									<AddIcon className="w-8" />
 								</p>
 							</div>
 							<div className="flex w-full border-b h-32 items-center border-white">
-								<h4 className="text-4xl font-['telegraf] leading-none">
-									Apps development
+								<h4 className="text-4xl font-medium uppercase leading-none">
+									Apps Development
 								</h4>
 								<p className="ml-auto">
 									<AddIcon className="w-8" />
