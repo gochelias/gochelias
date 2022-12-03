@@ -100,7 +100,7 @@ const HomePage = () => (
 					<hr className="h-[1] w-full bg-white" />
 					<div className="w-full flex justify-between">
 						<h4 className="text-xl w-1/3 font-semibold uppercase">
-							About
+							About me /<br /> Services
 						</h4>
 						<div className="w-3/5">
 							<p className="font-medium indent-64 text-4xl uppercase mb-12">
