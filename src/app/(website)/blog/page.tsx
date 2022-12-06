@@ -7,8 +7,8 @@ import { CardPostSm } from './CardPostSm';
 const BlogPage = () => {
 	const dataExp = {
 		id: '1',
-		image: 'https://images.unsplash.com/photo-1635776062360-af423602aff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80',
-		publishedAt: 'sep 16',
+		image: 'https://images.unsplash.com/photo-1545431613-51ec097943c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
+		publishedAt: 'Sep 16, 2022',
 		name: 'Lorem ipsum dolor sit amet consectetur.',
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil libero incidunt perspiciatis accusamus neque eos perferendis.',
