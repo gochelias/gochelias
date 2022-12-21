@@ -9,9 +9,9 @@ export const CardPostMd = ({
 	description,
 	publishedAt,
 }: CardPostProps) => (
-	<article className="w-1/2 flex flex-col select-none">
-		<div className="w-full h-96 relative">
-			<Link href={`/p/${id}`} className="w-full h-full">
+	<article className="flex w-1/2 select-none flex-col">
+		<div className="relative h-96 w-full">
+			<Link href={`/p/${id}`} className="h-full w-full">
 				<Image
 					className="object-cover"
 					src={image}
@@ -22,28 +22,28 @@ export const CardPostMd = ({
 			</Link>
 			<Link
 				href="/p/2"
-				className="text-lg font-[telegraf] border border-white absolute h-10 flex leading-none top-5 left-5 text-black">
-				<span className="bg-white px-4 uppercase min-w-max text-center flex items-center h-full">
+				className="absolute top-5 left-5 flex h-10 border border-white font-[telegraf] text-lg leading-none text-black">
+				<span className="flex h-full min-w-max items-center bg-white px-4 text-center uppercase">
 					Part 2
 				</span>
-				<span className="px-4 h-full w-full flex items-center justify-between bg-black/10 backdrop-blur-xl text-white capitalize">
+				<span className="flex h-full w-full items-center justify-between bg-black/10 px-4 capitalize text-white backdrop-blur-xl">
 					Setup
 				</span>
 			</Link>
 		</div>
-		<h4 className="font-medium uppercase font-[telegraf] text-lg text-[#8f8f93] mb-4 mt-5">
+		<h4 className="mb-4 mt-5 font-[telegraf] text-lg font-medium uppercase text-[#8f8f93]">
 			Category
 		</h4>
-		<h2 className="font-medium text-5xl line-clamp-2">{title}</h2>
-		<p className="font-[telegraf] text-xl mt-5 text-[#c7c7cc] line-clamp-2">
+		<h2 className="text-5xl font-medium line-clamp-2">{title}</h2>
+		<p className="mt-5 font-[telegraf] text-xl text-[#c7c7cc] line-clamp-2">
 			{description}
 		</p>
-		<p className="flex mt-5 justify-between text-[#626266]">
-			<span className="text-lg font-['telegraf'] w-max ">
+		<p className="mt-5 flex justify-between text-[#626266]">
+			<span className="w-max font-['telegraf'] text-lg ">
 				10 min read
 			</span>
 			{/* <span>·</span> */}
-			<span className="text-lg font-['telegraf'] w-max">
+			<span className="w-max font-['telegraf'] text-lg">
 				{publishedAt}
 			</span>
 		</p>

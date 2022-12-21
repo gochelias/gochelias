@@ -9,13 +9,13 @@ export const CardPostSm = ({
 	description,
 	publishedAt,
 }: CardPostProps) => (
-	<Link href={`/p/${id}`} className="w-1/4 flex flex-col select-none">
-		<span className="w-full h-44 relative">
+	<Link href={`/p/${id}`} className="flex w-1/4 select-none flex-col">
+		<span className="relative h-44 w-full">
 			<Image className="object-cover" src={image} fill sizes="" alt="" />
 		</span>
-		<p className="uppercase font-medium text-sm mt-5 mb-1">{publishedAt}</p>
-		<h4 className="font-medium text-2xl">{title}</h4>
-		<p className="font-[telegraf] text-lg mt-5 h-20 overflow-hidden">
+		<p className="mt-5 mb-1 text-sm font-medium uppercase">{publishedAt}</p>
+		<h4 className="text-2xl font-medium">{title}</h4>
+		<p className="mt-5 h-20 overflow-hidden font-[telegraf] text-lg">
 			{description}
 		</p>
 	</Link>

@@ -11,8 +11,8 @@ export const CardPostBase = ({
 	publishedAt,
 }: CardPostProps) => (
 	<article className="w-1/3 select-none">
-		<div className="w-full h-64 relative flex items-center justify-center">
-			<Link href={`/p/${id}`} className="w-full h-full">
+		<div className="relative flex h-64 w-full items-center justify-center">
+			<Link href={`/p/${id}`} className="h-full w-full">
 				<Image
 					className="object-cover"
 					src={image}
@@ -23,34 +23,34 @@ export const CardPostBase = ({
 			</Link>
 			<Link
 				href="/p/2"
-				className="text-base  font-['telegraf'] border border-white absolute h-8 flex items-center leading-none top-4 left-4 text-black">
-				<span className="bg-white px-3 uppercase min-w-max text-center grid place-content-center h-full">
+				className="absolute top-4 left-4 flex h-8 items-center border border-white font-['telegraf'] text-base leading-none text-black">
+				<span className="grid h-full min-w-max place-content-center bg-white px-3 text-center uppercase">
 					Part 2
 				</span>
-				<span className="px-3 h-full w-full flex items-center justify-between bg-black/10 backdrop-blur-xl text-white capitalize">
+				<span className="flex h-full w-full items-center justify-between bg-black/10 px-3 capitalize text-white backdrop-blur-xl">
 					Setup
 				</span>
 			</Link>
 		</div>
-		<h4 className="font-medium uppercase font-[telegraf] text-base text-[#8f8f93] mb-3 mt-5">
+		<h4 className="mb-3 mt-5 font-[telegraf] text-base font-medium uppercase text-[#8f8f93]">
 			Category
 		</h4>
 		<h2>
 			<Link
 				href={`/p/${id}`}
-				className="font-medium text-3xl line-clamp-2">
+				className="text-3xl font-medium line-clamp-2">
 				{title}
 			</Link>
 		</h2>
-		<p className="font-[telegraf] text-lg mt-4 text-[#c7c7cc] line-clamp-3">
+		<p className="mt-4 font-[telegraf] text-lg text-[#c7c7cc] line-clamp-3">
 			{description}
 		</p>
-		<p className="flex mt-4 justify-between text-[#626266]">
-			<span className="text-base font-['telegraf'] w-max ">
+		<p className="mt-4 flex justify-between text-[#626266]">
+			<span className="w-max font-['telegraf'] text-base ">
 				10 min read
 			</span>
 			{/* <span>·</span> */}
-			<span className="text-base font-['telegraf'] w-max">
+			<span className="w-max font-['telegraf'] text-base">
 				{publishedAt}
 			</span>
 		</p>
