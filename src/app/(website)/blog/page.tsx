@@ -15,9 +15,9 @@ const BlogPage = () => {
 	};
 	return (
 		<>
-			<header className="w-full h-screen flex items-center justify-center">
-				<div className="w-3/5">
-					<div className="w-full h-[55vh] relative">
+			<header className="w-full h-screen flex justify-center pt-16">
+				{/* <div className="w-2/3 h-2/3">
+					<div className="w-full h-full relative">
 						<Image
 							className="object-cover"
 							src="https://images.unsplash.com/photo-1635776062360-af423602aff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
@@ -39,7 +39,7 @@ const BlogPage = () => {
 						iusto voluptatum amet, natus, molestiae debitis
 						praesentium aperiam quia beatae.
 					</p>
-				</div>
+				</div> */}
 			</header>
 			<section className="w-3/5 py-40 h-full mx-auto space-y-40">
 				<div className="flex gap-x-16">

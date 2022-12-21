@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -33,18 +32,20 @@ export const CardPostBase = ({
 				</span>
 			</Link>
 		</div>
-		<h4 className="font-medium uppercase font-['telegraf'] mt-5 text-base mb-3 text-[#8f8f93]">
-			tutorial
+		<h4 className="font-medium uppercase font-[telegraf] text-base text-[#8f8f93] mb-3 mt-5">
+			Category
 		</h4>
 		<h2>
-			<Link href={`/p/${id}`} className="font-medium text-3xl">
+			<Link
+				href={`/p/${id}`}
+				className="font-medium text-3xl line-clamp-2">
 				{title}
 			</Link>
 		</h2>
-		<p className="font-[telegraf] text-lg mt-5 text-[#c7c7cc]">
+		<p className="font-[telegraf] text-lg mt-4 text-[#c7c7cc] line-clamp-3">
 			{description}
 		</p>
-		<p className="flex mt-5 justify-between text-[#626266]">
+		<p className="flex mt-4 justify-between text-[#626266]">
 			<span className="text-base font-['telegraf'] w-max ">
 				10 min read
 			</span>
