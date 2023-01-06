@@ -4,13 +4,13 @@ import { Tween, ScrollTrigger } from 'react-gsap';
 
 import styles from 'styles/Home.module.css';
 import { ArrowRight } from 'components/ArrowRight';
-import { nanoid } from 'nanoid';
 
 type ProjectProps = {
 	name: string;
 	description: string;
 	imageUrl: string;
 	website: string;
+	reverse?: boolean;
 };
 
 export const RecentProject = ({
@@ -18,42 +18,32 @@ export const RecentProject = ({
 	description,
 	imageUrl,
 	website,
+	reverse,
 }: ProjectProps) => {
-	const nameByWord = name.split('');
-
+	const isReverse = reverse ? 'flex-row-reverse' : '';
 	return (
-		<div className="h-full">
-			<div className="w-full h-full flex justify-between space-x-16">
-				<div className=" w-1/3 flex flex-col justify-center space-y-12">
-					<h4 className="text-5xl font-semibold flex overflow-hidden">
+		<div
+			className={`flex h-full w-full justify-between gap-x-16 ${isReverse}`}>
+			<div className=" flex w-1/3 flex-col justify-between">
+				<div className="flex flex-col space-y-2">
+					<h4 className="flex overflow-hidden text-5xl font-medium">
 						<ScrollTrigger start="-100% bottom">
 							<Tween
 								from={{ y: '100%' }}
 								to={{ y: '0%' }}
-								duration={1.6}
+								duration={1.4}
 								stagger={0.1}
 								ease={Expo.easeInOut}>
-								{nameByWord.map((letter: string) => (
-									<span key={nanoid(5)} className="block">
-										{letter}
-									</span>
-								))}
+								<span className="block">{name}</span>
 							</Tween>
 						</ScrollTrigger>
 					</h4>
-					<div className="w-10">
-						<ScrollTrigger>
-							<Tween
-								from={{ width: '0%' }}
-								to={{ width: '100%' }}
-								delay={0.4}
-								duration={1.6}
-								ease={Expo.easeInOut}>
-								<hr className={styles.recent_project_line} />
-							</Tween>
-						</ScrollTrigger>
-					</div>
-					<p>
+					<p className="font-[telegraf] text-xl">
+						Design / Development
+					</p>
+				</div>
+				<div className="flex flex-col space-y-12">
+					<p className="indent-40">
 						<ScrollTrigger start="-100% bottom" end="top bottom">
 							<Tween
 								from={{ opacity: 0 }}
@@ -61,31 +51,41 @@ export const RecentProject = ({
 								delay={0.8}
 								duration={1.8}
 								ease={Expo.easeInOut}>
-								<span className="text-2xl font-['telegraf'] block">
+								<span className="block font-['telegraf'] text-2xl">
 									{description}
 								</span>
 							</Tween>
 						</ScrollTrigger>
 					</p>
-				</div>
-				<div className="bg-violet-900 w-3/5 h-[50vh] relative">
-					<div className="w-full h-full relative">
-						<Image
-							className="object-cover object-center"
-							src={imageUrl}
-							fill
-							sizes="60%"
-							alt=""
-						/>
+					<div className="flex space-x-10 text-lg font-medium uppercase">
+						<a className="flex items-center space-x-2" href="#">
+							<span>See More</span>
+							<ArrowRight className="w-4 -rotate-45" />
+						</a>
+						<a className="flex items-center space-x-2" href="#">
+							<span>Source Code</span>
+							<ArrowRight className="w-4 -rotate-45" />
+						</a>
 					</div>
-					<a
-						className={styles.recent_project_link}
-						href={`https://${website}`}
-						target="_blank"
-						rel="noreferrer">
-						<ArrowRight className={styles.recent_project_arrow} />
-					</a>
 				</div>
+			</div>
+			<div className="relative h-[50vh] w-3/5 bg-violet-900">
+				<div className="relative h-full w-full">
+					<Image
+						className="object-cover object-center"
+						src={imageUrl}
+						fill
+						sizes="60%"
+						alt=""
+					/>
+				</div>
+				<a
+					className={styles.recent_project_link}
+					href={`https://${website}`}
+					target="_blank"
+					rel="noreferrer">
+					<ArrowRight className={styles.recent_project_arrow} />
+				</a>
 			</div>
 		</div>
 	);

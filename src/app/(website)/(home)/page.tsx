@@ -96,20 +96,20 @@ const HomePage = () => (
 				</div>
 			</header>
 			<main className={styles.main}>
-				<section className="w-full h-screen space-y-16 flex flex-col border-white">
+				<section className="flex h-screen w-full flex-col space-y-16 border-white">
 					<hr className="h-[1] w-full bg-white" />
-					<div className="w-full flex justify-between">
-						<h4 className="text-xl w-1/3 font-semibold uppercase">
+					<div className="flex w-full justify-between">
+						<h4 className="w-1/3 text-xl font-semibold uppercase">
 							About me /<br /> Services
 						</h4>
 						<div className="w-3/5">
-							<p className="font-medium indent-64 text-4xl uppercase mb-12">
+							<p className="mb-12 indent-64 text-4xl font-medium uppercase">
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Vel ab commodi repellendus
 								doloribus non necessitatibus delectus nulla
 								tenetur.
 							</p>
-							<p className="text-2xl w-2/3 font-['telegraf'] text-[#EAEAEA]">
+							<p className="w-2/3 font-['telegraf'] text-2xl text-[#EAEAEA]">
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Vel ab commodi repellendus
 								doloribus non necessitatibus delectus nulla
@@ -120,7 +120,7 @@ const HomePage = () => (
 								cupiditate optio ratione beatae nobis commodi ad
 								fugiat vel.
 							</p>
-							<div className="flex w-full border-b mt-16 h-32 items-center border-white">
+							<div className="mt-16 flex h-32 w-full items-center border-b border-white">
 								<h4 className="text-4xl font-medium uppercase leading-none">
 									Web Development
 								</h4>
@@ -128,7 +128,7 @@ const HomePage = () => (
 									<AddIcon className="w-8" />
 								</p>
 							</div>
-							<div className="flex w-full border-b h-32 items-center border-white">
+							<div className="flex h-32 w-full items-center border-b border-white">
 								<h4 className="text-4xl font-medium uppercase leading-none">
 									Backend Development
 								</h4>
@@ -136,7 +136,7 @@ const HomePage = () => (
 									<AddIcon className="w-8" />
 								</p>
 							</div>
-							<div className="flex w-full border-b h-32 items-center border-white">
+							<div className="flex h-32 w-full items-center border-b border-white">
 								<h4 className="text-4xl font-medium uppercase leading-none">
 									Apps Development
 								</h4>
@@ -166,6 +166,7 @@ const HomePage = () => (
 								tenetur."
 							website=""
 							imageUrl="https://images.unsplash.com/photo-1635776062360-af423602aff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
+							reverse
 						/>
 					</div>
 				</section>
