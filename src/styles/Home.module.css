@@ -195,8 +195,8 @@
 
 .about_word {
 	@apply mr-2
-	font-['telegraf']
 	overflow-hidden
+	font-['telegraf']
 	2xl:mr-4;
 }
 
@@ -255,51 +255,18 @@
 .recent_project {
 	@apply flex 
 	h-full
-	border
 	w-full
 	select-none
-	flex-col 
-	items-center
+	flex-col
+	items-center 
 	space-y-10
+	border
 	sm:flex-row
 	sm:space-y-0
 	sm:space-x-10
 	2xl:flex-row
 	2xl:justify-center
 	2xl:space-x-16;
-}
-
-.recent_project_line {
-	@apply mt-auto
-	block
-	h-0.5
-	w-full
-	bg-white;
-}
-
-.recent_project_link {
-	@apply ml-auto 
-	absolute
-	bottom-16
-	right-16
-	hidden 
-	h-40
-	w-40
-	place-content-center
-	transition-colors 
-	duration-200 
-	ease-in-out 
-	bg-white
-	hover:bg-transparent
-	hover:border-2
-	border-white
-	hover:text-white
-	text-black
-	2xl:grid;
-}
-
-.recent_project_arrow {
-	@apply -rotate-45 w-7;
 }
 
 .footer {

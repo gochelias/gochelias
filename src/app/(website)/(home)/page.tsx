@@ -155,8 +155,9 @@ const HomePage = () => (
 								adipisicing elit. Vel ab commodi repellendus
 								doloribus non necessitatibus delectus nulla
 								tenetur."
-							website=""
-							imageUrl="https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+							url=""
+							repo=""
+							image="https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
 						/>
 						<RecentProject
 							name="watchmo"
@@ -164,8 +165,9 @@ const HomePage = () => (
 								adipisicing elit. Vel ab commodi repellendus
 								doloribus non necessitatibus delectus nulla
 								tenetur."
-							website=""
-							imageUrl="https://images.unsplash.com/photo-1635776062360-af423602aff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
+							url=""
+							repo=""
+							image="https://images.unsplash.com/photo-1635776062360-af423602aff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
 							reverse
 						/>
 					</div>

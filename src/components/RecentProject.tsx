@@ -1,24 +1,25 @@
 import Image from 'next/image';
 import { Expo } from 'gsap';
 import { Tween, ScrollTrigger } from 'react-gsap';
+import { ArrowUpRight } from 'react-feather';
 
-import styles from 'styles/Home.module.css';
-import { ArrowRight } from 'components/ArrowRight';
 import { Divider } from './Divider';
 
 type ProjectProps = {
 	name: string;
 	description: string;
-	imageUrl: string;
-	website: string;
+	image: string;
+	url: string;
+	repo: string;
 	reverse?: boolean;
 };
 
 export const RecentProject = ({
 	name,
 	description,
-	imageUrl,
-	website,
+	image: imageUrl,
+	url,
+	repo,
 	reverse,
 }: ProjectProps) => {
 	const isReverse = reverse ? 'flex-row-reverse' : '';
@@ -67,24 +68,24 @@ export const RecentProject = ({
 						<div className="flex space-x-16 text-lg font-medium uppercase">
 							<a
 								className="group flex items-center space-x-3"
-								href="#">
+								href={url}>
 								<span className="transition-colors duration-100 group-hover:text-[#8f8f93]">
 									See More
 								</span>
-								<ArrowRight className="w-4 -rotate-45" />
+								<ArrowUpRight strokeWidth={1.5} />
 							</a>
 							<a
 								className="group ml-auto flex items-center space-x-3"
-								href="#">
+								href={repo}>
 								<span className="transition-colors duration-100 group-hover:text-[#8f8f93]">
 									Source Code
 								</span>
-								<ArrowRight className="w-4 -rotate-45" />
+								<ArrowUpRight strokeWidth={1.5} />
 							</a>
 						</div>
 					</div>
 				</div>
-				<div className="relative h-[50vh] w-3/5 bg-violet-900">
+				<div className="h-[50vh] w-3/5 bg-[#111]">
 					<div className="relative h-full w-full">
 						<Image
 							className="object-cover object-center"
@@ -94,13 +95,6 @@ export const RecentProject = ({
 							alt=""
 						/>
 					</div>
-					<a
-						className={styles.recent_project_link}
-						href={`https://${website}`}
-						target="_blank"
-						rel="noreferrer">
-						<ArrowRight className={styles.recent_project_arrow} />
-					</a>
 				</div>
 			</div>
 		</div>
