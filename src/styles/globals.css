@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-	@import url('../../public/fonts/stylesheet.css');
+	@import url('../../public/fonts/fonts.css');
 
 	html,
 	body {

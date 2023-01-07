@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-	@import url('../../public/fonts/stylesheet.css');
+	@import url('../../public/fonts/fonts.css');
 
 	html,
 	body {
@@ -32,7 +32,7 @@
 }
 
 .container {
-	@apply px-4 w-screen
+	@apply w-screen px-4
 	md:px-6
 	lg:px-8
 	2xl:px-16;
