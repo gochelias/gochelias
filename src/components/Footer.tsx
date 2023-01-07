@@ -10,7 +10,7 @@ export const Footer = () => {
 
 	return (
 		<section className="flex h-screen w-full flex-col justify-center space-y-64">
-			<h6 className="select-none text-lg font-semibold uppercase">
+			<h6 className="select-none text-lg uppercase">
 				Available for work
 			</h6>
 			<div className="text-9xl font-medium duration-75 hover:text-[#999999]">
@@ -26,16 +26,14 @@ export const Footer = () => {
 			<footer className="mr-40 flex w-auto select-none justify-between">
 				<div>
 					<div className="group flex items-center space-x-3">
-						<Link
-							href="/portfolio"
-							className="text-lg font-semibold uppercase">
+						<Link href="/portfolio" className="text-lg uppercase">
 							Portfolio
 						</Link>
 						<div className="overflow-hidden">
-							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
+							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0 " />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 text-lg font-medium text-[#999]">
+					<ul className="mt-4 space-y-1 font-body text-lg text-[#999]">
 						<FooterExternalLink
 							title={links.github.username}
 							name={links.github.name}
@@ -55,16 +53,14 @@ export const Footer = () => {
 				</div>
 				<div>
 					<div className="group flex items-center space-x-3">
-						<Link
-							href="/about"
-							className="text-lg font-semibold uppercase">
+						<Link href="/about" className="text-lg uppercase">
 							About
 						</Link>
 						<div className="overflow-hidden">
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 text-lg font-medium text-[#999]">
+					<ul className="mt-4 space-y-1 font-body text-lg text-[#999]">
 						<FooterLink name="Me" url="/me" />
 						<FooterLink name="Feed" url="/feed" />
 						<FooterLink name="stats" url="/stats" />
@@ -72,16 +68,14 @@ export const Footer = () => {
 				</div>
 				<div>
 					<div className="group flex items-center space-x-3">
-						<Link
-							href="/about"
-							className="text-lg font-semibold uppercase">
+						<Link href="/about" className="text-lg uppercase">
 							Contact
 						</Link>
 						<div className="overflow-hidden">
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 text-lg font-medium text-[#999]">
+					<ul className="mt-4 space-y-1 font-body text-lg text-[#999]">
 						<FooterExternalLink
 							title={links.linkedin.username}
 							name={links.linkedin.name}
@@ -101,16 +95,14 @@ export const Footer = () => {
 				</div>
 				<div>
 					<div className="group flex items-center space-x-3">
-						<Link
-							href="/blog"
-							className="text-lg font-semibold uppercase">
+						<Link href="/blog" className="text-lg uppercase">
 							Blog
 						</Link>
 						<div className="overflow-hidden">
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 text-lg font-medium text-[#999]">
+					<ul className="mt-4 space-y-1 font-body text-lg text-[#999]">
 						<li>undefined</li>
 						<li>undefined</li>
 						<li>undefined</li>
