@@ -4,7 +4,10 @@
 	font-family: 'Telegraf';
 	src: url('../fonts/telegraf/Telegraf-Regular.woff2') format('woff2'),
 		url('../fonts/telegraf/Telegraf-Regular.woff') format('woff'),
-		url('../fonts/telegraf/Telegraf-Regular.ttf') format('truetype');
+		url('../fonts/telegraf/Telegraf-Regular.ttf') format('truetype'),
+		url('../fonts/telegraf/Telegraf-Regular.eot'),
+		url('../fonts/telegraf/Telegraf-Regular.eot?#iefix')
+			format('embedded-opentype');
 	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
@@ -16,8 +19,28 @@
 	font-family: 'Clash Display';
 	src: url('../fonts/clash-display/ClashDisplay-Medium.woff2') format('woff2'),
 		url('../fonts/clash-display/ClashDisplay-Medium.woff') format('woff'),
-		url('../fonts/clash-display/ClashDisplay-Medium.ttf') format('truetype');
+		url('../fonts/clash-display/ClashDisplay-Medium.ttf') format('truetype'),
+		url('../fonts/clash-display/ClashDisplay-Medium.eot'),
+		url('../fonts/clash-display/ClashDisplay-Medium.eot?#iefix')
+			format('embedded-opentype');
 	font-weight: 500;
+	font-display: swap;
+	font-style: normal;
+}
+
+/*  JetBrains Mono  */
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('../fonts/jetbrains-mono/JetBrainsMono-Regular.woff2')
+			format('woff2'),
+		url('../fonts/jetbrains-mono/JetBrainsMono-Regular.woff') format('woff'),
+		url('../fonts/jetbrains-mono/JetBrainsMono-Regular.ttf')
+			format('truetype'),
+		url('../fonts/jetbrains-mono/JetBrainsMono-Regular.eot'),
+		url('../fonts/jetbrains-mono/JetBrainsMono-Regular.eot?#iefix')
+			format('embedded-opentype');
+	font-weight: 400;
 	font-display: swap;
 	font-style: normal;
 }
