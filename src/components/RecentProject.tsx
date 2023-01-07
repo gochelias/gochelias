@@ -64,13 +64,21 @@ export const RecentProject = ({
 								</Tween>
 							</ScrollTrigger>
 						</p>
-						<div className="flex space-x-10 text-lg font-medium uppercase">
-							<a className="flex items-center space-x-2" href="#">
-								<span>See More</span>
+						<div className="flex space-x-16 text-lg font-medium uppercase">
+							<a
+								className="group flex items-center space-x-3"
+								href="#">
+								<span className="transition-colors duration-100 group-hover:text-[#8f8f93]">
+									See More
+								</span>
 								<ArrowRight className="w-4 -rotate-45" />
 							</a>
-							<a className="flex items-center space-x-2" href="#">
-								<span>Source Code</span>
+							<a
+								className="group ml-auto flex items-center space-x-3"
+								href="#">
+								<span className="transition-colors duration-100 group-hover:text-[#8f8f93]">
+									Source Code
+								</span>
 								<ArrowRight className="w-4 -rotate-45" />
 							</a>
 						</div>
