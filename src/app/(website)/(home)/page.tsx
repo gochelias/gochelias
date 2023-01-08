@@ -7,6 +7,7 @@ import styles from 'styles/Home.module.css';
 import AddIcon from 'icons/AddIcon';
 import { ArrowRight } from 'components/ArrowRight';
 import { RecentProject } from 'components/RecentProject';
+import { Divider } from 'components/Divider';
 
 const HomePage = () => (
 	/* const containerRef = useRef(null); */
@@ -96,20 +97,20 @@ const HomePage = () => (
 				</div>
 			</header>
 			<main className={styles.main}>
-				<section className="flex h-screen w-full flex-col space-y-16 border-white">
-					<hr className="h-[1] w-full bg-white" />
+				<section className="flex h-screen w-full select-none flex-col space-y-16 border-white">
+					<Divider />
 					<div className="flex w-full justify-between">
-						<h4 className="w-1/3 text-xl font-semibold uppercase">
+						<h4 className="w-1/3 text-lg uppercase">
 							About me /<br /> Services
 						</h4>
 						<div className="w-3/5">
-							<p className="mb-12 indent-64 text-4xl font-medium uppercase">
+							<p className="mb-12 indent-64 text-4xl uppercase">
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Vel ab commodi repellendus
 								doloribus non necessitatibus delectus nulla
 								tenetur.
 							</p>
-							<p className="w-2/3 font-['telegraf'] text-2xl text-[#EAEAEA]">
+							<p className="w-2/3 font-['telegraf'] text-2xl text-gray3light">
 								Lorem ipsum dolor, sit amet consectetur
 								adipisicing elit. Vel ab commodi repellendus
 								doloribus non necessitatibus delectus nulla
@@ -121,7 +122,7 @@ const HomePage = () => (
 								fugiat vel.
 							</p>
 							<div className="mt-16 flex h-32 w-full items-center border-b border-white">
-								<h4 className="text-4xl font-medium uppercase leading-none">
+								<h4 className="text-4xl uppercase leading-none">
 									Web Development
 								</h4>
 								<p className="ml-auto">
@@ -129,7 +130,7 @@ const HomePage = () => (
 								</p>
 							</div>
 							<div className="flex h-32 w-full items-center border-b border-white">
-								<h4 className="text-4xl font-medium uppercase leading-none">
+								<h4 className="text-4xl uppercase leading-none">
 									Backend Development
 								</h4>
 								<p className="ml-auto">
@@ -137,7 +138,7 @@ const HomePage = () => (
 								</p>
 							</div>
 							<div className="flex h-32 w-full items-center border-b border-white">
-								<h4 className="text-4xl font-medium uppercase leading-none">
+								<h4 className="text-4xl uppercase leading-none">
 									Apps Development
 								</h4>
 								<p className="ml-auto">
