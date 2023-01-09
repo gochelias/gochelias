@@ -10,30 +10,32 @@ export const Footer = () => {
 
 	return (
 		<section className="flex h-screen w-full flex-col justify-center space-y-64">
-			<h6 className="select-none text-lg uppercase">
+			<h6 className="select-none text-lg font-medium uppercase">
 				Available for work
 			</h6>
-			<div className="text-9xl font-medium duration-75 hover:text-[#999999]">
-				<h2 className="inline select-none">
+			<div className="group text-9xl font-medium">
+				<h2 className="inline select-none transition-colors duration-75 ease-in group-hover:text-gray2dark">
 					I like to work on cool stuff, let{apos}s work together.{' '}
 				</h2>
 				<Link
 					href="/contact"
-					className="text-[#FFEFCF] underline outline-none selection:bg-[#FFEFCF] selection:text-black active:bg-[#FFEFCF] active:text-black">
+					className="text-gray underline outline-none transition-colors duration-75 ease-in selection:bg-white selection:text-black group-hover:text-white">
 					hello@gochelias.com
 				</Link>
 			</div>
 			<footer className="mr-40 flex w-auto select-none justify-between">
-				<div>
+				<div className="space-y-6">
 					<div className="group flex items-center space-x-3">
-						<Link href="/portfolio" className="text-lg uppercase">
+						<Link
+							href="/portfolio"
+							className="text-sm font-medium uppercase text-gray">
 							Portfolio
 						</Link>
 						<div className="overflow-hidden">
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0 " />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 font-body text-lg text-[#999]">
+					<ul className="space-y-2 font-body text-lg">
 						<FooterExternalLink
 							title={links.github.username}
 							name={links.github.name}
@@ -51,31 +53,35 @@ export const Footer = () => {
 						/>
 					</ul>
 				</div>
-				<div>
+				<div className="space-y-6">
 					<div className="group flex items-center space-x-3">
-						<Link href="/about" className="text-lg uppercase">
+						<Link
+							href="/about"
+							className="text-sm font-medium uppercase text-gray">
 							About
 						</Link>
 						<div className="overflow-hidden">
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 font-body text-lg text-[#999]">
+					<ul className="space-y-2 font-body text-lg">
 						<FooterLink name="Me" url="/me" />
 						<FooterLink name="Feed" url="/feed" />
 						<FooterLink name="stats" url="/stats" />
 					</ul>
 				</div>
-				<div>
+				<div className="space-y-6">
 					<div className="group flex items-center space-x-3">
-						<Link href="/about" className="text-lg uppercase">
+						<Link
+							href="/about"
+							className="text-sm font-medium uppercase text-gray">
 							Contact
 						</Link>
 						<div className="overflow-hidden">
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 font-body text-lg text-[#999]">
+					<ul className="space-y-2 font-body text-lg">
 						<FooterExternalLink
 							title={links.linkedin.username}
 							name={links.linkedin.name}
@@ -93,16 +99,18 @@ export const Footer = () => {
 						/>
 					</ul>
 				</div>
-				<div>
+				<div className="space-y-6">
 					<div className="group flex items-center space-x-3">
-						<Link href="/blog" className="text-lg uppercase">
+						<Link
+							href="/blog"
+							className="text-sm font-medium uppercase text-gray">
 							Blog
 						</Link>
 						<div className="overflow-hidden">
 							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
 						</div>
 					</div>
-					<ul className="mt-4 space-y-1 font-body text-lg text-[#999]">
+					<ul className="space-y-2 font-body text-lg">
 						<li>undefined</li>
 						<li>undefined</li>
 						<li>undefined</li>
