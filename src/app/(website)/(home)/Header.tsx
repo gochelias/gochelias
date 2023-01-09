@@ -1,14 +1,17 @@
 import Image from 'next/image';
 import { Tween } from 'react-gsap';
 
-import styles from 'styles/Home.module.css';
 import { ArrowRight } from 'components/ArrowRight';
+import styles from './Home.module.css';
 
 export const HeaderHome = () => {
 	const a = '';
 	return (
 		<header className={styles.hero}>
-			<div className={styles.hero_title}>
+			<div
+				className={styles.hero_title}
+				data-scroll
+				data-scroll-speed="2">
 				<h2 className={styles.hero_name} data-scroll>
 					<Tween
 						from={{ y: 200, opacity: 0 }}
@@ -62,7 +65,6 @@ export const HeaderHome = () => {
 									className={`${styles.hero_image}`}
 									fill
 									sizes="25%"
-									// layout="fill"
 									src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 									alt=""
 								/>
