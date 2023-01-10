@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-/* import { Arrow } from 'components/ArrowRight'; */
 import { FooterExternalLink } from 'components/FooterExternalLink';
 import { FooterLink } from 'components/FooterLink';
 import { links } from 'config/links';
@@ -25,16 +24,11 @@ export const Footer = () => {
 			</div>
 			<footer className="mr-40 flex w-auto select-none justify-between">
 				<div className="space-y-6">
-					<div className="group flex items-center space-x-3">
-						<Link
-							href="/portfolio"
-							className="text-sm font-medium uppercase text-gray">
-							Portfolio
-						</Link>
-						<div className="overflow-hidden">
-							{/* <Arrow className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0 " /> */}
-						</div>
-					</div>
+					<Link
+						href="/portfolio"
+						className="text-sm font-medium uppercase text-gray">
+						Portfolio
+					</Link>
 					<ul className="space-y-2 font-body text-lg">
 						<FooterExternalLink
 							title={links.github.username}
@@ -54,16 +48,11 @@ export const Footer = () => {
 					</ul>
 				</div>
 				<div className="space-y-6">
-					<div className="group flex items-center space-x-3">
-						<Link
-							href="/about"
-							className="text-sm font-medium uppercase text-gray">
-							About
-						</Link>
-						<div className="overflow-hidden">
-							{/* <Arrow className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" /> */}
-						</div>
-					</div>
+					<Link
+						href="/about"
+						className="text-sm font-medium uppercase text-gray">
+						About
+					</Link>
 					<ul className="space-y-2 font-body text-lg">
 						<FooterLink name="Me" url="/me" />
 						<FooterLink name="Feed" url="/feed" />
@@ -71,16 +60,11 @@ export const Footer = () => {
 					</ul>
 				</div>
 				<div className="space-y-6">
-					<div className="group flex items-center space-x-3">
-						<Link
-							href="/about"
-							className="text-sm font-medium uppercase text-gray">
-							Contact
-						</Link>
-						<div className="overflow-hidden">
-							{/* <Arrow className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" /> */}
-						</div>
-					</div>
+					<Link
+						href="/contact"
+						className="text-sm font-medium uppercase text-gray">
+						Contact
+					</Link>
 					<ul className="space-y-2 font-body text-lg">
 						<FooterExternalLink
 							title={links.linkedin.username}
@@ -100,16 +84,11 @@ export const Footer = () => {
 					</ul>
 				</div>
 				<div className="space-y-6">
-					<div className="group flex items-center space-x-3">
-						<Link
-							href="/blog"
-							className="text-sm font-medium uppercase text-gray">
-							Blog
-						</Link>
-						<div className="overflow-hidden">
-							{/* <Arrow className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" /> */}
-						</div>
-					</div>
+					<Link
+						href="/blog"
+						className="text-sm font-medium uppercase text-gray">
+						Blog
+					</Link>
 					<ul className="space-y-2 font-body text-lg">
 						<li>undefined</li>
 						<li>undefined</li>
