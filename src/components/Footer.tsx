@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { ArrowRight } from 'components/ArrowRight';
+/* import { Arrow } from 'components/ArrowRight'; */
 import { FooterExternalLink } from 'components/FooterExternalLink';
 import { FooterLink } from 'components/FooterLink';
 import { links } from 'config/links';
@@ -32,7 +32,7 @@ export const Footer = () => {
 							Portfolio
 						</Link>
 						<div className="overflow-hidden">
-							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0 " />
+							{/* <Arrow className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0 " /> */}
 						</div>
 					</div>
 					<ul className="space-y-2 font-body text-lg">
@@ -61,7 +61,7 @@ export const Footer = () => {
 							About
 						</Link>
 						<div className="overflow-hidden">
-							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
+							{/* <Arrow className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" /> */}
 						</div>
 					</div>
 					<ul className="space-y-2 font-body text-lg">
@@ -78,7 +78,7 @@ export const Footer = () => {
 							Contact
 						</Link>
 						<div className="overflow-hidden">
-							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
+							{/* <Arrow className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" /> */}
 						</div>
 					</div>
 					<ul className="space-y-2 font-body text-lg">
@@ -107,7 +107,7 @@ export const Footer = () => {
 							Blog
 						</Link>
 						<div className="overflow-hidden">
-							<ArrowRight className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" />
+							{/* <Arrow className="h-max w-4 -translate-x-full transition-transform duration-100 group-hover:translate-x-0" /> */}
 						</div>
 					</div>
 					<ul className="space-y-2 font-body text-lg">
