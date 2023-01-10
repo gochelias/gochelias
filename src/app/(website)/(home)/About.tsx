@@ -1,24 +1,42 @@
-'use client';
+import { ArrowUpRight } from 'components/ArrowRight';
+import Image from 'next/image';
 
-import { Minus, Plus } from 'react-feather';
-import { Disclosure, Transition } from '@headlessui/react';
+export const AboutHome = () => {
+	const image =
+		'https://images.unsplash.com/photo-1626624158360-8cb69be9b5e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80';
 
-import { RecentProject } from 'components/RecentProject';
-import { Divider } from 'components/Divider';
-import styles from './Home.module.css';
-import { HeaderHome } from './Header';
-import { AboutHome } from './About';
+	return (
+		<section className="mt-16 ml-auto h-[65vh] w-4/5">
+			<div className="relative h-[33vh] w-full bg-gray6dark">
+				<Image
+					className="center-img object-cover"
+					fill
+					src={image}
+					alt=""
+				/>
+			</div>
+			<div className="ml-auto flex w-full flex-col">
+				<div className="mt-4 flex flex-col items-end space-x-4">
+					<a className="text-lg uppercase" href="#">
+						Read More
+					</a>
+					<ArrowUpRight size={12} strokeWidth={4} />
+				</div>
+				<div className="mx-auto mt-16 w-1/3 space-y-16">
+					<p className="text-4xl uppercase">
+						Lorem ipsum dolor, sit amet consec- tetur adipisicing
+						elit. Molestiae optio quis sunt, dolores porro inventore
+						ex dignissimos tenetur, aspernatur, nemo vel explicabo.
+					</p>
+				</div>
+			</div>
+		</section>
+	);
+};
 
-const HomePage = () => (
-	/* const containerRef = useRef(null); */
-	<>
-		{/* <LocomotiveScrollProvider
-					options={{ smooth: true, getSpeed: true }}> */}
-		<div>
-			<HeaderHome />
-			<main className={styles.main}>
-				<AboutHome />
-				{/* <section className="flex min-h-screen w-full select-none flex-col space-y-16 border-white">
+/* 
+
+<section className="flex min-h-screen w-full select-none flex-col space-y-16 border-white">
 					<Divider />
 					<div className="flex w-full justify-between">
 						<h4 className="w-1/3 text-lg uppercase">
@@ -169,35 +187,6 @@ const HomePage = () => (
 							<Divider className="border-gray4dark" />
 						</div>
 					</div>
-				</section> */}
-				<section className={styles.projects_section}>
-					<div className={styles.projects_container}>
-						<RecentProject
-							name="tasklab"
-							description="Lorem ipsum dolor, sit amet consectetur
-									adipisicing elit. Vel ab commodi repellendus
-									doloribus non necessitatibus delectus nulla
-									tenetur."
-							url=""
-							repo=""
-							image="https://images.unsplash.com/photo-1604079628040-94301bb21b91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-						/>
-						<RecentProject
-							name="watchmo"
-							description="Lorem ipsum dolor, sit amet consectetur
-									adipisicing elit. Vel ab commodi repellendus
-									doloribus non necessitatibus delectus nulla
-									tenetur."
-							url=""
-							repo=""
-							image="https://images.unsplash.com/photo-1635776062360-af423602aff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
-							reverse
-						/>
-					</div>
 				</section>
-			</main>
-		</div>
-		{/* </LocomotiveScrollProvider> */}
-	</>
-);
-export default HomePage;
+
+*/
