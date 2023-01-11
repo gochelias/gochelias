@@ -1,18 +1,23 @@
 import { ArrowUpRight } from 'components/ArrowRight';
 import { Divider } from 'components/Divider';
+import Link from 'next/link';
 /* import styles from './Home.module.css'; */
 
 export const HeaderHome = () => {
 	const a = '';
 	return (
-		<header className="flex h-max w-full flex-col pt-4">
+		<header className="flex h-max w-full select-none flex-col pt-4">
 			<div id="top">
 				<Divider />
 				<div className="flex items-center justify-between py-4 pr-4 text-base uppercase leading-none">
 					<h6>Frontend Development</h6>
 					<h6>Backend Development</h6>
 					<h6>Apps Development</h6>
-					<h6>Contact</h6>
+					<Link
+						className="transition-colors hover:text-gray3light"
+						href="/contact">
+						Contact
+					</Link>
 				</div>
 				<Divider />
 				<div className="flex h-40 items-center justify-between">
