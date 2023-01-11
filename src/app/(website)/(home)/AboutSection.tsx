@@ -1,7 +1,7 @@
 import { ArrowUpRight } from 'components/ArrowRight';
 import Image from 'next/image';
 
-export const AboutHome = () => {
+export const AboutSection = () => {
 	const image =
 		'https://images.unsplash.com/photo-1626624158360-8cb69be9b5e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80';
 

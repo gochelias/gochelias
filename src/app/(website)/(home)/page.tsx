@@ -2,8 +2,8 @@
 
 import styles from './Home.module.css';
 import { HeaderHome } from './Header';
-import { AboutHome } from './About';
-import { ProjectsHome } from './Projects';
+import { AboutSection } from './AboutSection';
+import { ProjectsSection } from './ProjectsSection';
 
 const HomePage = () => (
 	/* const containerRef = useRef(null); */
@@ -13,8 +13,8 @@ const HomePage = () => (
 		<div>
 			<HeaderHome />
 			<main className={styles.main}>
-				<AboutHome />
-				<ProjectsHome />
+				<AboutSection />
+				<ProjectsSection />
 			</main>
 		</div>
 		{/* </LocomotiveScrollProvider> */}

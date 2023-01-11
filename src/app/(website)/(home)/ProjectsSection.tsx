@@ -54,7 +54,7 @@ const RecentProject = ({
 	);
 };
 
-export const ProjectsHome = () => (
+export const ProjectsSection = () => (
 	<section className="my-16 w-full select-none">
 		<div className="flex">
 			<h2 className="flex w-max flex-col text-left text-[8vw] uppercase leading-none">
