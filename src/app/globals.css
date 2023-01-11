@@ -27,6 +27,14 @@
 	}
 }
 
+.navbar-show {
+	@apply translate-y-0;
+}
+
+.navbar-hide {
+	@apply -translate-y-full;
+}
+
 .center-img {
 	object-position: top -860px right 0;
 }

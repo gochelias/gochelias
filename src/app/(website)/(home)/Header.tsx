@@ -6,27 +6,29 @@ export const HeaderHome = () => {
 	const a = '';
 	return (
 		<header className="flex h-max w-full flex-col pt-4">
-			<Divider />
-			<div className="flex items-center justify-between py-4 pr-4 text-base uppercase leading-none">
-				<h6>Frontend Development</h6>
-				<h6>Backend Development</h6>
-				<h6>Apps Development</h6>
-				<h6>Contact</h6>
+			<div id="top">
+				<Divider />
+				<div className="flex items-center justify-between py-4 pr-4 text-base uppercase leading-none">
+					<h6>Frontend Development</h6>
+					<h6>Backend Development</h6>
+					<h6>Apps Development</h6>
+					<h6>Contact</h6>
+				</div>
+				<Divider />
+				<div className="flex h-40 items-center justify-between">
+					<h1 className="text-6xl uppercase">
+						Elias <br /> Goche
+					</h1>
+					<button
+						className="text mr-4 h-40 text-6xl uppercase"
+						type="button">
+						Me
+						<br />
+						nu
+					</button>
+				</div>
+				<Divider />
 			</div>
-			<Divider />
-			<div className="flex h-40 items-center justify-between">
-				<h1 className="text-6xl uppercase">
-					Elias <br /> Goche
-				</h1>
-				<button
-					className="text mr-4 h-40 text-6xl uppercase"
-					type="button">
-					Me
-					<br />
-					nu
-				</button>
-			</div>
-			<Divider />
 			<div className="mt-8 ml-auto w-2/3">
 				<div className="w-max">
 					<h4 className="mb-6 text-4xl uppercase">

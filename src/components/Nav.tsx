@@ -11,6 +11,30 @@ export const Nav = () => {
 	const timeline = gsap.timeline({ paused: true });
 
 	useEffect(() => {
+		const navbar: HTMLElement | null = document.getElementById('navbar');
+		const height: number =
+			document.getElementById('top')?.offsetHeight ?? 0;
+
+		window.addEventListener('scroll', () => {
+			const currentScroll = window.pageYOffset;
+
+			if (
+				currentScroll >= height &&
+				!navbar?.classList.contains('navbar-show')
+			) {
+				navbar?.classList.remove('navbar-hide');
+				navbar?.classList.add('navbar-show');
+			}
+
+			if (
+				currentScroll <= height &&
+				!navbar?.classList.contains('navbar-hide')
+			) {
+				navbar?.classList.remove('navbar-show');
+				navbar?.classList.add('navbar-hide');
+			}
+		});
+
 		timeline.to('.menu', {
 			y: '0%',
 			duration: 2.5,
@@ -40,19 +64,23 @@ export const Nav = () => {
 
 	return (
 		<>
-			<nav className="fixed inset-0 z-10 flex h-40 w-full select-none">
+			<nav
+				className="navbar-hide fixed inset-0 z-10 flex h-max w-full select-none justify-between px-16 pt-16 transition-transform duration-300"
+				id="navbar">
 				{/* <span className='px-4 pt-4 md:px-6 md:pt-6 lg:px-8 lg:pt-8 2xl:px-16 2xl:py-16'></span> */}
 				<Link
 					href="/"
-					className="grid place-content-center w-40 h-40 hover:text-black transition-colors duration-200 ease-in-out hover:bg-white text-3xl font-medium"
+					className="bg-white p-6 text-black"
 					title="Go to home">
 					<Logo />
 				</Link>
 				<button
 					type="button"
 					onClick={toggleMenu}
-					className="w-40 h-40 hover:text-black transition-colors duration-200 ease-in-out hover:bg-white place-content-center overflow-hidden text-base font-semibold uppercase ml-auto">
-					Menu
+					className="px-2 text-4xl uppercase leading-none">
+					Me
+					<br />
+					nu
 				</button>
 			</nav>
 			<div
