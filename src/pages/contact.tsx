@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-import { Nav } from 'components/Nav';
+import { Navbar } from 'components/Navbar';
 
 interface FormData {
 	name: string;
@@ -58,7 +58,7 @@ const ContactPage: NextPage = () => {
 
 	return (
 		<>
-			<Nav pageTitle="Contact" />
+			<Navbar />
 			<header className="flex h-screen w-full">
 				<div className="relative h-full w-1/2 select-none">
 					<div className="absolute z-[1] flex h-full w-full flex-col justify-between p-40">
