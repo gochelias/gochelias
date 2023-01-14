@@ -30,9 +30,6 @@ export const Footer = () => {
 			<footer className="w-full">
 				<div className="flex w-full items-center justify-between text-lg uppercase text-white">
 					<div className="flex items-center space-x-20">
-						<div className="bg-white p-6 text-black">
-							<Logo />
-						</div>
 						<FooterExternalLink
 							title={links.github.username}
 							name={links.github.name}
