@@ -2,13 +2,13 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { gsap, Expo } from 'gsap';
+import { X } from 'react-feather';
+import gsap, { Expo } from 'gsap';
 
+import { FooterExternalLink } from 'components/FooterExternalLink';
 import { Logo } from 'components/Logo';
 import { NavLink } from 'components/NavLink';
 import { links } from 'config/links';
-import { X } from 'react-feather';
-import { FooterExternalLink } from './FooterExternalLink';
 
 export const Navbar = () => {
 	const timeline: gsap.core.Timeline = gsap.timeline({ paused: true });
@@ -86,10 +86,8 @@ export const Navbar = () => {
 					nu
 				</button>
 			</nav>
-			<div
-				className="menu fixed inset-0 z-20 flex -translate-y-full overflow-hidden bg-black"
-				id="menu">
-				<div className="relative flex h-screen w-full p-16">
+			<div className="menu fixed inset-0 z-20 flex -translate-y-full overflow-hidden">
+				<div className="relative flex h-screen w-full bg-black p-16">
 					<Link
 						href="/"
 						className="absolute h-max w-max bg-white p-6 text-black"
@@ -103,7 +101,7 @@ export const Navbar = () => {
 						type="button">
 						<X />
 					</button>
-					<div className="ml-12 mb-12 flex h-max w-max flex-col space-y-16 self-end text-xl uppercase">
+					<div className="ml-12 mb-12 flex h-max w-max flex-col space-y-16 self-end text-lg uppercase">
 						<div className="mr-12 flex select-none flex-col space-y-3">
 							<FooterExternalLink
 								name={links.github.name}
@@ -127,7 +125,7 @@ export const Navbar = () => {
 							hello@gochelias.com
 						</Link>
 					</div>
-					<ul className="shape-outside ml-auto flex h-max w-2/3 select-none flex-col text-white opacity-100">
+					<ul className="ml-auto flex h-max w-2/3 select-none flex-col text-white opacity-100">
 						<li>
 							<NavLink href="/" name="Home" label="Maintenance" />
 						</li>

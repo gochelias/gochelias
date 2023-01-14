@@ -24,13 +24,13 @@ export const HeaderHome = () => {
 					<h1 className="text-6xl uppercase">
 						Elias <br /> Goche
 					</h1>
-					<button
+					{/* <button
 						className="text mr-4 h-40 text-6xl uppercase"
 						type="button">
 						Me
 						<br />
 						nu
-					</button>
+					</button> */}
 				</div>
 				<Divider />
 			</div>

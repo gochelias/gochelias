@@ -32,7 +32,7 @@ export const NavLink = ({ href, name, label }: NavLinkProps) => {
 				<ArrowUpRight className="my-auto mr-24 rotate-45" size={80} />
 			) : (
 				<ArrowUpRight
-					className="my-auto mr-24 text-transparent transition-colors duration-300 group-hover:text-white"
+					className="my-auto mr-24 -translate-x-24 rotate-45 opacity-0 transition-all duration-300 group-hover:mr-32 group-hover:translate-x-0 group-hover:opacity-100"
 					size={80}
 				/>
 			)}
