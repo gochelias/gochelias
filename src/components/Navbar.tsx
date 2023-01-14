@@ -15,14 +15,15 @@ export const Navbar = () => {
 
 	useEffect(() => {
 		const navbar: HTMLElement | null = document.getElementById('navbar');
-		const height: number =
+
+		const homeTop: number =
 			document.getElementById('top')?.offsetHeight ?? 0;
 
 		window.addEventListener('scroll', () => {
-			const currentScroll = window.pageYOffset;
+			const currentScroll: number = window.pageYOffset;
 
 			if (
-				currentScroll >= height &&
+				currentScroll >= homeTop &&
 				!navbar?.classList.contains('navbar-show')
 			) {
 				navbar?.classList.remove('navbar-hide');
@@ -30,33 +31,21 @@ export const Navbar = () => {
 			}
 
 			if (
-				currentScroll <= height &&
+				currentScroll <= homeTop &&
 				!navbar?.classList.contains('navbar-hide')
 			) {
 				navbar?.classList.remove('navbar-show');
 				navbar?.classList.add('navbar-hide');
 			}
 		});
+	}, []);
 
+	useEffect(() => {
 		timeline.to('.menu', {
 			y: '0%',
 			duration: 2.2,
 			ease: Expo.easeInOut,
 		});
-		/* 
-		timeline.from('.links li', {
-			y: 25,
-			opacity: 0,
-			stagger: 0.2,
-			duration: 1,
-			ease: Expo.easeInOut,
-		});
-
-		timeline.from('.extra', {
-			opacity: 0,
-			duration: 0.8,
-			ease: Expo.easeInOut,
-		}); */
 
 		timeline.reverse();
 	}, [timeline]);
