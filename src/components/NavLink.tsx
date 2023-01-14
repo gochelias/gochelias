@@ -1,8 +1,8 @@
 'use client';
 
-// import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { ArrowUpRight } from './ArrowRight';
+
+import { ArrowUpRight } from 'components/ArrowRight';
 
 type NavLinkProps = {
 	href: string;

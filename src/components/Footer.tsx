@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 import { FooterExternalLink } from 'components/FooterExternalLink';
+import { ArrowUpRight } from 'components/ArrowRight';
 import { links } from 'config/links';
-import { ArrowUpRight } from './ArrowRight';
 
 export const Footer = () => {
 	const apos = '\u2019';

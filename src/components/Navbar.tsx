@@ -6,8 +6,8 @@ import { X } from 'react-feather';
 import gsap, { Expo } from 'gsap';
 
 import { FooterExternalLink } from 'components/FooterExternalLink';
-import { Logo } from 'components/Logo';
 import { NavLink } from 'components/NavLink';
+import { Logo } from 'components/Logo';
 import { links } from 'config/links';
 
 export const Navbar = () => {
@@ -66,14 +66,14 @@ export const Navbar = () => {
 					title="Go to home">
 					<Logo />
 				</Link>
-				<button
+				{/* <button
 					type="button"
 					onClick={toggleMenu}
 					className="px-2 text-4xl uppercase leading-none">
 					Me
 					<br />
 					nu
-				</button>
+				</button> */}
 			</nav>
 			<div className="menu fixed inset-0 z-20 flex -translate-y-full overflow-hidden">
 				<div className="relative flex h-screen w-full bg-black p-16">
