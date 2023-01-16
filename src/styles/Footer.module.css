@@ -1,0 +1,66 @@
+.footerSection {
+	@apply flex 
+    h-full 
+    w-full 
+    flex-col 
+    items-center 
+    pb-4
+    2xl:pb-16;
+}
+
+.footerContent {
+	@apply mx-auto 
+    w-max 
+    select-none 
+    text-5xl 
+    font-medium 
+    uppercase 
+    leading-none 
+    2xl:text-[8vw] 
+    2xl:font-normal;
+}
+
+.footerGetInTouch {
+	@apply flex 
+    flex-col 
+    items-end 
+    justify-between 
+    text-xl
+    transition-colors 
+    hover:text-gray 
+    2xl:text-4xl;
+}
+
+.footerGetInTouchArrow {
+	@apply h-3 
+    w-3 
+    2xl:h-5 
+    2xl:w-5;
+}
+
+.footerLinksContainer {
+	@apply flex 
+    w-full 
+    flex-col
+    items-start
+    gap-y-8
+    text-lg
+    font-medium 
+    uppercase
+    text-white
+    2xl:flex-row 
+    2xl:items-center 
+    2xl:justify-between 
+    2xl:font-normal;
+}
+
+.footerLinks {
+	@apply flex 
+    select-none
+    flex-col
+    items-start 
+    gap-x-20
+    gap-y-2
+    2xl:flex-row
+    2xl:items-center;
+}

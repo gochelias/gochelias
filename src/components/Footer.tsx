@@ -3,14 +3,15 @@ import Link from 'next/link';
 import { FooterExternalLink } from 'components/FooterExternalLink';
 import { ArrowUpRight } from 'components/ArrowRight';
 import { links } from 'config/links';
+import styles from 'styles/Footer.module.css';
 
 export const Footer = () => {
 	const apos = '\u2019';
 
 	return (
-		<section className="flex h-full w-full flex-col items-center pb-16">
-			<div className="my-64 w-full">
-				<div className="mx-auto w-max text-[8vw] uppercase leading-none">
+		<section className={styles.footerSection}>
+			<div className="my-16 w-full 2xl:my-64">
+				<div className={styles.footerContent}>
 					<h2>
 						I like to <br /> work <br /> on cool <br /> stuff,
 						<br />
@@ -19,16 +20,19 @@ export const Footer = () => {
 						<span>
 							Let{apos}s <br /> work <br /> together
 						</span>
-						<span className="flex flex-col items-end justify-between text-4xl transition-colors hover:text-gray">
+						<span className={styles.footerGetInTouch}>
 							<p>Get in Touch</p>
-							<ArrowUpRight strokeWidth={3} size={20} />
+							<ArrowUpRight
+								strokeWidth={3}
+								className={styles.footerGetInTouchArrow}
+							/>
 						</span>
 					</Link>
 				</div>
 			</div>
 			<footer className="w-full">
-				<div className="flex w-full items-center justify-between text-lg uppercase text-white">
-					<div className="flex items-center space-x-20">
+				<div className={styles.footerLinksContainer}>
+					<div className={styles.footerLinks}>
 						<FooterExternalLink
 							title={links.github.username}
 							name={links.github.name}
