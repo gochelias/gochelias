@@ -57,7 +57,7 @@ export const Navbar = () => {
 	return (
 		<>
 			<nav
-				className="navbar-hide 2x:pt-16 fixed inset-0 z-10 flex h-max w-full select-none justify-between px-4 pt-4 transition-transform duration-300 2xl:px-16"
+				className="navbar-hide fixed inset-0 z-10 flex h-max w-full select-none justify-between px-4 pt-4 transition-transform duration-300 2xl:px-16 2xl:pt-16"
 				id="navbar">
 				{/* <span className='px-4 pt-4 md:px-6 md:pt-6 lg:px-8 lg:pt-8 2xl:px-16 2xl:py-16'></span> */}
 				<Link
