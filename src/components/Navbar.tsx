@@ -57,14 +57,14 @@ export const Navbar = () => {
 	return (
 		<>
 			<nav
-				className="navbar-hide fixed inset-0 z-10 flex h-max w-full select-none justify-between px-16 pt-16 transition-transform duration-300"
+				className="navbar-hide 2x:pt-16 fixed inset-0 z-10 flex h-max w-full select-none justify-between px-4 pt-4 transition-transform duration-300 2xl:px-16"
 				id="navbar">
 				{/* <span className='px-4 pt-4 md:px-6 md:pt-6 lg:px-8 lg:pt-8 2xl:px-16 2xl:py-16'></span> */}
 				<Link
 					href="/"
-					className="bg-white p-6 text-black"
+					className="bg-white p-3 text-black 2xl:p-6"
 					title="Go to home">
-					<Logo />
+					<Logo className="h-4 w-4 2xl:h-auto 2xl:w-auto" />
 				</Link>
 				{/* <button
 					type="button"
