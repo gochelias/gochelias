@@ -1,146 +1,89 @@
-.hero {
-	@apply relative z-[1]
-	flex
-	h-screen
-	w-full
-	select-none
-	items-center
-	justify-center;
+.header {
+	@apply flex
+	h-max
+	w-full 
+	select-none 
+	flex-col 
+	pt-2
+	2xl:pt-4;
 }
 
-.hero_title {
-	@apply absolute
-	top-24 
-	left-8
-	z-[2]
-	flex
-	flex-col
-	items-end
-	sm:top-auto
-	2xl:left-64;
-}
-
-.hero_name {
-	@apply overflow-hidden
-	text-5xl 
+.headerList {
+	@apply flex 
+	items-center 
+	justify-between
+	py-2
+	pr-2 
+	text-xs
 	font-medium
-	sm:text-6xl
-	lg:text-7xl
-	2xl:text-9xl;
+	uppercase 
+	leading-none
+	2xl:py-4
+	2xl:pr-4 
+	2xl:text-base
+	2xl:font-normal;
 }
 
-.hero_dev {
-	@apply overflow-hidden
-	font-['telegraf']
+.headerListItems {
+	@apply 2xl:after:content-["Development"];
+}
+
+.headerListContact {
+	@apply transition-colors
+	hover:text-gray3light;
+}
+
+.headerNavbar {
+	@apply flex 
+	h-16
+	items-center 
+	justify-between
+	2xl:h-40;
+}
+
+.headerName {
+	@apply text-2xl 
+	font-medium
+	uppercase
+	leading-none
+	2xl:text-6xl
+	2xl:font-normal;
+}
+
+.headerDev {
+	@apply mb-3 
 	text-lg
-	font-normal
-	text-[#eaeaea] 
-	sm:text-xl
-	lg:text-2xl
-	2xl:text-3xl;
+	font-medium
+	uppercase
+	2xl:mb-6
+	2xl:text-4xl 
+	2xl:font-normal;
 }
 
-.hero_center {
-	@apply relative
-	flex 
-	h-80
-	w-full
-	items-center
-	justify-center 
-	sm:h-3/4
-	md:h-3/5
-	lg:h-2/3
-	2xl:h-4/6;
-}
-
-.hero_center_left {
-	@apply grid
-	h-full
-	place-content-end;
-}
-
-.hero_to_about {
-	@apply grid 
-	h-10
-	w-10
-	place-content-center
-	place-self-end 
-	bg-white
-	text-black 
-	sm:h-16
-	sm:w-16 
-	2xl:h-48 
-	2xl:w-48;
-}
-
-.hero_arrow {
-	@apply w-4 
-	md:w-6 
-	2xl:w-8;
-}
-
-.hero_img_container {
-	@apply relative
-	z-[1] 
-	flex
-	h-full
-	w-52  
-	justify-center
-	overflow-hidden
-	md:w-2/4
-	lg:w-1/3
-	2xl:h-full 
-	2xl:w-1/4;
-}
-
-.hero_img_cover {
-	@apply absolute 
-	z-[2] 
-	h-full 
-	w-full 
-	bg-black
-	outline 
-	outline-2 
-	outline-black;
-}
-
-.hero_img_layout {
-	@apply relative
-	h-full
-	w-full 
-	bg-black;
-}
-
-.hero_image {
-	@apply object-cover opacity-90;
-}
-
-.hero_center_right {
-	@apply h-full;
-}
-
-.hero_available {
-	@apply flex h-44
-	w-10
-	flex-col
-	items-center
-	justify-center
-	bg-white  
-	sm:mr-10
-	sm:h-52
-	sm:w-14
-	2xl:mr-24 
-	2xl:h-96 
-	2xl:w-24;
-}
-
-.hero_available_text {
-	@apply w-max
-	rotate-90
+.headerBased {
+	@apply text-sm 
 	font-medium 
-	text-black
-	sm:text-lg
-	2xl:text-2xl;
+	uppercase
+	leading-tight
+	2xl:text-lg
+	2xl:font-normal;
+}
+
+.headerCenter {
+	@apply mt-16 
+	2xl:mt-8
+	2xl:ml-auto 
+	2xl:w-2/3;
+}
+
+.headerMainText {
+	@apply mt-16
+	text-5xl
+	font-medium
+	uppercase 
+	leading-none 
+	2xl:text-[8vw]
+	2xl:font-normal;
 }
 
 .main {
@@ -151,220 +94,172 @@
 	items-center;
 }
 
-.about_section {
-	@apply flex
+.about {
+	@apply mt-16 
+	ml-auto 
 	h-full
-	w-full
-	select-none
-	flex-col
-	items-end
-	md:h-screen
-	md:py-8
-	2xl:h-screen
-	2xl:py-16;
+	2xl:h-[65vh] 
+	2xl:w-4/5;
 }
 
-.about_content {
-	@apply my-auto 
-	flex
-	w-full
-	flex-col 
-	justify-center
-	space-y-5
-	sm:w-5/6
-	md:w-4/5
-	md:space-y-8
-	2xl:w-3/4
-	2xl:space-y-20;
+.aboutImage {
+	@apply relative 
+	h-40
+	w-full 
+	bg-gray6dark 
+	2xl:h-[33vh];
 }
 
-.about_main {
+.aboutReadMore {
+	@apply text-base 
+	font-medium 
+	uppercase 
+	2xl:text-lg 
+	2xl:font-normal;
+}
+
+.aboutDescrip {
+	@apply mx-auto 
+	mt-8 
+	w-5/6
+	space-y-16
+	text-xl
+	font-medium
+	uppercase
+	2xl:mt-16
+	2xl:w-1/3 
+	2xl:text-4xl 
+	2xl:font-normal;
+}
+
+.projects {
 	@apply flex 
-	flex-wrap 
-	text-3xl 
+	w-max 
+	flex-col 
+	text-left 
+	text-5xl 
+	font-medium
+	uppercase 
+	leading-none
+	2xl:text-[8vw]
+	2xl:font-normal;
+}
+
+.projectSectionDescription {
+	@apply mt-6 
+	text-xl
 	font-medium 
 	uppercase
-	md:text-4xl
-	2xl:text-6xl;
+	2xl:mt-0
+	2xl:text-2xl 
+	2xl:font-normal;
 }
 
-.about_margin {
-	@apply ml-80 
-	md:ml-40;
-}
-
-.about_word {
-	@apply mr-2
-	overflow-hidden
-	font-['telegraf']
-	2xl:mr-4;
-}
-
-.about_paragraph {
-	@apply 2xl:w-1/2;
-}
-
-.about_paragraph_one {
-	@apply font-['telegraf']
-	text-xl
-	text-[#eaeaea]
-	2xl:text-2xl;
-}
-
-.about_paragraph_two {
-	@apply mt-5 
-	font-['telegraf']
-	text-xl 
-	text-[#eaeaea]
-	md:mt-8
-	2xl:text-2xl;
-}
-
-.about_me_link {
-	@apply relative 
-	ml-auto
-	mt-5 
-	flex
-	w-max 
-	items-center
-	space-x-3 
-	text-lg
-	font-semibold
-	uppercase 
-	hover:text-[#FFEFCF]
-	md:mt-10
-	2xl:mt-20 
-	2xl:space-x-6
-	2xl:text-lg;
-}
-
-.projects_section {
+.recentProjectLeft {
 	@apply flex 
-	h-full 
-	w-full 
-	flex-col;
+	flex-col 
+	gap-x-16  
+	2xl:flex-row;
 }
 
-.projects_container {
+.recentProjectRight {
+	@apply flex 
+	flex-col 
+	gap-x-16  
+	2xl:flex-row-reverse;
+}
+
+.recentProjectImageContainer {
 	@apply h-full 
-	w-full
-	flex-auto
-	space-y-64;
+	w-full 
+	2xl:w-3/5;
 }
 
-.recent_project {
-	@apply flex 
-	h-full
+.recentProjectImage {
+	@apply relative 
+	h-40 
 	w-full
-	select-none
-	flex-col
-	items-center 
-	space-y-10
-	border
-	sm:flex-row
-	sm:space-y-0
-	sm:space-x-10
-	2xl:flex-row
-	2xl:justify-center
-	2xl:space-x-16;
+	bg-[#111]
+	2xl:h-[33vh];
 }
 
-.footer {
-	@apply flex 
-	h-72 w-full
-	select-none
+.recentProjectLabels {
+	@apply mt-4 
+	flex 
+	w-full 
+	items-start 
 	justify-between;
 }
 
-.footer_main {
-	@apply flex 
-	w-full 
-	flex-auto 
-	flex-col 
-	justify-center;
+.recentProjectLabel {
+	@apply text-xs 
+	font-medium 
+	uppercase
+	2xl:text-lg
+	2xl:font-normal;
 }
 
-.footer_content {
-	@apply relative 
-	m-auto 
+.recentProjetSourceCode {
+	@apply flex 
+	flex-col 
+	items-end;
+}
+
+.recentProjectArrowSourceCode {
+	@apply h-2 
+	w-2
+	2xl:h-3 
+	2xl:w-3;
+}
+
+.recentProjectContentLeft {
+	@apply mt-6 
 	flex 
-	select-none 
-	flex-col 
-	items-center 
-	justify-center;
-}
-
-.footer_copy_msg {
-	@apply absolute 
-	-top-12 
-	w-max 
-	border 
-	border-white 
-	px-6 
-	py-3 
-	font-semibold 
-	text-white 
-	opacity-40 
-	transition-all 
-	duration-300
-	ease-in-out;
-}
-
-.footer_content:hover .footer_copy_msg {
-	@apply -top-20
-	opacity-100;
-}
-
-.footer_email_container {
-	@apply overflow-hidden;
-}
-
-.footer_info {
-	@apply flex 
-	w-full 
-	select-none 
-	flex-col-reverse 
-	items-center
-	pb-4
-	2xl:flex-row 
-	2xl:items-center 
-	2xl:justify-between 
-	2xl:pb-16;
-}
-
-.footer_copyright {
-	@apply flex 
-	w-72 
-	justify-center
-	2xl:justify-start 
-	2xl:text-lg 
-	2xl:font-medium;
-}
-
-.footer_social {
-	@apply my-4 
-	flex
-	w-max
+	h-max 
+	flex-auto
 	flex-col
-	space-y-3
-	text-lg
+	items-center
+	justify-between
+	gap-y-4
+	2xl:mt-0
+	2xl:h-[33vh]
+	2xl:w-1/3 
+	2xl:flex-row 
+	2xl:items-end;
+}
+
+.recentProjectContentRight {
+	@apply mt-6 
+	flex 
+	h-max 
+	flex-auto
+	flex-col
+	items-center
+	justify-between
+	gap-y-4
+	2xl:mt-0
+	2xl:h-[33vh]
+	2xl:w-1/3 
+	2xl:flex-row-reverse
+	2xl:items-end;
+}
+
+.recentProjectDescription {
+	@apply w-5/6
+	text-xl
 	font-medium
-	leading-none
-	text-[#eaeaea]
-	2xl:m-0;
+	uppercase 
+	2xl:w-2/5 
+	2xl:text-4xl 
+	2xl:font-normal;
 }
 
-.footer_name {
+.recentProjectArrowLink {
 	@apply hidden 
-	w-72 
-	justify-end 
-	space-x-1.5 
-	text-lg 
-	leading-none 
-	2xl:flex 
-	2xl:font-medium;
-}
-
-.footer_social_link {
-	@apply hover:underline;
+	h-10 
+	w-10
+	2xl:block
+	2xl:h-36
+	2xl:w-36 
+	2xl:p-0;
 }
