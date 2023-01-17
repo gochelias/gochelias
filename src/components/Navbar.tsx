@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { X } from 'react-feather';
 import gsap, { Expo } from 'gsap';
@@ -11,34 +12,41 @@ import { Logo } from 'components/Logo';
 import { links } from 'config/links';
 
 export const Navbar = () => {
+	const pathname = usePathname();
+
 	const timeline: gsap.core.Timeline = gsap.timeline({ paused: true });
 
 	useEffect(() => {
 		const navbar: HTMLElement | null = document.getElementById('navbar');
 
-		const homeTop: number =
-			document.getElementById('top')?.offsetHeight ?? 0;
+		if (pathname === '/') {
+			const homeTop: number =
+				document.getElementById('top')?.offsetHeight ?? 0;
 
-		window.addEventListener('scroll', () => {
-			const currentScroll: number = window.pageYOffset;
+			window.addEventListener('scroll', () => {
+				const currentScroll: number = window.pageYOffset;
 
-			if (
-				currentScroll >= homeTop &&
-				!navbar?.classList.contains('navbar-show')
-			) {
-				navbar?.classList.remove('navbar-hide');
-				navbar?.classList.add('navbar-show');
-			}
+				if (
+					currentScroll >= homeTop &&
+					!navbar?.classList.contains('navbar-show')
+				) {
+					navbar?.classList.remove('navbar-hide');
+					navbar?.classList.add('navbar-show');
+				}
 
-			if (
-				currentScroll <= homeTop &&
-				!navbar?.classList.contains('navbar-hide')
-			) {
-				navbar?.classList.remove('navbar-show');
-				navbar?.classList.add('navbar-hide');
-			}
-		});
-	}, []);
+				if (
+					currentScroll <= homeTop &&
+					!navbar?.classList.contains('navbar-hide')
+				) {
+					navbar?.classList.remove('navbar-show');
+					navbar?.classList.add('navbar-hide');
+				}
+			});
+		} else {
+			navbar?.classList.remove('navbar-hide');
+			navbar?.classList.add('navbar-show');
+		}
+	}, [pathname]);
 
 	useEffect(() => {
 		timeline.to('.menu', {
