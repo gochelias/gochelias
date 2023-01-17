@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { FooterExternalLink } from 'components/FooterExternalLink';
+import { ExternalLink } from 'components/ExternalLink';
 import { ArrowUpRight } from 'components/ArrowRight';
 import { links } from 'config/links';
 import styles from 'styles/Footer.module.css';
@@ -33,27 +33,27 @@ export const Footer = () => {
 			<footer className="w-full">
 				<div className={styles.footerLinksContainer}>
 					<div className={styles.footerLinks}>
-						<FooterExternalLink
+						<ExternalLink
 							title={links.github.username}
 							name={links.github.name}
 							url={links.github.url}
 						/>
-						<FooterExternalLink
+						<ExternalLink
 							title={links.codepen.username}
 							name={links.codepen.name}
 							url={links.codepen.url}
 						/>
-						<FooterExternalLink
+						<ExternalLink
 							title={links.dribbble.username}
 							name={links.dribbble.name}
 							url={links.dribbble.url}
 						/>
-						<FooterExternalLink
+						<ExternalLink
 							title={links.linkedin.username}
 							name={links.linkedin.name}
 							url={links.linkedin.url}
 						/>
-						<FooterExternalLink
+						<ExternalLink
 							title={links.discord.username}
 							name={links.discord.name}
 							url={links.discord.url}

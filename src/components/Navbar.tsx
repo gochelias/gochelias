@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { X } from 'react-feather';
 import gsap, { Expo } from 'gsap';
 
-import { FooterExternalLink } from 'components/FooterExternalLink';
+import { ExternalLink } from 'components/ExternalLink';
 import { NavLink } from 'components/NavLink';
 import { Logo } from 'components/Logo';
 import { links } from 'config/links';
@@ -100,17 +100,17 @@ export const Navbar = () => {
 					</button>
 					<div className="ml-12 mb-12 flex h-max w-max flex-col space-y-16 self-end text-lg uppercase">
 						<div className="mr-12 flex select-none flex-col space-y-3">
-							<FooterExternalLink
+							<ExternalLink
 								name={links.github.name}
 								title={links.github.username}
 								url={links.github.url}
 							/>
-							<FooterExternalLink
+							<ExternalLink
 								name={links.linkedin.name}
 								title={links.linkedin.username}
 								url={links.linkedin.url}
 							/>
-							<FooterExternalLink
+							<ExternalLink
 								name={links.discord.name}
 								title={links.discord.username}
 								url={links.discord.url}

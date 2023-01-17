@@ -4,7 +4,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { ArrowUpRight } from 'components/ArrowRight';
-import { FooterExternalLink } from 'components/FooterExternalLink';
+import { ExternalLink } from 'components/ExternalLink';
 import { links } from 'config/links';
 import styles from './Contact.module.css';
 
@@ -138,17 +138,17 @@ const ContactPage = () => {
 					</button>
 				</form>
 				<div className={styles.links}>
-					<FooterExternalLink
+					<ExternalLink
 						name={links.github.name}
 						title={links.github.username}
 						url={links.github.url}
 					/>
-					<FooterExternalLink
+					<ExternalLink
 						name={links.linkedin.name}
 						title={links.linkedin.username}
 						url={links.linkedin.url}
 					/>
-					<FooterExternalLink
+					<ExternalLink
 						name={links.discord.name}
 						title={links.discord.username}
 						url={links.discord.url}

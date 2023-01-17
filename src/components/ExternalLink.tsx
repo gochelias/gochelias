@@ -1,16 +1,12 @@
-import { ExternalLink } from 'react-feather';
+import { ExternalLink as ExternalLinkIcon } from 'react-feather';
 
-type FooterExternalLinkProps = {
+type ExternalLinkProps = {
 	url: string;
 	name: string;
 	title: string;
 };
 
-export const FooterExternalLink = ({
-	url,
-	name,
-	title,
-}: FooterExternalLinkProps) => (
+export const ExternalLink = ({ url, name, title }: ExternalLinkProps) => (
 	<a
 		className="group flex space-x-2 leading-none hover:text-gray2light"
 		href={url}
@@ -18,7 +14,7 @@ export const FooterExternalLink = ({
 		target="_blank"
 		rel="noreferrer">
 		<span>{name}</span>
-		<ExternalLink
+		<ExternalLinkIcon
 			size={18}
 			className="text-transparent transition-colors group-hover:text-white"
 		/>
