@@ -61,33 +61,30 @@
 	@apply flex
     h-full
     w-full
-    flex-col 
+    flex-col
+    items-center
     justify-center
-    xl:w-1/2
-    2xl:w-1/2;
+    space-y-16
+    xl:w-1/2 
+    2xl:w-1/2
+    2xl:space-y-40;
 }
 
 .form {
 	@apply flex 
     h-max 
-    w-full
-    flex-auto
     flex-col
-    lg:px-16
-    lg:pt-40
-    xl:pt-80
-    2xl:px-40
-    2xl:pt-80;
+    2xl:w-3/4;
 }
 
 .formInputs {
 	@apply mb-16 
     grid
-    h-max 
-    w-full 
-    grid-cols-1
-    grid-rows-4
-    gap-x-3 
+    h-max
+    w-full
+    grid-cols-1 
+    grid-rows-4 
+    gap-x-3
     gap-y-9
     md:grid-cols-2
     md:grid-rows-3
@@ -111,7 +108,6 @@
 	@apply col-span-1
     col-start-1
     row-span-1
-    row-end-1
     lg:col-span-1
     lg:row-start-1;
 }
@@ -206,19 +202,17 @@
 }
 
 .links {
-	@apply mt-16
-    mb-16
-    flex
+	@apply flex
+    w-full
     select-none
     flex-col
     items-center
     justify-evenly
     gap-y-2
     text-lg
-    font-medium
+    font-medium 
     uppercase 
-    md:flex-row 
-    lg:font-normal
-    2xl:mb-40 
+    md:flex-row
+    lg:font-normal 
     2xl:flex-row;
 }
