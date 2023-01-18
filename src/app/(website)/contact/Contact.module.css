@@ -1,43 +1,70 @@
+.container {
+	@apply flex 
+    h-full 
+    w-full 
+    flex-col
+    lg:h-screen
+    lg:flex-row 
+    xl:h-screen 
+    xl:flex-row 
+    2xl:h-screen 
+    2xl:flex-row;
+}
+
 .leftContainer {
 	@apply flex 
     h-full 
-    w-1/2 
+    w-full
     select-none 
-    items-center 
-    justify-center;
+    items-center
+    justify-center 
+    xl:w-1/2
+    2xl:w-1/2;
 }
 
 .leftContent {
 	@apply flex 
     flex-col 
-    items-start 
-    space-y-16;
+    items-start
+    gap-y-8
+    py-16
+    2xl:gap-y-16
+    2xl:py-0;
 }
 
 .textP {
-	@apply w-96 
-    text-4xl 
-    uppercase;
+	@apply w-52 
+    text-xl
+    font-medium
+    uppercase
+    lg:font-normal
+    2xl:w-96 
+    2xl:text-4xl;
 }
 
 .textH2 {
 	@apply flex 
     flex-col 
-    uppercase 
-    leading-none 
-    2xl:text-[8vw];
+    text-5xl
+    font-medium
+    uppercase
+    leading-none
+    lg:text-[8vw] 
+    lg:font-normal;
 }
 
 .indented {
-	@apply indent-40;
+	@apply indent-12 2xl:indent-40;
 }
 
 .rightContainer {
 	@apply flex
     h-full
-    w-1/2 
-    flex-col
-    justify-center;
+    w-full
+    flex-col 
+    justify-center
+    xl:w-1/2
+    2xl:w-1/2;
 }
 
 .form {
@@ -46,16 +73,33 @@
     w-full
     flex-auto
     flex-col
-    px-40
-    pt-80;
+    lg:px-16
+    lg:pt-40
+    xl:pt-80
+    2xl:px-40
+    2xl:pt-80;
 }
 
 .formInputs {
-	@apply grid 
+	@apply mb-16 
+    grid
     h-max 
     w-full 
-    grid-cols-2 
-    gap-6;
+    grid-cols-1
+    grid-rows-4
+    gap-x-3 
+    gap-y-9
+    md:grid-cols-2
+    md:grid-rows-3
+    lg:grid-cols-1
+    lg:grid-rows-4
+    lg:gap-y-6
+    lg:gap-x-0
+    2xl:mb-40
+    2xl:grid-cols-2
+    2xl:grid-rows-3
+    2xl:gap-y-16
+    2xl:gap-x-6;
 }
 
 .formInputContainer {
@@ -63,21 +107,42 @@
     flex-col;
 }
 
+.formInputName {
+	@apply col-span-1
+    col-start-1
+    row-span-1
+    row-end-1
+    lg:col-span-1
+    lg:row-start-1;
+}
+
+.formInputEmail {
+	@apply col-span-1
+    row-span-1
+    row-start-2
+    md:row-span-1
+    lg:row-start-2
+    2xl:row-span-1;
+}
+
 .formLabel {
 	@apply select-none 
     text-lg
+    font-medium
     uppercase
-    text-gray3light;
+    text-gray3light
+    lg:font-normal;
 }
 
 .formInput {
 	@apply h-14 
-    border-b 
+    rounded-none
+    border-b
     border-gray2dark 
     bg-transparent 
     font-body 
     text-2xl 
-    text-[#EAEAEA] 
+    text-white 
     transition-colors 
     selection:bg-white 
     selection:text-black 
@@ -88,22 +153,30 @@
 }
 
 .formTextareaContainer {
-	@apply col-span-2 
-    mt-10 
-    mb-40 
-    flex 
-    flex-col 
-    space-y-3;
+	@apply col-span-1
+    row-span-2
+    row-start-3
+    flex
+    flex-col
+    space-y-3
+    md:col-span-2
+    md:row-start-2 
+    lg:row-start-3 
+    2xl:col-span-2 
+    2xl:row-span-2 
+    2xl:row-start-2;
 }
 
 .formTextarea {
-	@apply h-28 
-    border-b 
+	@apply h-full 
+    resize-none 
+    rounded-none
+    border-b
     border-gray2dark 
-    bg-transparent 
-    font-body 
+    bg-transparent
+    font-body
     text-2xl 
-    text-[#EAEAEA]
+    text-white
     transition-colors 
     selection:bg-white 
     selection:text-black 
@@ -115,28 +188,37 @@
 
 .formButton {
 	@apply mr-4
-    h-12
-    w-12
+    h-6
+    w-6
     select-none
-    self-end 
-    bg-transparent  
-    text-lg
-    font-medium
+    self-end
+    bg-transparent
+    text-lg 
+    font-medium  
     uppercase
-    text-white 
-    transition-colors 
+    text-white
+    transition-colors
     hover:text-gray 
-    active:bg-black
-    active:text-white;
+    active:bg-black 
+    active:text-white 
+    2xl:h-10
+    2xl:w-10;
 }
 
 .links {
-	@apply mb-40 
-    flex 
-    select-none 
-    items-center 
-    justify-evenly 
-    self-stretch 
-    text-lg 
-    uppercase;
+	@apply mt-16
+    mb-16
+    flex
+    select-none
+    flex-col
+    items-center
+    justify-evenly
+    gap-y-2
+    text-lg
+    font-medium
+    uppercase 
+    md:flex-row 
+    lg:font-normal
+    2xl:mb-40 
+    2xl:flex-row;
 }

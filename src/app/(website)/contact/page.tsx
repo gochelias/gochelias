@@ -62,7 +62,7 @@ const ContactPage = () => {
 	};
 
 	return (
-		<header className="flex h-screen w-full">
+		<header className={styles.container}>
 			<div className={styles.leftContainer}>
 				<div className={styles.leftContent}>
 					<p className={styles.textP}>
@@ -78,7 +78,8 @@ const ContactPage = () => {
 			<div className={styles.rightContainer}>
 				<form onSubmit={handleSubmit} className={styles.form}>
 					<div className={styles.formInputs}>
-						<div className={styles.formInputContainer}>
+						<div
+							className={`${styles.formInputContainer} ${styles.formInputName}`}>
 							<label className={styles.formLabel} htmlFor="name">
 								Name
 							</label>
@@ -94,7 +95,8 @@ const ContactPage = () => {
 								required
 							/>
 						</div>
-						<div className={styles.formInputContainer}>
+						<div
+							className={`${styles.formInputContainer} ${styles.formInputEmail}`}>
 							<label className={styles.formLabel} htmlFor="email">
 								Email
 							</label>
