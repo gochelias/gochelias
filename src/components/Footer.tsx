@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { ExternalLink } from 'components/ExternalLink';
 import { ArrowUpRight } from 'components/ArrowRight';
+import { Email } from 'components/Email';
 import { links } from 'config/links';
 import styles from 'styles/Footer.module.css';
 
@@ -59,11 +60,7 @@ export const Footer = () => {
 							url={links.discord.url}
 						/>
 					</div>
-					<Link
-						href="/contact"
-						className=" selection:bg-white selection:text-black">
-						hello@gochelias.com
-					</Link>
+					<Email />
 				</div>
 			</footer>
 		</section>
