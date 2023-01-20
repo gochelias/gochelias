@@ -11,25 +11,23 @@ export const Footer = () => {
 
 	return (
 		<section className={styles.footerSection}>
-			<div className="my-16 w-full 2xl:my-64">
-				<div className={styles.footerContent}>
-					<h2>
-						I like to <br /> work <br /> on cool <br /> stuff,
-						<br />
-					</h2>
-					<Link href="/contact">
-						<span>
-							Let{apos}s <br /> work <br /> together
-						</span>
-						<span className={styles.footerGetInTouch}>
-							<p>Get in Touch</p>
-							<ArrowUpRight
-								strokeWidth={3}
-								className={styles.footerGetInTouchArrow}
-							/>
-						</span>
-					</Link>
-				</div>
+			<div className={styles.footerContent} translate="no">
+				<h2>
+					I like to <br /> work <br /> on cool <br /> stuff,
+					<br />
+				</h2>
+				<Link href="/contact">
+					<span>
+						Let{apos}s <br /> work <br /> together
+					</span>
+					<span className={styles.footerGetInTouch}>
+						<p>Get in Touch</p>
+						<ArrowUpRight
+							strokeWidth={3}
+							className={styles.footerGetInTouchArrow}
+						/>
+					</span>
+				</Link>
 			</div>
 			<footer className="w-full">
 				<div className={styles.footerLinksContainer}>
