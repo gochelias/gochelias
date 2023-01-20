@@ -1,7 +1,6 @@
 import 'app/globals.css';
 import { ReactNode } from 'react';
 
-import { Footer } from 'components/Footer';
 import { Navbar } from 'components/Navbar';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -10,7 +9,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 			<body className="h-full w-full px-4 md:px-6 lg:px-8 2xl:px-16">
 				<Navbar />
 				{children}
-				<Footer />
 			</body>
 		</html>
 	);

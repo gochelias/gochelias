@@ -3,6 +3,7 @@
 import { Tween } from 'react-gsap';
 import { Expo } from 'gsap';
 
+import { Footer } from 'components/Footer';
 import { HeaderHome } from './Header';
 import { AboutSection } from './AboutSection';
 import { ProjectsSection } from './ProjectsSection';
@@ -20,6 +21,7 @@ const HomePage = () => (
 					<AboutSection />
 					<ProjectsSection />
 				</main>
+				<Footer />
 			</div>
 		</Tween>
 		{/* </LocomotiveScrollProvider> */}
