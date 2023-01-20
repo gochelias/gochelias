@@ -1,4 +1,4 @@
-export const links = {
+export const socialLinks = {
 	github: {
 		name: 'GitHub',
 		url: 'https://github.com/gochelias',

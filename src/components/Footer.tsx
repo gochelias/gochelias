@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import { ExternalLink } from 'components/ExternalLink';
 import { ArrowUpRight } from 'components/ArrowRight';
+import { SocialLink } from 'components/SocialLink';
 import { Email } from 'components/Email';
-import { links } from 'config/links';
+import { socialLinks } from 'config';
 import styles from 'styles/Footer.module.css';
 
 export const Footer = () => {
@@ -34,31 +34,11 @@ export const Footer = () => {
 			<footer className="w-full">
 				<div className={styles.footerLinksContainer}>
 					<div className={styles.footerLinks}>
-						<ExternalLink
-							title={links.github.username}
-							name={links.github.name}
-							url={links.github.url}
-						/>
-						<ExternalLink
-							title={links.codepen.username}
-							name={links.codepen.name}
-							url={links.codepen.url}
-						/>
-						<ExternalLink
-							title={links.dribbble.username}
-							name={links.dribbble.name}
-							url={links.dribbble.url}
-						/>
-						<ExternalLink
-							title={links.linkedin.username}
-							name={links.linkedin.name}
-							url={links.linkedin.url}
-						/>
-						<ExternalLink
-							title={links.discord.username}
-							name={links.discord.name}
-							url={links.discord.url}
-						/>
+						<SocialLink type={socialLinks.github} />
+						<SocialLink type={socialLinks.codepen} />
+						<SocialLink type={socialLinks.dribbble} />
+						<SocialLink type={socialLinks.linkedin} />
+						<SocialLink type={socialLinks.discord} />
 					</div>
 					<Email />
 				</div>

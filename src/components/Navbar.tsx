@@ -6,10 +6,10 @@ import Link from 'next/link';
 import { X } from 'react-feather';
 import gsap, { Expo } from 'gsap';
 
-import { ExternalLink } from 'components/ExternalLink';
+import { SocialLink } from 'components/SocialLink';
 import { NavLink } from 'components/NavLink';
 import { Logo } from 'components/Logo';
-import { links } from 'config/links';
+import { socialLinks } from 'config';
 
 export const Navbar = () => {
 	const pathname = usePathname();
@@ -100,21 +100,9 @@ export const Navbar = () => {
 					</button>
 					<div className="ml-12 mb-12 flex h-max w-max flex-col space-y-16 self-end text-lg uppercase">
 						<div className="mr-12 flex select-none flex-col space-y-3">
-							<ExternalLink
-								name={links.github.name}
-								title={links.github.username}
-								url={links.github.url}
-							/>
-							<ExternalLink
-								name={links.linkedin.name}
-								title={links.linkedin.username}
-								url={links.linkedin.url}
-							/>
-							<ExternalLink
-								name={links.discord.name}
-								title={links.discord.username}
-								url={links.discord.url}
-							/>
+							<SocialLink type={socialLinks.github} />
+							<SocialLink type={socialLinks.linkedin} />
+							<SocialLink type={socialLinks.discord} />
 						</div>
 						<Link
 							href="/contact"

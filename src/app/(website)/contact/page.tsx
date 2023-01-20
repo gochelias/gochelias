@@ -4,8 +4,8 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { ArrowUpRight } from 'components/ArrowRight';
-import { ExternalLink } from 'components/ExternalLink';
-import { links } from 'config/links';
+import { SocialLink } from 'components/SocialLink';
+import { socialLinks } from 'config';
 import styles from './Contact.module.css';
 
 interface FormData {
@@ -140,21 +140,9 @@ const ContactPage = () => {
 					</button>
 				</form>
 				<div className={styles.links}>
-					<ExternalLink
-						name={links.github.name}
-						title={links.github.username}
-						url={links.github.url}
-					/>
-					<ExternalLink
-						name={links.linkedin.name}
-						title={links.linkedin.username}
-						url={links.linkedin.url}
-					/>
-					<ExternalLink
-						name={links.discord.name}
-						title={links.discord.username}
-						url={links.discord.url}
-					/>
+					<SocialLink type={socialLinks.github} />
+					<SocialLink type={socialLinks.linkedin} />
+					<SocialLink type={socialLinks.discord} />
 				</div>
 			</div>
 		</header>
