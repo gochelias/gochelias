@@ -3,8 +3,11 @@
     h-full 
     w-full 
     flex-col
+    pb-4
+    md:pb-6
     lg:h-screen
-    lg:flex-row 
+    lg:flex-row
+    lg:pb-8
     xl:h-screen 
     xl:flex-row 
     2xl:h-screen 
@@ -205,14 +208,13 @@
 	@apply flex
     w-full
     select-none
-    flex-col
+    flex-wrap
     items-center
     justify-evenly
-    gap-y-2
+    gap-y-3
+    gap-x-3
     text-lg
     font-medium 
     uppercase 
-    md:flex-row
-    lg:font-normal 
-    2xl:flex-row;
+    lg:font-normal;
 }
