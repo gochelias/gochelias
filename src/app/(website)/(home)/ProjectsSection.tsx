@@ -3,41 +3,28 @@ import Image from 'next/image';
 import { ArrowUpRight } from 'components/ArrowRight';
 import styles from './Home.module.css';
 
-/* type ProjectProps = {
-	description: string;
-	image: string;
-	url: string;
-	repo: string;
-	reverse?: boolean;
-}; */
-
-/* const RecentProject = ({
-	description,
-	image,
-	url,
-	repo,
-	reverse,
-}: ProjectProps) => {
-	const isReverse = reverse ? 'flex-row-reverse' : '';
-	return <div />;
-}; */
-
 export const ProjectsSection = () => (
-	<section className="my-16 w-full select-none">
-		<div className="flex flex-col 2xl:flex-row">
+	<section className="my-16 h-max w-full select-none sm:space-y-8">
+		<div className="flex flex-col overflow-hidden sm:flex-row 2xl:flex-row">
 			<h2 className={styles.projects}>
 				<span>Passion</span>
-				<span className="ml-20 2xl:ml-96">for</span>
-				<span className="ml-16 2xl:ml-72">Creating</span>
+				<span className="indent-20 md:indent-32 2xl:indent-96">
+					for
+				</span>
+				<span className="md:indent-30 indent-16 2xl:indent-72">
+					Creating
+				</span>
 			</h2>
-			<div className="m-auto flex w-max flex-col items-center">
-				<span className="hidden text-[12vw] 2xl:block">*</span>
+			<div className="m-auto flex h-max w-max flex-col items-center">
+				<span className="hidden text-[12vw] leading-none md:block 2xl:block">
+					*
+				</span>
 				<p className={styles.projectSectionDescription}>
 					Projects <br /> I am currently <br /> working on
 				</p>
 			</div>
 		</div>
-		<div className="flex h-screen flex-col justify-evenly">
+		<div className={styles.projectsContainer}>
 			<div className={styles.recentProjectLeft}>
 				<div className={styles.recentProjectImageContainer}>
 					<div className={styles.recentProjectImage}>

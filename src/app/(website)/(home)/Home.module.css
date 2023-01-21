@@ -5,7 +5,7 @@
 	select-none 
 	flex-col 
 	pt-2
-	2xl:pt-4;
+	lg:pt-4;
 }
 
 .headerList {
@@ -16,16 +16,19 @@
 	pr-2 
 	text-xs
 	font-medium
-	uppercase 
-	leading-none
+	uppercase
+	leading-none 
+	lg:py-3
+	lg:pr-3
+	lg:text-sm 
+	xl:text-base
+	xl:font-normal 
 	2xl:py-4
-	2xl:pr-4 
-	2xl:text-base
-	2xl:font-normal;
+	2xl:pr-4;
 }
 
 .headerListItems {
-	@apply 2xl:after:content-["Development"];
+	@apply lg:after:content-["Development"];
 }
 
 .headerListContact {
@@ -34,10 +37,12 @@
 }
 
 .headerNavbar {
-	@apply flex 
+	@apply flex
 	h-16
 	items-center 
 	justify-between
+	md:h-24
+	xl:h-28
 	2xl:h-40;
 }
 
@@ -46,8 +51,20 @@
 	font-medium
 	uppercase
 	leading-none
-	2xl:text-6xl
-	2xl:font-normal;
+	md:text-4xl
+	md:font-normal
+	lg:text-5xl
+	2xl:text-6xl;
+}
+
+.headerCenter {
+	@apply mt-16 
+	sm:mt-8
+	sm:ml-auto
+	sm:w-2/3
+	2xl:mt-8
+	2xl:ml-auto 
+	2xl:w-2/3;
 }
 
 .headerDev {
@@ -55,9 +72,10 @@
 	text-lg
 	font-medium
 	uppercase
-	2xl:mb-6
-	2xl:text-4xl 
-	2xl:font-normal;
+	lg:text-2xl
+	xl:font-normal
+	2xl:mb-6 
+	2xl:text-4xl;
 }
 
 .headerBased {
@@ -65,25 +83,20 @@
 	font-medium 
 	uppercase
 	leading-tight
-	2xl:text-lg
-	2xl:font-normal;
-}
-
-.headerCenter {
-	@apply mt-16 
-	2xl:mt-8
-	2xl:ml-auto 
-	2xl:w-2/3;
+	xl:font-normal
+	2xl:text-lg;
 }
 
 .headerMainText {
 	@apply mt-16
 	text-5xl
 	font-medium
-	uppercase 
+	uppercase
 	leading-none 
-	2xl:text-[8vw]
-	2xl:font-normal;
+	sm:mt-8
+	md:text-[8vw]
+	md:font-normal
+	2xl:text-[8vw];
 }
 
 .main {
@@ -98,6 +111,7 @@
 	@apply mt-16 
 	ml-auto 
 	h-full
+	sm:w-3/4
 	2xl:h-[65vh] 
 	2xl:w-4/5;
 }
@@ -105,17 +119,21 @@
 .aboutImage {
 	@apply relative 
 	h-40
-	w-full 
+	w-full
 	bg-gray6dark 
+	md:h-52 
+	xl:h-60
 	2xl:h-[33vh];
 }
 
 .aboutReadMore {
-	@apply text-base 
+	@apply text-xs 
 	font-medium 
 	uppercase 
-	2xl:text-lg 
-	2xl:font-normal;
+	lg:text-sm
+	xl:text-base
+	xl:font-normal 
+	2xl:text-lg;
 }
 
 .aboutDescrip {
@@ -126,14 +144,17 @@
 	text-xl
 	font-medium
 	uppercase
-	2xl:mt-16
-	2xl:w-1/3 
-	2xl:text-4xl 
-	2xl:font-normal;
+	sm:w-2/4
+	lg:text-2xl 
+	xl:w-1/3
+	xl:font-normal
+	2xl:mt-16 
+	2xl:text-4xl;
 }
 
 .projects {
 	@apply flex 
+	h-max
 	w-max 
 	flex-col 
 	text-left 
@@ -141,45 +162,64 @@
 	font-medium
 	uppercase 
 	leading-none
-	2xl:text-[8vw]
-	2xl:font-normal;
+	md:text-[8vw]
+	md:font-normal;
 }
 
 .projectSectionDescription {
-	@apply mt-6 
+	@apply mt-6
 	text-xl
-	font-medium 
-	uppercase
-	2xl:mt-0
-	2xl:text-2xl 
-	2xl:font-normal;
+	font-medium
+	uppercase 
+	sm:mt-0
+	xl:font-normal
+	2xl:mt-0 
+	2xl:text-2xl;
+}
+
+.projectsContainer {
+	@apply flex 
+	h-screen 
+	flex-col 
+	justify-evenly 
+	sm:h-max 
+	sm:space-y-16;
 }
 
 .recentProjectLeft {
 	@apply flex 
 	flex-col 
-	gap-x-16  
+	gap-x-16
+	sm:w-full
+	sm:flex-row
+	sm:gap-x-8  
 	2xl:flex-row;
 }
 
 .recentProjectRight {
 	@apply flex 
+	w-full
 	flex-col 
-	gap-x-16  
+	gap-x-16
+	sm:flex-row-reverse
+	sm:gap-x-8 
 	2xl:flex-row-reverse;
 }
 
 .recentProjectImageContainer {
 	@apply h-full 
-	w-full 
-	2xl:w-3/5;
+	w-full
+	sm:w-1/2 
+	xl:w-3/5;
 }
 
 .recentProjectImage {
 	@apply relative 
-	h-40 
-	w-full
+	h-40
+	w-full 
 	bg-[#111]
+	md:h-52
+	xl:h-60
 	2xl:h-[33vh];
 }
 
@@ -195,8 +235,10 @@
 	@apply text-xs 
 	font-medium 
 	uppercase
-	2xl:text-lg
-	2xl:font-normal;
+	lg:text-sm
+	xl:text-base
+	xl:font-normal
+	2xl:text-lg;
 }
 
 .recentProjetSourceCode {
@@ -208,22 +250,31 @@
 .recentProjectArrowSourceCode {
 	@apply h-2 
 	w-2
+	lg:h-2.5
+	lg:w-2.5
 	2xl:h-3 
 	2xl:w-3;
 }
 
 .recentProjectContentLeft {
-	@apply mt-6 
+	@apply mt-6
 	flex 
-	h-max 
+	h-max
 	flex-auto
 	flex-col
 	items-center
 	justify-between
-	gap-y-4
+	gap-y-4 
+	sm:mt-0
+	sm:h-40
+	sm:w-1/2
+	sm:flex-row
+	sm:items-end
+	md:h-52
+	xl:h-60
+	xl:w-1/3
 	2xl:mt-0
-	2xl:h-[33vh]
-	2xl:w-1/3 
+	2xl:h-[33vh] 
 	2xl:flex-row 
 	2xl:items-end;
 }
@@ -237,27 +288,43 @@
 	items-center
 	justify-between
 	gap-y-4
+	sm:mt-0
+	sm:h-40
+	sm:w-1/2
+	sm:flex-row-reverse
+	sm:items-end
+	md:h-52
+	xl:h-60
+	xl:w-1/3
 	2xl:mt-0
-	2xl:h-[33vh]
-	2xl:w-1/3 
+	2xl:h-[33vh] 
 	2xl:flex-row-reverse
 	2xl:items-end;
 }
 
 .recentProjectDescription {
-	@apply w-5/6
-	text-xl
+	@apply flex
+	w-5/6
+	flex-wrap
+	text-lg
 	font-medium
-	uppercase 
+	uppercase
+	line-clamp-3
+	sm:w-2/3
+	lg:text-2xl
+	xl:font-normal
 	2xl:w-2/5 
 	2xl:text-4xl 
-	2xl:font-normal;
+	2xl:line-clamp-none;
 }
 
 .recentProjectArrowLink {
 	@apply hidden 
 	h-10 
 	w-10
+	sm:block
+	sm:h-14
+	sm:w-14
 	2xl:block
 	2xl:h-36
 	2xl:w-36 

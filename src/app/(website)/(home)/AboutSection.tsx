@@ -22,7 +22,10 @@ export const AboutSection = () => {
 					<a className={styles.aboutReadMore} href="#">
 						Read More
 					</a>
-					<ArrowUpRight size={12} strokeWidth={4} />
+					<ArrowUpRight
+						className="h-2 w-2 xl:h-2.5 xl:w-2.5 2xl:h-3 2xl:w-3"
+						strokeWidth={4}
+					/>
 				</div>
 				<p className={styles.aboutDescrip}>
 					Lorem ipsum dolor, sit amet consec- tetur adipisicing elit.
