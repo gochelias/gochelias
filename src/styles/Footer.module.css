@@ -21,10 +21,9 @@
     uppercase 
     leading-none 
     md:my-32 
-    md:text-[12vw]
-    md:font-normal
+    md:text-[8vw]
+    md:font-normal 
     2xl:my-64 
-    2xl:text-[8vw] 
     2xl:font-normal;
 }
 
