@@ -13,7 +13,8 @@
 		"clean": "rimraf ./node_modules",
 		"test": "vitest run --reporter=verbose",
 		"test:watch": "vitest watch",
-		"coverage": "vitest run --coverage"
+		"coverage": "vitest run --coverage",
+		"test:e2e": "playwright test"
 	},
 	"dependencies": {
 		"@headlessui/react": "1.7.7",
@@ -35,6 +36,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "17.4.2",
 		"@commitlint/config-conventional": "17.4.2",
+		"@playwright/test": "1.29.2",
 		"@testing-library/react": "13.4.0",
 		"@testing-library/user-event": "14.4.3",
 		"@types/locomotive-scroll": "4.1.0",

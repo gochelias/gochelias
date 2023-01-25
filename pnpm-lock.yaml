@@ -4,6 +4,7 @@ specifiers:
   '@commitlint/cli': 17.4.2
   '@commitlint/config-conventional': 17.4.2
   '@headlessui/react': 1.7.7
+  '@playwright/test': 1.29.2
   '@tailwindcss/line-clamp': 0.4.2
   '@testing-library/react': 13.4.0
   '@testing-library/user-event': 14.4.3
@@ -64,6 +65,7 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 17.4.2
   '@commitlint/config-conventional': 17.4.2
+  '@playwright/test': 1.29.2
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/user-event': 14.4.3
   '@types/locomotive-scroll': 4.1.0
@@ -945,6 +947,15 @@ packages:
       tiny-glob: 0.2.9
       tslib: 2.4.0
     dev: false
+
+  /@playwright/test/1.29.2:
+    resolution: {integrity: sha512-+3/GPwOgcoF0xLz/opTnahel1/y42PdcgZ4hs+BZGIUjtmEFSXGg+nFoaH3NSmuc7a6GSFwXDJ5L7VXpqzigNg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@types/node': 18.11.18
+      playwright-core: 1.29.2
+    dev: true
 
   /@rushstack/eslint-patch/1.1.4:
     resolution: {integrity: sha512-LwzQKA4vzIct1zNZzBmRKI9QuNpLgTQMEjsQLf3BXuGYb3QPTP4Yjf6mkdX+X1mYttZ808QpOwAzZjv28kq7DA==}
@@ -3853,6 +3864,12 @@ packages:
       jsonc-parser: 3.2.0
       mlly: 1.1.0
       pathe: 1.1.0
+    dev: true
+
+  /playwright-core/1.29.2:
+    resolution: {integrity: sha512-94QXm4PMgFoHAhlCuoWyaBYKb92yOcGVHdQLoxQ7Wjlc7Flg4aC/jbFW7xMR52OfXMVkWicue4WXE7QEegbIRA==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /postcss-import/14.1.0_postcss@8.4.21:
