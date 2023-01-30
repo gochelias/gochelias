@@ -4,7 +4,9 @@ import { ArrowUpRight } from 'components/ArrowRight';
 import styles from './Home.module.css';
 
 export const ProjectsSection = () => (
-	<section className="my-16 h-max w-full select-none sm:space-y-8">
+	<section
+		className="my-16 h-max w-full select-none sm:space-y-8"
+		data-testid="projects-section">
 		<div className="flex flex-col overflow-hidden sm:flex-row 2xl:flex-row">
 			<h2 className={styles.projects}>
 				<span>Passion</span>
@@ -53,7 +55,9 @@ export const ProjectsSection = () => (
 					</div>
 				</div>
 				<div className={styles.recentProjectContentLeft}>
-					<p className={styles.recentProjectDescription}>
+					<p
+						className={styles.recentProjectDescription}
+						role="paragraph">
 						Lorem ipsum dolor, sit amet consectetur adipisicing
 						elit.
 					</p>
@@ -94,7 +98,9 @@ export const ProjectsSection = () => (
 					</div>
 				</div>
 				<div className={styles.recentProjectContentRight}>
-					<p className={styles.recentProjectDescription}>
+					<p
+						className={styles.recentProjectDescription}
+						role="paragraph">
 						Lorem ipsum dolor, sit amet consectetur adipisicing
 						elit.
 					</p>

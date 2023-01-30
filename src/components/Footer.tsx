@@ -10,7 +10,7 @@ export const Footer = () => {
 	const apos = '\u2019';
 
 	return (
-		<section className={styles.footerSection}>
+		<footer className={styles.footerSection}>
 			<div className={styles.footerContent} translate="no">
 				<h2>
 					I like to <br /> work <br /> on cool <br /> stuff,
@@ -29,7 +29,7 @@ export const Footer = () => {
 					</span>
 				</Link>
 			</div>
-			<footer className="w-full">
+			<div className="w-full">
 				<div className={styles.footerLinksContainer}>
 					<div className={styles.footerLinks}>
 						<SocialLink type={socialLinks.github} />
@@ -40,7 +40,7 @@ export const Footer = () => {
 					</div>
 					<Email />
 				</div>
-			</footer>
-		</section>
+			</div>
+		</footer>
 	);
 };

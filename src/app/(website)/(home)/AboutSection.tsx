@@ -8,7 +8,7 @@ export const AboutSection = () => {
 		'https://images.unsplash.com/photo-1626624158360-8cb69be9b5e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80';
 
 	return (
-		<section className={styles.about}>
+		<section className={styles.about} data-testid="about-section">
 			<div className={styles.aboutImage}>
 				<Image
 					className="object-cover object-center"
@@ -27,7 +27,7 @@ export const AboutSection = () => {
 						strokeWidth={4}
 					/>
 				</div>
-				<p className={styles.aboutDescrip}>
+				<p className={styles.aboutDescrip} role="paragraph">
 					Lorem ipsum dolor, sit amet consec- tetur adipisicing elit.
 					Molestiae optio quis sunt, dolores porro inventore ex
 					dignissimos tenetur, aspernatur, nemo vel explicabo.

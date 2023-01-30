@@ -21,13 +21,6 @@ export const HeaderHome = () => (
 				<h1 className={styles.headerName}>
 					Elias <br /> Goche
 				</h1>
-				{/* <button
-						className="text mr-4 h-40 text-6xl uppercase"
-						type="button">
-						Me
-						<br />
-						nu
-					</button> */}
 			</div>
 			<Divider />
 		</div>
@@ -46,9 +39,9 @@ export const HeaderHome = () => (
 					/>
 				</div>
 			</div>
-			<p className={styles.headerMainText}>
+			<h2 className={styles.headerMainText}>
 				Making <br /> the code an <br /> experience
-			</p>
+			</h2>
 		</div>
 	</header>
 );
