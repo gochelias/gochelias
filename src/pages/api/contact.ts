@@ -1,28 +1,56 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { MessageBuilder, Webhook } from 'discord-webhook-node';
 
-const ContactHandler = async (
+import { ContactForm, ContactFormSchema } from 'types/ContactForm';
+
+export default async (
 	req: NextApiRequest,
 	res: NextApiResponse,
 ): Promise<void> => {
-	const { name, email, message } = req.body;
+	if (req.method !== 'POST') {
+		res.status(405).json({
+			status: '405 Method Not Allowed',
+		});
+		return;
+	}
 
-	const hook = new Webhook(String(process.env.DISCORD_WEBHOOK));
-	hook.setUsername('Messanger');
+	const { name, email, message }: ContactForm = req.body;
+
+	const result = ContactFormSchema.safeParse({
+		name,
+		email,
+		message,
+	});
+
+	if (!result.success) {
+		res.status(422).json(result.error);
+		return;
+	}
+
+	if (!process.env.DISCORD_WEBHOOK) {
+		res.status(500).json({
+			status: '500 Internal Server Error',
+		});
+		return;
+	}
+
+	const hook = new Webhook(process.env.DISCORD_WEBHOOK);
+	hook.setUsername('Messenger');
 
 	const embed = new MessageBuilder()
-		.setAuthor(email)
-		.setTitle(name)
-		.setDescription(message)
-		.setColor(0);
+		.setAuthor(result.data.email)
+		.setTitle(result.data.name)
+		.setDescription(result.data.message)
+		.setColor(483793);
 
 	try {
 		await hook.send(embed);
-		res.status(200).json({ status: 'Ok' });
+		res.status(200).json({
+			status: '200 Message Sent',
+		});
 	} catch (err: any) {
-		// console.log(err.message);
-		res.status(500).json({ status: 'Internal Server Error' });
+		res.status(500).json({
+			status: '500 Internal Server Error',
+		});
 	}
 };
-
-export default ContactHandler;

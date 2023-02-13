@@ -7,21 +7,16 @@ import { Tween } from 'react-gsap';
 
 import { ArrowUpRight } from 'components/ArrowRight';
 import { SocialLink } from 'components/SocialLink';
+import { ContactForm } from 'types/ContactForm';
 import { socialLinks } from 'config';
 import styles from './Contact.module.css';
-
-interface FormData {
-	name: string;
-	email: string;
-	message: string;
-}
 
 const ContactPage = () => {
 	const apos = '\u2019';
 
 	const router = useRouter();
 
-	const [formData, setFormData] = useState<FormData>({
+	const [formData, setFormData] = useState<ContactForm>({
 		name: '',
 		email: '',
 		message: '',
@@ -39,14 +34,11 @@ const ContactPage = () => {
 	): Promise<void> => {
 		event.preventDefault();
 
-		const { name, email, message } = formData;
+		const { name, email, message }: ContactForm = formData;
 		if (!name && !email && !message) {
 			console.log('Something was wrong!');
 			return;
 		}
-
-		const data: FormData = { name, email, message };
-		const JSONData = JSON.stringify(data);
 
 		try {
 			await fetch('/api/contact', {
@@ -54,7 +46,7 @@ const ContactPage = () => {
 				headers: {
 					'Content-Type': 'application/json',
 				},
-				body: JSONData,
+				body: JSON.stringify({ name, email, message }),
 			});
 
 			router.push('/');
