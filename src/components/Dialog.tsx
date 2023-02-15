@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
 import { Transition, Dialog as Modal } from '@headlessui/react';
 import { Check, X, XCircle, XOctagon } from 'react-feather';
-import { useRouter } from 'next/navigation';
 
 import styles from 'styles/Dialog.module.css';
 import { DialogProps } from 'types';
+import Link from 'next/link';
 
 export const Dialog = ({
 	type,
@@ -13,8 +13,6 @@ export const Dialog = ({
 	isOpen,
 	setIsOpen,
 }: DialogProps) => {
-	const router = useRouter();
-
 	const icons = {
 		InternalError: <XOctagon className={styles.xOctagon} />,
 		Error: <XCircle className={styles.xCircle} />,
@@ -22,11 +20,6 @@ export const Dialog = ({
 	};
 
 	const icon = icons[type];
-
-	const handleClick = (): void => {
-		setIsOpen(false);
-		router.push('/');
-	};
 
 	return (
 		<Transition show={isOpen} as={Fragment}>
@@ -70,13 +63,13 @@ export const Dialog = ({
 										{description}
 									</p>
 								</div>
-								<button
-									onClick={handleClick}
+								<Link
+									href="/"
 									className={styles.textButton}
 									type="button"
 									title="Home">
 									Go back home
-								</button>
+								</Link>
 							</div>
 							{/* <div className="h-2 w-full bg-gray text-white" /> */}
 						</Modal.Panel>
