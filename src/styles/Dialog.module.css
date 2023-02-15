@@ -1,0 +1,106 @@
+/* --- Layout --- */
+
+.modal {
+	@apply relative z-50;
+}
+
+.backdrop {
+	@apply fixed 
+    inset-0 
+    bg-black 
+    bg-opacity-80;
+}
+
+.container {
+	@apply fixed 
+    inset-0 
+    flex 
+    items-center 
+    justify-center;
+}
+
+.panel {
+	@apply relative;
+}
+
+.dialog {
+	@apply flex 
+    h-96 
+    w-full 
+    max-w-md 
+    select-none 
+    flex-col 
+    items-center 
+    justify-between 
+    bg-white p-8;
+}
+
+.content {
+	@apply flex 
+    w-full 
+    flex-col 
+    items-center 
+    justify-center;
+}
+
+.buttonX {
+	@apply absolute 
+    right-0 
+    top-0 
+    p-2 
+    focus:outline-none;
+}
+
+.x {
+	@apply h-6 
+    w-5 
+    stroke-black;
+}
+
+.iconContainer {
+	@apply mt-6 
+    mb-8;
+}
+
+.xCircle {
+	@apply h-10 
+    w-10 
+    stroke-warning-light;
+}
+
+.xOctagon {
+	@apply h-10 
+    w-10 
+    stroke-error-light;
+}
+
+.check {
+	@apply h-10
+    w-10 
+    stroke-success-light;
+}
+
+.title {
+	@apply mb-3 
+    text-3xl 
+    font-medium 
+    text-black;
+}
+
+.description {
+	@apply w-96 
+    text-center 
+    font-body 
+    text-xl 
+    text-gray;
+}
+
+.textButton {
+	@apply py-3 
+    text-xl 
+    font-medium 
+    text-black 
+    transition-colors 
+    hover:text-gray2dark 
+    focus:outline-none;
+}

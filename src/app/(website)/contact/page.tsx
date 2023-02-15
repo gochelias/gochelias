@@ -1,26 +1,32 @@
 'use client';
 
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Expo } from 'gsap';
 import { Tween } from 'react-gsap';
 
+import { DialogData } from 'types';
+import { socialLinks, dialogMessages } from 'config';
 import { ArrowUpRight } from 'components/ArrowRight';
 import { SocialLink } from 'components/SocialLink';
 import { ContactForm } from 'types/ContactForm';
-import { socialLinks } from 'config';
+import { Dialog } from 'components/Dialog';
 import styles from './Contact.module.css';
 
 const ContactPage = () => {
-	const apos = '\u2019';
-
-	const router = useRouter();
+	const [dialogIsOpen, setDialogIsOpen] = useState<boolean>(false);
+	const [dialogData, setDialogData] = useState<DialogData>({
+		type: 'Success',
+		title: '',
+		description: '',
+	});
 
 	const [formData, setFormData] = useState<ContactForm>({
 		name: '',
 		email: '',
 		message: '',
 	});
+
+	const apos = '\u2019';
 
 	const handleChange = async (
 		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -35,13 +41,18 @@ const ContactPage = () => {
 		event.preventDefault();
 
 		const { name, email, message }: ContactForm = formData;
-		if (!name && !email && !message) {
-			console.log('Something was wrong!');
+		if (!name || !email || !message) {
+			setDialogData({
+				type: 'Error',
+				title: dialogMessages.required.title,
+				description: dialogMessages.required.description,
+			});
+			setDialogIsOpen(true);
 			return;
 		}
 
 		try {
-			await fetch('/api/contact', {
+			const res = await fetch('/api/contact', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -49,8 +60,29 @@ const ContactPage = () => {
 				body: JSON.stringify({ name, email, message }),
 			});
 
-			router.push('/');
+			if (res.status !== 200) {
+				setDialogData({
+					type: 'InternalError',
+					title: dialogMessages.internalError.title,
+					description: dialogMessages.internalError.description,
+				});
+				setDialogIsOpen(true);
+			}
+
+			setDialogData({
+				type: 'Success',
+				title: dialogMessages.sent.title,
+				description: dialogMessages.sent.description,
+			});
+			setFormData({ name: '', email: '', message: '' });
+			setDialogIsOpen(true);
 		} catch (err) {
+			setDialogData({
+				type: 'InternalError',
+				title: dialogMessages.internalError.title,
+				description: dialogMessages.internalError.description,
+			});
+			setDialogIsOpen(true);
 			console.log(err);
 		}
 	};
@@ -150,6 +182,13 @@ const ContactPage = () => {
 					</div>
 				</header>
 			</Tween>
+			<Dialog
+				type={dialogData.type}
+				title={dialogData.title}
+				description={dialogData.description}
+				isOpen={dialogIsOpen}
+				setIsOpen={setDialogIsOpen}
+			/>
 		</div>
 	);
 };
