@@ -61,12 +61,23 @@ const ContactPage = () => {
 			});
 
 			if (res.status !== 200) {
+				if (res.status === 422) {
+					setDialogData({
+						type: 'Error',
+						title: dialogMessages.semanticError.title,
+						description: dialogMessages.semanticError.description,
+					});
+					setDialogIsOpen(true);
+					return;
+				}
+
 				setDialogData({
 					type: 'InternalError',
 					title: dialogMessages.internalError.title,
 					description: dialogMessages.internalError.description,
 				});
 				setDialogIsOpen(true);
+				return;
 			}
 
 			setDialogData({
@@ -125,6 +136,8 @@ const ContactPage = () => {
 										type="text"
 										name="name"
 										id="name"
+										minLength={5}
+										maxLength={75}
 										required
 									/>
 								</div>
@@ -143,6 +156,8 @@ const ContactPage = () => {
 										type="email"
 										name="email"
 										id="email"
+										minLength={5}
+										maxLength={75}
 										required
 									/>
 								</div>
@@ -159,6 +174,7 @@ const ContactPage = () => {
 										placeholder="Enter your message"
 										name="message"
 										id="message"
+										minLength={5}
 										maxLength={280}
 										required
 									/>
