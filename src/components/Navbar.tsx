@@ -10,6 +10,7 @@ import { SocialLink } from 'components/SocialLink';
 import { NavLink } from 'components/NavLink';
 import { Logo } from 'components/Logo';
 import { socialLinks } from 'config';
+import { Email } from './Email';
 
 export const Navbar = () => {
 	const pathname = usePathname();
@@ -23,8 +24,17 @@ export const Navbar = () => {
 			const homeTop: number =
 				document.getElementById('top')?.offsetHeight ?? 0;
 
+			const onLoadScroll: number = window.scrollY;
+			if (
+				onLoadScroll === 0 &&
+				!navbar?.classList.contains('navbar-hide')
+			) {
+				navbar?.classList.remove('navbar-show');
+				navbar?.classList.add('navbar-hide');
+			}
+
 			window.addEventListener('scroll', () => {
-				const currentScroll: number = window.pageYOffset;
+				const currentScroll: number = window.scrollY;
 
 				if (
 					currentScroll >= homeTop &&
@@ -67,7 +77,6 @@ export const Navbar = () => {
 			<nav
 				className="navbar-hide fixed inset-0 z-10 flex h-max w-full select-none justify-between px-4 pt-4 transition-transform duration-300 2xl:px-16 2xl:pt-16"
 				id="navbar">
-				{/* <span className='px-4 pt-4 md:px-6 md:pt-6 lg:px-8 lg:pt-8 2xl:px-16 2xl:py-16'></span> */}
 				<Link
 					href="/"
 					className="bg-white p-3 text-black 2xl:p-6"
@@ -104,11 +113,7 @@ export const Navbar = () => {
 							<SocialLink type={socialLinks.linkedin} />
 							<SocialLink type={socialLinks.discord} />
 						</div>
-						<Link
-							href="/contact"
-							className="underline-offset-4 selection:bg-white selection:text-black hover:underline">
-							hello@gochelias.com
-						</Link>
+						<Email />
 					</div>
 					<ul className="ml-auto flex h-max w-2/3 select-none flex-col text-white opacity-100">
 						<li>
