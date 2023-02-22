@@ -183,7 +183,8 @@
 	flex-col 
 	justify-evenly 
 	sm:h-max 
-	sm:space-y-16;
+	sm:space-y-16 
+	2xl:space-y-64;
 }
 
 .recentProjectLeft {

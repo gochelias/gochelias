@@ -5,7 +5,7 @@ import styles from './Home.module.css';
 
 export const ProjectsSection = () => (
 	<section
-		className="my-16 h-max w-full select-none sm:space-y-8"
+		className="my-16 h-max w-full select-none sm:space-y-8 2xl:space-y-32"
 		data-testid="projects-section">
 		<div className="flex flex-col overflow-hidden sm:flex-row 2xl:flex-row">
 			<h2 className={styles.projects}>
