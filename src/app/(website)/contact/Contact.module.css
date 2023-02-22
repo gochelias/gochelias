@@ -195,13 +195,14 @@
     self-end
     bg-transparent
     text-lg 
-    font-medium  
-    uppercase
+    font-medium
+    uppercase  
     text-white
     transition-colors
-    hover:text-gray 
+    hover:text-gray
     active:bg-black 
     active:text-white 
+    disabled:text-gray2dark 
     2xl:h-10
     2xl:w-10;
 }

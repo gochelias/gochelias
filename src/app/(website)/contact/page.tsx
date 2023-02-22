@@ -183,7 +183,12 @@ const ContactPage = () => {
 							<button
 								className={styles.formButton}
 								type="submit"
-								title="Send">
+								title="Send"
+								disabled={
+									!formData.name ||
+									!formData.email ||
+									!formData.message
+								}>
 								<ArrowUpRight
 									className="h-full w-full rotate-45"
 									strokeWidth={2.5}
