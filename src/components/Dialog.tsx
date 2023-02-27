@@ -23,7 +23,10 @@ export const Dialog = ({
 
 	return (
 		<Transition show={isOpen} as={Fragment}>
-			<Modal className={styles.modal} onClose={() => setIsOpen(false)}>
+			<Modal
+				id="dialog"
+				className={styles.modal}
+				onClose={() => setIsOpen(false)}>
 				<Transition.Child
 					as={Fragment}
 					enter="ease-out duration-300"

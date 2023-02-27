@@ -9,6 +9,10 @@ test.describe('Contact Form', (): void => {
 		await page.getByLabel('message').fill('Hello Word!');
 		await page.getByRole('button', { name: 'send' }).click();
 
+		const dialog = page.locator('id=dialog');
+		expect(dialog.getByRole('heading', { level: 2, name: 'Message sent' }));
+		await dialog.getByRole('link', { name: 'Go back home' }).click();
+
 		await expect(page).toHaveURL('/');
 	});
 });
