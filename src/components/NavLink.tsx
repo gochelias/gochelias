@@ -8,9 +8,10 @@ type NavLinkProps = {
 	href: string;
 	name: string;
 	label: string;
+	closeMenu: () => void;
 };
 
-export const NavLink = ({ href, name, label }: NavLinkProps) => {
+export const NavLink = ({ href, name, label, closeMenu }: NavLinkProps) => {
 	const router = useRouter();
 	const pathname = usePathname();
 
@@ -18,6 +19,8 @@ export const NavLink = ({ href, name, label }: NavLinkProps) => {
 
 	const handleClick = (): void => {
 		if (path) return;
+
+		closeMenu();
 		router.push(href);
 	};
 
@@ -38,7 +41,7 @@ export const NavLink = ({ href, name, label }: NavLinkProps) => {
 			)}
 			<span
 				className={`transition-colors duration-300 group-hover:text-gray ${
-					path ? 'italic' : null
+					path ? '' : null
 				}`}>
 				{name}
 			</span>

@@ -76,7 +76,6 @@ export const Navbar = () => {
 			{
 				y: 0,
 				duration: 2.4,
-				/* delay: 0.6, */
 				ease: Expo.easeInOut,
 			},
 			'<0.2',
@@ -134,6 +133,10 @@ export const Navbar = () => {
 		timeline.reversed(!timeline.reversed());
 	};
 
+	const closeMenu = (): void => {
+		timeline.reverse();
+	};
+
 	return (
 		<>
 			<nav
@@ -179,13 +182,19 @@ export const Navbar = () => {
 					</div>
 					<ul className="ml-auto flex h-max w-2/3 select-none flex-col text-white">
 						<li className="link w-max translate-y-20 opacity-0">
-							<NavLink href="/" name="Home" label="Maintenance" />
+							<NavLink
+								href="/"
+								name="Home"
+								label="Home"
+								closeMenu={closeMenu}
+							/>
 						</li>
 						<li className="link w-max translate-y-20 opacity-0">
 							<NavLink
 								href="/portfolio"
 								name="Portfolio"
 								label="Maintenance"
+								closeMenu={closeMenu}
 							/>
 						</li>
 						<li className="link w-max translate-y-20 opacity-0">
@@ -193,6 +202,7 @@ export const Navbar = () => {
 								href="/about"
 								name="About"
 								label="Maintenance"
+								closeMenu={closeMenu}
 							/>
 						</li>
 						<li className="link w-max translate-y-20 opacity-0">
@@ -200,6 +210,7 @@ export const Navbar = () => {
 								href="/blog"
 								name="Blog"
 								label="Maintenance"
+								closeMenu={closeMenu}
 							/>
 						</li>
 						<li className="link w-max translate-y-20 opacity-0">
@@ -207,6 +218,7 @@ export const Navbar = () => {
 								href="/contact"
 								name="Contact"
 								label="Say hello"
+								closeMenu={closeMenu}
 							/>
 						</li>
 					</ul>
