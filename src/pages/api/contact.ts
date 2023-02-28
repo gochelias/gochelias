@@ -41,7 +41,8 @@ export default async (
 		.setAuthor(result.data.email)
 		.setTitle(result.data.name)
 		.setDescription(result.data.message)
-		.setColor(483793);
+		.setColor(483793)
+		.setTimestamp();
 
 	try {
 		await hook.send(embed);
