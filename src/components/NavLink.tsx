@@ -41,9 +41,7 @@ export const NavLink = ({ href, name, label, closeMenu }: NavLinkProps) => {
 				/>
 			)}
 			<span
-				className={`transition-colors duration-300 group-hover:text-gray2dark ${
-					path ? '' : null
-				}`}
+				className="transition-colors duration-300 group-hover:text-gray2dark"
 				translate="no">
 				{name}
 			</span>
