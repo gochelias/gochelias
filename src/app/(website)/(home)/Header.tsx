@@ -18,7 +18,7 @@ export const HeaderHome = () => (
 			</div>
 			<Divider />
 			<div className={styles.headerNavbar}>
-				<h1 className={styles.headerName}>
+				<h1 className={styles.headerName} translate="no">
 					Elias <br /> Goche
 				</h1>
 			</div>

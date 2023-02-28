@@ -162,7 +162,8 @@ export const Navbar = () => {
 					<Link
 						href="/"
 						className="name absolute h-max w-max text-3xl text-white opacity-0 transition-colors hover:text-gray3light"
-						title="Go to home">
+						title="Go to home"
+						translate="no">
 						Elias Goche
 					</Link>
 					<button

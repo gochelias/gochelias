@@ -12,7 +12,8 @@ export const SocialLink = ({ type }: { type: SocialLinkProps }) => (
 		href={type.url}
 		title={type.username}
 		target="_blank"
-		rel="noreferrer">
+		rel="noreferrer"
+		translate="no">
 		<span>{type.name}</span>
 		<ExternalLink
 			size={18}

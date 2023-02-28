@@ -30,7 +30,8 @@ export const NavLink = ({ href, name, label, closeMenu }: NavLinkProps) => {
 				path ? 'cursor-not-allowed' : null
 			}`}
 			onClick={handleClick}
-			type="button">
+			type="button"
+			translate="no">
 			{path ? (
 				<ArrowUpRight className="my-auto mr-24 rotate-45" size={80} />
 			) : (
@@ -42,7 +43,8 @@ export const NavLink = ({ href, name, label, closeMenu }: NavLinkProps) => {
 			<span
 				className={`transition-colors duration-300 group-hover:text-gray ${
 					path ? '' : null
-				}`}>
+				}`}
+				translate="no">
 				{name}
 			</span>
 			{path ? (
