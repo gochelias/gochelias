@@ -23,10 +23,7 @@ export const Dialog = ({
 
 	return (
 		<Transition show={isOpen} as={Fragment}>
-			<Modal
-				id="dialog"
-				className={styles.modal}
-				onClose={() => setIsOpen(false)}>
+			<Modal className={styles.modal} onClose={() => setIsOpen(false)}>
 				<Transition.Child
 					as={Fragment}
 					enter="ease-out duration-300"
@@ -61,7 +58,11 @@ export const Dialog = ({
 									<div className={styles.iconContainer}>
 										{icon}
 									</div>
-									<h2 className={styles.title}>{title}</h2>
+									<h2
+										className={styles.title}
+										data-testid="dialog-title">
+										{title}
+									</h2>
 									<p className={styles.description}>
 										{description}
 									</p>
@@ -69,7 +70,6 @@ export const Dialog = ({
 								<Link
 									href="/"
 									className={styles.textButton}
-									type="button"
 									title="Home">
 									Go back home
 								</Link>
