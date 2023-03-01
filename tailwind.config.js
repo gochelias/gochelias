@@ -32,9 +32,9 @@ module.exports = {
 			},
 		},
 		fontFamily: {
-			display: ['"Clash Display"'],
-			body: ['Telegraf'],
-			mono: ['JetBrains Mono'],
+			sans: ['var(--font-clash-display)'],
+			body: ['var(--font-telegraf)'],
+			mono: ['var(--font-jetbrains-mono)'],
 		},
 	},
 	plugins: [LineClamp],

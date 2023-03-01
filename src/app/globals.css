@@ -3,13 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-	@import url('../../public/fonts/fonts.css');
-
-	html,
-	body {
-		font-family: 'Clash Display';
-	}
-
 	#__next {
 		@apply overflow-hidden 
 		bg-black
