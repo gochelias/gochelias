@@ -99,12 +99,12 @@ const ContactPage = () => {
 	};
 
 	return (
-		<div className="overflow-hidden">
+		<>
 			<Tween
 				to={{ y: 0, opacity: 1 }}
 				duration={0.8}
 				ease={Expo.easeInOut}>
-				<header className={styles.container}>
+				<section className={styles.container}>
 					<div className={styles.leftContainer}>
 						<div className={styles.leftContent}>
 							<p className={styles.textP}>
@@ -201,7 +201,7 @@ const ContactPage = () => {
 							<SocialLink type={socialLinks.discord} />
 						</div>
 					</div>
-				</header>
+				</section>
 			</Tween>
 			<Dialog
 				type={dialogData.type}
@@ -210,7 +210,7 @@ const ContactPage = () => {
 				isOpen={dialogIsOpen}
 				setIsOpen={setDialogIsOpen}
 			/>
-		</div>
+		</>
 	);
 };
 
