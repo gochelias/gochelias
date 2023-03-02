@@ -36,12 +36,15 @@ export default async (
 
 	const hook = new Webhook(process.env.DISCORD_WEBHOOK);
 	hook.setUsername('Messenger');
+	hook.setAvatar(
+		'https://cdn.discordapp.com/attachments/893625212871008326/1080950125079298048/messenger.png',
+	);
 
 	const embed = new MessageBuilder()
 		.setAuthor(result.data.email)
 		.setTitle(result.data.name)
 		.setDescription(result.data.message)
-		.setColor(483793)
+		.setColor(0)
 		.setTimestamp();
 
 	try {
