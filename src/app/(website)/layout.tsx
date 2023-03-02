@@ -1,6 +1,7 @@
 import 'app/globals.css';
 import { ReactNode } from 'react';
 import localFont from 'next/font/local';
+import type { Metadata } from 'next';
 
 import { Navbar } from 'components/Navbar';
 
@@ -36,6 +37,48 @@ const jetBrainsMono = localFont({
 	style: 'normal',
 	display: 'swap',
 });
+
+export const metadata: Metadata = {
+	title: {
+		default: 'Elias Goche',
+		template: '%s | Elias Goche',
+	},
+	description: 'Full-Stack Developer.',
+	openGraph: {
+		title: 'Elias Goche',
+		description: 'Full-Stack Developer.',
+		url: 'https://gochelias.com',
+		siteName: 'Elias Goche',
+		/* images: [], */
+		locale: 'en-US',
+		alternateLocale: 'es-ES',
+		type: 'website',
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			'max-image-preview': 'large',
+			'max-video-preview': -1,
+			'max-snippet': -1,
+		},
+	},
+	icons: {
+		shortcut: '/favicon.ico',
+	},
+	themeColor: 'black',
+	twitter: {
+		title: 'Elias Goche',
+		description: 'Full-Stack Developer.',
+		card: 'summary_large_image',
+		siteId: '1400908388',
+		creator: '@gochelias',
+		creatorId: '1400908388',
+		/* images: [], */
+	},
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
