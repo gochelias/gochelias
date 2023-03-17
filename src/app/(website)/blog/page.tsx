@@ -1,76 +1,81 @@
 import Image from 'next/image';
 
 import { CardPostBase } from './CardPostBase';
-import { CardPostMd } from './CardPostMd';
 import { CardPostSm } from './CardPostSm';
+import { CardPostMain } from './CardPostMain';
+import styles from './Blog.module.css';
 
 const BlogPage = () => {
 	const dataExp = {
-		id: '1',
-		image: 'https://images.unsplash.com/photo-1545431613-51ec097943c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
-		publishedAt: 'Sep 16, 2022',
-		name: 'Lorem ipsum dolor sit amet consectetur.',
+		id: '#',
+		image: 'https://images.unsplash.com/photo-1635776062360-af423602aff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80',
+		category: 'Category',
+		title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nihil libero incidunt perspiciatis accusamus neque eos perferendis.',
+		publishedAt: 'Sep 16, 2022',
+		readingTime: '10 min read',
 	};
 	return (
-		<>
-			<header className="w-full h-screen flex justify-center pt-16">
-				{/* <div className="w-2/3 h-2/3">
-					<div className="w-full h-full relative">
-						<Image
-							className="object-cover"
-							src="https://images.unsplash.com/photo-1635776062360-af423602aff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
-							fill
-							sizes=""
-							alt=""
-						/>
-					</div>
-					<h6 className="uppercase font-medium text-2xl mt-10 mb-1">
-						Sep 18
-					</h6>
-					<h2 className="font-medium text-8xl">
-						Lorem ipsum dolor sit amet consectetur.
-					</h2>
-					<p className="font-[telegraf] text-2xl mt-10">
-						Lorem, ipsum dolor sit amet consectetur adipisicing
-						elit. Blanditiis illum exercitationem eligendi libero
-						atque asperiores quos nobis? Incidunt minus dolorum
-						iusto voluptatum amet, natus, molestiae debitis
-						praesentium aperiam quia beatae.
-					</p>
-				</div> */}
-			</header>
-			<section className="w-3/5 py-40 h-full mx-auto space-y-40">
-				<div className="flex gap-x-16">
-					<CardPostMd
+		<main className="flex flex-col items-center">
+			<section className="flex h-screen w-3/5 flex-col items-center justify-center">
+				<hr className="mb-32 h-[1px] w-full border-none bg-gray4dark" />
+				<div className="grid h-max grid-cols-4 gap-x-16 gap-y-20">
+					<CardPostMain
 						id={dataExp.id}
 						image={dataExp.image}
-						title={dataExp.name}
+						category={dataExp.category}
+						title={dataExp.title}
 						description={dataExp.description}
 						publishedAt={dataExp.publishedAt}
+						readingTime={dataExp.readingTime}
 					/>
+					<div className="col-span-1 grid grid-cols-1 gap-y-28">
+						<CardPostSm
+							id={dataExp.id}
+							image={dataExp.image}
+							category={dataExp.category}
+							title={dataExp.title}
+							description={dataExp.description}
+							publishedAt={dataExp.publishedAt}
+							readingTime={dataExp.readingTime}
+						/>
+						<CardPostSm
+							id={dataExp.id}
+							image={dataExp.image}
+							category={dataExp.category}
+							title={dataExp.title}
+							description={dataExp.description}
+							publishedAt={dataExp.publishedAt}
+							readingTime={dataExp.readingTime}
+						/>
+					</div>
 				</div>
-				<div className="flex gap-16">
+			</section>
+			<section className="h-full w-3/5 space-y-32 pb-32">
+				<hr className="h-[1px] w-full border-none bg-gray4dark" />
+				<div className="grid grid-cols-3 gap-x-20 gap-y-32 ">
 					<CardPostBase
 						id={dataExp.id}
 						image={dataExp.image}
-						title={dataExp.name}
+						category={dataExp.category}
+						title={dataExp.title}
 						description={dataExp.description}
 						publishedAt={dataExp.publishedAt}
+						readingTime={dataExp.readingTime}
 					/>
-				</div>
-				<div className="flex gap-x-16">
-					<CardPostSm
+					<CardPostBase
 						id={dataExp.id}
 						image={dataExp.image}
-						title={dataExp.name}
+						category={dataExp.category}
+						title={dataExp.title}
 						description={dataExp.description}
 						publishedAt={dataExp.publishedAt}
+						readingTime={dataExp.readingTime}
 					/>
 				</div>
 			</section>
-		</>
+		</main>
 	);
 };
 

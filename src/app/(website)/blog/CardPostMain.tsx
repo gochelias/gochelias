@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { CardPostProps } from 'types/CardPostProps';
 import styles from './Blog.module.css';
 
-export const CardPostBase = ({
+export const CardPostMain = ({
 	/* id, */
 	image,
 	category,
@@ -13,7 +13,7 @@ export const CardPostBase = ({
 	publishedAt,
 	readingTime,
 }: CardPostProps) => (
-	<article className={styles.baseArticle}>
+	<article className={styles.mainArticle}>
 		<div className={styles.imgContainer}>
 			<Link href="#" className={styles.imgLink}>
 				<Image
@@ -27,15 +27,14 @@ export const CardPostBase = ({
 				/>
 			</Link>
 		</div>
-		<h4 className={styles.baseCategory}>{category}</h4>
-		<h2 className={styles.baseTitle} title={title}>
+		<h4 className={styles.mainCategory}>{category}</h4>
+		<h2 className={styles.mainTitle} title={title}>
 			<Link href="#">{title}</Link>
 		</h2>
-		<p className={styles.baseDescription}>{description}</p>
-		<p className={styles.baseData}>
+		<p className={styles.mainDescription}>{description}</p>
+		<p className={styles.mainData}>
 			<span>{readingTime}</span>
 			<span>{publishedAt}</span>
 		</p>
-		{/* <span>·</span> #FF3E00 */}
 	</article>
 );

@@ -1,0 +1,133 @@
+/* card default */
+.article {
+	@apply flex 
+	select-none 
+	flex-col;
+}
+
+.imgContainer {
+	@apply flex 
+	aspect-video 
+	w-full 
+	items-center 
+	justify-center 
+	overflow-hidden;
+}
+
+.imgLink {
+	@apply relative 
+	h-full 
+	w-full;
+}
+
+.image {
+	@apply bg-dark
+	object-cover;
+}
+
+.category {
+	@apply font-body 
+	uppercase
+	text-gray2light;
+}
+
+.title {
+	@apply font-medium
+	text-white 
+	transition-colors
+	line-clamp-2
+	hover:text-gray3light;
+}
+
+.description {
+	@apply font-body 
+	text-gray;
+}
+
+.data {
+	@apply flex
+	justify-between
+	font-body 
+	text-gray2dark;
+}
+
+/* card big */
+.mainArticle {
+	@apply article 
+	col-span-3
+	gap-y-5;
+}
+
+.mainCategory {
+	@apply category text-xl;
+}
+
+.mainTitle {
+	@apply title 
+	text-5xl;
+}
+
+.mainDescription {
+	@apply description 
+	text-2xl
+	line-clamp-2;
+}
+
+.mainData {
+	@apply data text-xl;
+}
+
+/* card base */
+.baseArticle {
+	@apply article 
+	gap-y-4;
+}
+
+.baseCategory {
+	@apply category 
+	text-base
+	font-medium
+	leading-normal;
+}
+
+.baseTitle {
+	@apply title 
+	text-3xl;
+}
+
+.baseDescription {
+	@apply description 
+	text-xl 
+	line-clamp-3;
+}
+
+.baseData {
+	@apply data 
+	text-base;
+}
+
+/* card sm */
+.smArticle {
+	@apply article 
+	gap-y-3;
+}
+
+.smCategory {
+	@apply category
+	text-base;
+}
+
+.smTitle {
+	@apply title
+	text-2xl;
+}
+
+.smDescription {
+	@apply description
+	text-lg
+	line-clamp-2;
+}
+
+.smData {
+	@apply data;
+}

@@ -1,22 +1,39 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { CardPostProps } from 'types/CardPostProps';
+import styles from './Blog.module.css';
 
 export const CardPostSm = ({
-	id,
+	/* id, */
 	image,
+	category,
 	title,
 	description,
 	publishedAt,
+	readingTime,
 }: CardPostProps) => (
-	<Link href={`/p/${id}`} className="flex w-1/4 select-none flex-col">
-		<span className="relative h-44 w-full">
-			<Image className="object-cover" src={image} fill sizes="" alt="" />
-		</span>
-		<p className="mt-5 mb-1 text-sm font-medium uppercase">{publishedAt}</p>
-		<h4 className="text-2xl font-medium">{title}</h4>
-		<p className="mt-5 h-20 overflow-hidden font-[telegraf] text-lg">
-			{description}
+	<article className={styles.smArticle}>
+		<div className={styles.imgContainer}>
+			<Link href="#" className={styles.imgLink}>
+				<Image
+					className={styles.image}
+					src={image}
+					fill
+					sizes="(max-width: 768px) 100vw,
+					(max-width: 1200px) 50vw,
+					33vw"
+					alt="IMG"
+				/>
+			</Link>
+		</div>
+		<h4 className={styles.smCategory}>{category}</h4>
+		<h2 className={styles.smTitle} title={title}>
+			<Link href="#">{title}</Link>
+		</h2>
+		<p className={styles.smDescription}>{description}</p>
+		<p className={styles.smData}>
+			<span>{readingTime}</span>
+			<span>{publishedAt}</span>
 		</p>
-	</Link>
+	</article>
 );
