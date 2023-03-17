@@ -1,9 +1,6 @@
-import Image from 'next/image';
-
 import { CardPostBase } from './CardPostBase';
 import { CardPostSm } from './CardPostSm';
 import { CardPostMain } from './CardPostMain';
-import styles from './Blog.module.css';
 
 const BlogPage = () => {
 	const dataExp = {
