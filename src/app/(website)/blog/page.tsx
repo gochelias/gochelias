@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
+
 import { CardPostBase } from './CardPostBase';
 import { CardPostSm } from './CardPostSm';
 import { CardPostMain } from './CardPostMain';
+
+export const metadata: Metadata = {
+	title: 'Blog',
+};
 
 const BlogPage = () => {
 	const dataExp = {
