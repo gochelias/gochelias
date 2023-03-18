@@ -1,32 +1,32 @@
 export const socialLinks = {
 	github: {
 		name: 'GitHub',
-		url: 'https://github.com/gochelias',
+		url: '/github',
 		username: 'gochelias',
 	},
 	linkedin: {
 		name: 'LinkedIn',
-		url: 'https://linkedin.com/in/gochelias',
+		url: '/linkedin',
 		username: 'gochelias',
 	},
 	discord: {
 		name: 'Discord',
-		url: 'https://discord.com/users/636351475307773963',
+		url: '/discord',
 		username: 'gochelias#2076',
 	},
 	codepen: {
 		name: 'Codepen',
-		url: 'https://codepen.io/gochelias',
+		url: '/codepen',
 		username: 'gochelias',
 	},
 	dribbble: {
 		name: 'Dribbble',
-		url: 'https://dribbble.com/gochelias',
+		url: '/dribbble',
 		username: 'gochelias',
 	},
 	twitter: {
 		name: 'Twitter',
-		url: 'https://twitter.com/gochelias',
+		url: '/twitter',
 		username: 'gochelias',
 	},
 };
