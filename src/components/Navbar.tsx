@@ -140,11 +140,11 @@ export const Navbar = () => {
 	return (
 		<>
 			<nav
-				className="navbar-hide fixed left-0 z-10 flex w-full select-none items-center justify-between px-4 pt-4 transition-transform duration-300 2xl:px-16 2xl:pt-16"
+				className="navbar-hide fixed left-0 z-10 flex w-full select-none items-center justify-between bg-gradient-to-b from-black to-transparent px-4 pt-4 transition-transform duration-300 md:bg-none 2xl:px-16 2xl:pt-16"
 				id="navbar">
 				<Link
 					href="/"
-					className="text-3xl text-white transition-colors hover:text-gray3light"
+					className="text-2xl font-medium leading-none text-white xl:text-3xl xl:font-normal"
 					title="Go to home"
 					translate="no">
 					Elias Goche
@@ -161,7 +161,7 @@ export const Navbar = () => {
 				<div className="menu-nav relative flex h-screen w-full -translate-y-full bg-black p-16">
 					<Link
 						href="/"
-						className="name absolute h-max w-max text-3xl text-white opacity-0 transition-colors hover:text-gray3light"
+						className="absolute h-max w-max text-3xl text-white opacity-0 transition-colors hover:text-gray3light"
 						title="Go to home"
 						translate="no">
 						Elias Goche
