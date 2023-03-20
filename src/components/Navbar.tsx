@@ -10,6 +10,7 @@ import { SocialLink } from 'components/SocialLink';
 import { NavLink } from 'components/NavLink';
 import { Email } from 'components/Email';
 import { socialLinks } from 'config';
+import styles from 'styles/Navbar.module.css';
 
 export const Navbar = () => {
 	const pathname = usePathname();
@@ -62,7 +63,7 @@ export const Navbar = () => {
 
 	useEffect(() => {
 		timeline.to(
-			'.menu',
+			'#menu',
 			{
 				y: 0,
 				duration: 1.8,
@@ -72,7 +73,7 @@ export const Navbar = () => {
 		);
 
 		timeline.to(
-			'.menu-nav',
+			'#menu-nav',
 			{
 				y: 0,
 				duration: 2.4,
@@ -82,7 +83,7 @@ export const Navbar = () => {
 		);
 
 		timeline.to(
-			'.link',
+			'#link',
 			{
 				y: 0,
 				duration: 1.6,
@@ -96,7 +97,7 @@ export const Navbar = () => {
 		);
 
 		timeline.to(
-			'.socials',
+			'#socials',
 			{
 				duration: 1,
 				opacity: 1,
@@ -107,7 +108,7 @@ export const Navbar = () => {
 		);
 
 		timeline.to(
-			'.name',
+			'#name',
 			{
 				duration: 0.6,
 				opacity: 1,
@@ -117,7 +118,7 @@ export const Navbar = () => {
 		);
 
 		timeline.to(
-			'.close',
+			'#close',
 			{
 				duration: 0.6,
 				opacity: 1,
@@ -157,72 +158,76 @@ export const Navbar = () => {
 					<hr className="h-0.5 w-3 bg-white transition-all group-hover:w-6 group-hover:bg-gray" />
 				</button>
 			</nav>
-			<div className="menu fixed inset-0 z-20 flex -translate-y-full overflow-hidden bg-gray2dark">
-				<div className="menu-nav relative flex h-screen w-full -translate-y-full bg-black p-16">
+			<div className={styles.menu} id="menu">
+				<div className={styles.menuContent} id="menu-nav">
 					<Link
 						href="/"
-						className="absolute h-max w-max text-3xl text-white opacity-0 transition-colors hover:text-gray3light"
+						className={styles.name}
+						id="name"
 						title="Go to home"
 						translate="no">
 						Elias Goche
 					</Link>
 					<button
-						className="close absolute right-16 h-max w-max opacity-0 transition-colors hover:text-gray3light"
+						className={styles.close}
+						id="close"
 						onClick={toggleMenu}
 						title="Close"
 						type="button">
 						<X />
 					</button>
-					<div className="socials flex h-max w-max flex-col space-y-16 self-end text-lg uppercase opacity-0">
-						<div className="mr-12 flex select-none flex-col space-y-4">
-							<SocialLink type={socialLinks.github} />
-							<SocialLink type={socialLinks.linkedin} />
-							<SocialLink type={socialLinks.discord} />
+					<div className="flex h-full w-full flex-col py-24 lg:flex-row-reverse lg:py-0 xl:justify-start landscape:flex-row-reverse landscape:gap-x-16 landscape:py-0">
+						<ul className={styles.links}>
+							<li className={styles.link} id="link">
+								<NavLink
+									href="/"
+									name="Home"
+									label="Home"
+									closeMenu={closeMenu}
+								/>
+							</li>
+							<li className={styles.link} id="link">
+								<NavLink
+									href="/portfolio"
+									name="Portfolio"
+									label="Maintenance"
+									closeMenu={closeMenu}
+								/>
+							</li>
+							<li className={styles.link} id="link">
+								<NavLink
+									href="/about"
+									name="About"
+									label="Maintenance"
+									closeMenu={closeMenu}
+								/>
+							</li>
+							<li className={styles.link} id="link">
+								<NavLink
+									href="/blog"
+									name="Blog"
+									label="Maintenance"
+									closeMenu={closeMenu}
+								/>
+							</li>
+							<li className={styles.link} id="link">
+								<NavLink
+									href="/contact"
+									name="Contact"
+									label="Say hello"
+									closeMenu={closeMenu}
+								/>
+							</li>
+						</ul>
+						<div className={styles.socials} id="socials">
+							<div className={styles.socialLinks}>
+								<SocialLink type={socialLinks.github} />
+								<SocialLink type={socialLinks.linkedin} />
+								<SocialLink type={socialLinks.discord} />
+							</div>
+							<Email />
 						</div>
-						<Email />
 					</div>
-					<ul className="ml-auto flex h-max w-2/3 select-none flex-col text-white">
-						<li className="link w-max translate-y-20 opacity-0">
-							<NavLink
-								href="/"
-								name="Home"
-								label="Home"
-								closeMenu={closeMenu}
-							/>
-						</li>
-						<li className="link w-max translate-y-20 opacity-0">
-							<NavLink
-								href="/portfolio"
-								name="Portfolio"
-								label="Maintenance"
-								closeMenu={closeMenu}
-							/>
-						</li>
-						<li className="link w-max translate-y-20 opacity-0">
-							<NavLink
-								href="/about"
-								name="About"
-								label="Maintenance"
-								closeMenu={closeMenu}
-							/>
-						</li>
-						<li className="link w-max translate-y-20 opacity-0">
-							<NavLink
-								href="/blog"
-								name="Blog"
-								label="Maintenance"
-								closeMenu={closeMenu}
-							/>
-						</li>
-						<li className="link w-max translate-y-20 opacity-0">
-							<NavLink
-								href="/contact"
-								name="Contact"
-								label="Say hello"
-								closeMenu={closeMenu}
-							/>
-						</li>
-					</ul>
 				</div>
 			</div>
 		</>
