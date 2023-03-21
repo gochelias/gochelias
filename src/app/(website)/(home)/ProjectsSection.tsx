@@ -31,8 +31,8 @@ export const ProjectsSection = () => (
 				<div className={styles.recentProjectImageContainer}>
 					<div className={styles.recentProjectImage}>
 						<Image
-							className="object-center"
-							src="https://images.unsplash.com/photo-1635776062360-af423602aff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
+							className="object-cover object-center grayscale"
+							src="https://images.unsplash.com/photo-1522517779552-6cf4c1f31ee3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
 							fill
 							sizes=""
 							alt=""
@@ -74,8 +74,8 @@ export const ProjectsSection = () => (
 				<div className={styles.recentProjectImageContainer}>
 					<div className={styles.recentProjectImage}>
 						<Image
-							className="object-center"
-							src="https://images.unsplash.com/photo-1635776062360-af423602aff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
+							className="object-cover object-center grayscale"
+							src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80"
 							fill
 							sizes=""
 							alt=""
