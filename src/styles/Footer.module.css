@@ -51,7 +51,7 @@
 	@apply flex 
     w-full 
     flex-col
-    items-center
+    items-start
     gap-y-8
     text-lg
     font-medium
@@ -70,7 +70,7 @@
 .footerLinks {
 	@apply flex 
     select-none
-    flex-row
+    flex-col
     flex-wrap
     justify-center
     gap-y-3
