@@ -182,7 +182,7 @@ export const Navbar = () => {
 								<NavLink
 									href="/"
 									name="Home"
-									label="Home"
+									label="Let's start"
 									closeMenu={closeMenu}
 								/>
 							</li>
