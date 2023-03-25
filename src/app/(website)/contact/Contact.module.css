@@ -211,13 +211,16 @@
 	@apply flex
     w-full
     select-none
-    flex-wrap
+    flex-col
     items-center
     justify-evenly
     gap-y-3
     gap-x-3
+    pb-12
     text-lg
-    font-medium 
-    uppercase 
+    font-medium
+    uppercase
+    md:flex-row 
+    md:pb-0 
     lg:font-normal;
 }
