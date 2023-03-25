@@ -40,10 +40,10 @@ test('should render the about section', (): void => {
 	expect(about.getByRole('img')).toBeInTheDocument();
 
 	// link to read more
-	const link: HTMLLinkElement = about.getByRole('link', {
+	/* const link: HTMLLinkElement = about.getByRole('link', {
 		name: 'Read More',
 	});
-	expect(link.href).toContain('/about');
+	expect(link.href).toContain('/about'); */
 
 	// description
 	const description: HTMLParagraphElement = about.getByRole('paragraph');

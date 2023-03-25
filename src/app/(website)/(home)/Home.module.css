@@ -111,6 +111,7 @@
 	@apply mt-16 
 	ml-auto 
 	h-full
+	select-none
 	sm:w-3/4
 	2xl:h-[65vh] 
 	2xl:w-4/5;

@@ -19,7 +19,11 @@ export const AboutSection = () => {
 			</div>
 			<div className="ml-auto flex w-full flex-col">
 				<div className="mt-2 flex flex-col items-end space-x-4 2xl:mt-4">
-					<a className={styles.aboutReadMore} href="#">
+					<a
+						className={styles.aboutReadMore}
+						href="/linkedin"
+						target="_blank"
+						rel="noreferrer">
 						Read More
 					</a>
 					<ArrowUpRight
@@ -28,9 +32,9 @@ export const AboutSection = () => {
 					/>
 				</div>
 				<p className={styles.aboutDescrip} role="paragraph">
-					Lorem ipsum dolor, sit amet consec- tetur adipisicing elit.
-					Molestiae optio quis sunt, dolores porro inventore ex
-					dignissimos tenetur, aspernatur, nemo vel explicabo.
+					I use my knowledge to develop digital products. I like to
+					express my creativity designing, creating and explorin new
+					ideas.
 				</p>
 			</div>
 		</section>

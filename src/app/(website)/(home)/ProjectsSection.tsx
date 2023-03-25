@@ -44,7 +44,11 @@ export const ProjectsSection = () => (
 							Development
 						</h6>
 						<div className={styles.recentProjetSourceCode}>
-							<a className={styles.recentProjectLabel} href="#">
+							<a
+								className={styles.recentProjectLabel}
+								href="https://github.com/gochelias/sonor"
+								target="_blank"
+								rel="noreferrer">
 								Source Code
 							</a>
 							<ArrowUpRight
@@ -58,11 +62,13 @@ export const ProjectsSection = () => (
 					<p
 						className={styles.recentProjectDescription}
 						role="paragraph">
-						Lorem ipsum dolor, sit amet consectetur adipisicing
-						elit.
+						Listen to your favorite music anywhere.
 					</p>
 					<div>
-						<a href="#">
+						<a
+							href="https://github.com/gochelias/sonor"
+							target="_blank"
+							rel="noreferrer">
 							<ArrowUpRight
 								className={styles.recentProjectArrowLink}
 							/>
@@ -87,7 +93,11 @@ export const ProjectsSection = () => (
 							Development
 						</h6>
 						<div className={styles.recentProjetSourceCode}>
-							<a className={styles.recentProjectLabel} href="#">
+							<a
+								className={styles.recentProjectLabel}
+								href="https://github.com/gochelias/tasklab"
+								target="_blank"
+								rel="noreferrer">
 								Source Code
 							</a>
 							<ArrowUpRight
@@ -101,11 +111,13 @@ export const ProjectsSection = () => (
 					<p
 						className={styles.recentProjectDescription}
 						role="paragraph">
-						Lorem ipsum dolor, sit amet consectetur adipisicing
-						elit.
+						Manage your projects in the best way.
 					</p>
 					<div>
-						<a href="#">
+						<a
+							href="https://github.com/gochelias/tasklab"
+							target="_blank"
+							rel="noreferrer">
 							<ArrowUpRight
 								className={styles.recentProjectArrowLink}
 							/>
