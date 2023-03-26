@@ -38,7 +38,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
-        uses: pnpm install
+        run: pnpm install
       - name: Build
         run: pnpm build
       - name: Install Playwright Browsers
