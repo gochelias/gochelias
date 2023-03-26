@@ -1,11 +1,8 @@
-name: CI/CD
+name: Preview
 
 on: 
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-    types: [opened, synchronize]
+    branches-ignore: [main]
 
 jobs:
   build:
