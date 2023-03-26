@@ -1,7 +1,7 @@
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 import type { PlaywrightTestConfig } from '@playwright/test';
 
-dotenv.config({ path: '.env.test.local' });
+// dotenv.config({ path: '.env.test.local' });
 
 const PORT = process.env.PORT || 3000;
 const baseURL = `http://localhost:${PORT}`;
