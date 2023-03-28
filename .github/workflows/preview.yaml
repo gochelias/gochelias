@@ -10,7 +10,7 @@ on:
 
 jobs:
   deploy-preview:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     concurrency: 
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
