@@ -7,14 +7,13 @@ env:
 on: 
   push:
     branches-ignore: [main]
-
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   dependencies: 
     name: Install Dependencies
     runs-on: ubuntu-22.04
-    concurrency: 
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -45,9 +44,6 @@ jobs:
     name: Lint
     needs: dependencies
     runs-on: ubuntu-22.04
-    concurrency: 
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -62,12 +58,9 @@ jobs:
         run: pnpm lint
 
   build:
-    needs: dependencies
     name: Build
+    needs: dependencies
     runs-on: ubuntu-22.04
-    concurrency: 
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -90,9 +83,6 @@ jobs:
     name: Tests
     needs: build
     runs-on: ubuntu-22.04
-    concurrency: 
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
