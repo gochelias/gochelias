@@ -9,7 +9,7 @@ on:
     branches-ignore: [main]
 
 jobs:
-  dependencies: 
+  build: 
     name: Install and Cache Dependecies
     runs-on: ubuntu-22.04
     concurrency: 
@@ -40,29 +40,6 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install Dependencies
         run: pnpm install
-      - name: Upload Dependecies
-        uses: actions/upload-artifact@v3
-        with: 
-          name: dependencies
-          path: node_modules
-
-  build:
-    name: Build
-    needs: dependencies
-    runs-on: ubuntu-22.04
-    concurrency: 
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.17.1
-      - name: Download Dependecies
-        uses: actions/download-artifact@v3
-        with: 
-          name: dependencies
-          path: node_modules
       - name: Run Build
         run: pnpm build
       - name: Upload Build
@@ -74,7 +51,7 @@ jobs:
   
   test:
     name: Test
-    needs: [dependencies, build]
+    needs: build
     runs-on: ubuntu-22.04
     concurrency: 
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -84,11 +61,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.17.1
-      - name: Download Dependecies
-        uses: actions/download-artifact@v3
-        with: 
-          name: dependencies
-          path: node_modules
       - name: Download Build
         uses: actions/download-artifact@v3
         with: 
