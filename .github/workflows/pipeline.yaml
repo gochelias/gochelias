@@ -10,17 +10,16 @@ on:
   pull_request:
     branches: [main]
     types: [opened, synchronize]
-
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  build:
+  dependencies: 
+    name: Install Dependencies
     runs-on: ubuntu-22.04
-    concurrency: 
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v3
-      - name: Install Node.js 
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 16.17.1
       - name: Install pnpm
@@ -29,7 +28,7 @@ jobs:
         with:
           version: 7
           run_install: false
-      - name: Get pnpm store directory
+      - name: Get pnpm Store Directory
         id: pnpm-cache
         shell: bash
         run: |
@@ -41,12 +40,79 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-      - name: Install dependencies
+      - name: Install Dependencies
         run: pnpm install
-      - name: Build
+
+  lint:
+    name: Lint
+    needs: dependencies
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.17.1
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Run Lint
+        run: pnpm lint
+
+  build:
+    name: Build
+    needs: dependencies
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.17.1
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Run Build
         run: pnpm build
+      - name: Upload Build
+        uses: actions/upload-artifact@v3
+        with: 
+          name: build
+          path: .next
+      
+  test:
+    name: Tests
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.17.1
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Run Test
+        run: pnpm test
+      
+  deploy:
+    name: Deploy
+    needs: [lint, test]
+    if: github.event_name == 'push'
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.17.1
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - name: Install Vercel CLI
-        if: ${{ github.event_name == 'push' }}
         run: pnpm install -g vercel@latest
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
