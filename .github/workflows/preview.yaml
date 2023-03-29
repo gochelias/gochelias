@@ -9,8 +9,8 @@ on:
     branches-ignore: [main]
 
 jobs:
-  build: 
-    name: Install and Cache Dependecies
+  dependencies: 
+    name: Install Dependencies
     runs-on: ubuntu-22.04
     concurrency: 
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -40,6 +40,44 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install Dependencies
         run: pnpm install
+
+  lint:
+    name: Lint
+    needs: dependencies
+    runs-on: ubuntu-22.04
+    concurrency: 
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.17.1
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Run Lint
+        run: pnpm lint
+
+  build:
+    needs: dependencies
+    name: Build
+    runs-on: ubuntu-22.04
+    concurrency: 
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.17.1
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Install Dependencies
+        run: pnpm install
       - name: Run Build
         run: pnpm build
       - name: Upload Build
@@ -48,9 +86,8 @@ jobs:
           name: build
           path: .next
       
-  
   test:
-    name: Test
+    name: Tests
     needs: build
     runs-on: ubuntu-22.04
     concurrency: 
@@ -66,10 +103,5 @@ jobs:
           version: 7
       - name: Install Dependencies
         run: pnpm install
-      - name: Download Build
-        uses: actions/download-artifact@v3
-        with: 
-          name: build
-          path: .next
       - name: Run Test
         run: pnpm test
