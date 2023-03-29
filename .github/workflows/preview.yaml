@@ -64,6 +64,8 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 7
+      - name: Install Dependencies
+        run: pnpm install
       - name: Download Build
         uses: actions/download-artifact@v3
         with: 
