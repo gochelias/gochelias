@@ -1,7 +1,6 @@
-/* const withPreact = require('next-plugin-preact'); */
+const { withSentryConfig } = require('@sentry/nextjs');
 
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
@@ -47,4 +46,18 @@ const nextConfig = {
 	},
 };
 
-module.exports = nextConfig;
+module.exports = withSentryConfig(
+	nextConfig,
+	{
+		silent: true,
+		org: 'gochelias',
+		project: 'website',
+	},
+	{
+		widenClientFileUpload: true,
+		transpileClientSDK: true,
+		tunnelRoute: '/monitoring',
+		hideSourceMaps: true,
+		disableLogger: true,
+	},
+);
