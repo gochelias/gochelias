@@ -1,16 +1,12 @@
-// import dotenv from 'dotenv';
 import type { PlaywrightTestConfig } from '@playwright/test';
 
-// dotenv.config({ path: '.env.test.local' });
-
-const PORT = process.env.PORT || 3000;
-const baseURL = `http://localhost:${PORT}`;
+const baseURL = 'http://127.0.0.1:3000';
 
 const config: PlaywrightTestConfig = {
 	testDir: './e2e',
 	reporter: process.env.CI ? 'github' : 'list',
 	webServer: {
-		command: 'pnpm run dev',
+		command: 'pnpm start',
 		url: baseURL,
 		timeout: 120 * 1000,
 		reuseExistingServer: !process.env.CI,
