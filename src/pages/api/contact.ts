@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import * as Sentry from '@sentry/nextjs';
 import { MessageBuilder, Webhook } from 'discord-webhook-node';
 
 import { ContactForm, ContactFormSchema } from 'types/ContactForm';
@@ -31,7 +32,8 @@ export default async (
 		res.status(500).json({
 			status: '500 Internal Server Error',
 		});
-		return;
+
+		throw new Error('No Webhook Found');
 	}
 
 	const hook = new Webhook(process.env.DISCORD_WEBHOOK);
@@ -52,9 +54,11 @@ export default async (
 		res.status(200).json({
 			status: '200 Message Sent',
 		});
-	} catch (err: any) {
+	} catch (err) {
 		res.status(500).json({
 			status: '500 Internal Server Error',
 		});
+
+		Sentry.captureException(err);
 	}
 };

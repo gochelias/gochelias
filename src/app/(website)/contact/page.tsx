@@ -3,6 +3,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { Expo } from 'gsap';
 import { Tween } from 'react-gsap';
+import * as Sentry from '@sentry/nextjs';
 
 import { DialogData } from 'types';
 import { socialLinks, dialogMessages } from 'config';
@@ -94,7 +95,7 @@ const ContactPage = () => {
 				description: dialogMessages.internalError.description,
 			});
 			setDialogIsOpen(true);
-			console.log(err);
+			Sentry.captureException(err);
 		}
 	};
 
