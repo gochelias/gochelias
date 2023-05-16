@@ -1,4 +1,5 @@
 const { withSentryConfig } = require('@sentry/nextjs');
+const { withContentlayer } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -47,7 +48,7 @@ const nextConfig = {
 };
 
 module.exports = withSentryConfig(
-	nextConfig,
+	withContentlayer(nextConfig),
 	{
 		silent: true,
 		org: 'gochelias',

@@ -1,5 +1,5 @@
 {
-	"$schema": "https://json.schemastore.org/jsconfig",
+	"$schema": "https://json.schemastore.org/tsconfig",
 	"display": "Default",
 	"compilerOptions": {
 		"target": "ES2022",
@@ -19,6 +19,9 @@
 		"isolatedModules": true,
 		"incremental": true,
 		"baseUrl": "src",
+		"paths": {
+			"contentlayer/generated": ["./.contentlayer/generated"]
+		},
 		"plugins": [
 			{
 				"name": "next"
@@ -30,7 +33,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		"**/*.config.js",
-		".next/types/**/*.ts"
+		".next/types/**/*.ts",
+		".contentlayer/generated"
 	],
 	"exclude": ["node_modules"]
 }
