@@ -23,15 +23,7 @@ export default function BlogPage() {
 				<div className="grid w-3/5 grid-cols-3 gap-x-8 gap-y-16">
 					{posts.map((post: Post) => (
 						<Fragment key={post.id}>
-							<PostCard
-								id={post.id}
-								image={post.image!}
-								title={post.title}
-								description={post.overview}
-								publishedAt={post.publishedAt}
-								category=""
-								readingTime={post.readingTime.text}
-							/>
+							<PostCard data={post} />
 						</Fragment>
 					))}
 				</div>
