@@ -13,7 +13,7 @@ export const Post = defineDocumentType(() => ({
 		publishedAt: { type: 'date', required: true },
 	},
 	computedFields: {
-		id: {
+		slug: {
 			type: 'string',
 			resolve: post => post._raw.flattenedPath,
 		},

@@ -22,7 +22,7 @@ export default function BlogPage() {
 			{posts.length > 0 ? (
 				<div className="grid w-3/5 grid-cols-3 gap-x-8 gap-y-16">
 					{posts.map((post: Post) => (
-						<Fragment key={post.id}>
+						<Fragment key={post.slug}>
 							<PostCard data={post} />
 						</Fragment>
 					))}
