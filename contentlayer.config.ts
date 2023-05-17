@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import readingTime from 'reading-time';
 
 export const Post = defineDocumentType(() => ({
 	name: 'Post',
@@ -15,6 +16,10 @@ export const Post = defineDocumentType(() => ({
 		id: {
 			type: 'string',
 			resolve: post => post._raw.flattenedPath,
+		},
+		readingTime: {
+			type: 'json',
+			resolve: post => readingTime(post.body.raw),
 		},
 	},
 }));
