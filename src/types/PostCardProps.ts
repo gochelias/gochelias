@@ -1,4 +1,4 @@
-export type CardPostProps = {
+export type PostCardProps = {
 	id: string;
 	image: string;
 	category: string;
