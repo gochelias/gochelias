@@ -18,8 +18,13 @@
 		"jsx": "preserve",
 		"isolatedModules": true,
 		"incremental": true,
-		"baseUrl": "src",
+		"baseUrl": ".",
 		"paths": {
+			"app/*": ["./src/app/*"],
+			"components/*": ["./src/components/*"],
+			"config": ["./src/config"],
+			"styles/*": ["./src/styles/*"],
+			"types": ["./src/types"],
 			"contentlayer/generated": ["./.contentlayer/generated"]
 		},
 		"plugins": [

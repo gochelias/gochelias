@@ -5,11 +5,10 @@ import { Expo } from 'gsap';
 import { Tween } from 'react-gsap';
 import * as Sentry from '@sentry/nextjs';
 
-import { DialogData } from 'types';
+import { ContactForm, DialogData } from 'types';
 import { socialLinks, dialogMessages } from 'config';
 import { ArrowUpRight } from 'components/ArrowRight';
 import { SocialLink } from 'components/SocialLink';
-import { ContactForm } from 'types/ContactForm';
 import { Dialog } from 'components/Dialog';
 import styles from './Contact.module.css';
 
