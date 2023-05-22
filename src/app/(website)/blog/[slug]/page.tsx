@@ -45,8 +45,8 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 					{post.overview}
 				</p>
 			</section>
-			<section className="flex w-3/5 justify-center pb-64 text-gray4light">
-				<article className="w-2/3 font-body text-2xl">
+			<section className="flex w-3/5 justify-center pb-64 text-gray3light">
+				<article className="prose max-w-3xl space-y-6 font-body text-[22px] leading-relaxed">
 					<MDXContent />
 				</article>
 			</section>

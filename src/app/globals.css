@@ -20,6 +20,59 @@
 	}
 }
 
+.prose a {
+	@apply underline
+	decoration-white 
+	underline-offset-2;
+}
+
+.prose strong {
+	@apply font-sans font-medium;
+}
+
+pre {
+	@apply bg-[#0a0a0a]
+	p-4
+	leading-none;
+}
+
+code {
+	counter-reset: line;
+	@apply border 
+	border-gray5dark 
+	bg-gray6dark
+	px-2
+	text-lg;
+}
+
+pre code {
+	@apply border-none 
+	bg-transparent
+	p-0;
+}
+
+[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
+	counter-increment: line;
+	content: counter(line);
+	@apply mr-8 
+	inline-block
+	w-6
+	text-right
+	text-gray3dark;
+}
+
+code[data-line-numbers-max-digits='2'] > .line::before {
+	width: 2rem;
+}
+
+code[data-line-numbers-max-digits='3'] > .line::before {
+	width: 3rem;
+}
+
+[data-rehype-pretty-code-title] > .codeTitle::after {
+	@apply text-red-500;
+}
+
 .navbar-show {
 	@apply translate-y-0;
 }
