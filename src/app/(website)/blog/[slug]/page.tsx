@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 import { format, parseISO } from 'date-fns';
 
 import { allPosts, type Post } from 'contentlayer/generated';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import components from 'components/mdx';
 
 export async function generateStaticParams() {
 	return allPosts.map((post: Post) => ({
@@ -46,8 +47,8 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 				</p>
 			</section>
 			<section className="flex w-3/5 justify-center pb-64 text-gray3light">
-				<article className="prose max-w-3xl space-y-6 font-body text-[22px] leading-relaxed">
-					<MDXContent />
+				<article className="prose w-full max-w-3xl space-y-6 font-body text-[22px] leading-relaxed">
+					<MDXContent components={components} />
 				</article>
 			</section>
 		</main>

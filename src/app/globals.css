@@ -30,8 +30,15 @@
 	@apply font-sans font-medium;
 }
 
+.cmd .line::before {
+	@apply mr-3
+	text-gray3dark
+	content-['$'];
+}
+
 pre {
-	@apply bg-[#0a0a0a]
+	@apply overflow-x-auto
+	bg-[#0a0a0a]
 	p-4
 	leading-none;
 }
