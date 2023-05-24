@@ -30,6 +30,35 @@
 	@apply font-sans font-medium;
 }
 
+.prose ul,
+.prose ol {
+	@apply space-y-2;
+}
+
+.prose ul {
+	@apply pl-6;
+}
+
+.prose ul li {
+	@apply list-disc
+	pl-3;
+}
+.prose ol li {
+	@apply list-inside 
+	list-decimal
+	pl-2;
+}
+
+.prose li::marker {
+	@apply text-right
+	text-lg
+	text-gray2dark;
+}
+
+.prose ol li::marker {
+	@apply font-mono;
+}
+
 .cmd .line::before {
 	@apply mr-3
 	text-gray3dark
