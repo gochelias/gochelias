@@ -38,7 +38,9 @@
 		"react-gsap": "3.2.1",
 		"react-locomotive-scroll": "0.2.2",
 		"reading-time": "1.5.0",
+		"rehype-autolink-headings": "6.1.1",
 		"rehype-pretty-code": "0.9.5",
+		"rehype-slug": "5.1.0",
 		"shiki": "0.14.2",
 		"zod": "3.20.6"
 	},

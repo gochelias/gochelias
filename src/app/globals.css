@@ -20,6 +20,37 @@
 	}
 }
 
+.prose h3 {
+	@apply relative 
+	flex
+	items-center
+	pt-7
+	font-sans
+	text-3xl
+	font-medium
+	text-white;
+}
+
+.prose .anchor {
+	@apply absolute 
+	flex
+	w-full
+	no-underline
+	opacity-0;
+}
+
+.anchor:hover {
+	@apply opacity-100
+	transition-opacity;
+}
+
+.prose .anchor::before {
+	@apply -translate-x-full
+	pr-3
+	text-gray3dark
+	content-['#'];
+}
+
 .prose a {
 	@apply underline
 	decoration-white 
