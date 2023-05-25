@@ -52,9 +52,11 @@
 }
 
 .prose a {
-	@apply underline
-	decoration-white 
-	underline-offset-2;
+	@apply text-gray6light
+	underline
+	decoration-gray2dark
+	decoration-2
+	underline-offset-4;
 }
 
 .prose strong {
