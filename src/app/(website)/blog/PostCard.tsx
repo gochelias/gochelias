@@ -6,12 +6,12 @@ import type { Post } from 'contentlayer/generated';
 import styles from './Blog.module.css';
 
 export default function PostCard({ data }: { data: Post }) {
-	const { image, title, overview, readingTime, publishedAt } = data;
+	const { slug, image, title, overview, readingTime, publishedAt } = data;
 
 	return (
 		<article className={styles.article}>
 			<div className={styles.imgContainer}>
-				<Link href="#" className={styles.imgLink}>
+				<Link href={`/blog/${slug}`} className={styles.imgLink}>
 					<Image
 						className={styles.image}
 						src={image!}
@@ -25,7 +25,7 @@ export default function PostCard({ data }: { data: Post }) {
 			</div>
 			{/* <h4 className={styles.category}>{category}</h4> */}
 			<h2 className={styles.title} title={title}>
-				<Link href="#">{title}</Link>
+				<Link href={`/blog/${slug}`}>{title}</Link>
 			</h2>
 			<p className={styles.description}>{overview}</p>
 			<p className={styles.data}>
