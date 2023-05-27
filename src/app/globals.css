@@ -110,8 +110,9 @@ code {
 	@apply border 
 	border-gray5dark 
 	bg-gray6dark
-	px-2
-	text-lg;
+	px-1
+	text-lg
+	text-gray6light;
 }
 
 pre code {
