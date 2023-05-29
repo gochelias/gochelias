@@ -63,6 +63,10 @@
 	@apply font-sans font-medium;
 }
 
+.prose hr {
+	@apply text-gray5dark;
+}
+
 .prose ul,
 .prose ol {
 	@apply space-y-2;
