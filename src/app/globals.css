@@ -59,6 +59,9 @@
 	underline-offset-4;
 }
 
+.prose .repo a {
+	@apply no-underline;
+}
 .prose strong {
 	@apply font-sans font-medium;
 }
