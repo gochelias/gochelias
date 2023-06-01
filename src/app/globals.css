@@ -70,17 +70,6 @@
 	@apply text-gray5dark;
 }
 
-.prose blockquote {
-	@apply border-l-4
-	border-white
-	bg-[#0a0a0a]
-	px-6
-	py-5
-	text-2xl
-	leading-relaxed
-	text-white;
-}
-
 .prose ul,
 .prose ol {
 	@apply space-y-2;
