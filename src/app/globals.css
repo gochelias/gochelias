@@ -108,7 +108,7 @@
 pre {
 	@apply overflow-x-auto
 	bg-[#0a0a0a]
-	p-4
+	py-4
 	leading-none;
 }
 
@@ -123,9 +123,26 @@ code {
 }
 
 pre code {
-	@apply border-none 
+	@apply flex
+	min-w-max 
+	max-w-full
+	flex-col
+	border-none
 	bg-transparent
 	p-0;
+}
+
+.prose .line {
+	@apply flex
+	border-l-2
+	border-transparent 
+	px-4;
+}
+.prose .highlighted {
+	@apply box-content
+	flex
+	border-white
+	bg-gray6dark;
 }
 
 [data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
