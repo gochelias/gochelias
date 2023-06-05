@@ -67,7 +67,9 @@
 }
 
 .prose strong {
-	@apply font-sans font-medium;
+	@apply font-sans 
+	font-medium
+	text-white;
 }
 
 .prose blockquote {
