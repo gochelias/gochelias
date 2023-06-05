@@ -5,7 +5,7 @@ type QuoteProps = {
 
 export default function Quote({ author, content }: QuoteProps) {
 	return (
-		<blockquote className="my-8 flex w-full gap-x-6">
+		<div className="my-8 flex w-full gap-x-6">
 			<svg
 				className="h-10 w-10 text-gray2dark"
 				viewBox="0 0 59 59"
@@ -25,6 +25,6 @@ export default function Quote({ author, content }: QuoteProps) {
 					<span>{author}</span>
 				</p>
 			</div>
-		</blockquote>
+		</div>
 	);
 }
