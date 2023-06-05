@@ -62,6 +62,10 @@
 .prose .repo a {
 	@apply no-underline;
 }
+.prose .pkg a {
+	@apply no-underline;
+}
+
 .prose strong {
 	@apply font-sans font-medium;
 }
