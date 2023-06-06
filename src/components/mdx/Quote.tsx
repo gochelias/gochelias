@@ -20,7 +20,7 @@ export default function Quote({ author, content }: QuoteProps) {
 				<p className="border-white py-3 text-2xl leading-relaxed text-white">
 					{content}
 				</p>
-				<p className="space-x-4 self-end">
+				<p className="space-x-4 self-end" translate="no">
 					<span>⎯</span>
 					<span>{author}</span>
 				</p>
