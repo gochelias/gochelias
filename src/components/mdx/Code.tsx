@@ -11,7 +11,9 @@ export default function Code(props: any) {
 						className="h-[22px] w-[22px] object-cover object-center"
 						alt=""
 					/>
-					<span className="leading-normal">{filename}</span>
+					<p className="leading-normal" translate="no">
+						{filename}
+					</p>
 				</div>
 				<button className="p-4 text-gray" type="button">
 					<Copy />
