@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { format, parseISO } from 'date-fns';
+import Balancer from 'react-wrap-balancer';
 
 import { allPosts, type Post } from 'contentlayer/generated';
 import components from 'components/mdx';
@@ -25,8 +26,8 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 		<main className="flex flex-col items-center">
 			<section className="flex h-full w-3/5 flex-col items-center">
 				<div className="flex h-[50vh] flex-col items-center justify-center">
-					<h1 className="text-center text-6xl font-medium">
-						{post.title}
+					<h1 className="text-center text-7xl font-medium leading-tight">
+						<Balancer>{post.title}</Balancer>
 					</h1>
 				</div>
 				<p className="flex w-full items-center justify-center space-x-4 pb-16 font-body text-lg">
@@ -42,7 +43,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 						alt=""
 					/>
 				</div>
-				<p className="w-1/2 py-16 font-body text-2xl text-gray">
+				<p className="w-full max-w-3xl py-16 font-body text-2xl text-gray">
 					{post.overview}
 				</p>
 			</section>
