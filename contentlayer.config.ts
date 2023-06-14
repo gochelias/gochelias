@@ -1,9 +1,9 @@
-/* eslint-disable no-underscore-dangle */
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import readingTime from 'reading-time';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { visit } from 'unist-util-visit';
 
 export const Post = defineDocumentType(() => ({
 	name: 'Post',
@@ -18,6 +18,7 @@ export const Post = defineDocumentType(() => ({
 	computedFields: {
 		slug: {
 			type: 'string',
+			// eslint-disable-next-line no-underscore-dangle
 			resolve: post => post._raw.flattenedPath,
 		},
 		readingTime: {
@@ -32,6 +33,17 @@ export default makeSource({
 	documentTypes: [Post],
 	mdx: {
 		rehypePlugins: [
+			() => tree => {
+				visit(tree, node => {
+					if (node?.type === 'element' && node?.tagName === 'pre') {
+						const [codeEl] = node.children;
+						if (codeEl.tagName !== 'code') return;
+
+						// eslint-disable-next-line no-param-reassign
+						node.raw = codeEl.children?.[0].value;
+					}
+				});
+			},
 			[
 				rehypePrettyCode,
 				{
@@ -41,6 +53,22 @@ export default makeSource({
 					},
 				},
 			],
+			() => tree => {
+				visit(tree, node => {
+					if (node?.type === 'element' && node?.tagName === 'div') {
+						const codeFragment = 'data-rehype-pretty-code-fragment';
+						const isProperty = codeFragment in node.properties;
+						if (!isProperty) return;
+
+						// eslint-disable-next-line no-restricted-syntax
+						for (const child of node.children) {
+							if (child.tagName === 'pre') {
+								child.properties.raw = node.raw;
+							}
+						}
+					}
+				});
+			},
 			rehypeSlug,
 			[
 				rehypeAutolinkHeadings,

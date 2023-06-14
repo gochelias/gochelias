@@ -1,12 +1,13 @@
-import { Copy } from 'react-feather';
+import CopyButton from 'components/CopyButton';
 
 export default function Cmd(props: any) {
+	const { children } = props;
+	const { raw } = children.props.children.props;
+
 	return (
 		<div className="cmd flex items-center border border-gray6dark bg-[#0a0a0a]">
 			<div {...props} className="w-full" />
-			<button className="self-end p-4 text-gray" type="button">
-				<Copy />
-			</button>
+			<CopyButton text={raw} />
 		</div>
 	);
 }

@@ -43,6 +43,7 @@
 		"rehype-pretty-code": "0.9.5",
 		"rehype-slug": "5.1.0",
 		"shiki": "0.14.2",
+		"unist-util-visit": "4.1.2",
 		"zod": "3.20.6"
 	},
 	"devDependencies": {

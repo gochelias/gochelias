@@ -1,4 +1,5 @@
-import { Copy, Package } from 'react-feather';
+import CopyButton from 'components/CopyButton';
+import { Package } from 'react-feather';
 
 type PkgProps = {
 	name: string;
@@ -29,9 +30,7 @@ export default function Pkg({ url, name, description, install }: PkgProps) {
 					translate="no">
 					{install}
 				</p>
-				<button className="p-4 text-gray" type="button">
-					<Copy />
-				</button>
+				<CopyButton text={install} />
 			</div>
 		</div>
 	);

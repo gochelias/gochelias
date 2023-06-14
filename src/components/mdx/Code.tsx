@@ -1,7 +1,8 @@
-import { Copy } from 'react-feather';
+import CopyButton from 'components/CopyButton';
 
 export default function Code(props: any) {
-	const { filename, icon } = props;
+	const { filename, icon, children } = props;
+	const { raw } = children.props.children.props;
 	return (
 		<div className="border border-gray6dark">
 			<div className="flex items-center justify-between bg-black">
@@ -15,9 +16,7 @@ export default function Code(props: any) {
 						{filename}
 					</p>
 				</div>
-				<button className="p-4 text-gray" type="button">
-					<Copy />
-				</button>
+				<CopyButton text={raw} />
 			</div>
 			<div {...props} />
 		</div>
