@@ -25,10 +25,13 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 	return (
 		<main className="flex flex-col items-center">
 			<section className="flex h-full w-3/5 flex-col items-center">
-				<div className="flex h-[50vh] flex-col items-center justify-center">
+				<div className="flex h-[50vh] w-full flex-col items-center justify-center">
 					<h1 className="text-center text-7xl font-medium leading-tight">
 						<Balancer>{post.title}</Balancer>
 					</h1>
+					<p className="mt-4 w-full max-w-5xl text-center font-body text-2xl text-gray">
+						{post.overview}
+					</p>
 				</div>
 				<p className="flex w-full items-center justify-center space-x-4 pb-16 font-body text-lg">
 					<span>{post.readingTime.text}</span>
@@ -36,16 +39,13 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 						{format(parseISO(post.publishedAt), 'MMM d, yyyy')}
 					</span>
 				</p>
-				<div className="relative aspect-video w-full">
+				<div className="relative mb-16 aspect-video w-full">
 					<Image
 						src="https://images.unsplash.com/photo-1522517779552-6cf4c1f31ee3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
 						fill
 						alt=""
 					/>
 				</div>
-				<p className="w-full max-w-3xl py-16 font-body text-2xl text-gray">
-					{post.overview}
-				</p>
 			</section>
 			<section className="flex w-3/5 justify-center pb-64 text-gray3light">
 				<article className="prose flex w-full max-w-3xl flex-col gap-y-6 font-body text-[22px] leading-relaxed">
