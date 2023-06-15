@@ -1,19 +1,34 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import {
+	defineDocumentType,
+	defineNestedType,
+	makeSource,
+} from 'contentlayer/source-files';
 import readingTime from 'reading-time';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { visit } from 'unist-util-visit';
 
+const Serie = defineNestedType(() => ({
+	name: 'Serie',
+	fields: {
+		id: { type: 'string', required: true },
+		part: { type: 'number', required: true },
+	},
+}));
+
 export const Post = defineDocumentType(() => ({
 	name: 'Post',
 	filePathPattern: '**/*.mdx',
 	contentType: 'mdx',
 	fields: {
-		image: { type: 'string' },
+		id: { type: 'string', required: true },
+		image: { type: 'string', required: true },
 		title: { type: 'string', required: true },
 		overview: { type: 'string', required: true },
 		publishedAt: { type: 'date', required: true },
+		serie: { type: 'nested', of: Serie, required: false },
+		tags: { type: 'list', of: { type: 'string' }, required: false },
 	},
 	computedFields: {
 		slug: {
