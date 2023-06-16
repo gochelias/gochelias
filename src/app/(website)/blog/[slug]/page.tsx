@@ -41,11 +41,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 					</span>
 				</p>
 				<div className="relative mb-16 aspect-video w-full">
-					<Image
-						src="https://images.unsplash.com/photo-1522517779552-6cf4c1f31ee3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-						fill
-						alt=""
-					/>
+					<Image src={post.image} fill alt="" />
 				</div>
 			</section>
 			<section className="flex w-3/5 justify-center pb-64 text-gray3light">
