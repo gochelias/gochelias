@@ -36,7 +36,8 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 				<p className="flex w-full items-center justify-center space-x-4 pb-16 font-body text-lg">
 					<span>{post.readingTime.text}</span>
 					<span>
-						{format(parseISO(post.publishedAt), 'MMM d, yyyy')}
+						Last updated{' '}
+						{format(parseISO(post.updatedAt), 'MMMM d, yyyy')}
 					</span>
 				</p>
 				<div className="relative mb-16 aspect-video w-full">

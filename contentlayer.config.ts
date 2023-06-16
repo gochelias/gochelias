@@ -8,6 +8,10 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { visit } from 'unist-util-visit';
+import { stat } from 'fs/promises';
+import { join } from 'path';
+
+const contentDirPath = './src/posts';
 
 const Serie = defineNestedType(() => ({
 	name: 'Serie',
@@ -33,18 +37,26 @@ export const Post = defineDocumentType(() => ({
 	computedFields: {
 		slug: {
 			type: 'string',
-			// eslint-disable-next-line no-underscore-dangle
 			resolve: post => post._raw.flattenedPath,
 		},
 		readingTime: {
 			type: 'json',
 			resolve: post => readingTime(post.body.raw),
 		},
+		updatedAt: {
+			type: 'date',
+			resolve: async (post): Promise<Date> => {
+				const path = join(contentDirPath, post._raw.sourceFilePath);
+				const stats = await stat(path);
+
+				return stats.mtime;
+			},
+		},
 	},
 }));
 
 export default makeSource({
-	contentDirPath: './src/posts',
+	contentDirPath,
 	documentTypes: [Post],
 	mdx: {
 		rehypePlugins: [
