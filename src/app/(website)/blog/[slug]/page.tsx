@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { format, parseISO } from 'date-fns';
 import Balancer from 'react-wrap-balancer';
@@ -26,14 +27,21 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 		<main className="flex flex-col items-center">
 			<section className="flex h-full w-3/5 flex-col items-center">
 				<div className="flex h-[50vh] w-full flex-col items-center justify-center">
+					{post.serie && (
+						<Link
+							className="mb-8 space-x-3 border border-gray4dark px-4 py-2 font-body text-lg text-white hover:bg-gray6dark"
+							href={`/blog/series/${post.serie.id}`}>
+							<span>Part {post.serie.part}</span>
+						</Link>
+					)}
 					<h1 className="text-center text-7xl font-medium leading-tight">
 						<Balancer>{post.title}</Balancer>
 					</h1>
-					<p className="mt-4 w-full max-w-5xl text-center font-body text-2xl text-gray">
+					<p className="mt-4 w-full max-w-4xl text-center font-body text-2xl text-gray">
 						{post.overview}
 					</p>
 				</div>
-				<p className="flex w-full items-center justify-center space-x-4 pb-16 font-body text-lg">
+				<p className="mt-16 mb-8 flex w-full items-center justify-center space-x-5 font-body text-lg text-gray3light">
 					<span>{post.readingTime.text}</span>
 					<span>
 						Last updated{' '}
