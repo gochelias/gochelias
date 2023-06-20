@@ -14,6 +14,11 @@ const nextConfig = {
 	async redirects() {
 		return [
 			{
+				source: '/blog/series',
+				destination: '/blog',
+				permanent: true,
+			},
+			{
 				source: '/github',
 				destination: 'https://github.com/gochelias',
 				permanent: true,
