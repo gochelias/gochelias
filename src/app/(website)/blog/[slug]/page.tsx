@@ -27,11 +27,11 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 		<main className="flex flex-col items-center">
 			<section className="flex h-full w-3/5 flex-col items-center">
 				<div className="flex h-[50vh] w-full flex-col items-center justify-center">
-					{post.serie && (
+					{post.series && (
 						<Link
 							className="mb-8 space-x-3 border border-gray4dark px-4 py-2 font-body text-lg text-white hover:bg-gray6dark"
-							href={`/blog/series/${post.serie.id}`}>
-							<span>Part {post.serie.part}</span>
+							href={`/blog/series/${post.series.id}`}>
+							<span>Part {post.series.part}</span>
 						</Link>
 					)}
 					<h1 className="text-center text-7xl font-medium leading-tight">

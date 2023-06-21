@@ -13,8 +13,8 @@ import { join } from 'path';
 
 const contentDirPath = './src/posts';
 
-const Serie = defineNestedType(() => ({
-	name: 'Serie',
+const Series = defineNestedType(() => ({
+	name: 'Series',
 	fields: {
 		id: { type: 'string', required: true },
 		part: { type: 'number', required: true },
@@ -31,7 +31,7 @@ export const Post = defineDocumentType(() => ({
 		title: { type: 'string', required: true },
 		overview: { type: 'string', required: true },
 		publishedAt: { type: 'date', required: true },
-		serie: { type: 'nested', of: Serie, required: false },
+		series: { type: 'nested', of: Series, required: false },
 		tags: { type: 'list', of: { type: 'string' }, required: false },
 	},
 	computedFields: {

@@ -8,13 +8,13 @@ import Grid from '../../Grid';
 
 export default function SeriesPage({ params }: { params: { id: string } }) {
 	const posts: Post[] = allPosts.filter(
-		(p: Post) => p.serie?.id === params.id,
+		(p: Post) => p.series?.id === params.id,
 	);
 
 	if (posts.length === 0) notFound();
 
 	const sorted: Post[] = posts.sort(
-		(a: Post, b: Post) => a.serie!.part - b.serie!.part,
+		(a: Post, b: Post) => a.series!.part - b.series!.part,
 	);
 
 	return (
