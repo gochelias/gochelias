@@ -19,6 +19,11 @@ const nextConfig = {
 				permanent: true,
 			},
 			{
+				source: '/blog/tags',
+				destination: '/blog',
+				permanent: true,
+			},
+			{
 				source: '/github',
 				destination: 'https://github.com/gochelias',
 				permanent: true,
