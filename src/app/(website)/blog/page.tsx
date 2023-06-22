@@ -1,9 +1,8 @@
-import { Fragment } from 'react';
 import { compareDesc } from 'date-fns';
 import type { Metadata } from 'next';
 
 import { allPosts, type Post } from 'contentlayer/generated';
-import PostCard from './PostCard';
+import Grid from './Grid';
 
 export const metadata: Metadata = {
 	title: 'Blog',
@@ -20,13 +19,7 @@ export default function BlogPage() {
 				<h1 className="text-[8vw] uppercase">Blog</h1>
 			</header>
 			{posts.length > 0 ? (
-				<div className="grid w-3/5 grid-cols-3 gap-x-8 gap-y-16">
-					{posts.map((post: Post) => (
-						<Fragment key={post.slug}>
-							<PostCard data={post} />
-						</Fragment>
-					))}
-				</div>
+				<Grid posts={posts} />
 			) : (
 				<div className="flex w-full flex-col items-center justify-center">
 					<h6 className="text-3xl font-medium">Under Maintenance</h6>

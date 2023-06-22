@@ -61,3 +61,20 @@
 	text-base
 	text-gray2dark;
 }
+
+/*  Grid  */
+.gridContainer {
+	@apply flex 
+	w-full 
+	flex-col 
+	items-center 
+	pb-64;
+}
+
+.gridPosts {
+	@apply grid 
+	w-3/5 
+	grid-cols-3 
+	gap-x-8 
+	gap-y-16;
+}
