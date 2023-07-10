@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import { allPosts, Post } from 'contentlayer/generated';
 import Grid from '../../Grid';
+import styles from '../../Blog.module.css';
 
 export default function SeriesPage({ params }: { params: { id: string } }) {
 	const posts: Post[] = allPosts.filter(
@@ -19,19 +20,23 @@ export default function SeriesPage({ params }: { params: { id: string } }) {
 
 	return (
 		<>
-			<header className="flex h-[50vh] w-full select-none justify-center">
-				<div className="flex h-full w-3/5 flex-col items-start justify-center">
-					<Link
-						className="mb-8 flex items-end space-x-2 font-body leading-none text-gray2dark transition-colors duration-200 hover:text-white"
-						href="/blog">
+			<header className={styles.headerBlog}>
+				<div className={styles.headerBlogContainer}>
+					<Link className={styles.linkBackToBlog} href="/blog">
 						<ArrowLeft className="h-5" />
 						<span>Blog</span>
 					</Link>
-					<h1 className="text-left text-7xl font-medium">
-						<Balancer>title</Balancer>
+					<h1 className={styles.blogSectionsTitle}>
+						<Balancer>
+							Building and Scaling Web Applications on AWS: A
+							Step-by-Step Guide
+						</Balancer>
 					</h1>
-					<p className="mt-4 max-w-4xl font-body text-2xl text-gray">
-						description
+					<p className={styles.seriesDescription}>
+						Task-01: Launch an EC2 instance, install a web server,
+						and deploy a simple web application Launch an EC2
+						instance using the AWS Management Console: Log in to the
+						AWS Management Console. Open the EC
 					</p>
 				</div>
 			</header>

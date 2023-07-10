@@ -18,10 +18,14 @@ export default function CopyButton({ text }: { text: string }) {
 	return (
 		<CopyToClipboard text={text} onCopy={copy}>
 			<button
-				className="p-4 text-gray transition-colors hover:text-white"
+				className="p-3 text-gray transition-colors hover:text-white md:p-4"
 				title="Copy"
 				type="button">
-				{isCopied ? <Check className="text-white" /> : <Copy />}
+				{isCopied ? (
+					<Check className="w-5 text-white md:w-6" />
+				) : (
+					<Copy className="w-5 md:w-6" />
+				)}
 			</button>
 		</CopyToClipboard>
 	);

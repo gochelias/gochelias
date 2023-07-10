@@ -5,6 +5,7 @@ import { ArrowLeft } from 'react-feather';
 
 import { allPosts, Post } from 'contentlayer/generated';
 import Grid from '../../Grid';
+import styles from '../../Blog.module.css';
 
 export default function TagPage({ params }: { params: { slug: string } }) {
 	const posts: Post[] = allPosts.filter((p: Post) =>
@@ -19,15 +20,13 @@ export default function TagPage({ params }: { params: { slug: string } }) {
 
 	return (
 		<>
-			<header className="flex h-[50vh] w-full select-none justify-center">
-				<div className="flex h-full w-3/5 flex-col items-start justify-center">
-					<Link
-						className="mb-8 flex items-end space-x-2 font-body leading-none text-gray2dark transition-colors duration-200 hover:text-white"
-						href="/blog">
+			<header className={styles.headerBlog}>
+				<div className={styles.headerBlogContainer}>
+					<Link className={styles.linkBackToBlog} href="/blog">
 						<ArrowLeft className="h-5" />
 						<span>Blog</span>
 					</Link>
-					<h1 className="text-left text-7xl font-medium text-gray">
+					<h1 className={`${styles.blogSectionsTitle} text-gray`}>
 						#{params.slug}
 					</h1>
 				</div>

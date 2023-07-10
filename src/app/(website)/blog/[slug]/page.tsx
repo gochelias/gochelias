@@ -7,6 +7,7 @@ import Balancer from 'react-wrap-balancer';
 
 import { allPosts, type Post } from 'contentlayer/generated';
 import components from 'components/mdx';
+import styles from '../Blog.module.css';
 
 export async function generateStaticParams() {
 	return allPosts.map((post: Post) => ({
@@ -25,35 +26,33 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
 	return (
 		<main className="flex flex-col items-center">
-			<section className="flex h-full w-3/5 flex-col items-center">
-				<div className="flex h-[50vh] w-full flex-col items-center justify-center">
+			<section className={styles.postHeader}>
+				<div className={styles.postHeaderData}>
 					{post.series && (
 						<Link
-							className="mb-8 space-x-3 border border-gray4dark px-4 py-2 font-body text-lg text-white hover:bg-gray6dark"
+							className={styles.seriesPart}
 							href={`/blog/series/${post.series.id}`}>
 							<span>Part {post.series.part}</span>
 						</Link>
 					)}
-					<h1 className="text-center text-7xl font-medium leading-tight">
+					<h1 className={styles.postTitle}>
 						<Balancer>{post.title}</Balancer>
 					</h1>
-					<p className="mt-4 w-full max-w-4xl text-center font-body text-2xl text-gray">
-						{post.overview}
-					</p>
+					<p className={styles.postOverview}>{post.overview}</p>
 				</div>
-				<p className="mt-16 mb-8 flex w-full items-center justify-center space-x-5 font-body text-lg text-gray3light">
+				<p className={styles.postData}>
 					<span>{post.readingTime.text}</span>
 					<span>
 						Last updated{' '}
 						{format(parseISO(post.updatedAt), 'MMMM d, yyyy')}
 					</span>
 				</p>
-				<div className="relative mb-16 aspect-video w-full">
+				<div className={styles.postImage}>
 					<Image src={post.image} fill alt="" />
 				</div>
 			</section>
-			<section className="flex w-3/5 justify-center pb-64 text-gray3light">
-				<article className="prose flex w-full max-w-3xl flex-col gap-y-6 font-body text-[22px] leading-relaxed">
+			<section className={styles.postMain}>
+				<article className="prose flex w-full max-w-3xl flex-col gap-y-6 font-body text-base leading-relaxed md:text-[22px]">
 					<MDXContent components={components} />
 				</article>
 			</section>

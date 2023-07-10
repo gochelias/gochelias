@@ -14,9 +14,11 @@ export default function BlogPage() {
 	);
 
 	return (
-		<section className="flex w-full flex-col items-center space-y-8 border-red-500 pb-64">
-			<header className="flex w-full items-center justify-center py-40">
-				<h1 className="text-[8vw] uppercase">Blog</h1>
+		<>
+			<header className="flex h-[50vh] w-full items-center justify-center">
+				<h1 className="text-5xl font-medium uppercase md:text-[8vw] md:font-normal">
+					Blog
+				</h1>
 			</header>
 			{posts.length > 0 ? (
 				<Grid posts={posts} />
@@ -29,6 +31,6 @@ export default function BlogPage() {
 					</p>
 				</div>
 			)}
-		</section>
+		</>
 	);
 }

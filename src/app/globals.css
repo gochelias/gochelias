@@ -26,9 +26,10 @@
 	items-center
 	pt-7
 	font-sans
-	text-3xl
+	text-xl
 	font-medium
-	text-white;
+	text-white
+	md:text-3xl;
 }
 
 .prose .anchor {
@@ -76,7 +77,8 @@
 	@apply border-l-4 
 	border-gray3dark
 	py-2
-	pl-5;
+	pl-4
+	md:pl-5;
 }
 
 .prose hr {
@@ -111,7 +113,9 @@
 }
 
 .prose ol li::marker {
-	@apply font-mono;
+	@apply font-mono 
+	text-sm
+	md:text-base;
 }
 
 .cmd .line::before {
@@ -121,20 +125,25 @@
 }
 
 pre {
-	@apply overflow-x-auto
+	@apply max-h-[80vh]
+	overflow-x-auto
+	overflow-y-auto
 	bg-[#0a0a0a]
-	py-4
-	leading-none;
+	py-3
+	leading-none
+	md:py-4;
 }
 
 code {
 	counter-reset: line;
-	@apply border 
+	@apply inline
+	border
 	border-gray5dark 
 	bg-gray6dark
 	px-1
-	text-lg
-	text-gray6light;
+	text-sm
+	text-white
+	md:text-lg;
 }
 
 pre code {
@@ -150,8 +159,10 @@ pre code {
 .prose .line {
 	@apply flex
 	border-l-2
-	border-transparent 
-	px-4;
+	border-transparent
+	pl-2
+	pr-3
+	md:px-4;
 }
 .prose .highlighted {
 	@apply box-content
@@ -163,11 +174,11 @@ pre code {
 [data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
 	counter-increment: line;
 	content: counter(line);
-	@apply mr-8 
-	inline-block
+	@apply mr-5 inline-block 
 	w-6
 	text-right
-	text-gray3dark;
+	text-gray3dark
+	md:mr-8;
 }
 
 code[data-line-numbers-max-digits='2'] > .line::before {

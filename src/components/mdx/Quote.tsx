@@ -1,3 +1,5 @@
+import Balancer from 'react-wrap-balancer';
+
 type QuoteProps = {
 	author: string;
 	content: string;
@@ -7,7 +9,7 @@ export default function Quote({ author, content }: QuoteProps) {
 	return (
 		<div className="my-8 flex w-full gap-x-6">
 			<svg
-				className="h-10 w-10 text-gray2dark"
+				className="h-8 w-8 text-gray2dark md:h-10 md:w-10"
 				viewBox="0 0 59 59"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg">
@@ -17,8 +19,8 @@ export default function Quote({ author, content }: QuoteProps) {
 				/>
 			</svg>
 			<div className="flex w-full flex-col">
-				<p className="border-white py-3 text-2xl leading-relaxed text-white">
-					{content}
+				<p className="border-white py-3 text-xl leading-relaxed text-white md:text-2xl">
+					<Balancer>{content}</Balancer>
 				</p>
 				<p className="space-x-4 self-end" translate="no">
 					<span>⎯</span>

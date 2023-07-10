@@ -15,12 +15,12 @@ export default function Repo({ url, description, license }: RepoProps) {
 	const name = urlSplit[2];
 
 	return (
-		<div className="repo mx-auto flex w-full max-w-xl flex-col gap-y-3 border border-gray6dark bg-[#0a0a0a] p-5">
+		<div className="repo mx-auto flex w-full max-w-xl flex-col gap-y-3 border border-gray6dark bg-[#0a0a0a] p-4 md:p-5">
 			<div className="flex items-center justify-between">
 				<div className="flex items-center gap-3">
-					<Book className="h-[22px] text-white" />
+					<Book className="h-5 text-white md:h-[22px]" />
 					<a
-						className="flex items-center gap-1 leading-normal no-underline"
+						className="flex items-center gap-x-1 leading-normal no-underline"
 						href={`https://${url}`}
 						title={`${author}/${name}`}
 						target="_blank"
@@ -31,7 +31,7 @@ export default function Repo({ url, description, license }: RepoProps) {
 						<span className="text-white">{name}</span>
 					</a>
 				</div>
-				<div className="flex h-[22px] w-[22px] items-center overflow-hidden">
+				<div className="flex h-5 w-5 items-center overflow-hidden md:h-[22px] md:w-[22px]">
 					{host.startsWith('github') ? (
 						<GitHub className="text-white" />
 					) : (
@@ -39,8 +39,8 @@ export default function Repo({ url, description, license }: RepoProps) {
 					)}
 				</div>
 			</div>
-			<p className="text-xl line-clamp-2">{description}</p>
-			<p className="flex items-center space-x-6 text-lg text-gray">
+			<p className="text-base line-clamp-2 md:text-xl">{description}</p>
+			<p className="flex items-center space-x-6 text-sm text-gray md:text-lg">
 				<span>{license}</span>
 			</p>
 		</div>
