@@ -36,7 +36,7 @@ export async function generateMetadata({
 
 	return {
 		title: `${title} - Blog`,
-		description: post?.overview,
+		description,
 		openGraph: {
 			title,
 			description,
