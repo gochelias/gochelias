@@ -43,13 +43,13 @@ export const metadata: Metadata = {
 		default: 'Elias Goche',
 		template: '%s | Elias Goche',
 	},
-	description: 'Full-Stack Developer.',
+	description: 'Software Developer.',
 	openGraph: {
 		title: 'Elias Goche',
-		description: 'Full-Stack Developer.',
+		description: 'Software Developer.',
 		url: 'https://gochelias.com',
 		siteName: 'Elias Goche',
-		/* images: [], */
+		images: ['../opengraph-image.png'],
 		locale: 'en-US',
 		alternateLocale: 'es-ES',
 		type: 'website',
@@ -71,12 +71,12 @@ export const metadata: Metadata = {
 	themeColor: 'black',
 	twitter: {
 		title: 'Elias Goche',
-		description: 'Full-Stack Developer.',
+		description: 'Software Developer.',
 		card: 'summary_large_image',
 		siteId: '1400908388',
 		creator: '@gochelias',
 		creatorId: '1400908388',
-		/* images: [], */
+		images: ['../opengraph-image.png'],
 	},
 };
 
