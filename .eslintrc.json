@@ -31,6 +31,7 @@
 		"testing-library/no-debugging-utils": "warn",
 		"testing-library/no-dom-import": "off",
 		"@next/next/no-img-element": "off",
-		"no-underscore-dangle": "off"
+		"no-underscore-dangle": "off",
+		"consistent-return": "off"
 	}
 }

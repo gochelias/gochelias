@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { Metadata } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { format, parseISO } from 'date-fns';
 import Balancer from 'react-wrap-balancer';
@@ -13,6 +14,42 @@ export async function generateStaticParams() {
 	return allPosts.map((post: Post) => ({
 		slug: post.slug,
 	}));
+}
+
+export async function generateMetadata({
+	params,
+}: {
+	params: { slug: string };
+}): Promise<Metadata | undefined> {
+	const post: Post | undefined = allPosts.find(
+		(p: Post) => p.slug === params.slug,
+	);
+
+	if (!post) return;
+
+	const {
+		slug,
+		title,
+		overview: description,
+		publishedAt: publishedTime,
+	} = post;
+
+	return {
+		title: `${title} - Blog`,
+		description: post?.overview,
+		openGraph: {
+			title,
+			description,
+			publishedTime,
+			url: `https://gochelias.com/blog/${slug}`,
+			type: 'article',
+		},
+		twitter: {
+			title,
+			description,
+			card: 'summary_large_image',
+		},
+	};
 }
 
 export default function PostPage({ params }: { params: { slug: string } }) {
