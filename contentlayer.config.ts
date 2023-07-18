@@ -18,6 +18,8 @@ const Series = defineNestedType(() => ({
 	fields: {
 		id: { type: 'string', required: true },
 		part: { type: 'number', required: true },
+		title: { type: 'string' },
+		overview: { type: 'string' },
 	},
 }));
 

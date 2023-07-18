@@ -14,6 +14,8 @@ export default function SeriesPage({ params }: { params: { id: string } }) {
 
 	if (posts.length === 0) notFound();
 
+	const firstPost = posts.find((p: Post) => p.series!.part === 1)!;
+
 	const sorted: Post[] = posts.sort(
 		(a: Post, b: Post) => a.series!.part - b.series!.part,
 	);
@@ -27,16 +29,10 @@ export default function SeriesPage({ params }: { params: { id: string } }) {
 						<span>Blog</span>
 					</Link>
 					<h1 className={styles.blogSectionsTitle}>
-						<Balancer>
-							Building and Scaling Web Applications on AWS: A
-							Step-by-Step Guide
-						</Balancer>
+						<Balancer>{firstPost.series?.title}</Balancer>
 					</h1>
 					<p className={styles.seriesDescription}>
-						Task-01: Launch an EC2 instance, install a web server,
-						and deploy a simple web application Launch an EC2
-						instance using the AWS Management Console: Log in to the
-						AWS Management Console. Open the EC
+						{firstPost.series?.overview}
 					</p>
 				</div>
 			</header>
