@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Balancer from 'react-wrap-balancer';
 import { ArrowLeft } from 'react-feather';
@@ -6,6 +7,39 @@ import Link from 'next/link';
 import { allPosts, Post } from 'contentlayer/generated';
 import Grid from '../../Grid';
 import styles from '../../Blog.module.css';
+
+export async function generateMetadata({
+	params,
+}: {
+	params: { id: string };
+}): Promise<Metadata | undefined> {
+	const post = allPosts.find(
+		(p: Post) => p.series?.id === params.id && p.series.part === 1,
+	);
+
+	if (!post) return;
+
+	const { id, title, overview: description } = post.series!;
+	const { image, publishedAt: publishedTime } = post;
+
+	return {
+		title: `${title} - Blog`,
+		description,
+		openGraph: {
+			title,
+			description,
+			publishedTime,
+			url: `https://gochelias.com/blog/series/${id}`,
+			images: [image],
+		},
+		twitter: {
+			title,
+			description,
+			card: 'summary_large_image',
+			images: [image],
+		},
+	};
+}
 
 export default function SeriesPage({ params }: { params: { id: string } }) {
 	const posts: Post[] = allPosts.filter(
