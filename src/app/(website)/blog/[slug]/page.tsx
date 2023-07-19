@@ -29,6 +29,7 @@ export async function generateMetadata({
 
 	const {
 		slug,
+		image,
 		title,
 		overview: description,
 		publishedAt: publishedTime,
@@ -41,6 +42,7 @@ export async function generateMetadata({
 			title,
 			description,
 			publishedTime,
+			images: [image],
 			url: `https://gochelias.com/blog/${slug}`,
 			type: 'article',
 		},
@@ -48,6 +50,7 @@ export async function generateMetadata({
 			title,
 			description,
 			card: 'summary_large_image',
+			images: [image],
 		},
 	};
 }
