@@ -7,7 +7,7 @@ import { format, parseISO } from 'date-fns';
 import Balancer from 'react-wrap-balancer';
 
 import { allPosts, type Post } from 'contentlayer/generated';
-import components from 'components/mdx';
+import components from '@/components/mdx';
 import styles from '../Blog.module.css';
 
 export async function generateStaticParams() {

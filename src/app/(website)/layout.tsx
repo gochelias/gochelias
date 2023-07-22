@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import localFont from 'next/font/local';
 import type { Metadata } from 'next';
 
-import { Navbar } from 'components/Navbar';
+import { Navbar } from '@/components/Navbar';
 
 const clashDisplay = localFont({
 	src: [

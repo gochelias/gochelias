@@ -1,4 +1,4 @@
-import { Maintenance } from 'components/Maintenance';
+import { Maintenance } from '@/components/Maintenance';
 
 const PortfolioPage = () => <Maintenance />;
 

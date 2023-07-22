@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { MessageBuilder, Webhook } from 'discord-webhook-node';
 
-import { ContactForm, ContactFormSchema } from 'types/ContactForm';
+import { ContactForm, ContactFormSchema } from '@/types';
 
 export default async (
 	req: NextApiRequest,

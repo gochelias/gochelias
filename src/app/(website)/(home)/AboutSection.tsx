@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { ArrowUpRight } from 'components/ArrowRight';
+import { ArrowUpRight } from '@/components/ArrowRight';
 import styles from './Home.module.css';
 
 export const AboutSection = () => {

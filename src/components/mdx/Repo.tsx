@@ -1,6 +1,6 @@
 import { Book } from 'react-feather';
 
-import { GitHub, GitLab } from 'components/icons';
+import { GitHub, GitLab } from '@/components/icons';
 
 type RepoProps = {
 	url: string;
@@ -39,7 +39,7 @@ export default function Repo({ url, description, license }: RepoProps) {
 					)}
 				</div>
 			</div>
-			<p className="text-base line-clamp-2 md:text-xl">{description}</p>
+			<p className="line-clamp-2 text-base md:text-xl">{description}</p>
 			<p className="flex items-center space-x-6 text-sm text-gray md:text-lg">
 				<span>{license}</span>
 			</p>

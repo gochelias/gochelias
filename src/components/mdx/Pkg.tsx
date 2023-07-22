@@ -1,5 +1,6 @@
-import CopyButton from 'components/CopyButton';
 import { Package } from 'react-feather';
+
+import CopyButton from '@/components/CopyButton';
 
 type PkgProps = {
 	name: string;
@@ -23,7 +24,7 @@ export default function Pkg({ url, name, description, install }: PkgProps) {
 					{name}
 				</a>
 			</div>
-			<p className="text-base line-clamp-2 md:text-xl">{description}</p>
+			<p className="line-clamp-2 text-base md:text-xl">{description}</p>
 			<div className="flex w-full items-center overflow-hidden border border-gray6dark bg-black">
 				<p
 					className="w-full overflow-x-auto whitespace-nowrap p-3 font-mono text-sm leading-normal md:p-4 md:text-lg"

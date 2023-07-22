@@ -20,11 +20,7 @@
 		"incremental": true,
 		"baseUrl": ".",
 		"paths": {
-			"app/*": ["./src/app/*"],
-			"components/*": ["./src/components/*"],
-			"config": ["./src/config"],
-			"styles/*": ["./src/styles/*"],
-			"types": ["./src/types"],
+			"@/*": ["./src/*"],
 			"contentlayer/generated": ["./.contentlayer/generated"]
 		},
 		"plugins": [

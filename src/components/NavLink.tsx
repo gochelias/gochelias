@@ -2,8 +2,7 @@
 
 import { usePathname, useRouter } from 'next/navigation';
 
-import { ArrowUpRight } from 'components/ArrowRight';
-import styles from 'styles/Navbar.module.css';
+import { ArrowUpRight } from '@/components/ArrowRight';
 
 type NavLinkProps = {
 	href: string;
@@ -44,11 +43,11 @@ export const NavLink = ({ href, name, label, closeMenu }: NavLinkProps) => {
 				{name}
 			</span>
 			{path ? (
-				<span className="mt-1 ml-3 text-sm md:flex xl:ml-12 xl:mt-6 xl:text-xl">
+				<span className="ml-3 mt-1 text-sm md:flex xl:ml-12 xl:mt-6 xl:text-xl">
 					You are here
 				</span>
 			) : (
-				<span className="mt-1 ml-3 text-sm md:flex xl:ml-12 xl:mt-6 xl:text-xl">
+				<span className="ml-3 mt-1 text-sm md:flex xl:ml-12 xl:mt-6 xl:text-xl">
 					{label}
 				</span>
 			)}
