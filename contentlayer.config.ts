@@ -77,9 +77,7 @@ export default makeSource({
 				rehypePrettyCode,
 				{
 					theme: 'one-dark-pro',
-					onVisitHighlightedLine(node: any) {
-						node.properties.className.push('highlighted');
-					},
+					keepBackground: false,
 				},
 			],
 			() => tree => {

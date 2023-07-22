@@ -118,7 +118,7 @@
 	md:text-base;
 }
 
-.cmd .line::before {
+.cmd [data-line]::before {
 	@apply mr-3
 	text-gray3dark
 	content-['$'];
@@ -156,7 +156,7 @@ pre code {
 	p-0;
 }
 
-.prose .line {
+.prose [data-line] {
 	@apply flex
 	border-l-2
 	border-transparent
@@ -164,14 +164,14 @@ pre code {
 	pr-3
 	md:px-4;
 }
-.prose .highlighted {
+.prose [data-highlighted-line] {
 	@apply box-content
 	flex
 	border-white
 	bg-gray6dark;
 }
 
-[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
+[data-rehype-pretty-code-fragment] [data-line-numbers] > [data-line]::before {
 	counter-increment: line;
 	content: counter(line);
 	@apply mr-5 inline-block 
@@ -181,16 +181,12 @@ pre code {
 	md:mr-8;
 }
 
-code[data-line-numbers-max-digits='2'] > .line::before {
+code[data-line-numbers-max-digits='2'] > [data-line]::before {
 	width: 2rem;
 }
 
-code[data-line-numbers-max-digits='3'] > .line::before {
+code[data-line-numbers-max-digits='3'] > [data-line]::before {
 	width: 3rem;
-}
-
-[data-rehype-pretty-code-title] > .codeTitle::after {
-	@apply text-red-500;
 }
 
 .navbar-show {
@@ -219,8 +215,8 @@ code[data-line-numbers-max-digits='3'] > .line::before {
 .scroll_down {
 	@apply invisible
 	absolute
-	right-0
 	bottom-0
+	right-0
 	flex 
 	w-40
 	flex-col
@@ -300,7 +296,9 @@ html.has-scroll-dragging {
 	width: 11px;
 	height: 100%;
 	transform-origin: center right;
-	transition: transform 0.3s, opacity 0.3s;
+	transition:
+		transform 0.3s,
+		opacity 0.3s;
 	opacity: 0;
 }
 .c-scrollbar:hover {
