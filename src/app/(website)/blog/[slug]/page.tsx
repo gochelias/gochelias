@@ -78,7 +78,6 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 					<h1 className={styles.postTitle}>
 						<Balancer>{post.title}</Balancer>
 					</h1>
-					<p className={styles.postOverview}>{post.overview}</p>
 				</div>
 				<p className={styles.postData}>
 					<span>{post.readingTime.text}</span>
@@ -93,6 +92,8 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 			</section>
 			<section className={styles.postMain}>
 				<article className="prose flex w-full max-w-3xl flex-col gap-y-6 font-body text-base leading-relaxed md:text-[22px]">
+					<p className="text-gray">{post.overview}</p>
+					<hr />
 					<MDXContent components={components} />
 				</article>
 			</section>

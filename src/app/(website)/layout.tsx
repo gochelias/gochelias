@@ -1,4 +1,4 @@
-import 'app/globals.css';
+import '@/app/globals.css';
 import { ReactNode } from 'react';
 import localFont from 'next/font/local';
 import type { Metadata } from 'next';

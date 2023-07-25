@@ -38,23 +38,23 @@
 
 .title {
 	@apply mb-3
-	text-2xl
-	font-medium 
+	line-clamp-3
+	text-2xl 
+	font-medium
 	text-white
 	transition-colors
-	line-clamp-3
 	hover:text-gray3light
 	2xl:text-3xl;
 }
 
 .description {
 	@apply mb-3 
+	line-clamp-3
 	font-body
 	text-lg
 	text-gray2light
-	line-clamp-3
-	2xl:text-xl 
-	2xl:line-clamp-2;
+	2xl:line-clamp-2 
+	2xl:text-xl;
 }
 
 .data {
@@ -122,13 +122,13 @@
 
 .seriesDescription {
 	@apply mt-4 
+	line-clamp-3 
 	max-w-4xl 
 	font-body 
 	text-lg 
 	text-gray 
-	line-clamp-3 
-	md:text-xl 
-	md:line-clamp-none
+	md:line-clamp-none 
+	md:text-xl
 	2xl:text-2xl;
 }
 
@@ -182,7 +182,7 @@
 
 .postTitle {
 	@apply text-center
-	text-2xl
+	text-3xl
 	font-medium
 	leading-tight
 	md:text-4xl 
@@ -190,21 +190,9 @@
 	2xl:text-7xl;
 }
 
-.postOverview {
-	@apply mt-4 
-	w-full 
-	max-w-4xl 
-	text-center
-	font-body 
-	text-lg 
-	text-gray 
-	md:text-xl
-	2xl:text-2xl;
-}
-
 .postData {
-	@apply mt-16 
-	mb-8 
+	@apply mb-8 
+	mt-16 
 	flex 
 	w-full 
 	flex-col
