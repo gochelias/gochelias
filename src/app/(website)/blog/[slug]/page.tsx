@@ -2,19 +2,14 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+// import { useMDXComponent } from 'next-contentlayer/hooks';
 import { format, parseISO } from 'date-fns';
 import Balancer from 'react-wrap-balancer';
 
 import { allPosts, type Post } from 'contentlayer/generated';
-import components from '@/components/mdx';
+import { incrementViews } from '@/app/actions';
+import MDXContent from '@/components/mdx/MDXContent';
 import styles from '../Blog.module.css';
-
-export async function generateStaticParams() {
-	return allPosts.map((post: Post) => ({
-		slug: post.slug,
-	}));
-}
 
 export async function generateMetadata({
 	params,
@@ -55,14 +50,19 @@ export async function generateMetadata({
 	};
 }
 
-export default function PostPage({ params }: { params: { slug: string } }) {
+export default async function PostPage({
+	params,
+}: {
+	params: { slug: string };
+}) {
 	const post: Post | undefined = allPosts.find(
 		(p: Post) => p.slug === params.slug,
 	);
 
 	if (!post) notFound();
 
-	const MDXContent = useMDXComponent(post.body.code);
+	await incrementViews(post.slug);
+	// const MDXContent = useMDXComponent(post.body.code);
 
 	return (
 		<main className="flex flex-col items-center">
@@ -94,7 +94,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 				<article className="prose flex w-full max-w-3xl flex-col gap-y-6 font-body text-base leading-relaxed md:text-[22px]">
 					<p className="text-gray">{post.overview}</p>
 					<hr />
-					<MDXContent components={components} />
+					<MDXContent content={post.body.code} />
 				</article>
 			</section>
 		</main>

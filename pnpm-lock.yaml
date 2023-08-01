@@ -8,6 +8,9 @@ dependencies:
   '@headlessui/react':
     specifier: 1.7.15
     version: 1.7.15(react-dom@18.2.0)(react@18.2.0)
+  '@planetscale/database':
+    specifier: 1.9.0
+    version: 1.9.0
   '@sentry/nextjs':
     specifier: 7.60.0
     version: 7.60.0(next@13.4.12)(react@18.2.0)
@@ -29,6 +32,12 @@ dependencies:
   gsap:
     specifier: 3.12.2
     version: 3.12.2
+  kysely:
+    specifier: 0.26.1
+    version: 0.26.1
+  kysely-planetscale:
+    specifier: 1.3.0
+    version: 1.3.0(@planetscale/database@1.9.0)(kysely@0.26.1)
   locomotive-scroll:
     specifier: 4.1.4
     version: 4.1.4
@@ -1504,6 +1513,11 @@ packages:
       picocolors: 1.0.0
       tiny-glob: 0.2.9
       tslib: 2.6.0
+
+  /@planetscale/database@1.9.0:
+    resolution: {integrity: sha512-QIAADQeRAb2opiZYrIqhbOfLPx4gFICAZmQBWUMoyvSQr89YQgbb+6UGJHb7zVK6O8YjoR7BjGT/Jh9RC4iSNg==}
+    engines: {node: '>=16'}
+    dev: false
 
   /@playwright/test@1.36.1:
     resolution: {integrity: sha512-YK7yGWK0N3C2QInPU6iaf/L3N95dlGdbsezLya4n0ZCh3IL7VgPGxC6Gnznh9ApWdOmkJeleT2kMTcWPRZvzqg==}
@@ -4924,6 +4938,22 @@ packages:
   /kleur@4.1.5:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
+    dev: false
+
+  /kysely-planetscale@1.3.0(@planetscale/database@1.9.0)(kysely@0.26.1):
+    resolution: {integrity: sha512-lAldOF+Yg2raVvRfyXjBqlZ63ONpNZRpfWUK9WrtEdVUIYJxOhbgzihYaRtb4lHVFNyAZyuSCvatEsK7hszcJg==}
+    peerDependencies:
+      '@planetscale/database': '*'
+      kysely: '*'
+    dependencies:
+      '@planetscale/database': 1.9.0
+      date-fns: 2.30.0
+      kysely: 0.26.1
+    dev: false
+
+  /kysely@0.26.1:
+    resolution: {integrity: sha512-FVRomkdZofBu3O8SiwAOXrwbhPZZr8mBN5ZeUWyprH29jzvy6Inzqbd0IMmGxpd4rcOCL9HyyBNWBa8FBqDAdg==}
+    engines: {node: '>=14.0.0'}
     dev: false
 
   /language-subtag-registry@0.3.22:
