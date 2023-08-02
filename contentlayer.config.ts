@@ -11,7 +11,7 @@ import { visit } from 'unist-util-visit';
 import { stat } from 'fs/promises';
 import { join } from 'path';
 
-const contentDirPath = './src/posts';
+const contentDirPath = './src/app/(website)/blog/content';
 
 const Series = defineNestedType(() => ({
 	name: 'Series',
