@@ -147,7 +147,8 @@
 	h-full 
 	w-full
 	max-w-[1450px] 
-	flex-col 
+	select-none
+	flex-col
 	items-center 
 	lg:w-4/5;
 }
@@ -156,18 +157,20 @@
 	@apply flex 
 	h-max 
 	w-full 
+	max-w-3xl
 	flex-col 
-	items-center 
-	justify-center 
-	pt-20 
+	justify-center
+	gap-y-6
+	pt-20
+	md:gap-y-8
 	xl:h-[50vh]
 	xl:pt-0;
 }
 
 .seriesPart {
-	@apply mb-8 
+	@apply w-max 
 	space-x-3 
-	border 
+	border
 	border-gray4dark 
 	px-3 
 	py-1.5 
@@ -181,34 +184,32 @@
 }
 
 .postTitle {
-	@apply text-center
+	@apply text-left
 	text-3xl
 	font-medium
 	leading-tight
 	md:text-4xl 
-	xl:text-6xl 
-	2xl:text-7xl;
+	xl:text-5xl 
+	2xl:text-6xl;
 }
 
 .postData {
-	@apply mb-8 
-	mt-16 
-	flex 
-	w-full 
-	flex-col
-	items-center
-	justify-center
-	space-x-5 
+	@apply flex 
+	w-full
+	flex-row
+	items-start
+	justify-start
+	gap-x-2
 	font-body 
 	text-base
-	text-gray3light
-	md:flex-row 
+	text-gray2light
+	md:gap-x-3 
 	xl:text-lg;
 }
 
 .postImage {
 	@apply relative 
-	mb-16 
+	my-16 
 	aspect-video 
 	w-full;
 }
@@ -222,11 +223,3 @@
 	text-gray3light 
 	sm:w-4/5;
 }
-
-/* .postArticle {
-	@apply prose 
-	flex 
-	w-full 
-	max-w-3xl 
-	flex-col gap-y-6 font-body text-[22px] leading-relaxed;
-} */

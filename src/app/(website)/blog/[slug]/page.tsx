@@ -76,22 +76,23 @@ export default async function PostPage({
 						</Link>
 					)}
 					<h1 className={styles.postTitle}>
-						<Balancer>{post.title}</Balancer>
+						<Balancer className="leading-[1.1]">
+							{post.title}
+						</Balancer>
 					</h1>
+					<p className={styles.postData}>
+						<span>{post.readingTime.text}</span>·
+						<span>
+							{format(parseISO(post.publishedAt), 'MMMM d, yyyy')}
+						</span>
+					</p>
 				</div>
-				<p className={styles.postData}>
-					<span>{post.readingTime.text}</span>
-					<span>
-						Last updated{' '}
-						{format(parseISO(post.updatedAt), 'MMMM d, yyyy')}
-					</span>
-				</p>
 				<div className={styles.postImage}>
 					<Image src={post.image} fill alt="" />
 				</div>
 			</section>
 			<section className={styles.postMain}>
-				<article className="prose flex w-full max-w-3xl flex-col gap-y-6 font-body text-base leading-relaxed md:text-[22px]">
+				<article className="prose flex w-full max-w-3xl flex-col gap-y-6 font-body text-base leading-relaxed selection:bg-white selection:text-black md:text-[22px]">
 					<p className="text-gray">{post.overview}</p>
 					<hr />
 					<MDXContent content={post.body.code} />
