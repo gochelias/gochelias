@@ -38,18 +38,18 @@
 
 .title {
 	@apply mb-3
-	line-clamp-3
-	text-2xl 
+	cursor-pointer
+	text-2xl
 	font-medium
 	text-white
 	transition-colors
 	hover:text-gray3light
-	2xl:text-3xl;
+	2xl:text-[27px];
 }
 
 .description {
-	@apply mb-3 
-	line-clamp-3
+	@apply mb-5 
+	line-clamp-3 
 	font-body
 	text-lg
 	text-gray2light
@@ -58,7 +58,8 @@
 }
 
 .data {
-	@apply flex
+	@apply mt-auto
+	flex
 	justify-between
 	font-body
 	text-sm

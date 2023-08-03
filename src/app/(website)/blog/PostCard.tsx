@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Balancer from 'react-wrap-balancer';
 import { format, parseISO } from 'date-fns';
 
 import type { Post } from 'contentlayer/generated';
@@ -24,9 +25,11 @@ export default function PostCard({ data }: { data: Post }) {
 				</Link>
 			</div>
 			{/* <h4 className={styles.category}>{category}</h4> */}
-			<h2 className={styles.title} title={title}>
-				<Link href={`/blog/${slug}`}>{title}</Link>
-			</h2>
+			<Link href={`/blog/${slug}`}>
+				<h2 className={styles.title} title={title}>
+					<Balancer className="leading-tight">{title}</Balancer>
+				</h2>
+			</Link>
 			<p className={styles.description}>{overview}</p>
 			<p className={styles.data}>
 				<span>{readingTime.text}</span>
