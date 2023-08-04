@@ -11,7 +11,7 @@ type PkgProps = {
 
 export default function Pkg({ url, name, description, install }: PkgProps) {
 	return (
-		<div className="pkg mx-auto flex w-full max-w-xl flex-col gap-y-3 border border-gray6dark bg-[#0a0a0a] p-4 md:p-5">
+		<div className="no-line mx-auto flex w-full max-w-xl flex-col gap-y-3 border border-gray6dark bg-[#0a0a0a] p-4 md:p-5">
 			<div className="flex items-center gap-3">
 				<Package className="h-5 text-white md:h-[22px]" />
 				<a

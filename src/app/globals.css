@@ -52,19 +52,16 @@
 	content-['#'];
 }
 
+.prose .no-line a {
+	@apply no-underline;
+}
+
 .prose a {
 	@apply text-gray6light
 	underline
 	decoration-gray2dark
 	decoration-2
 	underline-offset-4;
-}
-
-.prose .repo a {
-	@apply no-underline;
-}
-.prose .pkg a {
-	@apply no-underline;
 }
 
 .prose strong {

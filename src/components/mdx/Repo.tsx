@@ -15,7 +15,7 @@ export default function Repo({ url, description, license }: RepoProps) {
 	const name = urlSplit[2];
 
 	return (
-		<div className="repo mx-auto flex w-full max-w-xl flex-col gap-y-3 border border-gray6dark bg-[#0a0a0a] p-4 md:p-5">
+		<div className="no-line mx-auto flex w-full max-w-xl flex-col gap-y-3 border border-gray6dark bg-[#0a0a0a] p-4 md:p-5">
 			<div className="flex items-center justify-between">
 				<div className="flex items-center gap-3">
 					<Book className="h-5 text-white md:h-[22px]" />

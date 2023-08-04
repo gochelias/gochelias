@@ -96,6 +96,17 @@ export default async function PostPage({
 					<p className="text-gray">{post.overview}</p>
 					<hr />
 					<MDXContent content={post.body.code} />
+					{post.tags && (
+						<div className="no-line mt-16 flex items-center gap-3">
+							{post.tags.map((tag: string) => (
+								<Link
+									href={`/blog/tags/${tag}`}
+									className="border border-gray5dark bg-[#0a0a0a] px-3 py-1 text-lg text-gray">
+									{tag}
+								</Link>
+							))}
+						</div>
+					)}
 				</article>
 			</section>
 		</main>
