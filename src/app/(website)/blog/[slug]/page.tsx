@@ -61,7 +61,7 @@ export default async function PostPage({
 
 	if (!post) notFound();
 
-	await incrementViews(post.slug);
+	// await incrementViews(post.slug);
 	// const MDXContent = useMDXComponent(post.body.code);
 
 	return (

@@ -20,6 +20,18 @@
 	}
 }
 
+.prose h2 {
+	@apply relative 
+	flex
+	items-center
+	pt-7
+	font-sans
+	text-2xl
+	font-medium
+	text-white
+	md:text-3xl;
+}
+
 .prose h3 {
 	@apply relative 
 	flex
@@ -29,7 +41,7 @@
 	text-xl
 	font-medium
 	text-white
-	md:text-3xl;
+	md:text-2xl;
 }
 
 .prose .anchor {
