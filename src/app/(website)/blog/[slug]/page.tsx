@@ -97,11 +97,11 @@ export default async function PostPage({
 					<hr />
 					<MDXContent content={post.body.code} />
 					{post.tags && (
-						<div className="no-line mt-16 flex items-center gap-3">
+						<div className="no-line mt-16 flex flex-wrap items-center gap-3 overflow-hidden">
 							{post.tags.map((tag: string) => (
 								<Link
 									href={`/blog/tags/${tag}`}
-									className="border border-gray5dark bg-[#0a0a0a] px-3 py-1 text-lg text-gray">
+									className="border border-gray5dark bg-[#0a0a0a] px-3 py-1 text-base text-gray md:text-lg">
 									{tag}
 								</Link>
 							))}
