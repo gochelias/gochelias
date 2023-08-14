@@ -11,11 +11,15 @@ import { incrementViews } from '@/app/actions';
 import MDXContent from '@/components/mdx/MDXContent';
 import styles from '../Blog.module.css';
 
+type PageProps = {
+	params: {
+		slug: string;
+	};
+};
+
 export async function generateMetadata({
 	params,
-}: {
-	params: { slug: string };
-}): Promise<Metadata | undefined> {
+}: PageProps): Promise<Metadata | undefined> {
 	const post: Post | undefined = allPosts.find(
 		(p: Post) => p.slug === params.slug,
 	);
@@ -50,11 +54,7 @@ export async function generateMetadata({
 	};
 }
 
-export default async function PostPage({
-	params,
-}: {
-	params: { slug: string };
-}) {
+export default async function PostPage({ params }: PageProps) {
 	const post: Post | undefined = allPosts.find(
 		(p: Post) => p.slug === params.slug,
 	);
