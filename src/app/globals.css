@@ -150,10 +150,10 @@ code {
 	@apply inline
 	border
 	border-gray5dark 
-	bg-gray6dark
+	bg-[#0a0a0a]
 	px-1
 	text-sm
-	text-white
+	text-gray3light
 	md:text-lg;
 }
 
