@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { Metadata } from 'next';
-// import { useMDXComponent } from 'next-contentlayer/hooks';
 import daysjs from 'dayjs';
 import Balancer from 'react-wrap-balancer';
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+// import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import { allPosts, type Post } from 'contentlayer/generated';
 import { incrementViews } from '@/app/actions';
