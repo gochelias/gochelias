@@ -1,13 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Balancer from 'react-wrap-balancer';
-import { format, parseISO } from 'date-fns';
+import daysjs from 'dayjs';
 
 import type { Post } from 'contentlayer/generated';
 import styles from './Blog.module.css';
 
 export default function PostCard({ data }: { data: Post }) {
-	const { slug, image, title, overview, readingTime, publishedAt } = data;
+	const { slug, image, title, overview, readingTime } = data;
+
+	const publishedAt = daysjs(data.publishedAt).format('MMM DD, YYYY');
 
 	return (
 		<article className={styles.article}>
@@ -33,7 +35,7 @@ export default function PostCard({ data }: { data: Post }) {
 			<p className={styles.description}>{overview}</p>
 			<p className={styles.data}>
 				<span>{readingTime.text}</span>
-				<span>{format(parseISO(publishedAt), 'MMM d, yyyy')}</span>
+				<span>{publishedAt}</span>
 			</p>
 			{/* <span>·</span> #FF3E00 */}
 		</article>

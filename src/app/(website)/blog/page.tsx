@@ -1,4 +1,4 @@
-import { compareDesc } from 'date-fns';
+import dayjs from 'dayjs';
 import type { Metadata } from 'next';
 
 import { allPosts, type Post } from 'contentlayer/generated';
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
 	const posts: Post[] = allPosts.sort((a, b) =>
-		compareDesc(new Date(a.publishedAt), new Date(b.publishedAt)),
+		dayjs(a.publishedAt).isAfter(dayjs(b.publishedAt)) ? -1 : 1,
 	);
 
 	return (
