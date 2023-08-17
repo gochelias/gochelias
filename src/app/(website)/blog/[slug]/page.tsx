@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
 // import { useMDXComponent } from 'next-contentlayer/hooks';
-import { format, parseISO } from 'date-fns';
+import daysjs from 'dayjs';
 import Balancer from 'react-wrap-balancer';
 
 import { allPosts, type Post } from 'contentlayer/generated';
@@ -64,6 +64,8 @@ export default async function PostPage({ params }: PageProps) {
 	// await incrementViews(post.slug);
 	// const MDXContent = useMDXComponent(post.body.code);
 
+	const publishedAt = daysjs(post.publishedAt).format('MMM DD, YYYY');
+
 	return (
 		<main className="flex flex-col items-center">
 			<section className={styles.postHeader}>
@@ -82,9 +84,7 @@ export default async function PostPage({ params }: PageProps) {
 					</h1>
 					<p className={styles.postData}>
 						<span>{post.readingTime.text}</span>·
-						<span>
-							{format(parseISO(post.publishedAt), 'MMMM d, yyyy')}
-						</span>
+						<span>{publishedAt}</span>
 					</p>
 				</div>
 				<div className={styles.postImage}>

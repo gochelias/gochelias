@@ -17,9 +17,9 @@ dependencies:
   contentlayer:
     specifier: 0.3.4
     version: 0.3.4(esbuild@0.17.17)
-  date-fns:
-    specifier: 2.30.0
-    version: 2.30.0
+  dayjs:
+    specifier: 1.11.9
+    version: 1.11.9
   discord-webhook-node:
     specifier: 1.1.8
     version: 1.1.8
@@ -2994,6 +2994,10 @@ packages:
     engines: {node: '>=0.11'}
     dependencies:
       '@babel/runtime': 7.21.5
+    dev: false
+
+  /dayjs@1.11.9:
+    resolution: {integrity: sha512-QvzAURSbQ0pKdIye2txOzNaHmxtUBXerpY0FJsFXUMKbIZeFm5ht1LS/jFsrncjnmtv8HsG0W2g6c0zUjZWmpA==}
     dev: false
 
   /debug@2.6.9:
