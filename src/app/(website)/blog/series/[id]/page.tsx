@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Balancer from 'react-wrap-balancer';
 import { ArrowLeft } from 'react-feather';
+import Balancer from 'react-wrap-balancer';
 import Link from 'next/link';
 
-import { allPosts, Post } from 'contentlayer/generated';
+import { allPosts, type Post } from 'contentlayer/generated';
 import { Grid } from '@/components/blog';
 import styles from '../../Blog.module.css';
 

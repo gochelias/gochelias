@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'react-feather';
 
-import { allPosts, Post } from 'contentlayer/generated';
+import { allPosts, type Post } from 'contentlayer/generated';
 import { Grid } from '@/components/blog';
 import styles from '../../Blog.module.css';
 
