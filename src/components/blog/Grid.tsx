@@ -1,16 +1,16 @@
 import { Fragment } from 'react';
 
 import { Post } from 'contentlayer/generated';
-import PostCard from './PostCard';
-import styles from './Blog.module.css';
+import styles from '@/app/(website)/blog/Blog.module.css';
+import { Card } from './Card';
 
-export default function Grid({ posts }: { posts: Post[] }) {
+export function Grid({ posts }: { posts: Post[] }) {
 	return (
 		<main className={styles.gridContainer}>
 			<div className={styles.gridPosts}>
 				{posts.map((post: Post) => (
 					<Fragment key={post.slug}>
-						<PostCard data={post} />
+						<Card data={post} />
 					</Fragment>
 				))}
 			</div>

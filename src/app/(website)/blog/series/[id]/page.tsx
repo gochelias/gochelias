@@ -5,7 +5,7 @@ import { ArrowLeft } from 'react-feather';
 import Link from 'next/link';
 
 import { allPosts, Post } from 'contentlayer/generated';
-import Grid from '../../Grid';
+import { Grid } from '@/components/blog';
 import styles from '../../Blog.module.css';
 
 export async function generateMetadata({

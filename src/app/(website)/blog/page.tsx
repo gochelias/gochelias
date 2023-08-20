@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import type { Metadata } from 'next';
 
 import { allPosts, type Post } from 'contentlayer/generated';
-import Grid from './Grid';
+import { Grid } from '@/components/blog';
 
 export const metadata: Metadata = {
 	title: 'Blog',

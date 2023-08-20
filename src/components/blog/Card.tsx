@@ -3,10 +3,10 @@ import Link from 'next/link';
 import Balancer from 'react-wrap-balancer';
 import daysjs from 'dayjs';
 
+import styles from '@/app/(website)/blog/Blog.module.css';
 import type { Post } from 'contentlayer/generated';
-import styles from './Blog.module.css';
 
-export default function PostCard({ data }: { data: Post }) {
+export function Card({ data }: { data: Post }) {
 	const { slug, image, title, overview, readingTime } = data;
 
 	const publishedAt = daysjs(data.publishedAt).format('MMM DD, YYYY');

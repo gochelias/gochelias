@@ -1,0 +1,103 @@
+---
+id: ee7c61
+image: 'https://images.unsplash.com/photo-1522517779552-6cf4c1f31ee3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080&q=80'
+title: 'Fastify API: Building a Lightning-Fast REST Backend'
+overview: 'Task-01: Launch an EC2 instance, install a web server, and deploy a simple web application Launch an EC2'
+publishedAt: 2023/05/17
+series:
+    id: a0bf45
+    part: 1
+    title: 'API Rest with Fastify, Prisma and TypeScript'
+    overview: 'Definiremos Schemas, agregaremos autorizacion login y documentacion'
+tags:
+    - aws
+    - python
+    - fastapi
+    - graphql
+---
+
+One metric for a website's success is the amount of traffic it receives. For a blog, this translates to page views. Articles with lots of views indicate the content your readers care most about. This helps drive future articles.
+
+Most people measure view counts via analytics (like `Google Analytics`). However, with the rise of ad-blocking browser extensions, these counts are likely ~10% off (especially if your target market is tech). What if we could have better accuracy, better performance, and better privacy for our users?
+
+### Connect DynamoDB Database
+
+This post will show how to display real-time view counts for a given blog post using [Firebase](https://firebase.google.com/docs/database). We can host and deploy this entire solution for free using Firebase's [free tier and Vercel](https://firebase.google.com/pricing/).
+
+1.  Create project
+1.  Install dependecies
+1.  Configure
+1.  Create Home Page
+
+-   http.IncomingMessage
+-   http.ServerResponse
+
+with [`mercurial`](https://tailwindcss.com/docs/word-break)
+
+> If your site receives a lot of traffic, you'll need to upgrade from the Spark plan (free) to `Blaze` (pay-as-you-go). On Spark, you can only have 100 simultaneous connections. With Blaze, you can have 100k.
+
+<Cmd>
+```shell
+yarn add swr
+```
+
+</Cmd>
+
+<Code filename="[slug].js" icon="javascript">
+```js showLineNumbers {14-16}
+import { db } from '../../lib/firebase';
+ 
+export default async (req, res) => {
+  if (req.method === 'POST') {
+    const ref = db.ref('views').child(req.query.slug);
+    const { snapshot } = await ref.transaction((currentViews) => {
+      if (currentViews === null) {
+        return 1;
+      }
+ 
+      return currentViews + 1;
+    });
+ 
+    return res.status(200).json({
+      total: snapshot.val(),
+    });
+  }
+ 
+  if (req.method === 'GET') {
+    const snapshot = await db.ref('views').child(req.query.slug).once('value');
+    const views = snapshot.val();
+ 
+    return res.status(200).json({ total: views });
+  }
+};
+```
+
+</Code>
+
+Code blocks are unstyled to give you full control. Code blocks however assume a grid style, so ensure the following style is present:
+
+<Repo
+	url="github.com/gochelias/tasklab"
+	description="✨ My portfolio built with Next.js, Tailwind CSS, PlanetScale, and Vercel."
+	license="MIT license"
+/>
+
+## Connect DynamoDB Database
+
+Amazon Aurora es un sistema de administración de bases de datos relacionales (RDBMS), creado para la nube, con compatibilidad completa con MySQL y PostgreSQL. Aurora le ofrece rendimiento y disponibilidad de bases de datos comerciales por una décima parte del costo.
+
+<Pkg
+	name="react"
+	description="React is a JavaScript library for building user interfaces."
+	install="npm i react"
+	url="https://www.npmjs.com/package/react"
+/>
+
+Opere aplicaciones empresariales, como aquellas de administración de relaciones con los clientes (CRM), de planificación de recursos empresariales (ERP), de cadena de suministro y de facturación, con alta disponibilidad y rendimiento.
+
+<Img src="https://images.unsplash.com/photo-1688223367766-38daf84eb2fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=1080&q=60" />
+
+<Quote
+	content="A room without books is like a body without a soul."
+	author="Marcus Tullius Cicero"
+/>
