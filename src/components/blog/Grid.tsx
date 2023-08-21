@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 
 import { Post } from 'contentlayer/generated';
-import styles from '@/app/(website)/blog/Blog.module.css';
+import styles from '@/styles/Blog.module.css';
 import { Card } from './Card';
 
 export function Grid({ posts }: { posts: Post[] }) {

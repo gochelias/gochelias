@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Balancer from 'react-wrap-balancer';
 import daysjs from 'dayjs';
 
-import styles from '@/app/(website)/blog/Blog.module.css';
 import type { Post } from 'contentlayer/generated';
+import styles from '@/styles/Blog.module.css';
 
 export function Card({ data }: { data: Post }) {
 	const { slug, image, title, overview, readingTime } = data;

@@ -5,8 +5,8 @@ import Balancer from 'react-wrap-balancer';
 import Link from 'next/link';
 
 import { allPosts, type Post } from 'contentlayer/generated';
+import styles from '@/styles/Blog.module.css';
 import { Grid } from '@/components/blog';
-import styles from '../../Blog.module.css';
 
 export async function generateMetadata({
 	params,

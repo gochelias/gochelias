@@ -4,8 +4,8 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'react-feather';
 
 import { allPosts, type Post } from 'contentlayer/generated';
+import styles from '@/styles/Blog.module.css';
 import { Grid } from '@/components/blog';
-import styles from '../../Blog.module.css';
 
 export default function TagPage({ params }: { params: { slug: string } }) {
 	const posts: Post[] = allPosts.filter(

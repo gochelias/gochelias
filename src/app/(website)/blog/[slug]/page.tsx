@@ -7,9 +7,9 @@ import type { Metadata } from 'next';
 // import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import { allPosts, type Post } from 'contentlayer/generated';
+import styles from '@/styles/Blog.module.css';
 import { incrementViews } from '@/app/actions';
 import MDXContent from '@/components/mdx/MDXContent';
-import styles from '../Blog.module.css';
 
 type PageProps = {
 	params: {
