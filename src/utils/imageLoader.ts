@@ -8,11 +8,11 @@ import type { ImageLoaderProps } from 'next/image';
  *
  * Example: https://res.cloudinary.com/demo/image/upload/w_600,c_limit,f_webp,q_auto/sample
  */
-export function cloudinaryLoader({
+export const cloudinaryLoader = ({
 	src,
 	width,
 	quality,
-}: ImageLoaderProps): string {
+}: ImageLoaderProps): string => {
 	const url = 'https://res.cloudinary.com/demo/image/upload';
 	const params = [
 		`w_${width}`,
@@ -22,4 +22,4 @@ export function cloudinaryLoader({
 	];
 
 	return `${url}/${params.join(',')}/${src}`;
-}
+};
