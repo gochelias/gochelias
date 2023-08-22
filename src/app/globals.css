@@ -120,13 +120,14 @@
 .prose li::marker {
 	@apply text-right
 	text-lg
-	text-gray2dark;
+	text-white
+	md:text-xl;
 }
 
 .prose ol li::marker {
 	@apply font-mono 
 	text-sm
-	md:text-base;
+	md:text-lg;
 }
 
 .cmd [data-line]::before {
