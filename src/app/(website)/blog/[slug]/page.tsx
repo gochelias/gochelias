@@ -4,12 +4,10 @@ import daysjs from 'dayjs';
 import Balancer from 'react-wrap-balancer';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-// import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import { allPosts, type Post } from 'contentlayer/generated';
 import styles from '@/styles/Blog.module.css';
-import { incrementViews } from '@/app/actions';
-import MDXContent from '@/components/mdx/MDXContent';
+import { Info, MDX } from '@/components/blog';
 
 type PageProps = {
 	params: {
@@ -54,15 +52,12 @@ export async function generateMetadata({
 	};
 }
 
-export default async function PostPage({ params }: PageProps) {
+export default function PostPage({ params }: PageProps) {
 	const post: Post | undefined = allPosts.find(
 		(p: Post) => p.slug === params.slug,
 	);
 
 	if (!post) notFound();
-
-	// await incrementViews(post.slug);
-	// const MDXContent = useMDXComponent(post.body.code);
 
 	const publishedAt = daysjs(post.publishedAt).format('MMM DD, YYYY');
 
@@ -82,10 +77,11 @@ export default async function PostPage({ params }: PageProps) {
 							{post.title}
 						</Balancer>
 					</h1>
-					<p className={styles.postData}>
-						<span>{post.readingTime.text}</span>·
-						<span>{publishedAt}</span>
-					</p>
+					<Info
+						slug={post.slug}
+						readingTime={post.readingTime.text}
+						publishedAt={publishedAt}
+					/>
 				</div>
 				<div className={styles.postImage}>
 					<Image src={post.image} fill alt="" />
@@ -95,7 +91,7 @@ export default async function PostPage({ params }: PageProps) {
 				<article className="prose flex w-full max-w-3xl flex-col gap-y-6 font-body text-base leading-relaxed selection:bg-white selection:text-black md:text-[22px]">
 					<p className="text-gray">{post.overview}</p>
 					<hr />
-					<MDXContent content={post.body.code} />
+					<MDX content={post.body.code} />
 					{post.tags && (
 						<div className="no-line mt-16 flex flex-wrap items-center gap-3 overflow-hidden">
 							{post.tags.map((tag: string) => (
