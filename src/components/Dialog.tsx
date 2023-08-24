@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
+import Link from 'next/link';
 import { Transition, Dialog as Modal } from '@headlessui/react';
 import { Check, X, XCircle, XOctagon } from 'react-feather';
 
-import styles from 'styles/Dialog.module.css';
-import { DialogProps } from 'types';
-import Link from 'next/link';
+import { DialogProps } from '@/types';
+import styles from '@/styles/Dialog.module.css';
 
 export const Dialog = ({
 	type,

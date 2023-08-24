@@ -1,4 +1,3 @@
-const LineClamp = require('@tailwindcss/line-clamp');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -38,5 +37,4 @@ module.exports = {
 			mono: ['var(--font-jetbrains-mono)'],
 		},
 	},
-	plugins: [LineClamp],
 };

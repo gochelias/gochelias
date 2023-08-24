@@ -6,11 +6,11 @@ import Link from 'next/link';
 import { X } from 'react-feather';
 import gsap, { Expo } from 'gsap';
 
-import { SocialLink } from 'components/SocialLink';
-import { NavLink } from 'components/NavLink';
-import { Email } from 'components/Email';
-import { socialLinks } from 'config';
-import styles from 'styles/Navbar.module.css';
+import styles from '@/styles/Navbar.module.css';
+import { SocialLink } from '@/components/SocialLink';
+import { NavLink } from '@/components/NavLink';
+import { Email } from '@/components/Email';
+import { socialLinks } from '@/config';
 
 export const Navbar = () => {
 	const pathname = usePathname();

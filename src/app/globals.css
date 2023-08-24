@@ -20,6 +20,187 @@
 	}
 }
 
+.prose h2 {
+	@apply relative 
+	flex
+	items-center
+	pt-7
+	font-sans
+	text-2xl
+	font-medium
+	text-white
+	md:text-3xl;
+}
+
+.prose h3 {
+	@apply relative 
+	flex
+	items-center
+	pt-7
+	font-sans
+	text-xl
+	font-medium
+	text-white
+	md:text-2xl;
+}
+
+.prose .anchor {
+	@apply absolute 
+	flex
+	w-full
+	no-underline
+	opacity-0;
+}
+
+.anchor:hover {
+	@apply opacity-100
+	transition-opacity;
+}
+
+.prose .anchor::before {
+	@apply -translate-x-full
+	pr-3
+	text-gray3dark
+	content-['#'];
+}
+
+.prose .no-line a {
+	@apply no-underline;
+}
+
+.prose a {
+	@apply text-gray6light
+	underline
+	decoration-gray2dark
+	decoration-2
+	underline-offset-4;
+}
+
+.prose strong {
+	@apply font-sans 
+	font-medium
+	text-white;
+}
+
+.prose blockquote {
+	@apply border-l-4 
+	border-gray3dark
+	py-2
+	pl-4
+	md:pl-5;
+}
+
+.prose hr {
+	@apply my-2
+	w-8
+	border-b-2
+	border-white
+	md:w-10;
+}
+
+.prose ul,
+.prose ol {
+	@apply space-y-2;
+}
+
+.prose ul {
+	@apply pl-6;
+}
+
+.prose ul li {
+	@apply list-disc
+	pl-3;
+}
+.prose ol li {
+	@apply list-inside 
+	list-decimal
+	pl-2;
+}
+
+.prose li::marker {
+	@apply text-right
+	text-lg
+	text-white
+	md:text-xl;
+}
+
+.prose ol li::marker {
+	@apply font-mono 
+	text-sm
+	md:text-lg;
+}
+
+.cmd [data-line]::before {
+	@apply mr-3
+	text-gray3dark
+	content-['$'];
+}
+
+pre {
+	@apply max-h-[80vh]
+	overflow-x-auto
+	overflow-y-auto
+	bg-[#0a0a0a]
+	py-3
+	leading-none
+	md:py-4;
+}
+
+code {
+	counter-reset: line;
+	@apply inline
+	border
+	border-gray5dark 
+	bg-[#0a0a0a]
+	px-1
+	text-sm
+	text-gray3light
+	md:text-lg;
+}
+
+pre code {
+	@apply flex
+	min-w-max 
+	max-w-full
+	flex-col
+	border-none
+	bg-transparent
+	p-0;
+}
+
+.prose [data-line] {
+	@apply flex
+	border-l-2
+	border-transparent
+	pl-2
+	pr-3
+	md:px-4;
+}
+.prose [data-highlighted-line] {
+	@apply box-content
+	flex
+	border-white
+	bg-gray6dark;
+}
+
+[data-rehype-pretty-code-fragment] [data-line-numbers] > [data-line]::before {
+	counter-increment: line;
+	content: counter(line);
+	@apply mr-5 inline-block 
+	w-6
+	text-right
+	text-gray3dark
+	md:mr-8;
+}
+
+code[data-line-numbers-max-digits='2'] > [data-line]::before {
+	width: 2rem;
+}
+
+code[data-line-numbers-max-digits='3'] > [data-line]::before {
+	width: 3rem;
+}
+
 .navbar-show {
 	@apply translate-y-0;
 }
@@ -46,8 +227,8 @@
 .scroll_down {
 	@apply invisible
 	absolute
-	right-0
 	bottom-0
+	right-0
 	flex 
 	w-40
 	flex-col
@@ -127,7 +308,9 @@ html.has-scroll-dragging {
 	width: 11px;
 	height: 100%;
 	transform-origin: center right;
-	transition: transform 0.3s, opacity 0.3s;
+	transition:
+		transform 0.3s,
+		opacity 0.3s;
 	opacity: 0;
 }
 .c-scrollbar:hover {

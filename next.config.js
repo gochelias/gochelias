@@ -1,17 +1,28 @@
 const { withSentryConfig } = require('@sentry/nextjs');
+const { withContentlayer } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	experimental: {
-		appDir: true,
+		serverActions: true,
 	},
 	images: {
 		domains: ['images.unsplash.com', 'cdn.svgporn.com', 'www.svgrepo.com'],
 	},
 	async redirects() {
 		return [
+			{
+				source: '/blog/series',
+				destination: '/blog',
+				permanent: true,
+			},
+			{
+				source: '/blog/tags',
+				destination: '/blog',
+				permanent: true,
+			},
 			{
 				source: '/github',
 				destination: 'https://github.com/gochelias',
@@ -47,7 +58,7 @@ const nextConfig = {
 };
 
 module.exports = withSentryConfig(
-	nextConfig,
+	withContentlayer(nextConfig),
 	{
 		silent: true,
 		org: 'gochelias',

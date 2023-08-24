@@ -1,23 +1,12 @@
-import 'app/globals.css';
+import '@/app/globals.css';
 import { ReactNode } from 'react';
 import localFont from 'next/font/local';
 import type { Metadata } from 'next';
 
-import { Navbar } from 'components/Navbar';
+import { Navbar } from '@/components/Navbar';
 
 const clashDisplay = localFont({
-	src: [
-		{
-			path: '../../../public/fonts/clash-display-400-regular.woff2',
-			weight: '400',
-			style: 'normal',
-		},
-		{
-			path: '../../../public/fonts/clash-display-500-medium.woff2',
-			weight: '500',
-			style: 'normal',
-		},
-	],
+	src: '../../../public/fonts/clash-display-variable.woff2',
 	variable: '--font-clash-display',
 	display: 'swap',
 });
@@ -43,13 +32,13 @@ export const metadata: Metadata = {
 		default: 'Elias Goche',
 		template: '%s | Elias Goche',
 	},
-	description: 'Full-Stack Developer.',
+	description: 'Software Developer.',
 	openGraph: {
 		title: 'Elias Goche',
-		description: 'Full-Stack Developer.',
+		description: 'Software Developer.',
 		url: 'https://gochelias.com',
 		siteName: 'Elias Goche',
-		/* images: [], */
+		images: ['../opengraph-image.png'],
 		locale: 'en-US',
 		alternateLocale: 'es-ES',
 		type: 'website',
@@ -71,12 +60,12 @@ export const metadata: Metadata = {
 	themeColor: 'black',
 	twitter: {
 		title: 'Elias Goche',
-		description: 'Full-Stack Developer.',
+		description: 'Software Developer.',
 		card: 'summary_large_image',
 		siteId: '1400908388',
 		creator: '@gochelias',
 		creatorId: '1400908388',
-		/* images: [], */
+		images: ['../opengraph-image.png'],
 	},
 };
 

@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-import { ArrowUpRight } from 'components/ArrowRight';
-import { SocialLink } from 'components/SocialLink';
-import { Email } from 'components/Email';
-import { socialLinks } from 'config';
-import styles from 'styles/Footer.module.css';
+import styles from '@/styles/Footer.module.css';
+import { ArrowUpRight } from '@/components/ArrowRight';
+import { SocialLink } from '@/components/SocialLink';
+import { Email } from '@/components/Email';
+import { socialLinks } from '@/config';
 
 export const Footer = () => {
 	const apos = '\u2019';

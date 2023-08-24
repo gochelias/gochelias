@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { ArrowUpRight } from 'components/ArrowRight';
-import { Divider } from 'components/Divider';
+import { ArrowUpRight } from '@/components/ArrowRight';
+import { Divider } from '@/components/Divider';
 import styles from './Home.module.css';
 
 export const HeaderHome = () => (
