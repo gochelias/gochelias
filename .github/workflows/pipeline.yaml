@@ -9,6 +9,7 @@ env:
   SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
   SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
   SENTRY_LOG_LEVEL: info
+  PNPM_VERSION: 8
 
 on:
   push:
@@ -35,17 +36,17 @@ jobs:
         uses: pnpm/action-setup@v2
         id: pnpm-install
         with:
-          version: 7
+          version: ${{ env.PNPM_VERSION }}
           run_install: false
       - name: Get pnpm Store Directory
         id: pnpm-cache
         shell: bash
         run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
       - name: Setup pnpm cache
         uses: actions/cache@v3
         with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
@@ -63,7 +64,7 @@ jobs:
           node-version: 16.17.1
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: ${{ env.PNPM_VERSION }}
       - name: Install Dependencies
         run: pnpm install
       - name: Run Lint
@@ -80,7 +81,7 @@ jobs:
           node-version: 16.17.1
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: ${{ env.PNPM_VERSION }}
       - name: Install Dependencies
         run: pnpm install
       - name: Run Build
@@ -102,7 +103,7 @@ jobs:
           node-version: 16.17.1
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: ${{ env.PNPM_VERSION }}
       - name: Install Dependencies
         run: pnpm install
       - name: Run Test
@@ -119,7 +120,7 @@ jobs:
           node-version: 16.17.1
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: ${{ env.PNPM_VERSION }}
       - name: Download Build
         uses: actions/download-artifact@v3
         with:
@@ -144,7 +145,7 @@ jobs:
           node-version: 16.17.1
       - uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: ${{ env.PNPM_VERSION }}
       - name: Install Vercel CLI
         run: pnpm install -g vercel@latest
       - name: Pull Vercel Environment Information
