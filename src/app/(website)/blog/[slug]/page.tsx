@@ -95,13 +95,12 @@ export default function PostPage({ params }: PageProps) {
 					{post.tags && (
 						<div className="no-line mt-16 flex flex-wrap items-center gap-3 overflow-hidden">
 							{post.tags.map((tag: string) => (
-								<div key={tag}>
-									<Link
-										href={`/blog/tags/${tag}`}
-										className="border border-gray5dark bg-[#0a0a0a] px-3 py-1 text-base text-gray md:text-lg">
-										{tag}
-									</Link>
-								</div>
+								<Link
+									key={tag}
+									href={`/blog/tags/${tag}`}
+									className="border border-gray5dark bg-[#0a0a0a] px-3 py-1 text-base text-gray md:text-lg">
+									{tag}
+								</Link>
 							))}
 						</div>
 					)}
