@@ -59,11 +59,11 @@
 
 .headerCenter {
 	@apply mt-16 
-	sm:mt-8
 	sm:ml-auto
+	sm:mt-8
 	sm:w-2/3
-	2xl:mt-8
-	2xl:ml-auto 
+	2xl:ml-auto
+	2xl:mt-8 
 	2xl:w-2/3;
 }
 
@@ -108,8 +108,8 @@
 }
 
 .about {
-	@apply mt-16 
-	ml-auto 
+	@apply ml-auto 
+	mt-16 
 	h-full
 	select-none
 	sm:w-3/4
@@ -305,19 +305,19 @@
 }
 
 .recentProjectDescription {
-	@apply flex
+	@apply line-clamp-3
+	flex
 	w-5/6
 	flex-wrap
 	text-lg
 	font-medium
 	uppercase
-	line-clamp-3
 	sm:w-2/3
 	lg:text-2xl
 	xl:font-normal
-	2xl:w-2/5 
-	2xl:text-4xl 
-	2xl:line-clamp-none;
+	2xl:line-clamp-none 
+	2xl:w-2/5
+	2xl:text-4xl;
 }
 
 .recentProjectArrowLink {
