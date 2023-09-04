@@ -1,31 +1,9 @@
 import '@/app/globals.css';
 import { ReactNode } from 'react';
-import localFont from 'next/font/local';
 import type { Metadata } from 'next';
 
+import { clash_display, telegraf, jet_brains_mono } from '@/fonts';
 import { Navigation } from '@/components/layout';
-
-const clashDisplay = localFont({
-	src: '../../../public/fonts/clash-display-variable.woff2',
-	variable: '--font-clash-display',
-	display: 'swap',
-});
-
-const telegraf = localFont({
-	src: '../../../public/fonts/telegraf-400-regular.woff2',
-	variable: '--font-telegraf',
-	weight: '400',
-	style: 'normal',
-	display: 'swap',
-});
-
-const jetBrainsMono = localFont({
-	src: '../../../public/fonts/jetbrains-mono-400-regular.woff2',
-	variable: '--font-jetbrains-mono',
-	weight: '400',
-	style: 'normal',
-	display: 'swap',
-});
 
 export const metadata: Metadata = {
 	title: {
@@ -73,7 +51,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html
 			lang="en"
-			className={`${clashDisplay.variable} ${telegraf.variable} ${jetBrainsMono.variable}`}>
+			className={`${clash_display.variable} ${telegraf.variable} ${jet_brains_mono.variable}`}>
 			<body className="h-full w-full">
 				<Navigation />
 				{children}
