@@ -1,0 +1,161 @@
+.button {
+	@apply flex 
+    h-full 
+    w-20
+    items-center 
+    justify-center 
+    border-l
+    border-gray5dark 
+    focus-visible:outline-none 
+    md:w-24
+    lg:w-28
+    xl:w-32
+    2xl:w-36
+    2xl:border-x;
+}
+
+.btnContainer {
+	@apply relative
+    flex
+    h-7
+    w-7
+    flex-col
+    items-center
+    justify-center
+    overflow-hidden
+    2xl:h-8
+    2xl:w-8;
+}
+
+.line {
+	@apply absolute
+    border-t-2
+    border-white
+    transition-all
+    duration-200
+    ease-in-out;
+}
+
+.one {
+	composes: line;
+	@apply w-7
+    -translate-y-1
+    xl:w-8;
+}
+
+.two {
+	composes: line;
+	@apply w-3.5
+    translate-y-1
+    self-end
+    xl:w-4
+    xl:translate-y-1.5;
+}
+
+/* Menu */
+.backdrop {
+	@apply fixed inset-0 
+    bg-black/50;
+}
+
+.container {
+	@apply fixed 
+    inset-0 
+    flex
+    items-center
+    justify-end;
+}
+
+.panel {
+	height: 100dvh;
+	@apply flex 
+    h-full 
+    w-2/3
+    items-center
+    overflow-hidden
+    bg-[#111]
+    pt-14
+    md:w-1/2
+    md:pt-16
+    lg:w-2/3
+    xl:w-1/2
+    xl:pt-24
+    portrait:w-full
+    portrait:md:w-1/2;
+}
+
+.title {
+	@apply mb-3
+    select-none
+    text-base
+    leading-none
+    text-gray2dark
+    md:mb-4
+    lg:mb-5
+    xl:mb-6
+    xl:text-lg;
+}
+
+.wrapper {
+	@apply flex 
+    h-full 
+    w-full 
+    max-w-1k 
+    items-center
+    justify-start 
+    gap-y-32 
+    font-body
+    text-white
+    lg:justify-center
+    portrait:px-8
+    md:portrait:px-12 
+    sm:landscape:justify-center;
+}
+
+.links {
+	@apply flex 
+    flex-col 
+    gap-y-3 
+    md:gap-y-4
+    lg:gap-y-5
+    xl:gap-y-6;
+}
+
+.link {
+	@apply select-none
+    text-3xl
+    capitalize
+    transition-colors
+    hover:text-gray2light
+    focus-visible:outline-none
+    md:text-4xl
+    lg:text-5xl
+    xl:text-6xl
+    2xl:text-7xl;
+}
+
+.content {
+	@apply flex
+    h-max
+    items-start
+    gap-x-16
+    gap-y-16
+    md:flex-row
+    md:gap-x-32
+    portrait:flex-col;
+}
+
+.nav {
+	@apply flex
+    w-max 
+    flex-col;
+}
+
+.social {
+	@apply flex
+    h-max
+    flex-col
+    items-start
+    gap-y-8
+    xl:gap-y-10;
+}

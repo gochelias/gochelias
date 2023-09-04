@@ -1,9 +1,15 @@
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{ts,tsx}'],
 	theme: {
 		extend: {
+			screens: {
+				'2k': '2000px',
+			},
+			maxWidth: {
+				'1k': '1000px',
+				'2k': '2000px',
+			},
 			colors: {
 				dark: '#111111',
 				gray6light: '#F2F2F7',

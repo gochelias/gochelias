@@ -5,10 +5,9 @@ import { Expo } from 'gsap';
 import { Tween } from 'react-gsap';
 import * as Sentry from '@sentry/nextjs';
 
-import { SocialLink } from '@/components/SocialLink';
 import { Dialog } from '@/components/Dialog';
 import { ArrowUpRight } from '@/components/ArrowRight';
-import { socialLinks, dialogMessages } from '@/config';
+import { dialogMessages } from '@/config';
 import { ContactForm, DialogData } from '@/types';
 import styles from './Contact.module.css';
 
@@ -195,11 +194,6 @@ const ContactPage = () => {
 								/>
 							</button>
 						</form>
-						<div className={styles.links}>
-							<SocialLink type={socialLinks.github} />
-							<SocialLink type={socialLinks.linkedin} />
-							<SocialLink type={socialLinks.discord} />
-						</div>
 					</div>
 				</section>
 			</Tween>

@@ -2,9 +2,6 @@ import Link from 'next/link';
 
 import styles from '@/styles/Footer.module.css';
 import { ArrowUpRight } from '@/components/ArrowRight';
-import { SocialLink } from '@/components/SocialLink';
-import { Email } from '@/components/Email';
-import { socialLinks } from '@/config';
 
 export const Footer = () => {
 	const apos = '\u2019';
@@ -28,18 +25,6 @@ export const Footer = () => {
 						/>
 					</span>
 				</Link>
-			</div>
-			<div className="w-full">
-				<div className={styles.footerLinksContainer}>
-					<div className={styles.footerLinks}>
-						<SocialLink type={socialLinks.github} />
-						<SocialLink type={socialLinks.codepen} />
-						<SocialLink type={socialLinks.dribbble} />
-						<SocialLink type={socialLinks.linkedin} />
-						<SocialLink type={socialLinks.discord} />
-					</div>
-					<Email />
-				</div>
 			</div>
 		</footer>
 	);

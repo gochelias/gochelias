@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import localFont from 'next/font/local';
 import type { Metadata } from 'next';
 
-import { Navbar } from '@/components/Navbar';
+import { Navigation } from '@/components/layout';
 
 const clashDisplay = localFont({
 	src: '../../../public/fonts/clash-display-variable.woff2',
@@ -74,8 +74,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 		<html
 			lang="en"
 			className={`${clashDisplay.variable} ${telegraf.variable} ${jetBrainsMono.variable}`}>
-			<body className="h-full w-full px-4 md:px-6 lg:px-8 2xl:px-16">
-				<Navbar />
+			<body className="h-full w-full">
+				<Navigation />
 				{children}
 			</body>
 		</html>

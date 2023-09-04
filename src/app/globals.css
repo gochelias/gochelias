@@ -16,8 +16,29 @@
 		body {
 			color: white;
 			background: black;
+			scrollbar-gutter: stable;
 		}
 	}
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.wrapper {
+	@apply w-full max-w-2k;
+}
+
+.padding {
+	@apply px-4 
+	md:px-6 
+	lg:px-8 
+	2xl:px-16
+	2k:px-0;
 }
 
 * {

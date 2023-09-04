@@ -1,0 +1,33 @@
+.link {
+	@apply flex
+    select-none
+    gap-x-2
+    text-lg
+    leading-none
+    transition-colors
+    hover:text-gray2light
+    xl:text-xl;
+}
+
+.icon {
+	@apply text-white
+    opacity-0
+    transition-opacity
+    duration-150;
+}
+
+.column {
+	@apply flex
+    w-max
+    flex-col
+    gap-y-3;
+}
+
+.email {
+	@apply text-lg
+    transition-colors
+    selection:bg-white
+    selection:text-black
+    hover:text-gray2light
+    2xl:text-xl;
+}
