@@ -41,6 +41,12 @@
 	2k:px-0;
 }
 
+hr {
+	@apply mb-6 
+	border-gray5dark 
+	md:mb-8;
+}
+
 * {
 	scrollbar-color: #2c2c2d black;
 }

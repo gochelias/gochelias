@@ -19,7 +19,7 @@ export const SocialLink = ({ platform }: { platform: Platform }) => (
 		<span>{platform}</span>
 		<ExternalLink
 			size={18}
-			className={`${styles.icon} group-hover:opacity-100`}
+			className={`${styles.icon} mb-px group-hover:opacity-100`}
 		/>
 	</a>
 );
@@ -32,6 +32,23 @@ export const SocialLink = ({ platform }: { platform: Platform }) => (
 export function SocialLinksColumn({ include }: { include: Platform[] }) {
 	return (
 		<ul className={styles.column}>
+			{include.map((platform: Platform) => (
+				<li key={platform}>
+					<SocialLink platform={platform} />
+				</li>
+			))}
+		</ul>
+	);
+}
+
+/**
+ * Generates a row of social links
+ *
+ * @param include An array of platforms to include in the row
+ */
+export function SocialLinksRow({ include }: { include: Platform[] }) {
+	return (
+		<ul className={styles.row}>
 			{include.map((platform: Platform) => (
 				<li key={platform}>
 					<SocialLink platform={platform} />

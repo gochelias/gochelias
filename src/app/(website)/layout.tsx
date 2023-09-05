@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
 import { clash_display, telegraf, jet_brains_mono } from '@/fonts';
-import { Navigation } from '@/components/layout';
+import { Footer, Navigation } from '@/components/layout';
 
 export const metadata: Metadata = {
 	title: {
@@ -55,6 +55,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 			<body className="h-full w-full">
 				<Navigation />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
