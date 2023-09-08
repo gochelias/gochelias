@@ -16,17 +16,17 @@
 		body {
 			color: white;
 			background: black;
-			scrollbar-gutter: stable;
+			overflow-x: hidden;
 		}
 	}
 }
 
-.container {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.box {
+	@apply flex
+	h-full
+	w-screen 
+	items-center
+	justify-center;
 }
 
 .wrapper {
@@ -39,6 +39,10 @@
 	lg:px-8 
 	2xl:px-16
 	2k:px-0;
+}
+
+.textSize {
+	@apply text-lg xl:text-xl;
 }
 
 hr {
