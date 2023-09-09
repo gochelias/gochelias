@@ -1,0 +1,51 @@
+.main {
+	@apply flex
+    h-screen
+    w-screen
+    justify-center
+    pt-14
+    md:pt-16
+    xl:pt-20
+    2xl:pt-24;
+}
+
+.wrapper {
+	composes: wrapper from global;
+	composes: padding from global;
+	@apply flex
+    h-full
+    flex-col
+    items-center
+    justify-center
+    gap-x-8
+    gap-y-4
+    pt-8
+    sm:landscape:flex-row
+    lg:landscape:flex-row;
+}
+
+.content {
+	@apply flex
+    w-full
+    flex-col
+    gap-y-8
+    lg:w-1/2
+    xl:gap-y-16
+    sm:landscape:w-1/2;
+}
+
+.title {
+	@apply select-none
+    text-6xl
+    font-medium
+    md:text-7xl
+    xl:text-8xl
+    2xl:text-9xl;
+}
+
+.email {
+	composes: textSize from global;
+	@apply text-gray2light
+    selection:bg-white
+    selection:text-black;
+}

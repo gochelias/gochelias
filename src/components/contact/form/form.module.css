@@ -1,0 +1,62 @@
+.form {
+	@apply flex
+    w-full
+    flex-col
+    gap-y-6
+    lg:w-1/2
+    2xl:gap-y-8
+    sm:landscape:w-1/2;
+}
+
+.field {
+	composes: textSize from global;
+	@apply border-b
+    border-gray5dark
+    bg-black
+    px-2
+    font-body
+    selection:bg-white
+    selection:text-black
+    placeholder:text-gray2dark
+    focus:border-white
+    focus-visible:outline-none;
+}
+
+.inputs {
+	@apply flex
+    w-full
+    flex-col
+    items-center
+    gap-x-8
+    gap-y-3
+    2xl:flex-row;
+}
+
+.input {
+	composes: field;
+	@apply h-16
+    w-full
+    2xl:w-1/2;
+}
+
+.textarea {
+	composes: field;
+	@apply h-28
+    xl:h-44;
+}
+
+.send {
+	composes: textSize from global;
+	@apply flex
+    w-max
+    select-none
+    items-center
+    justify-center
+    gap-x-3
+    font-body
+    font-medium
+    text-gray2light
+    transition-colors
+    hover:text-white
+    focus-visible:outline-none;
+}
