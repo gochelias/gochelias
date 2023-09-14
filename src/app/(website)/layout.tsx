@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 		<html
 			lang="en"
 			className={`${clash_display.variable} ${telegraf.variable} ${jet_brains_mono.variable}`}>
-			<body className="h-full w-full">
+			<body className="h-full w-screen">
 				<Navigation />
 				{children}
 				<Footer />

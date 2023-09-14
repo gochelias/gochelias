@@ -1,3 +1,2 @@
-export * from './ContactForm';
-export * from './Dialog';
+export * from './contact-form';
 export * from './Database';

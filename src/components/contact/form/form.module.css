@@ -58,5 +58,6 @@
     text-gray2light
     transition-colors
     hover:text-white
-    focus-visible:outline-none;
+    focus-visible:outline-none
+    active:text-gray2dark;
 }

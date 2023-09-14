@@ -1,11 +1,18 @@
+'use client';
+
+import { useContactForm } from '@/hooks';
 import styles from './form.module.css';
 
 export function Form() {
+	const { contactData, handleChange, handleSubmit } = useContactForm();
+
 	return (
-		<form className={styles.form}>
+		<form className={styles.form} onSubmit={handleSubmit}>
 			<div className={styles.inputs}>
 				<input
 					className={styles.input}
+					onChange={handleChange}
+					value={contactData.name}
 					placeholder="Name"
 					name="name"
 					minLength={5}
@@ -16,6 +23,8 @@ export function Form() {
 				/>
 				<input
 					className={styles.input}
+					onChange={handleChange}
+					value={contactData.email}
 					placeholder="Email"
 					name="email"
 					minLength={5}
@@ -26,6 +35,8 @@ export function Form() {
 			</div>
 			<textarea
 				className={styles.textarea}
+				onChange={handleChange}
+				value={contactData.message}
 				placeholder="Message"
 				name="message"
 				minLength={5}
