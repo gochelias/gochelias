@@ -1,5 +1,5 @@
 import '@/app/globals.css';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
 
 import { clash_display, telegraf, jet_brains_mono } from '@/fonts';
