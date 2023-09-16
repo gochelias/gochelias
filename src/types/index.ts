@@ -1,2 +1,2 @@
 export * from './contact-form';
-export * from './Database';
+export * from './database';

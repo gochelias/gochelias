@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'react-feather';
 
-import styles from '@/styles/Home.module.css';
+import styles from '@/styles/home.module.css';
 
 export default function HomePage() {
 	return (
