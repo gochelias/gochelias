@@ -1,0 +1,32 @@
+.header {
+	@apply flex
+    h-full
+    min-h-[24rem]
+    max-w-1k
+    flex-col
+    items-start
+    justify-center
+    gap-y-3
+	py-24;
+}
+
+.title {
+	@apply select-none
+	text-4xl
+    font-medium
+	xl:text-5xl
+	2xl:text-7xl;
+}
+
+.description {
+	@apply mt-4 
+	line-clamp-3 
+	max-w-4xl 
+	select-none
+    font-body
+	text-lg 
+	text-gray2light 
+	md:line-clamp-none 
+	md:text-xl
+	2xl:text-2xl;
+}

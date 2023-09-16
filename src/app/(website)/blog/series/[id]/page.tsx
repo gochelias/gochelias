@@ -1,18 +1,16 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { ArrowLeft } from 'react-feather';
 import Balancer from 'react-wrap-balancer';
-import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 
 import { allPosts, type Post } from 'contentlayer/generated';
-import styles from '@/styles/Blog.module.css';
-import { Grid } from '@/components/blog';
+import styles from '@/styles/series.module.css';
+import { Grid, Scaffold } from '@/components/blog';
 
-export async function generateMetadata({
+export const generateMetadata = async ({
 	params,
 }: {
 	params: { id: string };
-}): Promise<Metadata | undefined> {
+}): Promise<Metadata | undefined> => {
 	const post = allPosts.find(
 		(p: Post) => p.series?.id === params.id && p.series.part === 1,
 	);
@@ -39,7 +37,7 @@ export async function generateMetadata({
 			images: [image],
 		},
 	};
-}
+};
 
 export default function SeriesPage({ params }: { params: { id: string } }) {
 	const posts: Post[] = allPosts.filter(
@@ -55,22 +53,16 @@ export default function SeriesPage({ params }: { params: { id: string } }) {
 	);
 
 	return (
-		<>
-			<header className={styles.headerBlog}>
-				<div className={styles.headerBlogContainer}>
-					<Link className={styles.linkBackToBlog} href="/blog">
-						<ArrowLeft className="h-5" />
-						<span>Blog</span>
-					</Link>
-					<h1 className={styles.blogSectionsTitle}>
-						<Balancer>{firstPost.series?.title}</Balancer>
-					</h1>
-					<p className={styles.seriesDescription}>
-						{firstPost.series?.overview}
-					</p>
-				</div>
-			</header>
+		<Scaffold>
+			<div className={styles.header}>
+				<h1 className={styles.title}>
+					<Balancer>{firstPost.series?.title}</Balancer>
+				</h1>
+				<p className={styles.description}>
+					{firstPost.series?.overview}
+				</p>
+			</div>
 			<Grid posts={sorted} />
-		</>
+		</Scaffold>
 	);
 }

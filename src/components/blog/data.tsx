@@ -2,22 +2,22 @@
 
 import { useEffect } from 'react';
 
-import styles from '@/styles/Blog.module.css';
+import styles from '@/styles/post.module.css';
 import { incrementViews } from '@/app/actions';
 
-type InfoProps = {
+type DataProps = {
 	slug: string;
 	readingTime: string;
 	publishedAt: string;
 };
 
-export function Info({ slug, readingTime, publishedAt }: InfoProps) {
+export function Data({ slug, readingTime, publishedAt }: DataProps) {
 	useEffect(() => {
 		incrementViews(slug);
 	}, [slug]);
 
 	return (
-		<p className={styles.postData}>
+		<p className={styles.data}>
 			<span>{readingTime}</span>·<span>{publishedAt}</span>
 		</p>
 	);

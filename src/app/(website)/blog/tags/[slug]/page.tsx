@@ -1,11 +1,9 @@
-import Link from 'next/link';
 import dayjs from 'dayjs';
 import { notFound } from 'next/navigation';
-import { ArrowLeft } from 'react-feather';
 
 import { allPosts, type Post } from 'contentlayer/generated';
-import styles from '@/styles/Blog.module.css';
-import { Grid } from '@/components/blog';
+import styles from '@/styles/tags.module.css';
+import { Grid, Scaffold } from '@/components/blog';
 
 export default function TagPage({ params }: { params: { slug: string } }) {
 	const posts: Post[] = allPosts.filter(
@@ -19,19 +17,11 @@ export default function TagPage({ params }: { params: { slug: string } }) {
 	);
 
 	return (
-		<>
-			<header className={styles.headerBlog}>
-				<div className={styles.headerBlogContainer}>
-					<Link className={styles.linkBackToBlog} href="/blog">
-						<ArrowLeft className="h-5" />
-						<span>Blog</span>
-					</Link>
-					<h1 className={`${styles.blogSectionsTitle} text-gray`}>
-						#{params.slug}
-					</h1>
-				</div>
-			</header>
+		<Scaffold>
+			<div className={styles.header}>
+				<h1 className={styles.title}>#{params.slug}</h1>
+			</div>
 			<Grid posts={sorted} />
-		</>
+		</Scaffold>
 	);
 }
