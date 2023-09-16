@@ -1,4 +1,5 @@
 import Balancer from 'react-wrap-balancer';
+import styles from './mdx.module.css';
 
 type QuoteProps = {
 	author: string;
@@ -19,7 +20,7 @@ export default function Quote({ author, content }: QuoteProps) {
 				/>
 			</svg>
 			<div className="flex w-full flex-col">
-				<p className="border-white py-3 text-xl leading-relaxed text-white md:text-2xl">
+				<p className={styles.quoteContent}>
 					<Balancer>{content}</Balancer>
 				</p>
 				<p className="space-x-4 self-end" translate="no">

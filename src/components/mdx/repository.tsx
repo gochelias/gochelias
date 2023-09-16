@@ -1,6 +1,7 @@
 import { Book } from 'react-feather';
 
 import { GitHub, GitLab } from '@/components/icons';
+import styles from './mdx.module.css';
 
 type RepoProps = {
 	url: string;
@@ -15,23 +16,23 @@ export default function Repo({ url, description, license }: RepoProps) {
 	const name = urlSplit[2];
 
 	return (
-		<div className="no-line mx-auto flex w-full max-w-xl flex-col gap-y-3 border border-gray6dark bg-[#0a0a0a] p-4 md:p-5">
-			<div className="flex items-center justify-between">
+		<div className={styles.repo}>
+			<div className={styles.repoHeader}>
 				<div className="flex items-center gap-3">
-					<Book className="h-5 text-white md:h-[22px]" />
+					<Book className={styles.icon} />
 					<a
-						className="flex items-center gap-x-1 leading-normal no-underline"
+						className={styles.repoName}
 						href={`https://${url}`}
 						title={`${author}/${name}`}
 						target="_blank"
 						rel="noreferrer"
 						translate="no">
-						<span className="text-gray3light">{author}</span>
-						<span className="text-gray2dark">/</span>
+						<span className="text-gray3light">{author}</span>{' '}
+						<span className="text-gray2dark">/</span>{' '}
 						<span className="text-white">{name}</span>
 					</a>
 				</div>
-				<div className="flex h-5 w-5 items-center overflow-hidden md:h-[22px] md:w-[22px]">
+				<div className={styles.repoIcon}>
 					{host.startsWith('github') ? (
 						<GitHub className="text-white" />
 					) : (
@@ -39,8 +40,8 @@ export default function Repo({ url, description, license }: RepoProps) {
 					)}
 				</div>
 			</div>
-			<p className="line-clamp-2 text-base md:text-xl">{description}</p>
-			<p className="flex items-center space-x-6 text-sm text-gray md:text-lg">
+			<p className={styles.repoDescription}>{description}</p>
+			<p className={styles.repoData}>
 				<span>{license}</span>
 			</p>
 		</div>

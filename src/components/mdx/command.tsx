@@ -1,11 +1,12 @@
-import CopyButton from '@/components/CopyButton';
+import { CopyButton } from '@/components';
+import styles from './mdx.module.css';
 
 export default function Cmd(props: any) {
 	const { children } = props;
 	const { raw } = children.props.children.props;
 
 	return (
-		<div className="cmd flex items-center overflow-hidden border border-gray6dark bg-[#0a0a0a]">
+		<div className={styles.cmd}>
 			<div {...props} className="flex-auto overflow-hidden" />
 			<CopyButton text={raw} />
 		</div>

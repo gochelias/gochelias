@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Check, Copy } from 'react-feather';
 
-export default function CopyButton({ text }: { text: string }) {
+export function CopyButton({ text }: { text: string }) {
 	const [isCopied, setIsCopied] = useState<boolean>(false);
 
 	const copy = (): void => {

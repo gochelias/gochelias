@@ -1,9 +1,9 @@
-import Cmd from './Cmd';
-import Code from './Code';
-import Pkg from './Pkg';
-import Quote from './Quote';
-import Repo from './Repo';
-import Img from './Img';
+import Cmd from './command';
+import Code from './code-block';
+import Pkg from './package';
+import Quote from './quote';
+import Repo from './repository';
+import Img from './image';
 
 export default {
 	Pkg,

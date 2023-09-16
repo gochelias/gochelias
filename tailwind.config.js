@@ -11,7 +11,7 @@ module.exports = {
 				'2k': '2000px',
 			},
 			colors: {
-				dark: '#111111',
+				dark: '#0a0a0a',
 				gray6light: '#F2F2F7',
 				gray5light: '#E5E5EA',
 				gray4light: '#D1D1D6',

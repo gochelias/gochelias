@@ -119,10 +119,6 @@ hr {
 	content-['#'];
 }
 
-.prose .no-line a {
-	@apply no-underline;
-}
-
 .prose a {
 	@apply text-gray6light
 	underline
@@ -185,17 +181,11 @@ hr {
 	md:text-lg;
 }
 
-.cmd [data-line]::before {
-	@apply mr-3
-	text-gray3dark
-	content-['$'];
-}
-
 pre {
 	@apply max-h-[80vh]
 	overflow-x-auto
 	overflow-y-auto
-	bg-[#0a0a0a]
+	bg-dark
 	py-3
 	leading-none
 	md:py-4;
@@ -206,7 +196,7 @@ code {
 	@apply inline
 	border
 	border-gray5dark 
-	bg-[#0a0a0a]
+	bg-dark
 	px-1
 	text-sm
 	text-gray3light
