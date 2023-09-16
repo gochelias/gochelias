@@ -7,8 +7,7 @@
 }
 
 .hero {
-	composes: wrapper from global;
-	composes: padding from global;
+	composes: wrapper padding from global;
 	@apply flex
 	h-full
 	select-none
@@ -56,8 +55,7 @@
 }
 
 .aboutSection {
-	composes: wrapper from global;
-	composes: padding from global;
+	composes: wrapper padding from global;
 	@apply h-screen 
 	w-full
 	select-none

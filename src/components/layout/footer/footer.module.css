@@ -5,8 +5,7 @@
 }
 
 .wrapper {
-	composes: wrapper from global;
-	composes: padding from global;
+	composes: wrapper padding from global;
 	@apply flex
     flex-col
     py-4
