@@ -255,39 +255,3 @@ code[data-line-numbers-max-digits='2'] > [data-line]::before {
 code[data-line-numbers-max-digits='3'] > [data-line]::before {
 	width: 3rem;
 }
-
-.navbar-show {
-	@apply translate-y-0;
-}
-
-.navbar-hide {
-	@apply -translate-y-full;
-}
-
-.center-img {
-	object-position: top -860px right 0;
-}
-
-.ring_one {
-	animation: rotate_right 5s linear infinite;
-}
-.ring_two {
-	animation: rotate_left 5s linear infinite;
-}
-
-@keyframes rotate_right {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-@keyframes rotate_left {
-	0% {
-		transform: rotate(-0deg);
-	}
-	100% {
-		transform: rotate(-360deg);
-	}
-}
