@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowUpRight } from 'react-feather';
 
 import styles from '@/styles/home.module.css';
@@ -15,10 +14,12 @@ export default function HomePage() {
 					<div className={styles.info}>
 						<h6>Software Developer</h6>
 						<h6>Based in México</h6>
-						<Link href="/contact" className={styles.contact}>
+						<a
+							href="mailto:elias@gochelias.com"
+							className={styles.contact}>
 							<span>Contact</span>
 							<ArrowUpRight />
-						</Link>
+						</a>
 					</div>
 					<div className={styles.image}>
 						<Image
@@ -30,13 +31,15 @@ export default function HomePage() {
 					</div>
 				</div>
 			</section>
-			<main className="box">
-				<section className={styles.aboutSection}>
+			<main className="box flex flex-col">
+				<section className={styles.sections}>
 					<hr />
-					<div className={styles.about}>
-						<div className="w-1/2">About</div>
+					<div className={styles.sectionContainer}>
+						<div className="w-1/2 uppercase">
+							<h4>About</h4>
+						</div>
 						<div className="flex w-full flex-col md:w-1/2">
-							<div className={styles.aboutContent}>
+							<div className={styles.content}>
 								<h2>Hello I'm Elias.</h2>
 								<p>
 									I'm a passionate software developer who
@@ -58,7 +61,7 @@ export default function HomePage() {
 								href="/github"
 								target="_blank"
 								translate="no"
-								className={`${styles.aboutLink} mb-[-1px]`}>
+								className={`${styles.link} mb-[-1px]`}>
 								<span>GitHub</span>
 								<ArrowUpRight />
 							</a>
@@ -66,8 +69,36 @@ export default function HomePage() {
 								href="/linkedin"
 								target="_blank"
 								translate="no"
-								className={styles.aboutLink}>
+								className={styles.link}>
 								<span>LinkedIn</span>
+								<ArrowUpRight />
+							</a>
+						</div>
+					</div>
+				</section>
+				<section className={styles.sections}>
+					<div className={styles.sectionContainer}>
+						<div className="w-1/2 uppercase">
+							<h4>Contact</h4>
+						</div>
+						<div className="flex w-full flex-col md:w-1/2">
+							<p className={styles.content}>
+								I like to work on a cool stuff, let's work
+								together.
+							</p>
+							<a
+								href="mailto:elias@gochelias.com"
+								translate="no"
+								className={styles.link}>
+								<span>Email</span>
+								<ArrowUpRight />
+							</a>
+							<a
+								href="/discord"
+								target="_blank"
+								translate="no"
+								className={`${styles.link} mt-[-1px]`}>
+								<span>Discord</span>
 								<ArrowUpRight />
 							</a>
 						</div>
