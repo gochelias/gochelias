@@ -1,0 +1,36 @@
+.container {
+	@apply fixed 
+    left-0
+    top-0
+    z-50 
+    flex 
+    h-14
+    w-screen 
+    select-none
+    justify-center 
+    border-b 
+    border-gray5dark
+    bg-black
+    md:h-16
+    xl:h-20
+    2xl:h-24;
+}
+
+.navigation {
+	composes: wrapper from global;
+	@apply flex 
+    h-full 
+    items-center
+    justify-between;
+}
+
+.name {
+	composes: padding from global;
+	@apply grid 
+    h-full 
+    place-items-center 
+    text-xl
+    font-medium 
+    md:text-2xl
+    xl:text-3xl;
+}

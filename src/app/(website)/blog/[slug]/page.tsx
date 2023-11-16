@@ -6,8 +6,8 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
 import { allPosts, type Post } from 'contentlayer/generated';
-import styles from '@/styles/Blog.module.css';
-import { Info, MDX } from '@/components/blog';
+import styles from '@/styles/post.module.css';
+import { Data, MDXContent } from '@/components/blog';
 
 type PageProps = {
 	params: {
@@ -15,9 +15,9 @@ type PageProps = {
 	};
 };
 
-export async function generateMetadata({
+export const generateMetadata = async ({
 	params,
-}: PageProps): Promise<Metadata | undefined> {
+}: PageProps): Promise<Metadata | undefined> => {
 	const post: Post | undefined = allPosts.find(
 		(p: Post) => p.slug === params.slug,
 	);
@@ -50,7 +50,7 @@ export async function generateMetadata({
 			images: [image],
 		},
 	};
-}
+};
 
 export default function PostPage({ params }: PageProps) {
 	const post: Post | undefined = allPosts.find(
@@ -63,35 +63,35 @@ export default function PostPage({ params }: PageProps) {
 
 	return (
 		<main className="flex flex-col items-center">
-			<section className={styles.postHeader}>
-				<div className={styles.postHeaderData}>
+			<section className={styles.header}>
+				<div className={styles.details}>
 					{post.series && (
 						<Link
-							className={styles.seriesPart}
+							className={styles.part}
 							href={`/blog/series/${post.series.id}`}>
 							<span>Part {post.series.part}</span>
 						</Link>
 					)}
-					<h1 className={styles.postTitle}>
+					<h1 className={styles.title}>
 						<Balancer className="leading-[1.1]">
 							{post.title}
 						</Balancer>
 					</h1>
-					<Info
+					<Data
 						slug={post.slug}
 						readingTime={post.readingTime.text}
 						publishedAt={publishedAt}
 					/>
 				</div>
-				<div className={styles.postImage}>
+				<div className={styles.image}>
 					<Image src={post.image} fill alt="" />
 				</div>
 			</section>
-			<section className={styles.postMain}>
-				<article className="prose flex w-full max-w-3xl flex-col gap-y-6 font-body text-base leading-relaxed selection:bg-white selection:text-black md:text-[22px]">
+			<section className={styles.content}>
+				<article className={`prose ${styles.article}`}>
 					<p className="text-gray">{post.overview}</p>
 					<hr />
-					<MDX content={post.body.code} />
+					<MDXContent content={post.body.code} />
 					{post.tags && (
 						<div className="no-line mt-16 flex flex-wrap items-center gap-3 overflow-hidden">
 							{post.tags.map((tag: string) => (

@@ -1,0 +1,46 @@
+.link {
+	@apply flex
+    select-none
+    items-center
+    gap-x-2
+    font-body
+    text-lg
+    leading-none
+    transition-colors
+    hover:text-gray2light
+    xl:text-xl;
+}
+
+.icon {
+	@apply text-white
+    opacity-0
+    transition-opacity
+    duration-150;
+}
+
+.column {
+	@apply flex
+    w-max
+    flex-col
+    gap-y-3;
+}
+
+.row {
+	@apply flex
+    w-max
+    flex-row
+    items-center
+    gap-x-5
+    gap-y-3
+    md:gap-x-6;
+}
+
+.email {
+	@apply font-body
+    text-lg
+    transition-colors
+    selection:bg-white
+    selection:text-black
+    hover:text-gray2light
+    2xl:text-xl;
+}

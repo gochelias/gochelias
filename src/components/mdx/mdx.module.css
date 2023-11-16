@@ -1,0 +1,178 @@
+.box {
+	@apply border
+    border-gray6dark
+    bg-dark;
+}
+
+.icon {
+	@apply h-5
+    text-white
+    md:h-[22px];
+}
+
+.cmd {
+	composes: box;
+	@apply flex
+    items-center
+    overflow-hidden;
+}
+
+.cmd [data-line]::before {
+	@apply mr-3
+	text-gray3dark
+	content-['$'];
+}
+
+.repo {
+	composes: box;
+	@apply mx-auto
+    flex
+    w-full
+    max-w-xl
+    flex-col
+    gap-y-3
+    p-4 md:p-5;
+}
+
+.repoHeader {
+	@apply flex
+    items-center
+    justify-between;
+}
+
+.repoIcon {
+	@apply flex
+    h-5
+    w-5
+    items-center
+    overflow-hidden
+    md:h-[22px]
+    md:w-[22px];
+}
+
+.repoName {
+	text-decoration: none !important;
+	@apply flex
+    items-center
+    gap-x-1
+    leading-normal
+    no-underline;
+}
+
+.repoDescription {
+	@apply line-clamp-2
+    text-base
+    md:text-xl;
+}
+
+.repoData {
+	@apply flex
+    items-center
+    space-x-6
+    text-sm
+    text-gray
+    md:text-lg;
+}
+
+.codeHeader {
+	@apply flex
+    items-center
+    justify-between
+    bg-black;
+}
+
+.codeTab {
+	@apply flex
+    w-max
+    items-center
+    space-x-3
+    bg-dark
+    py-3
+    pl-3
+    pr-3
+    font-mono
+    text-sm 
+    text-white 
+    md:py-4
+    md:pl-4
+    md:pr-5
+    md:text-base;
+}
+
+.codeIcon {
+	@apply h-[22px]
+    w-[22px]
+    object-cover
+    object-center;
+}
+
+.pkg {
+	composes: box;
+	@apply mx-auto
+    flex
+    w-full
+    max-w-xl
+    flex-col
+    gap-y-3
+    p-4
+    md:p-5;
+}
+
+.pkgName {
+	text-decoration: none !important;
+	@apply flex
+    items-center
+    gap-1
+    leading-normal;
+}
+
+.pkgDescription {
+	@apply line-clamp-2
+    text-base
+    md:text-xl;
+}
+
+.pkgCmd {
+	composes: box;
+	@apply flex
+    w-full
+    items-center
+    overflow-hidden
+    bg-black;
+}
+
+.pkgInstall {
+	@apply w-full
+    overflow-x-auto
+    whitespace-nowrap
+    p-3
+    font-mono
+    text-sm
+    leading-normal
+    md:p-4
+    md:text-lg;
+}
+
+.img {
+	@apply mx-auto
+    h-auto
+    w-auto
+    object-contain;
+}
+
+.imgCaption {
+	@apply mt-1
+    text-center
+    text-sm
+    text-gray2dark
+    lg:text-base;
+}
+
+.quoteContent {
+	@apply border-white
+    py-3
+    text-xl
+    leading-relaxed
+    text-white
+    md:text-2xl;
+}

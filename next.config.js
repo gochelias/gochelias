@@ -1,4 +1,3 @@
-const { withSentryConfig } = require('@sentry/nextjs');
 const { withContentlayer } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
@@ -57,18 +56,4 @@ const nextConfig = {
 	},
 };
 
-module.exports = withSentryConfig(
-	withContentlayer(nextConfig),
-	{
-		silent: true,
-		org: 'gochelias',
-		project: 'website',
-	},
-	{
-		widenClientFileUpload: true,
-		transpileClientSDK: true,
-		tunnelRoute: '/monitoring',
-		hideSourceMaps: true,
-		disableLogger: true,
-	},
-);
+module.exports = withContentlayer(nextConfig);

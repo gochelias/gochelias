@@ -1,0 +1,10 @@
+.container {
+	@apply grid 
+	h-full
+    w-full
+    grid-cols-1
+	pb-64
+	sm:grid-cols-2
+	xl:grid-cols-3
+	2k:grid-cols-4;
+}

@@ -1,0 +1,114 @@
+.container {
+	@apply flex
+	h-screen
+	w-screen
+	flex-col
+	items-center;
+}
+
+.hero {
+	composes: wrapper padding from global;
+	@apply flex
+	h-full
+	select-none
+	flex-col
+	justify-end
+	gap-y-8
+	pb-8
+	pt-24;
+}
+
+.title {
+	@apply max-w-4xl
+	text-5xl
+	font-medium
+	uppercase
+	leading-none
+	text-white
+	md:text-7xl
+	2xl:text-8xl;
+}
+
+.info {
+	composes: textSize from global;
+	@apply flex
+	w-full
+	flex-col
+	justify-between
+	font-body
+	md:flex-row;
+}
+
+.contact {
+	@apply hidden
+	items-center
+	gap-x-2
+	transition-colors
+	hover:text-gray2light
+	md:flex;
+}
+
+.image {
+	@apply relative
+	h-1/2
+	overflow-hidden;
+}
+
+.sections {
+	composes: wrapper padding textSize from global;
+	@apply h-screen
+	w-full
+	select-none
+	font-body
+	md:h-max
+	md:pb-16;
+}
+
+.sectionContainer {
+	composes: textSize from global;
+	@apply flex
+	flex-col
+	gap-y-16
+	font-body
+	md:flex-row;
+}
+
+.content {
+	@apply mb-8
+	flex
+	w-full
+	max-w-2xl
+	flex-col
+	gap-y-6
+	leading-normal;
+}
+
+.skillBox {
+	@apply grid
+	aspect-square
+	h-24
+	w-24
+	place-content-center
+	border
+	border-gray5dark
+	p-6
+	grayscale;
+}
+
+.link {
+	@apply relative
+	flex
+	h-14
+	w-full
+	items-center
+	justify-between
+	border-y
+	border-gray5dark
+	px-2
+	font-body
+	text-lg
+	hover:z-[1]
+	hover:border-white
+	2xl:h-16
+	2xl:text-xl;
+}

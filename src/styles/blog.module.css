@@ -1,0 +1,14 @@
+.header {
+	@apply flex
+	h-96
+	items-center
+	justify-start;
+}
+
+.title {
+	@apply select-none
+	text-7xl
+	font-medium
+	2xl:text-8xl
+	2k:text-9xl;
+}
