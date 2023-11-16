@@ -5,7 +5,7 @@
 		"project": ["./tsconfig.json"]
 	},
 	"parser": "@typescript-eslint/parser",
-	"plugins": ["@typescript-eslint", "testing-library", "prettier"],
+	"plugins": ["@typescript-eslint", "prettier"],
 	"rules": {
 		"indent": "off",
 		"@next/next/no-html-link-for-pages": "off",
@@ -26,10 +26,6 @@
 		"jsx-a11y/label-has-associated-control": "off",
 		"jsx-a11y/no-autofocus": "off",
 		"react/require-default-props": "off",
-		"testing-library/await-async-query": "error",
-		"testing-library/no-await-sync-query": "error",
-		"testing-library/no-debugging-utils": "warn",
-		"testing-library/no-dom-import": "off",
 		"@next/next/no-img-element": "off",
 		"no-underscore-dangle": "off",
 		"consistent-return": "off",

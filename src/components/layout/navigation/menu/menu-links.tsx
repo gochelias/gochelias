@@ -14,14 +14,6 @@ export default function MenuLinks({ closeMenu }: { closeMenu: () => void }) {
 					Blog
 				</Link>
 			</li>
-			<li>
-				<Link
-					href="/contact"
-					onClick={closeMenu}
-					className={styles.link}>
-					Contact
-				</Link>
-			</li>
 		</ul>
 	);
 }
