@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 		template: '%s | Elias Goche',
 	},
 	description: 'Software Developer',
+	metadataBase: new URL('https://gochelias.com'),
 	openGraph: {
 		title: 'Elias Goche',
 		description: 'Software Developer',
